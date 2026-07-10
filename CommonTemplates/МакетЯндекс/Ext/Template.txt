@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="#COMPATIBLEMODE#"/>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=#APIKEY#" type="text/javascript"></script>
+    <style type="text/css">
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+  
+  <script type="text/javascript">
+  
+ymaps.ready(init);
+
+function init() 
+{
+	ymaps.geocode('#CITY#', {results: 1}).then
+	(
+		function (res)
+		{
+			var firstGeoObject = res.geoObjects.get(0);
+			myMap = new ymaps.Map("map", 
+				{
+					center: firstGeoObject.geometry.getCoordinates(),
+					zoom: 12
+				});
+				
+			myMap.behaviors.enable('scrollZoom');
+			myMap.behaviors.disable('dblClickZoom');
+		
+			#METKI#
+				
+				
+			myMap.events.add('click', function (e) 
+				{
+					MyCoords = e.get('coords');
+				}
+			);
+		}
+	);
+}
+	
+   </script>
+</html>

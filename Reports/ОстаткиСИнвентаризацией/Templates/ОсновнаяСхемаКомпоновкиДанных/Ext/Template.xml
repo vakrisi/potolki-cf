@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Склад</dataPath>
+			<field>Склад</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоОстаток</dataPath>
+			<field>КоличествоОстаток</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Поставщик</dataPath>
+			<field>Поставщик</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ХарактеристикаНоменклатуры</dataPath>
+			<field>ХарактеристикаНоменклатуры</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Инвентаризация</dataPath>
+			<field>Инвентаризация</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Инвентаризация</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СерияНоменклатуры</dataPath>
+			<field>СерияНоменклатуры</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Номенклатура.Ссылка КАК Номенклатура,
+	Номенклатура.Поставщик КАК Поставщик
+ПОМЕСТИТЬ ВТ_Номенклатура
+ИЗ
+	Справочник.Номенклатура КАК Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ТоварыНаСкладахОстатки.Номенклатура КАК Номенклатура,
+	ТоварыНаСкладахОстатки.Склад КАК Склад,
+	ТоварыНаСкладахОстатки.КоличествоОстаток КАК КоличествоОстаток
+ПОМЕСТИТЬ ВТ_Остатки
+ИЗ
+	РегистрНакопления.ТоварыНаСкладах.Остатки(, ) КАК ТоварыНаСкладахОстатки
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ИнвентаризацияТовары.Номенклатура КАК Номенклатура,
+	ИнвентаризацияТовары.Ссылка.Дата КАК Дата
+ПОМЕСТИТЬ ВТ_ИнвентаризацияДата
+ИЗ
+	Документ.Инвентаризация.Товары КАК ИнвентаризацияТовары
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ИнвентаризацияТовары.Ссылка КАК Инвентаризация,
+	ИнвентаризацияТовары.Номенклатура КАК Номенклатура,
+	ИнвентаризацияТовары.Ссылка.Дата КАК Дата
+ПОМЕСТИТЬ ВТ_ИнвентаризацияСсылка
+ИЗ
+	Документ.Инвентаризация.Товары КАК ИнвентаризацияТовары
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТ_ИнвентаризацияСсылка.Номенклатура КАК Номенклатура,
+	МАКСИМУМ(ВТ_ИнвентаризацияСсылка.Инвентаризация) КАК Инвентаризация
+ПОМЕСТИТЬ ВТ_ИнвентаризацияСсылкаРезультат
+ИЗ
+	ВТ_ИнвентаризацияДата КАК ВТ_ИнвентаризацияДата
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ИнвентаризацияСсылка КАК ВТ_ИнвентаризацияСсылка
+		ПО ВТ_ИнвентаризацияДата.Номенклатура = ВТ_ИнвентаризацияСсылка.Номенклатура
+			И ВТ_ИнвентаризацияДата.Дата = ВТ_ИнвентаризацияСсылка.Дата
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ИнвентаризацияСсылка.Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТ_Номенклатура.Номенклатура КАК Номенклатура,
+	ВТ_Номенклатура.Поставщик КАК Поставщик,
+	ВТ_Остатки.Склад КАК Склад,
+	ВТ_Остатки.КоличествоОстаток КАК КоличествоОстаток,
+	ВТ_ИнвентаризацияСсылкаРезультат.Инвентаризация КАК Инвентаризация
+ИЗ
+	ВТ_Номенклатура КАК ВТ_Номенклатура
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Остатки КАК ВТ_Остатки
+		ПО ВТ_Номенклатура.Номенклатура = ВТ_Остатки.Номенклатура
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_ИнвентаризацияСсылкаРезультат КАК ВТ_ИнвентаризацияСсылкаРезультат
+		ПО ВТ_Номенклатура.Номенклатура = ВТ_ИнвентаризацияСсылкаРезультат.Номенклатура</query>
+	</dataSet>
+	<totalField>
+		<dataPath>КоличествоОстаток</dataPath>
+		<expression>Сумма(КоличествоОстаток)</expression>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Номенклатура</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Поставщик</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоОстаток</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Инвентаризация</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Античный</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,953 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Продукция</dataPath>
+			<field>Продукция</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Продукция</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РаскройВыработка</dataPath>
+			<field>РаскройВыработка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Раскрой, выработка</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РаскройКоличество</dataPath>
+			<field>РаскройКоличество</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Раскрой, количество</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидЗаказа</dataPath>
+			<field>ВидЗаказа</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Документ</dataPath>
+			<field>Документ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Углы</dataPath>
+			<field>Углы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Углы (более четырех)</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КриволинейныйУчасток</dataPath>
+			<field>КриволинейныйУчасток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Криволинейный участок</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">10</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПрямолинейныеШвы</dataPath>
+			<field>ПрямолинейныеШвы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прямолинейные швы</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">10</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Фотопечать</dataPath>
+			<field>Фотопечать</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фотопечать</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВнутренниеВырезы</dataPath>
+			<field>ВнутренниеВырезы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Внутренние вырезы</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Гарпун</dataPath>
+			<field>Гарпун</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Гарпун</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПользовательскиеШвы</dataPath>
+			<field>ПользовательскиеШвы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пользовательские швы</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВырезыApply</dataPath>
+			<field>ВырезыApply</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вырезы apply</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КриволинейныеШвы</dataPath>
+			<field>КриволинейныеШвы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Криволинейные швы</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоПотолок</dataPath>
+			<field>КоличествоПотолок</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество продукции</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>УглыВсего</dataPath>
+			<field>УглыВсего</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Углы ( всего)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВыпускПродукцииМатериалы.Ссылка,
+	ВыпускПродукцииМатериалы.Ссылка.ПродукцияНоменклатура КАК Продукция,
+	СУММА(ВыпускПродукцииМатериалы.Количество * ВыпускПродукцииМатериалы.Коэффициент) КАК РаскройКоличество,
+	СУММА(ВыпускПродукцииМатериалы.КоличествоКВыработке) КАК РаскройВыработка
+ПОМЕСТИТЬ ВТ_Материалы
+ИЗ
+	Документ.ВыпускПродукции.Материалы КАК ВыпускПродукцииМатериалы
+ГДЕ
+	ВыпускПродукцииМатериалы.Ссылка.Проведен
+	И (ВыпускПродукцииМатериалы.Номенклатура.ВидНоменклатуры = ЗНАЧЕНИЕ(Справочник.ВидыНоменклатуры.Полотно)
+	ИЛИ ВыпускПродукцииМатериалы.Номенклатура.ВидНоменклатуры = ЗНАЧЕНИЕ(Справочник.ВидыНоменклатуры.ОстатокПленки))
+
+СГРУППИРОВАТЬ ПО
+	ВыпускПродукцииМатериалы.Ссылка,
+	ВыпускПродукцииМатериалы.Ссылка.ПродукцияНоменклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВыпускПродукцииМатериалы.Ссылка,
+	СУММА(ВыпускПродукцииМатериалы.Количество) КАК Углы
+ПОМЕСТИТЬ ВТ_Углы
+ИЗ
+	Документ.ВыпускПродукции.Услуги КАК ВыпускПродукцииМатериалы
+ГДЕ
+	ВыпускПродукцииМатериалы.Ссылка.Проведен
+	И ВыпускПродукцииМатериалы.Номенклатура.ВидПроизводственнойУслуги = ЗНАЧЕНИЕ(Справочник.ВидыПроизводственныхУслуг.Углы)
+
+СГРУППИРОВАТЬ ПО
+	ВыпускПродукцииМатериалы.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВыпускПродукцииМатериалы.Ссылка,
+	СУММА(ВыпускПродукцииМатериалы.Количество) КАК КриволинейныйУчасток
+ПОМЕСТИТЬ ВТ_Кривые
+ИЗ
+	Документ.ВыпускПродукции.Услуги КАК ВыпускПродукцииМатериалы
+ГДЕ
+	ВыпускПродукцииМатериалы.Ссылка.Проведен
+	И ВыпускПродукцииМатериалы.Номенклатура.ВидПроизводственнойУслуги = ЗНАЧЕНИЕ(Справочник.ВидыПроизводственныхУслуг.КриволинейныйУчасток)
+
+СГРУППИРОВАТЬ ПО
+	ВыпускПродукцииМатериалы.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВыпускПродукцииМатериалы.Ссылка,
+	СУММА(ВыпускПродукцииМатериалы.Количество) КАК ПрямолинейныеШвы
+ПОМЕСТИТЬ ВТ_ДлинаШвов
+ИЗ
+	Документ.ВыпускПродукции.Услуги КАК ВыпускПродукцииМатериалы
+ГДЕ
+	ВыпускПродукцииМатериалы.Ссылка.Проведен
+	И ВыпускПродукцииМатериалы.Номенклатура.ВидПроизводственнойУслуги = ЗНАЧЕНИЕ(Справочник.ВидыПроизводственныхУслуг.ПрямолинейныеШвы)
+
+СГРУППИРОВАТЬ ПО
+	ВыпускПродукцииМатериалы.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВыпускПродукцииМатериалы.Ссылка,
+	СУММА(ВыпускПродукцииМатериалы.Количество) КАК ПользовательскиеШвы
+ПОМЕСТИТЬ ВТ_ДлинаПользовательскихШвов
+ИЗ
+	Документ.ВыпускПродукции.Услуги КАК ВыпускПродукцииМатериалы
+ГДЕ
+	ВыпускПродукцииМатериалы.Ссылка.Проведен
+	И ВыпускПродукцииМатериалы.Номенклатура.ВидПроизводственнойУслуги = ЗНАЧЕНИЕ(Справочник.ВидыПроизводственныхУслуг.ПользовательскиеШвы)
+
+СГРУППИРОВАТЬ ПО
+	ВыпускПродукцииМатериалы.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВыпускПродукцииМатериалы.Ссылка,
+	СУММА(ВыпускПродукцииМатериалы.Количество) КАК КриволинейныеШвы
+ПОМЕСТИТЬ ВТ_КриволинейныеШвы
+ИЗ
+	Документ.ВыпускПродукции.Услуги КАК ВыпускПродукцииМатериалы
+ГДЕ
+	ВыпускПродукцииМатериалы.Ссылка.Проведен
+	И ВыпускПродукцииМатериалы.Номенклатура.ВидПроизводственнойУслуги = ЗНАЧЕНИЕ(Справочник.ВидыПроизводственныхУслуг.КриволинейныеШвы)
+
+СГРУППИРОВАТЬ ПО
+	ВыпускПродукцииМатериалы.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВыпускПродукцииМатериалы.Ссылка,
+	СУММА(ВыпускПродукцииМатериалы.Количество) КАК Фотопечать
+ПОМЕСТИТЬ ВТ_Фотопечать
+ИЗ
+	Документ.ВыпускПродукции.Услуги КАК ВыпускПродукцииМатериалы
+ГДЕ
+	ВыпускПродукцииМатериалы.Ссылка.Проведен
+	И ВыпускПродукцииМатериалы.Номенклатура.ВидПроизводственнойУслуги = ЗНАЧЕНИЕ(Справочник.ВидыПроизводственныхУслуг.Фотопечать)
+
+СГРУППИРОВАТЬ ПО
+	ВыпускПродукцииМатериалы.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВыпускПродукцииМатериалы.Ссылка,
+	СУММА(ВыпускПродукцииМатериалы.Количество) КАК ВнутренниеВырезы
+ПОМЕСТИТЬ ВТ_ВнутренниеВырезы
+ИЗ
+	Документ.ВыпускПродукции.Услуги КАК ВыпускПродукцииМатериалы
+ГДЕ
+	ВыпускПродукцииМатериалы.Ссылка.Проведен
+	И ВыпускПродукцииМатериалы.Номенклатура.ВидПроизводственнойУслуги = ЗНАЧЕНИЕ(Справочник.ВидыПроизводственныхУслуг.ВнутренниеВырезы)
+
+СГРУППИРОВАТЬ ПО
+	ВыпускПродукцииМатериалы.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВыпускПродукцииМатериалы.Ссылка,
+	СУММА(ВыпускПродукцииМатериалы.Количество) КАК ВырезыApply
+ПОМЕСТИТЬ ВТ_ВырезыApply
+ИЗ
+	Документ.ВыпускПродукции.Услуги КАК ВыпускПродукцииМатериалы
+ГДЕ
+	ВыпускПродукцииМатериалы.Ссылка.Проведен
+	И ВыпускПродукцииМатериалы.Номенклатура.ВидПроизводственнойУслуги = ЗНАЧЕНИЕ(Справочник.ВидыПроизводственныхУслуг.ВырезыApply)
+
+СГРУППИРОВАТЬ ПО
+	ВыпускПродукцииМатериалы.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВыпускПродукции.Ссылка КАК Документ,
+	ВыпускПродукции.ВидЗаказа,
+	ВыпускПродукции.Организация,
+	ВыпускПродукции.Подразделение,
+	ВыпускПродукции.ПродукцияНоменклатура КАК Продукция,
+	ЕСТЬNULL(ВыпускПродукции.ПродукцияНоменклатура.Потолок_КоличествоГарпун, 0) КАК Гарпун,
+	ВыпускПродукции.ПродукцияНоменклатураКоличество КАК КоличествоПотолок,
+	ВТ_Материалы.РаскройКоличество,
+	ВТ_Материалы.РаскройВыработка,
+	ВЫБОР
+		КОГДА ВТ_Углы.Углы &gt;= 4
+			ТОГДА ВТ_Углы.Углы - 4
+		ИНАЧЕ 0 // №7853 заменено на 0, раньше было ВТ_Углы.Углы
+	КОНЕЦ КАК Углы,
+	ВТ_Углы.Углы КАК УглыВсего,
+	ВТ_Кривые.КриволинейныйУчасток КАК КриволинейныйУчасток,
+	ВТ_ДлинаШвов.ПрямолинейныеШвы КАК ПрямолинейныеШвы,
+	ВТ_ДлинаПользовательскихШвов.ПользовательскиеШвы КАК ПользовательскиеШвы,
+	ВТ_Фотопечать.Фотопечать КАК Фотопечать,
+	ВТ_ВнутренниеВырезы.ВнутренниеВырезы КАК ВнутренниеВырезы,
+	ВТ_ВырезыApply.ВырезыApply КАК ВырезыApply,
+	ВТ_КриволинейныеШвы.КриволинейныеШвы КАК КриволинейныеШвы
+ИЗ
+	Документ.ВыпускПродукции КАК ВыпускПродукции
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Материалы КАК ВТ_Материалы
+		ПО ВыпускПродукции.Ссылка = ВТ_Материалы.Ссылка
+			И ВыпускПродукции.ПродукцияНоменклатура = ВТ_Материалы.Продукция
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Углы КАК ВТ_Углы
+		ПО ВыпускПродукции.Ссылка = ВТ_Углы.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Кривые КАК ВТ_Кривые
+		ПО ВыпускПродукции.Ссылка = ВТ_Кривые.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ДлинаШвов КАК ВТ_ДлинаШвов
+		ПО ВыпускПродукции.Ссылка = ВТ_ДлинаШвов.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ДлинаПользовательскихШвов КАК ВТ_ДлинаПользовательскихШвов
+		ПО ВыпускПродукции.Ссылка = ВТ_ДлинаПользовательскихШвов.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Фотопечать КАК ВТ_Фотопечать
+		ПО ВыпускПродукции.Ссылка = ВТ_Фотопечать.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ВнутренниеВырезы КАК ВТ_ВнутренниеВырезы
+		ПО ВыпускПродукции.Ссылка = ВТ_ВнутренниеВырезы.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ВырезыApply КАК ВТ_ВырезыApply
+		ПО ВыпускПродукции.Ссылка = ВТ_ВырезыApply.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_КриволинейныеШвы КАК ВТ_КриволинейныеШвы
+		ПО ВыпускПродукции.Ссылка = ВТ_КриволинейныеШвы.Ссылка
+ГДЕ
+	ВыпускПродукции.Проведен
+{ГДЕ
+	(ВыпускПродукции.Дата &gt;= &amp;ДатаНачала),
+	(ВыпускПродукции.Дата &lt;= &amp;ДатаОкончания)}</query>
+	</dataSet>
+	<totalField>
+		<dataPath>РаскройВыработка</dataPath>
+		<expression>Сумма(РаскройВыработка)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РаскройКоличество</dataPath>
+		<expression>Сумма(РаскройКоличество)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Углы</dataPath>
+		<expression>Сумма(Углы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КриволинейныйУчасток</dataPath>
+		<expression>Сумма(КриволинейныйУчасток)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПрямолинейныеШвы</dataPath>
+		<expression>Сумма(ПрямолинейныеШвы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Фотопечать</dataPath>
+		<expression>Сумма(Фотопечать)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВнутренниеВырезы</dataPath>
+		<expression>Сумма(ВнутренниеВырезы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Гарпун</dataPath>
+		<expression>Сумма(Гарпун)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВырезыApply</dataPath>
+		<expression>Сумма(ВырезыApply)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПользовательскиеШвы</dataPath>
+		<expression>Сумма(ПользовательскиеШвы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КриволинейныеШвы</dataPath>
+		<expression>Сумма(КриволинейныеШвы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоПотолок</dataPath>
+		<expression>Сумма(КоличествоПотолок)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>УглыВсего</dataPath>
+		<expression>Сумма(УглыВсего)</expression>
+	</totalField>
+	<parameter>
+		<name>СтПериод</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;СтПериод.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+		<inputParameters>
+			<dcscor:item>
+				<dcscor:parameter>ФорматРедактирования</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ДФ=dd.MM.yyyy</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</inputParameters>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;СтПериод.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+		<inputParameters>
+			<dcscor:item>
+				<dcscor:parameter>ФорматРедактирования</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ДФ=dd.MM.yyyy</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</inputParameters>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Продукция</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Документ</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Vertically</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоПотолок</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РаскройКоличество</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РаскройВыработка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Гарпун</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Углы</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>УглыВсего</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КриволинейныйУчасток</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПрямолинейныеШвы</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КриволинейныеШвы</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Фотопечать</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВнутренниеВырезы</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВырезыApply</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПользовательскиеШвы</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ВидЗаказа</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>686150d9-3013-4660-9459-ee556d84f269</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Продукция.ВидНоменклатуры</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>dea696b7-158e-4d84-9e6a-a2a501fa4a5d</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид продукции</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Продукция</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>509e0bca-406a-40e7-9445-21c22cb071d3</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>0ba51ac4-9c28-4eb6-8e35-a4d663306f08</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Подразделение</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>30e66cbf-88b8-4368-b2c9-c17c7ef1a8ff</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Документ.Материалы.Номенклатура</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>4d4fcbf4-4972-45f9-b081-36c56a14d248</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Материал</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СтПериод</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>d0696c8a-60be-4364-8791-be5ec1602dac</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДатаНачала</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>d8f8b2f4-6c65-4773-aebb-775b4051cc4b</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДатаОкончания</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>d0a7bd40-8e4e-4436-81c6-572eb90a1e6a</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Античный</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ПоМатериалам</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>По материалам</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СистемныеПоля.НомерПоПорядку</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Продукция</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Документ</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Vertically</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоПотолок</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РаскройКоличество</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РаскройВыработка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Гарпун</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Углы</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>УглыВсего</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КриволинейныйУчасток</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПрямолинейныеШвы</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КриволинейныеШвы</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Фотопечать</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВнутренниеВырезы</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВырезыApply</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПользовательскиеШвы</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ВидЗаказа</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>686150d9-3013-4660-9459-ee556d84f269</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Продукция.ВидНоменклатуры</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>e9026009-10e4-439f-8912-207c0a2e3b7a</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид продукции</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Продукция</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>509e0bca-406a-40e7-9445-21c22cb071d3</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>0ba51ac4-9c28-4eb6-8e35-a4d663306f08</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Подразделение</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>30e66cbf-88b8-4368-b2c9-c17c7ef1a8ff</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Документ.Материалы.Номенклатура</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>4d4fcbf4-4972-45f9-b081-36c56a14d248</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Материал</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СтПериод</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>01b776c0-bd6c-4a4e-b1da-28c9c7f70b43</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДатаНачала</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>d8f8b2f4-6c65-4773-aebb-775b4051cc4b</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДатаОкончания</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>d0a7bd40-8e4e-4436-81c6-572eb90a1e6a</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Античный</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Документ.Материалы.Номенклатура</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаНомерДата" id="44">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номер дата</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номер дата</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНомерДатаРасширеннаяПодсказка" id="45"/>
+			<ChildItems>
+				<InputField name="Номер" id="46">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="48"/>
+				</InputField>
+				<InputField name="Дата" id="49">
+					<DataPath>Объект.Date</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Действует с даты</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="51"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Организация" id="60">
+			<DataPath>Объект.Организация</DataPath>
+			<ContextMenu name="ОрганизацияКонтекстноеМеню" id="61"/>
+			<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="62"/>
+		</InputField>
+		<LabelDecoration name="ДекорацияПояснение" id="131">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<TextColor>style:ТекстИнформационнойНадписи</TextColor>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>При проведении документа "Поступление товаров и услуг" будет произведен поиск актуального документа контроля цен по указанной организации.
+По найденному документу контроля сопоставляются позиции поступления с настройками контроля по следующему приоритету (начиная с самого важного):
+1. Сопоставление по номенклатуре
+2. Сопоставление по группе номенклатуры
+3. Сопоставление по виду номенклатуры и категории
+Если позиции не сопоставились по одному из критериев, то такие позиции не попадают под контроль, а те позиции, которые сопоставились, проверяются на минимальную наценку по установленным текущим ценам по видам и процентам, которые указаны в документе контроля.
+Если есть позиции, которые не прошли по минимальной наценке, они будут предложены пользователю для установки цен.</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияПояснениеКонтекстноеМеню" id="132"/>
+			<ExtendedTooltip name="ДекорацияПояснениеРасширеннаяПодсказка" id="133"/>
+		</LabelDecoration>
+		<Pages name="ГруппаСтраницы" id="63">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="64"/>
+			<ChildItems>
+				<Page name="ГруппаНастройкиПоВидамНоменклатуры" id="65">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Виды номенклатуры</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа настройки по видам номенклатуры</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<ScrollOnCompress>false</ScrollOnCompress>
+					<ExtendedTooltip name="ГруппаНастройкиПоВидамНоменклатурыРасширеннаяПодсказка" id="66"/>
+					<ChildItems>
+						<Table name="НастройкиПоВидамНоменклатуры" id="67">
+							<RowSelectionMode>Cell</RowSelectionMode>
+							<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.НастройкиПоВидамНоменклатуры</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="НастройкиПоВидамНоменклатурыКонтекстноеМеню" id="68"/>
+							<AutoCommandBar name="НастройкиПоВидамНоменклатурыКоманднаяПанель" id="69"/>
+							<ExtendedTooltip name="НастройкиПоВидамНоменклатурыРасширеннаяПодсказка" id="70"/>
+							<SearchStringAddition name="НастройкиПоВидамНоменклатурыСтрокаПоиска" id="71">
+								<AdditionSource>
+									<Item>НастройкиПоВидамНоменклатуры</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="НастройкиПоВидамНоменклатурыСтрокаПоискаКонтекстноеМеню" id="72"/>
+								<ExtendedTooltip name="НастройкиПоВидамНоменклатурыСтрокаПоискаРасширеннаяПодсказка" id="73"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="НастройкиПоВидамНоменклатурыСостояниеПросмотра" id="74">
+								<AdditionSource>
+									<Item>НастройкиПоВидамНоменклатуры</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="НастройкиПоВидамНоменклатурыСостояниеПросмотраКонтекстноеМеню" id="75"/>
+								<ExtendedTooltip name="НастройкиПоВидамНоменклатурыСостояниеПросмотраРасширеннаяПодсказка" id="76"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="НастройкиПоВидамНоменклатурыУправлениеПоиском" id="77">
+								<AdditionSource>
+									<Item>НастройкиПоВидамНоменклатуры</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="НастройкиПоВидамНоменклатурыУправлениеПоискомКонтекстноеМеню" id="78"/>
+								<ExtendedTooltip name="НастройкиПоВидамНоменклатурыУправлениеПоискомРасширеннаяПодсказка" id="79"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="НастройкиПоВидамНоменклатурыНомерСтроки" id="80">
+									<DataPath>Объект.НастройкиПоВидамНоменклатуры.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="НастройкиПоВидамНоменклатурыНомерСтрокиКонтекстноеМеню" id="81"/>
+									<ExtendedTooltip name="НастройкиПоВидамНоменклатурыНомерСтрокиРасширеннаяПодсказка" id="82"/>
+								</LabelField>
+								<InputField name="НастройкиПоВидамНоменклатурыВидНоменклатуры" id="83">
+									<DataPath>Объект.НастройкиПоВидамНоменклатуры.ВидНоменклатуры</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="НастройкиПоВидамНоменклатурыВидНоменклатурыКонтекстноеМеню" id="84"/>
+									<ExtendedTooltip name="НастройкиПоВидамНоменклатурыВидНоменклатурыРасширеннаяПодсказка" id="85"/>
+								</InputField>
+								<InputField name="НастройкиПоВидамНоменклатурыКатегория" id="86">
+									<DataPath>Объект.НастройкиПоВидамНоменклатуры.Категория</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="НастройкиПоВидамНоменклатурыКатегорияКонтекстноеМеню" id="87"/>
+									<ExtendedTooltip name="НастройкиПоВидамНоменклатурыКатегорияРасширеннаяПодсказка" id="88"/>
+								</InputField>
+								<InputField name="НастройкиПоВидамНоменклатурыВидЦены" id="89">
+									<DataPath>Объект.НастройкиПоВидамНоменклатуры.ВидЦены</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="НастройкиПоВидамНоменклатурыВидЦеныКонтекстноеМеню" id="90"/>
+									<ExtendedTooltip name="НастройкиПоВидамНоменклатурыВидЦеныРасширеннаяПодсказка" id="91"/>
+								</InputField>
+								<InputField name="НастройкиПоВидамНоменклатурыВалюта" id="92">
+									<DataPath>Объект.НастройкиПоВидамНоменклатуры.Валюта</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="НастройкиПоВидамНоменклатурыВалютаКонтекстноеМеню" id="93"/>
+									<ExtendedTooltip name="НастройкиПоВидамНоменклатурыВалютаРасширеннаяПодсказка" id="94"/>
+								</InputField>
+								<InputField name="НастройкиПоВидамНоменклатурыПроцент" id="95">
+									<DataPath>Объект.НастройкиПоВидамНоменклатуры.Процент</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="НастройкиПоВидамНоменклатурыПроцентКонтекстноеМеню" id="96"/>
+									<ExtendedTooltip name="НастройкиПоВидамНоменклатурыПроцентРасширеннаяПодсказка" id="97"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаНастройкиПоНоменклатуре" id="98">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа настройки по номенклатуре</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<ScrollOnCompress>false</ScrollOnCompress>
+					<ExtendedTooltip name="ГруппаНастройкиПоНоменклатуреРасширеннаяПодсказка" id="99"/>
+					<ChildItems>
+						<Table name="НастройкиПоНоменклатуре" id="100">
+							<RowSelectionMode>Cell</RowSelectionMode>
+							<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.НастройкиПоНоменклатуре</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="НастройкиПоНоменклатуреКонтекстноеМеню" id="101"/>
+							<AutoCommandBar name="НастройкиПоНоменклатуреКоманднаяПанель" id="102"/>
+							<ExtendedTooltip name="НастройкиПоНоменклатуреРасширеннаяПодсказка" id="103"/>
+							<SearchStringAddition name="НастройкиПоНоменклатуреСтрокаПоиска" id="104">
+								<AdditionSource>
+									<Item>НастройкиПоНоменклатуре</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="НастройкиПоНоменклатуреСтрокаПоискаКонтекстноеМеню" id="105"/>
+								<ExtendedTooltip name="НастройкиПоНоменклатуреСтрокаПоискаРасширеннаяПодсказка" id="106"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="НастройкиПоНоменклатуреСостояниеПросмотра" id="107">
+								<AdditionSource>
+									<Item>НастройкиПоНоменклатуре</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="НастройкиПоНоменклатуреСостояниеПросмотраКонтекстноеМеню" id="108"/>
+								<ExtendedTooltip name="НастройкиПоНоменклатуреСостояниеПросмотраРасширеннаяПодсказка" id="109"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="НастройкиПоНоменклатуреУправлениеПоиском" id="110">
+								<AdditionSource>
+									<Item>НастройкиПоНоменклатуре</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="НастройкиПоНоменклатуреУправлениеПоискомКонтекстноеМеню" id="111"/>
+								<ExtendedTooltip name="НастройкиПоНоменклатуреУправлениеПоискомРасширеннаяПодсказка" id="112"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="НастройкиПоНоменклатуреНомерСтроки" id="113">
+									<DataPath>Объект.НастройкиПоНоменклатуре.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="НастройкиПоНоменклатуреНомерСтрокиКонтекстноеМеню" id="114"/>
+									<ExtendedTooltip name="НастройкиПоНоменклатуреНомерСтрокиРасширеннаяПодсказка" id="115"/>
+								</LabelField>
+								<InputField name="НастройкиПоНоменклатуреНоменклатура" id="116">
+									<DataPath>Объект.НастройкиПоНоменклатуре.Номенклатура</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="НастройкиПоНоменклатуреНоменклатураКонтекстноеМеню" id="117"/>
+									<ExtendedTooltip name="НастройкиПоНоменклатуреНоменклатураРасширеннаяПодсказка" id="118"/>
+								</InputField>
+								<InputField name="НастройкиПоНоменклатуреВидЦены" id="119">
+									<DataPath>Объект.НастройкиПоНоменклатуре.ВидЦены</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="НастройкиПоНоменклатуреВидЦеныКонтекстноеМеню" id="120"/>
+									<ExtendedTooltip name="НастройкиПоНоменклатуреВидЦеныРасширеннаяПодсказка" id="121"/>
+								</InputField>
+								<InputField name="НастройкиПоНоменклатуреВалюта" id="122">
+									<DataPath>Объект.НастройкиПоНоменклатуре.Валюта</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="НастройкиПоНоменклатуреВалютаКонтекстноеМеню" id="123"/>
+									<ExtendedTooltip name="НастройкиПоНоменклатуреВалютаРасширеннаяПодсказка" id="124"/>
+								</InputField>
+								<InputField name="НастройкиПоНоменклатуреПроцент" id="125">
+									<DataPath>Объект.НастройкиПоНоменклатуре.Процент</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="НастройкиПоНоменклатуреПроцентКонтекстноеМеню" id="126"/>
+									<ExtendedTooltip name="НастройкиПоНоменклатуреПроцентРасширеннаяПодсказка" id="127"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="ГруппаПодвал" id="52">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="53"/>
+			<ChildItems>
+				<InputField name="Комментарий" id="54">
+					<DataPath>Объект.Комментарий</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="55"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="56"/>
+				</InputField>
+				<InputField name="Автор" id="57">
+					<DataPath>Объект.Автор</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="АвторКонтекстноеМеню" id="58"/>
+					<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="59"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.НастройкиКонтроляПрайсЛистов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="ТребуетсяВыводКомандыОбработкиОбновления" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Требуется вывод команды обработки обновления</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

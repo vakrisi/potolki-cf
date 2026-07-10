@@ -1,0 +1,131 @@
+﻿		
+<1C_data>
+
+//
+var hasTrend = data<1C_pNum>.length == 1;
+
+//
+<TrendOFF>
+//
+
+if (hasTrend) {
+	trend_c = GetTrendCoord(data<1C_pNum>[0].data, undefined);
+	trend_line = { isColored: true, shadowSize:0, color:color_trend_hide, points: { show: false }, trendLine:true, data: []};
+	trend_line.data = trend_c;
+	data<1C_pNum>.push(trend_line);
+};
+//
+var numberOfCurentDate = <1C_numberOfCurentDate>;
+
+options.grid.markings[0].xaxis.from = numberOfCurentDate;
+options.grid.markings[0].xaxis.to = numberOfCurentDate;
+
+options.xaxis.tickFormatter = function (val, axis) { 
+	
+ 
+    try{
+       ticksnum = axis.n-1;
+    }
+    catch (e){
+       ticksnum = 0;
+    }
+    
+	
+	tickses = <1C_ticks>;
+	ticks = tickses[ticksnum];
+	 
+	f=ticks[val];
+	if (isICO) {
+		return "";
+	} else {
+		return f;
+	}; 
+};
+
+options.yaxis.tickFormatter = function (val, axis) { 
+	
+		return formatNumber(val);
+};
+
+if (isICO) {
+	options.yaxis.tickFormatter = function (val, axis) { 
+		return "";
+	};
+};
+
+if (mainScale) {
+	options.yaxis.min = <1C_yminScale>;
+	options.yaxis.max = <1C_ymaxScale>;
+	options.mainScale = mainScale;
+};
+
+hideInclude = <1C_hideInclude>;
+options.legend.show = <1C_ShowLegend>;
+var placeholder<1C_pNum> = $("#placeholder<1C_pNum>");
+
+if (document.getElementById("placeholder<1C_pNum>") != null)
+{
+	// drawing
+	SetReverse(options,<1C_Reverse>);
+	SetlineWidth(options,<1C_LW>);
+	var plot<1C_pNum> = $.plot(placeholder<1C_pNum>, data<1C_pNum>, options);
+	PlotsArr[<1C_pNum>] = plot<1C_pNum>;
+	SetYzoom(plot<1C_pNum>);
+	Refresh(plot<1C_pNum>);
+	PhOffsets['<1C_pNum>'] = placeholder<1C_pNum>.offset().top;
+
+	// labels on mouse over
+	placeholder<1C_pNum>.bind("plothover", plothover_f);
+
+	if ( !isICO ){
+		addTooltips(plot<1C_pNum>, placeholder<1C_pNum>, data<1C_pNum>, '<1C_pNum>');
+	};
+
+	if ((!isICO) && (!isPrint)){
+	
+		// labels
+		$("<div id='buttonInfo<1C_pNum>' class='button' title='Подписи значений'></div>")
+			.appendTo(placeholder<1C_pNum>)
+			.click(function () {ShowHideLabels('<1C_pNum>');});			
+		
+		// zoom
+		placeholder<1C_pNum>.bind("plotselected", function (event, ranges) {zoom(ranges, plot<1C_pNum>);  addTooltips(plot<1C_pNum>, placeholder<1C_pNum>, data<1C_pNum>, '<1C_pNum>'); RefreshLabels('<1C_pNum>'); RefreshTrend(plot<1C_pNum>, '<1C_pNum>'); });
+	
+		// zoom out
+		$("<div class='buttonzoom' title='Сбросить масштаб'></div>")
+			.appendTo(placeholder<1C_pNum>)
+			.click(function () {zoomOut(plot<1C_pNum>); addTooltips(plot<1C_pNum>, placeholder<1C_pNum>, data<1C_pNum>, '<1C_pNum>'); RefreshLabels('<1C_pNum>'); RefreshTrend(plot<1C_pNum>, '<1C_pNum>');});
+			
+		if (!isZP)
+		{
+			// report
+			$("<div class='buttonreport' title='Вывести расшифровку'></div>")
+				.appendTo(placeholder<1C_pNum>)
+				.click(function () {setCurEvent('report','<1C_pNum>');});
+			
+			if (!isMyStats & !hideInclude){
+				// incl stat
+				$("<div class='buttoninclstat' title='Показать вложенные статистики'></div>")
+					.appendTo(placeholder<1C_pNum>)
+					.click(function () {setCurEvent('incl','<1C_pNum>'); });
+			};
+				
+			// add
+			$("<div class='buttonadd' title='Добавить значение'></div>")
+				.appendTo(placeholder<1C_pNum>)
+				.click(function () {setCurEvent('add','<1C_pNum>'); });
+				
+			// trend
+			if (hasTrend) {
+				$("<div id='buttonTrend<1C_pNum>' class='buttontrend' title='Показать тренд'></div>")
+					.appendTo(placeholder<1C_pNum>)
+					.click(function () {ShowHideTrend(plot<1C_pNum>,'<1C_pNum>'); });
+			};
+		};
+	};
+	
+	if(isPrint & userShowLabels){
+	    addTooltips(plot<1C_pNum>, placeholder<1C_pNum>, data<1C_pNum>, '<1C_pNum>');
+		showLabels('<1C_pNum>');
+	};
+};

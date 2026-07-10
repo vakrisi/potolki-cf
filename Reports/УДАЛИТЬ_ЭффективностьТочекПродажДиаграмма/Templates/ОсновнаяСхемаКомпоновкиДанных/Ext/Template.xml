@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоКонтактов</dataPath>
+			<field>КоличествоКонтактов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество контактов</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоЗамеров</dataPath>
+			<field>КоличествоЗамеров</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество замеров</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РекламныйИсточник</dataPath>
+			<field>РекламныйИсточник</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контакт</dataPath>
+			<field>Контакт</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоДоговоров</dataPath>
+			<field>КоличествоДоговоров</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество договоров</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТочкаПродаж</dataPath>
+			<field>ТочкаПродаж</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	КонверсияВходящихКонтактовОбороты.Контакт,
+	КонверсияВходящихКонтактовОбороты.ТочкаПродаж,
+	КонверсияВходящихКонтактовОбороты.КоличествоЛидовОборот КАК КоличествоКонтактов,
+	0 КАК КоличествоЗамеров, //КонверсияВходящихКонтактовОбороты.КоличествоЗамеровОборот КАК КоличествоЗамеров,
+	КонверсияВходящихКонтактовОбороты.КоличествоДоговоровОборот КАК КоличествоДоговоров
+ИЗ
+	РегистрНакопления.КонверсияВходящихКонтактов.Обороты(, , , ) КАК КонверсияВходящихКонтактовОбороты</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>КоличествоЗамеровПоКонтактам</dataPath>
+		<expression>ОКР((КоличествоЗамеров/КоличествоКонтактов)*100)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>% замеров по контактам</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КоличествоДоговоровПоЗамерам</dataPath>
+		<expression>ОКР((КоличествоДоговоров/КоличествоЗамеров)*100)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>% договоров по замерам</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КоличествоДоговоровПоКонтактам</dataPath>
+		<expression>ОКР((КоличествоДоговоров/КоличествоКонтактов)*100)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>% договоров по контактам</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<totalField>
+		<dataPath>КоличествоКонтактов</dataPath>
+		<expression>Сумма(КоличествоКонтактов)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоЗамеров</dataPath>
+		<expression>Сумма(КоличествоЗамеров)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоДоговоров</dataPath>
+		<expression>Сумма(КоличествоДоговоров)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоЗамеровПоКонтактам</dataPath>
+		<expression>Сумма(КоличествоЗамеровПоКонтактам)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоЗамеровПоКонтактам</dataPath>
+		<expression>ОКР(ВычислитьВыражение("Сумма(КоличествоЗамеров)", "ТочкаПродаж") / ВычислитьВыражение("Сумма(КоличествоКонтактов)", "ТочкаПродаж") * 100)</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоДоговоровПоЗамерам</dataPath>
+		<expression>Сумма(КоличествоДоговоровПоЗамерам)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоДоговоровПоЗамерам</dataPath>
+		<expression>ОКР(ВычислитьВыражение("Сумма(КоличествоДоговоров)", "ТочкаПродаж") / ВычислитьВыражение("Сумма(КоличествоЗамеров)", "ТочкаПродаж") * 100)</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоДоговоровПоКонтактам</dataPath>
+		<expression>Сумма(КоличествоДоговоровПоКонтактам)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоДоговоровПоКонтактам</dataPath>
+		<expression>ОКР(ВычислитьВыражение("Сумма(КоличествоДоговоров)", "ТочкаПродаж") / ВычислитьВыражение("Сумма(КоличествоКонтактов)", "ТочкаПродаж") * 100)</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<expression>ВЫБОР КОГДА &amp;КонецПериода = Неопределено ИЛИ &amp;КонецПериода = NULL ИЛИ &amp;КонецПериода = ДатаВремя(1,1,1) ТОГДА ДатаВремя(3999,12,31)  ИНАЧЕ КонецПериода(&amp;КонецПериода, "День") КОНЕЦ</expression>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТочкаПродаж</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоКонтактов</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>58156fef-df5c-4175-a90b-db413d247abf</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfNextMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>d9be4080-4bb7-4205-93f5-27a6b0818021</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ТочкаПродаж</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ТипДиаграммы</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:ChartType">Column3D</dcscor:value>
+					<dcsset:userSettingID>0deab062-19fa-4b40-91ff-6f87786ef28b</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="xs:string">Тип диаграммы</dcsset:userSettingPresentation>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemChart">
+				<dcsset:point>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ТочкаПродаж</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:point>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

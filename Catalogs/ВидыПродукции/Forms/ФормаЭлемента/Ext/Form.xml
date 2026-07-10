@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="46">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ThroughAlign>Use</ThroughAlign>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="47"/>
+			<ChildItems>
+				<InputField name="Наименование" id="1">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="3"/>
+					<Events>
+						<Event name="OnChange">НаименованиеПриИзменении</Event>
+					</Events>
+				</InputField>
+				<CheckBoxField name="УникальнаяПродукция" id="36">
+					<DataPath>Объект.УникальнаяПродукция</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ContextMenu name="УникальнаяПродукцияКонтекстноеМеню" id="37"/>
+					<ExtendedTooltip name="УникальнаяПродукцияРасширеннаяПодсказка" id="38"/>
+					<Events>
+						<Event name="OnChange">УникальнаяПродукцияПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="СпособОпределенияСтоимости" id="41">
+					<DataPath>Объект.СпособОпределенияСтоимости</DataPath>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ChooseType>false</ChooseType>
+					<TextEdit>false</TextEdit>
+					<ContextMenu name="СпособОпределенияСтоимостиКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="СпособОпределенияСтоимостиРасширеннаяПодсказка" id="43"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаЗаполнениеНоменклатурыПродукции" id="44">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнение номенклатуры продукции</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>WeakSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ThroughAlign>Use</ThroughAlign>
+			<ExtendedTooltip name="ГруппаЗаполнениеНоменклатурыПродукцииРасширеннаяПодсказка" id="45"/>
+			<ChildItems>
+				<InputField name="ГруппаНоменклатуры" id="7">
+					<DataPath>Объект.ГруппаНоменклатуры</DataPath>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
+					<ContextMenu name="ГруппаНоменклатурыКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ГруппаНоменклатурыРасширеннаяПодсказка" id="9"/>
+				</InputField>
+				<InputField name="Префикс" id="4">
+					<DataPath>Объект.Префикс</DataPath>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ПрефиксКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ПрефиксРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ПрефиксПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПараметрыПродукции" id="39">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры продукции</v8:content>
+				</v8:item>
+			</Title>
+			<Group>HorizontalIfPossible</Group>
+			<Representation>WeakSeparation</Representation>
+			<ExtendedTooltip name="ГруппаПараметрыПродукцииРасширеннаяПодсказка" id="40"/>
+			<ChildItems>
+				<Table name="УчитываемыеПараметрыПродукции" id="14">
+					<RowSelectionMode>Cell</RowSelectionMode>
+					<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>Объект.УчитываемыеПараметрыПродукции</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="УчитываемыеПараметрыПродукцииКонтекстноеМеню" id="15"/>
+					<AutoCommandBar name="УчитываемыеПараметрыПродукцииКоманднаяПанель" id="16"/>
+					<ExtendedTooltip name="УчитываемыеПараметрыПродукцииРасширеннаяПодсказка" id="17"/>
+					<SearchStringAddition name="УчитываемыеПараметрыПродукцииСтрокаПоиска" id="18">
+						<AdditionSource>
+							<Item>УчитываемыеПараметрыПродукции</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="УчитываемыеПараметрыПродукцииСтрокаПоискаКонтекстноеМеню" id="19"/>
+						<ExtendedTooltip name="УчитываемыеПараметрыПродукцииСтрокаПоискаРасширеннаяПодсказка" id="20"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="УчитываемыеПараметрыПродукцииСостояниеПросмотра" id="21">
+						<AdditionSource>
+							<Item>УчитываемыеПараметрыПродукции</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="УчитываемыеПараметрыПродукцииСостояниеПросмотраКонтекстноеМеню" id="22"/>
+						<ExtendedTooltip name="УчитываемыеПараметрыПродукцииСостояниеПросмотраРасширеннаяПодсказка" id="23"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="УчитываемыеПараметрыПродукцииУправлениеПоиском" id="24">
+						<AdditionSource>
+							<Item>УчитываемыеПараметрыПродукции</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="УчитываемыеПараметрыПродукцииУправлениеПоискомКонтекстноеМеню" id="25"/>
+						<ExtendedTooltip name="УчитываемыеПараметрыПродукцииУправлениеПоискомРасширеннаяПодсказка" id="26"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="BeforeDeleteRow">УчитываемыеПараметрыПродукцииПередУдалением</Event>
+						<Event name="BeforeRowChange">УчитываемыеПараметрыПродукцииПередНачаломИзменения</Event>
+						<Event name="OnChange">УчитываемыеПараметрыПродукцииПриИзменении</Event>
+					</Events>
+					<ChildItems>
+						<LabelField name="УчитываемыеПараметрыПродукцииНомерСтроки" id="27">
+							<DataPath>Объект.УчитываемыеПараметрыПродукции.LineNumber</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="УчитываемыеПараметрыПродукцииНомерСтрокиКонтекстноеМеню" id="28"/>
+							<ExtendedTooltip name="УчитываемыеПараметрыПродукцииНомерСтрокиРасширеннаяПодсказка" id="29"/>
+						</LabelField>
+						<InputField name="УчитываемыеПараметрыПродукцииПараметрПродукции" id="30">
+							<DataPath>Объект.УчитываемыеПараметрыПродукции.ПараметрПродукции</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="УчитываемыеПараметрыПродукцииПараметрПродукцииКонтекстноеМеню" id="31"/>
+							<ExtendedTooltip name="УчитываемыеПараметрыПродукцииПараметрПродукцииРасширеннаяПодсказка" id="32"/>
+						</InputField>
+						<LabelField name="УчитываемыеПараметрыПродукцииПараметрПродукцииТипЗначения" id="33">
+							<DataPath>Объект.УчитываемыеПараметрыПродукции.ПараметрПродукции.ValueType</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="УчитываемыеПараметрыПродукцииПараметрПродукцииТипЗначенияКонтекстноеМеню" id="34"/>
+							<ExtendedTooltip name="УчитываемыеПараметрыПродукцииПараметрПродукцииТипЗначенияРасширеннаяПодсказка" id="35"/>
+						</LabelField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ВидыПродукции</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="мПрефикс" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>М префикс</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="мНаименование" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>М префикс</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

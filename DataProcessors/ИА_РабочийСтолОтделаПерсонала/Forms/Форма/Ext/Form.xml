@@ -1,0 +1,1292 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<ScalingMode>Compact</ScalingMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаКомандаСписокИнструкций" id="137">
+				<Type>CommandBarHyperlink</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.КомандаСписокИнструкций</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.ИА_РазвернутьСтроки</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаКомандаСписокИнструкцийРасширеннаяПодсказка" id="138"/>
+			</Button>
+			<Button name="ФормаКомандаНастройкаПрав" id="139">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.КомандаНастройкаПрав</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.ИА_Стратегия_ТипЗадачи</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаКомандаНастройкаПравРасширеннаяПодсказка" id="140"/>
+			</Button>
+			<Button name="ФормаКомандаСправочникИнструкций" id="141">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.КомандаСправочникИнструкций</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.ИА_СвернутьСтроки</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаКомандаСправочникИнструкцийРасширеннаяПодсказка" id="142"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапкаСдача1" id="89">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка сдача</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка сдача</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаСдача1РасширеннаяПодсказка" id="90"/>
+			<ChildItems>
+				<LabelDecoration name="Декорация3" id="91">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Font ref="style:TextFont" faceName="Calibri" height="14" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Изучение материалов сотрудниками</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="Декорация3КонтекстноеМеню" id="92"/>
+					<ExtendedTooltip name="Декорация3РасширеннаяПодсказка" id="93"/>
+				</LabelDecoration>
+				<LabelDecoration name="Декорация4" id="94">
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="Декорация4КонтекстноеМеню" id="95"/>
+					<ExtendedTooltip name="Декорация4РасширеннаяПодсказка" id="96"/>
+				</LabelDecoration>
+				<CheckBoxField name="СкрытьПосты" id="97">
+					<DataPath>СкрытьПосты</DataPath>
+					<CheckBoxType>Tumbler</CheckBoxType>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>БЛ=Нет; БИ=Да</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="СкрытьПостыКонтекстноеМеню" id="98"/>
+					<ExtendedTooltip name="СкрытьПостыРасширеннаяПодсказка" id="99"/>
+					<Events>
+						<Event name="OnChange">СкрытьПостыПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="АнализОшляпливания" id="1">
+			<Representation>Tree</Representation>
+			<ReadOnly>true</ReadOnly>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>АнализОшляпливания</DataPath>
+			<Font ref="style:TextFont" faceName="Calibri" height="12" kind="StyleItem"/>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Итоговый анализ ошляпливания сотрудников</v8:content>
+				</v8:item>
+			</Title>
+			<TitleFont ref="style:TextFont" faceName="Calibri" height="14" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<ContextMenu name="АнализОшляпливанияКонтекстноеМеню" id="2">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="АнализОшляпливанияКонтекстноеМенюОбновитьАнализОшл" id="32">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ОбновитьАнализОшл</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Обновить</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="АнализОшляпливанияКонтекстноеМенюОбновитьАнализОшлРасширеннаяПодсказка" id="33"/>
+					</Button>
+					<Button name="АнализОшляпливанияКонтекстноеМенюПоказатьЗаданияСотрудника" id="143">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПоказатьЗаданияСотрудника</CommandName>
+						<ExtendedTooltip name="АнализОшляпливанияКонтекстноеМенюПоказатьЗаданияСотрудникаРасширеннаяПодсказка" id="144"/>
+					</Button>
+				</ChildItems>
+			</ContextMenu>
+			<AutoCommandBar name="АнализОшляпливанияКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="АнализОшляпливанияРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="АнализОшляпливанияСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>АнализОшляпливания</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="АнализОшляпливанияСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="АнализОшляпливанияСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="АнализОшляпливанияСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>АнализОшляпливания</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="АнализОшляпливанияСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="АнализОшляпливанияСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="АнализОшляпливанияУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>АнализОшляпливания</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="АнализОшляпливанияУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="АнализОшляпливанияУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">АнализОшляпливанияВыбор</Event>
+			</Events>
+			<ChildItems>
+				<InputField name="АнализОшляпливанияУзел" id="14">
+					<DataPath>АнализОшляпливания.Узел</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пост / Сотрудник / Инструкция</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="АнализОшляпливанияУзелКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="АнализОшляпливанияУзелРасширеннаяПодсказка" id="16"/>
+				</InputField>
+				<InputField name="АнализОшляпливанияКоличествоДИ" id="17">
+					<DataPath>АнализОшляпливания.КоличествоДИ</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<AutoEditMode>true</AutoEditMode>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧН=</v8:content>
+						</v8:item>
+					</Format>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧН=</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="АнализОшляпливанияКоличествоДИКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="АнализОшляпливанияКоличествоДИРасширеннаяПодсказка" id="19"/>
+				</InputField>
+				<ColumnGroup name="АнализОшляпливанияГруппаОтправлено" id="37">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Анализ ошляпливания группа отправлено</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Анализ ошляпливания группа отправлено</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>InCell</Group>
+					<ExtendedTooltip name="АнализОшляпливанияГруппаОтправленоРасширеннаяПодсказка" id="38"/>
+					<ChildItems>
+						<InputField name="АнализОшляпливанияОтправлено" id="20">
+							<DataPath>АнализОшляпливания.Отправлено</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<AutoEditMode>true</AutoEditMode>
+							<Format>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧН=</v8:content>
+								</v8:item>
+							</Format>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧН=</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="АнализОшляпливанияОтправленоКонтекстноеМеню" id="21"/>
+							<ExtendedTooltip name="АнализОшляпливанияОтправленоРасширеннаяПодсказка" id="22"/>
+						</InputField>
+						<InputField name="АнализОшляпливанияОтправленоПроцент" id="34">
+							<DataPath>АнализОшляпливания.ОтправленоПроцент</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<Format>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧН=; ЧФ='  Ч %'</v8:content>
+								</v8:item>
+							</Format>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧН=; ЧФ='  Ч %'</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="АнализОшляпливанияОтправленоПроцентКонтекстноеМеню" id="35"/>
+							<ExtendedTooltip name="АнализОшляпливанияОтправленоПроцентРасширеннаяПодсказка" id="36"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="АнализОшляпливанияГруппаСдано" id="39">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Анализ ошляпливания группа сдано</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Анализ ошляпливания группа сдано</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>InCell</Group>
+					<ExtendedTooltip name="АнализОшляпливанияГруппаСданоРасширеннаяПодсказка" id="40"/>
+					<ChildItems>
+						<InputField name="АнализОшляпливанияСдано" id="23">
+							<DataPath>АнализОшляпливания.Сдано</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<AutoEditMode>true</AutoEditMode>
+							<Format>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧН=</v8:content>
+								</v8:item>
+							</Format>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧН=</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="АнализОшляпливанияСданоКонтекстноеМеню" id="24"/>
+							<ExtendedTooltip name="АнализОшляпливанияСданоРасширеннаяПодсказка" id="25"/>
+						</InputField>
+						<InputField name="АнализОшляпливанияСданоПроцент" id="41">
+							<DataPath>АнализОшляпливания.СданоПроцент</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<Format>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧН=; ЧФ='  Ч %'</v8:content>
+								</v8:item>
+							</Format>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧН=; ЧФ='  Ч %'</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="АнализОшляпливанияСданоПроцентКонтекстноеМеню" id="42"/>
+							<ExtendedTooltip name="АнализОшляпливанияСданоПроцентРасширеннаяПодсказка" id="43"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="АнализОшляпливанияГруппаПросрочено" id="44">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Анализ ошляпливания группа просрочено</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Анализ ошляпливания группа просрочено</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>InCell</Group>
+					<ExtendedTooltip name="АнализОшляпливанияГруппаПросроченоРасширеннаяПодсказка" id="45"/>
+					<ChildItems>
+						<InputField name="АнализОшляпливанияПросрочено" id="26">
+							<DataPath>АнализОшляпливания.Просрочено</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+							<AutoEditMode>true</AutoEditMode>
+							<Format>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧН=</v8:content>
+								</v8:item>
+							</Format>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧН=</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="АнализОшляпливанияПросроченоКонтекстноеМеню" id="27"/>
+							<ExtendedTooltip name="АнализОшляпливанияПросроченоРасширеннаяПодсказка" id="28"/>
+						</InputField>
+						<InputField name="АнализОшляпливанияПросроченоПроцент" id="46">
+							<DataPath>АнализОшляпливания.ПросроченоПроцент</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<Format>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧН=; ЧФ='  Ч %'</v8:content>
+								</v8:item>
+							</Format>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧН=; ЧФ='  Ч %'</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="АнализОшляпливанияПросроченоПроцентКонтекстноеМеню" id="47"/>
+							<ExtendedTooltip name="АнализОшляпливанияПросроченоПроцентРасширеннаяПодсказка" id="48"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<InputField name="АнализОшляпливанияУО" id="29">
+					<DataPath>АнализОшляпливания.УО</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="АнализОшляпливанияУОКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="АнализОшляпливанияУОРасширеннаяПодсказка" id="31"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ГруппаНиз" id="100">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа низ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа низ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ChildItemsWidth>LeftWide</ChildItemsWidth>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНизРасширеннаяПодсказка" id="101"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаАнализ" id="102">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа анализ</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа анализ</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаАнализРасширеннаяПодсказка" id="103"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаШапкаСдача" id="81">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа шапка сдача</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа шапка сдача</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаШапкаСдачаРасширеннаяПодсказка" id="82"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация1" id="83">
+									<Font ref="style:TextFont" faceName="Calibri" height="14" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Анализ ознакомления</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Декорация1КонтекстноеМеню" id="84"/>
+									<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="85"/>
+								</LabelDecoration>
+								<LabelDecoration name="Декорация2" id="86">
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="Декорация2КонтекстноеМеню" id="87"/>
+									<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="88"/>
+								</LabelDecoration>
+								<RadioButtonField name="СдачаПоСотрудникам" id="78">
+									<DataPath>РежимОтчетаПоСдаче</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группировка</v8:content>
+										</v8:item>
+									</Title>
+									<RadioButtonType>Tumbler</RadioButtonType>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>По сотрудникам</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">0</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>По инструкциям</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">1</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="СдачаПоСотрудникамКонтекстноеМеню" id="79"/>
+									<ExtendedTooltip name="СдачаПоСотрудникамРасширеннаяПодсказка" id="80"/>
+									<Events>
+										<Event name="OnChange">СдачаПоСотрудникамПриИзменении</Event>
+									</Events>
+								</RadioButtonField>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="АнализСдачи" id="51">
+							<Representation>Tree</Representation>
+							<ReadOnly>true</ReadOnly>
+							<RowSelectionMode>Cell</RowSelectionMode>
+							<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>АнализСдачи</DataPath>
+							<Font ref="style:TextFont" faceName="Calibri" height="12" kind="StyleItem"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Анализ ознакомления</v8:content>
+								</v8:item>
+							</Title>
+							<TitleFont ref="style:TextFont" faceName="Calibri" height="14" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+							<ContextMenu name="АнализСдачиКонтекстноеМеню" id="52">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="АнализСдачиКонтекстноеМенюОбновитьОзнакомление" id="76">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОбновитьОзнакомление</CommandName>
+										<ExtendedTooltip name="АнализСдачиКонтекстноеМенюОбновитьОзнакомлениеРасширеннаяПодсказка" id="77"/>
+									</Button>
+									<Button name="АнализСдачиПоказатьЗаданияСотрудника1" id="145">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ПоказатьЗаданияСотрудника1</CommandName>
+										<ExtendedTooltip name="АнализСдачиПоказатьЗаданияСотрудника1РасширеннаяПодсказка" id="146"/>
+									</Button>
+								</ChildItems>
+							</ContextMenu>
+							<AutoCommandBar name="АнализСдачиКоманднаяПанель" id="53">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="АнализСдачиРасширеннаяПодсказка" id="54"/>
+							<SearchStringAddition name="АнализСдачиСтрокаПоиска" id="55">
+								<AdditionSource>
+									<Item>АнализСдачи</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="АнализСдачиСтрокаПоискаКонтекстноеМеню" id="56"/>
+								<ExtendedTooltip name="АнализСдачиСтрокаПоискаРасширеннаяПодсказка" id="57"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="АнализСдачиСостояниеПросмотра" id="58">
+								<AdditionSource>
+									<Item>АнализСдачи</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="АнализСдачиСостояниеПросмотраКонтекстноеМеню" id="59"/>
+								<ExtendedTooltip name="АнализСдачиСостояниеПросмотраРасширеннаяПодсказка" id="60"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="АнализСдачиУправлениеПоиском" id="61">
+								<AdditionSource>
+									<Item>АнализСдачи</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="АнализСдачиУправлениеПоискомКонтекстноеМеню" id="62"/>
+								<ExtendedTooltip name="АнализСдачиУправлениеПоискомРасширеннаяПодсказка" id="63"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="АнализСдачиУзел" id="64">
+									<DataPath>АнализСдачи.Узел</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сотрудник / Инструкция</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="АнализСдачиУзелКонтекстноеМеню" id="65"/>
+									<ExtendedTooltip name="АнализСдачиУзелРасширеннаяПодсказка" id="66"/>
+								</InputField>
+								<InputField name="АнализСдачиДатаЗадания" id="67">
+									<DataPath>АнализСдачи.ДатаЗадания</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="АнализСдачиДатаЗаданияКонтекстноеМеню" id="68"/>
+									<ExtendedTooltip name="АнализСдачиДатаЗаданияРасширеннаяПодсказка" id="69"/>
+								</InputField>
+								<InputField name="АнализСдачиСрок" id="70">
+									<DataPath>АнализСдачи.Срок</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="АнализСдачиСрокКонтекстноеМеню" id="71"/>
+									<ExtendedTooltip name="АнализСдачиСрокРасширеннаяПодсказка" id="72"/>
+								</InputField>
+								<InputField name="АнализСдачиДатаСдачи" id="73">
+									<DataPath>АнализСдачи.ДатаСдачи</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="АнализСдачиДатаСдачиКонтекстноеМеню" id="74"/>
+									<ExtendedTooltip name="АнализСдачиДатаСдачиРасширеннаяПодсказка" id="75"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаЗадания" id="132">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Задания</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа задания</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Collapsed>true</Collapsed>
+					<ControlRepresentation>Button</ControlRepresentation>
+					<Representation>None</Representation>
+					<ShowLeftMargin>false</ShowLeftMargin>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЗаданияРасширеннаяПодсказка" id="133"/>
+					<ChildItems>
+						<LabelDecoration name="Декорация5" id="134">
+							<Font ref="style:TextFont" faceName="Calibri" height="14" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Задания на ознакомление</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Декорация5КонтекстноеМеню" id="135"/>
+							<ExtendedTooltip name="Декорация5РасширеннаяПодсказка" id="136"/>
+						</LabelDecoration>
+						<Table name="ЗаданияДИ" id="104">
+							<RowSelectionMode>Cell</RowSelectionMode>
+							<InitialListView>Beginning</InitialListView>
+							<EnableStartDrag>true</EnableStartDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ЗаданияДИ</DataPath>
+							<RowPictureDataPath>ЗаданияДИ.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ЗаданияДИКонтекстноеМеню" id="105"/>
+							<AutoCommandBar name="ЗаданияДИКоманднаяПанель" id="106">
+								<ChildItems>
+									<Button name="ЗаданияДИУбратьОтборы" id="147">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.УбратьОтборы</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="ЗаданияДИУбратьОтборыРасширеннаяПодсказка" id="148"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ЗаданияДИРасширеннаяПодсказка" id="107"/>
+							<SearchStringAddition name="ЗаданияДИСтрокаПоиска" id="108">
+								<AdditionSource>
+									<Item>ЗаданияДИ</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаданияДИСтрокаПоискаКонтекстноеМеню" id="109"/>
+								<ExtendedTooltip name="ЗаданияДИСтрокаПоискаРасширеннаяПодсказка" id="110"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ЗаданияДИСостояниеПросмотра" id="111">
+								<AdditionSource>
+									<Item>ЗаданияДИ</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаданияДИСостояниеПросмотраКонтекстноеМеню" id="112"/>
+								<ExtendedTooltip name="ЗаданияДИСостояниеПросмотраРасширеннаяПодсказка" id="113"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ЗаданияДИУправлениеПоиском" id="114">
+								<AdditionSource>
+									<Item>ЗаданияДИ</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗаданияДИУправлениеПоискомКонтекстноеМеню" id="115"/>
+								<ExtendedTooltip name="ЗаданияДИУправлениеПоискомРасширеннаяПодсказка" id="116"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ЗаданияДИДата" id="117">
+									<DataPath>ЗаданияДИ.Date</DataPath>
+									<ContextMenu name="ЗаданияДИДатаКонтекстноеМеню" id="118"/>
+									<ExtendedTooltip name="ЗаданияДИДатаРасширеннаяПодсказка" id="119"/>
+								</LabelField>
+								<LabelField name="ЗаданияДИНомер" id="120">
+									<DataPath>ЗаданияДИ.Number</DataPath>
+									<Visible>false</Visible>
+									<ContextMenu name="ЗаданияДИНомерКонтекстноеМеню" id="121"/>
+									<ExtendedTooltip name="ЗаданияДИНомерРасширеннаяПодсказка" id="122"/>
+								</LabelField>
+								<LabelField name="ЗаданияДИАвтор" id="123">
+									<DataPath>ЗаданияДИ.Автор</DataPath>
+									<ContextMenu name="ЗаданияДИАвторКонтекстноеМеню" id="124"/>
+									<ExtendedTooltip name="ЗаданияДИАвторРасширеннаяПодсказка" id="125"/>
+								</LabelField>
+								<LabelField name="ЗаданияДИСотрудник" id="126">
+									<DataPath>ЗаданияДИ.Сотрудник</DataPath>
+									<ContextMenu name="ЗаданияДИСотрудникКонтекстноеМеню" id="127"/>
+									<ExtendedTooltip name="ЗаданияДИСотрудникРасширеннаяПодсказка" id="128"/>
+								</LabelField>
+								<LabelField name="ЗаданияДИСрок" id="129">
+									<DataPath>ЗаданияДИ.Срок</DataPath>
+									<ContextMenu name="ЗаданияДИСрокКонтекстноеМеню" id="130"/>
+									<ExtendedTooltip name="ЗаданияДИСрокРасширеннаяПодсказка" id="131"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ИА_РабочийСтолОтделаПерсонала</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="АнализОшляпливания" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Анализ ошляпливания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Узел" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Узел</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:Type>cfg:CatalogRef.ИА_Инструкции</v8:Type>
+						<v8:Type>cfg:CatalogRef.ОргСхема</v8:Type>
+						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="КоличествоДИ" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество инструкций</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Отправлено" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отправлено</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Сдано" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сдано</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Просрочено" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Просрочено</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="УО" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>УО</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтправленоПроцент" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ОтправленоПроцент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СданоПроцент" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>СданоПроцент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПросроченоПроцент" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ПросроченоПроцент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СкрытьПосты" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скрыть посты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АнализСдачи" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Анализ сдачи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Узел" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Узел</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИА_Инструкции</v8:Type>
+						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДатаЗадания" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата задания</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Срок" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Срок</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДатаСдачи" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата сдачи</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Просрочено" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Просрочено</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="РежимОтчетаПоСдаче" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим отчета по сдаче</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаданияДИ" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задания ДИ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Document.ИА_ЗаданиеНаИзучениеДИ</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Дата</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>АнализОшляпливания</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">АнализОшляпливания.УО</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">1</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#D2EFFF</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>АнализОшляпливания</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">АнализОшляпливания.УО</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">2</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#E0F4FF</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>АнализОшляпливания</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">АнализОшляпливания.УО</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">3</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#F4FBFF</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>АнализОшляпливанияОтправленоПроцент</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>АнализОшляпливанияСданоПроцент</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>АнализОшляпливанияПросроченоПроцент</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">АнализОшляпливания.УО</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">4</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Текст</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string"/>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Видимость</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>АнализСдачи</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">АнализСдачи.Просрочено</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FAC6C6</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ОбновитьАнализОшл" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить анализ ошл</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить анализ ошл</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОбновитьАнализОшл</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СкрытьПосты" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скрыть посты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скрыть посты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СкрытьПосты</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОбновитьОзнакомление" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить ознакомление</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОбновитьОзнакомление</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаСписокИнструкций" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список инструкций</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда список инструкций</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаСписокИнструкций</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаНастройкаПрав" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка прав</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда настройка прав</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаНастройкаПрав</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаСправочникИнструкций" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Справочник инструкций</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда справочник инструкций</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаСправочникИнструкций</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПоказатьЗаданияСотрудника" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать задания сотрудника</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать задания сотрудника</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоказатьЗаданияСотрудника</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПоказатьЗаданияСотрудника1" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать задания сотрудника</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать задания сотрудника</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоказатьЗаданияСотрудника1</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УбратьОтборы" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Убрать отборы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Убрать отборы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УбратьОтборы</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

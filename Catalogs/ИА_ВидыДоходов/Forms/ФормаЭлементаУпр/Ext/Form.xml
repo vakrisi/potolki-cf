@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>LockOwner</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="24">
+			<Height>3</Height>
+			<Group>HorizontalIfPossible</Group>
+			<VerticalAlign>Center</VerticalAlign>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="25"/>
+			<ChildItems>
+				<Button name="ФормаЗаписатьИЗакрыть" id="18">
+					<Type>UsualButton</Type>
+					<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
+					<TextColor>#000000</TextColor>
+					<BackColor>#FFE629</BackColor>
+					<Shape>Oval</Shape>
+					<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="19"/>
+				</Button>
+				<Button name="ФормаЗаписать" id="20">
+					<Type>UsualButton</Type>
+					<CommandName>Form.StandardCommand.Write</CommandName>
+					<Shape>Oval</Shape>
+					<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="21"/>
+				</Button>
+				<Button name="ФормаЗакрыть" id="16">
+					<Type>UsualButton</Type>
+					<CommandName>Form.StandardCommand.Close</CommandName>
+					<Shape>Oval</Shape>
+					<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="17"/>
+				</Button>
+				<Button name="ФормаСправка" id="22">
+					<Type>UsualButton</Type>
+					<Representation>Picture</Representation>
+					<Width>3</Width>
+					<CommandName>Form.StandardCommand.Help</CommandName>
+					<Picture>
+						<xr:Ref>CommonPicture.КСУ_ВопросСиний</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ShapeRepresentation>None</ShapeRepresentation>
+					<ButtonImportance>Supplementary</ButtonImportance>
+					<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="23"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="7"/>
+		</InputField>
+		<InputField name="Наименование" id="3">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="8"/>
+		</InputField>
+		<CheckBoxField name="Распределять" id="5">
+			<DataPath>Объект.Распределять</DataPath>
+			<Visible>false</Visible>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<ContextMenu name="РаспределятьКонтекстноеМеню" id="6"/>
+			<ExtendedTooltip name="РаспределятьРасширеннаяПодсказка" id="9"/>
+		</CheckBoxField>
+		<InputField name="ВебУИД" id="10">
+			<DataPath>Объект.ВебУИД</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор веб</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ВебУИДКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="ВебУИДРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<InputField name="ЗапросДанных" id="13">
+			<DataPath>Объект.ЗапросДанных</DataPath>
+			<ContextMenu name="ЗапросДанныхКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="ЗапросДанныхРасширеннаяПодсказка" id="15"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ИА_ВидыДоходов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

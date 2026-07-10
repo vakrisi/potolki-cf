@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Настройка номенклатуры как продукция</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<Group>Vertical</Group>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="СохранитьИЗакрыть" id="20">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.СохранитьИЗакрыть</CommandName>
+				<ButtonImportance>Main</ButtonImportance>
+				<ExtendedTooltip name="СохранитьИЗакрытьРасширеннаяПодсказка" id="21"/>
+			</Button>
+			<Button name="Сохранить" id="16">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Сохранить</CommandName>
+				<ExtendedTooltip name="СохранитьРасширеннаяПодсказка" id="17"/>
+			</Button>
+			<Button name="Закрыть" id="22">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отмена</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ЗакрытьРасширеннаяПодсказка" id="23"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаНастройкиОтбораНоменклатурыДляЗаказаВПроизводство" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номенклатура и виды номенклатуры, которые предлагаются к производству при создании заказа на производство на основании заказа покупателя</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа настройки отбора номенклатуры для заказа в производство</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>HorizontalIfPossible</Group>
+			<Representation>WeakSeparation</Representation>
+			<ExtendedTooltip name="ГруппаНастройкиОтбораНоменклатурыДляЗаказаВПроизводствоРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<Table name="КомпоновщикНастроекПоНоменклатуреКПроизводствуПользовательскиеНастройки" id="3">
+					<CommandBarLocation>None</CommandBarLocation>
+					<Autofill>true</Autofill>
+					<RowSelectionMode>Cell</RowSelectionMode>
+					<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>КомпоновщикНастроекПоНоменклатуреКПроизводству.UserSettings</DataPath>
+					<CommandSet>
+						<ExcludedCommand>HierarchicalList</ExcludedCommand>
+						<ExcludedCommand>List</ExcludedCommand>
+						<ExcludedCommand>Tree</ExcludedCommand>
+					</CommandSet>
+					<ViewMode>All</ViewMode>
+					<ComplexSettingsViewMode>Show</ComplexSettingsViewMode>
+					<ContextMenu name="КомпоновщикНастроекПоНоменклатуреКПроизводствуПользовательскиеНастройкиКонтекстноеМеню" id="4"/>
+					<AutoCommandBar name="КомпоновщикНастроекПоНоменклатуреКПроизводствуПользовательскиеНастройкиКоманднаяПанель" id="5"/>
+					<ExtendedTooltip name="КомпоновщикНастроекПоНоменклатуреКПроизводствуПользовательскиеНастройкиРасширеннаяПодсказка" id="6"/>
+					<SearchStringAddition name="КомпоновщикНастроекПоНоменклатуреКПроизводствуПользовательскиеНастройкиСтрокаПоиска" id="7">
+						<AdditionSource>
+							<Item>КомпоновщикНастроекПоНоменклатуреКПроизводствуПользовательскиеНастройки</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="КомпоновщикНастроекПоНоменклатуреКПроизводствуПользовательскиеНастройкиСтрокаПоискаКонтекстноеМеню" id="8"/>
+						<ExtendedTooltip name="КомпоновщикНастроекПоНоменклатуреКПроизводствуПользовательскиеНастройкиСтрокаПоискаРасширеннаяПодсказка" id="9"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="КомпоновщикНастроекПоНоменклатуреКПроизводствуПользовательскиеНастройкиСостояниеПросмотра" id="10">
+						<AdditionSource>
+							<Item>КомпоновщикНастроекПоНоменклатуреКПроизводствуПользовательскиеНастройки</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="КомпоновщикНастроекПоНоменклатуреКПроизводствуПользовательскиеНастройкиСостояниеПросмотраКонтекстноеМеню" id="11"/>
+						<ExtendedTooltip name="КомпоновщикНастроекПоНоменклатуреКПроизводствуПользовательскиеНастройкиСостояниеПросмотраРасширеннаяПодсказка" id="12"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="КомпоновщикНастроекПоНоменклатуреКПроизводствуПользовательскиеНастройкиУправлениеПоиском" id="13">
+						<AdditionSource>
+							<Item>КомпоновщикНастроекПоНоменклатуреКПроизводствуПользовательскиеНастройки</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="КомпоновщикНастроекПоНоменклатуреКПроизводствуПользовательскиеНастройкиУправлениеПоискомКонтекстноеМеню" id="14"/>
+						<ExtendedTooltip name="КомпоновщикНастроекПоНоменклатуреКПроизводствуПользовательскиеНастройкиУправлениеПоискомРасширеннаяПодсказка" id="15"/>
+					</SearchControlAddition>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="КомпоновщикНастроекПоНоменклатуреКПроизводству" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Компоновщик настроек по номенклатуре к производству</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>dcsset:SettingsComposer</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Сохранить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Сохранить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СохранитьИЗакрыть" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить и закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Write</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СохранитьИЗакрыть</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Сброс" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сброс</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сброс</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Сброс</Action>
+		</Command>
+	</Commands>
+</Form>

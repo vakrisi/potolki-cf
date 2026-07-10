@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Rights xmlns="http://v8.1c.ru/8.2/roles" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Rights" version="2.21">
+	<setForNewObjects>false</setForNewObjects>
+	<setForAttributesByDefault>true</setForAttributesByDefault>
+	<independentRightsOfChildObjects>false</independentRightsOfChildObjects>
+	<object>
+		<name>Configuration.Потолки</name>
+		<right>
+			<name>MainWindowModeNormal</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeWorkplace</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeEmbeddedWorkplace</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeFullscreenWorkplace</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeKiosk</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>AnalyticsSystemClient</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЭлектронноеПисьмо</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+			<restrictionByCondition>
+				<condition>	ТекущаяТаблица 
+ГДЕ 
+	ИСТИНА
+	#Если &amp;ОграничиватьДоступККонтрагентамПоГруппамДоступа #Тогда
+    И ВЫБОР
+    	КОГДА ТекущаяТаблица.Контрагент Ссылка Справочник.Контрагенты
+    			И НЕ ТекущаяТаблица.Контрагент.ЭтоГруппа
+    			И НЕ ТекущаяТаблица.Контрагент = Значение(Справочник.Контрагенты.ПустаяСсылка)
+    		ТОГДА ТекущаяТаблица.Контрагент.ГруппаДоступа
+        	 В
+            (ВЫБРАТЬ
+				ДоступныеГруппы.ГруппаКонтрагентов
+			ИЗ
+				Справочник.Пользователи.ДоступныеГруппыКонтрагентов КАК ДоступныеГруппы
+			ГДЕ
+				ДоступныеГруппы.Ссылка = &amp;Пользователь				
+			СГРУППИРОВАТЬ ПО
+			ДоступныеГруппы.ГруппаКонтрагентов)
+		ИНАЧЕ ИСТИНА
+	КОНЕЦ
+	#КонецЕсли</condition>
+			</restrictionByCondition>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InputByString</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.Взаимодействие.Subsystem.Взаимодействие</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.Взаимодействие</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+</Rights>

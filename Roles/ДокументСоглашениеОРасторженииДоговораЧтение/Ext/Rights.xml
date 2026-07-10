@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Rights xmlns="http://v8.1c.ru/8.2/roles" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Rights" version="2.21">
+	<setForNewObjects>false</setForNewObjects>
+	<setForAttributesByDefault>true</setForAttributesByDefault>
+	<independentRightsOfChildObjects>false</independentRightsOfChildObjects>
+	<object>
+		<name>Subsystem.Розница.Subsystem.Монтажи</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.Розница.Subsystem.Настройки</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.Розница.Subsystem.УДАЛИТЬ_Резервы</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.Розница.Subsystem.Договоры</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.СоглашениеОРасторженииДоговора</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+			<restrictionByCondition>
+				<condition>ТекущаяТаблица 
+    ГДЕ 
+    ИСТИНА = ИСТИНА
+    #Если &amp;ОграничиватьДоступПоОрганизациям #Тогда
+        И ТекущаяТаблица.Организация В
+        (ВЫБРАТЬ    
+            ДоступныеОрганизации.Организация 
+        ИЗ  
+            Справочник.Пользователи.ДоступныеОрганизации КАК ДоступныеОрганизации 
+        ГДЕ ДоступныеОрганизации.Ссылка = &amp;Пользователь 
+        СГРУППИРОВАТЬ ПО    ДоступныеОрганизации.Организация)
+    #КонецЕсли
+    #Если &amp;ОграничиватьДоступККонтрагентамПоГруппамДоступа #Тогда
+    И 
+    	ВЫБОР КОГДА НЕ ТекущаяТаблица.ЗаказДоговор.Контрагент.ЭтоГруппа ТОГДА
+    	  	ТекущаяТаблица.ЗаказДоговор.Контрагент.ГруппаДоступа        	
+        	 В
+            (ВЫБРАТЬ
+				ДоступныеГруппы.ГруппаКонтрагентов
+			ИЗ
+				Справочник.Пользователи.ДоступныеГруппыКонтрагентов КАК ДоступныеГруппы
+			ГДЕ
+				ДоступныеГруппы.Ссылка = &amp;Пользователь				
+			СГРУППИРОВАТЬ ПО
+			ДоступныеГруппы.ГруппаКонтрагентов)
+		ИНАЧЕ ИСТИНА КОНЕЦ	
+	#КонецЕсли  
+	#Если &amp;ОграничитьВидимостьЛидовПоТочкамПродаж #Тогда
+        И ТекущаяТаблица.ЗаказДоговор.ТочкаПродаж В
+        (ВЫБРАТЬ    
+            ДоступныеТочкиПродаж.ТочкаПродаж 
+        ИЗ  
+            Справочник.Пользователи.ДоступныеТочкиПродаж КАК ДоступныеТочкиПродаж 
+        ГДЕ ДоступныеТочкиПродаж.Ссылка = &amp;Пользователь 
+        СГРУППИРОВАТЬ ПО    ДоступныеТочкиПродаж.ТочкаПродаж)
+    #КонецЕсли</condition>
+			</restrictionByCondition>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InputByString</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.Розница.Subsystem.Планирование</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.Розница.Subsystem.Контакты</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.Розница.Subsystem.РабочееМесто</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Configuration.Потолки</name>
+		<right>
+			<name>ThinClient</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>WebClient</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeNormal</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeWorkplace</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeEmbeddedWorkplace</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeFullscreenWorkplace</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeKiosk</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>AnalyticsSystemClient</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>SaveUserData</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Output</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.Розница.Subsystem.Замеры</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.Розница</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+</Rights>

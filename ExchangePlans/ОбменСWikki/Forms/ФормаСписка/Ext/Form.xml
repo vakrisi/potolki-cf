@@ -1,0 +1,519 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Popup name="СинхронизацияДанных" id="22">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Синхронизация данных</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Синхронизация данных</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="СинхронизацияДанныхРасширеннаяПодсказка" id="23"/>
+				<ChildItems>
+					<Button name="ФормаПланОбменаОбменСWikkiВыполнитьОбменДанными" id="24">
+						<Type>CommandBarButton</Type>
+						<CommandName>ExchangePlan.ОбменСWikki.Command.ВыполнитьОбменДанными</CommandName>
+						<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+						<ExtendedTooltip name="ФормаПланОбменаОбменСWikkiВыполнитьОбменДаннымиРасширеннаяПодсказка" id="25"/>
+					</Button>
+					<Button name="ФормаПланОбменаОбменСWikkiВыполнитьПолныйОбменДанными" id="26">
+						<Type>CommandBarButton</Type>
+						<CommandName>ExchangePlan.ОбменСWikki.Command.ВыполнитьПолныйОбменДанными</CommandName>
+						<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+						<ExtendedTooltip name="ФормаПланОбменаОбменСWikkiВыполнитьПолныйОбменДаннымиРасширеннаяПодсказка" id="27"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<Representation>WeakSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="2"/>
+		</UsualGroup>
+		<Table name="Список" id="3">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокКонтекстноеМеню" id="4"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="5">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="6"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="7">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="8"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="10">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="11"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="12"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="13">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="14"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="15"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="Код" id="16">
+					<DataPath>Список.Код</DataPath>
+					<ContextMenu name="КодКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="18"/>
+				</LabelField>
+				<LabelField name="Наименование" id="19">
+					<DataPath>Список.Наименование</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="21"/>
+				</LabelField>
+				<ColumnGroup name="ГруппаВыгрузкаТоваров" id="28">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выгрузка товаров</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="ГруппаВыгрузкаТоваровРасширеннаяПодсказка" id="29"/>
+					<ChildItems>
+						<ColumnGroup name="Группа2" id="30">
+							<Group>InCell</Group>
+							<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="31"/>
+							<ChildItems>
+								<PictureField name="РезультатВыгрузкиТоваров" id="32">
+									<DataPath>Список.РезультатВыгрузкиТоваров</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ValuesPicture>
+										<xr:Ref>CommonPicture.СостояниеОбмена</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</ValuesPicture>
+									<ContextMenu name="РезультатВыгрузкиТоваровКонтекстноеМеню" id="33"/>
+									<ExtendedTooltip name="РезультатВыгрузкиТоваровРасширеннаяПодсказка" id="34"/>
+								</PictureField>
+								<LabelField name="ДатаВыгрузкиТоваров" id="35">
+									<DataPath>Список.ДатаВыгрузкиТоваров</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Последняя</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДатаВыгрузкиТоваровКонтекстноеМеню" id="36"/>
+									<ExtendedTooltip name="ДатаВыгрузкиТоваровРасширеннаяПодсказка" id="37"/>
+								</LabelField>
+							</ChildItems>
+						</ColumnGroup>
+						<LabelField name="ДатаУспешнойВыгрузкиТоваров" id="38">
+							<DataPath>Список.ДатаУспешнойВыгрузкиТоваров</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Успешная</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДатаУспешнойВыгрузкиТоваровКонтекстноеМеню" id="39"/>
+							<ExtendedTooltip name="ДатаУспешнойВыгрузкиТоваровРасширеннаяПодсказка" id="40"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ГруппаЗагрузкаЗаказов" id="45">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Загрузка заказов</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="ГруппаЗагрузкаЗаказовРасширеннаяПодсказка" id="46"/>
+					<ChildItems>
+						<ColumnGroup name="Группа5" id="47">
+							<Group>InCell</Group>
+							<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="48"/>
+							<ChildItems>
+								<PictureField name="РезультатЗагрузкиЗаказов" id="55">
+									<DataPath>Список.РезультатЗагрузкиЗаказов</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ValuesPicture>
+										<xr:Ref>CommonPicture.СостояниеОбмена</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</ValuesPicture>
+									<ContextMenu name="РезультатЗагрузкиЗаказовКонтекстноеМеню" id="56"/>
+									<ExtendedTooltip name="РезультатЗагрузкиЗаказовРасширеннаяПодсказка" id="57"/>
+								</PictureField>
+								<LabelField name="ДатаЗагрузкиЗаказов" id="64">
+									<DataPath>Список.ДатаЗагрузкиЗаказов</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Последняя</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДатаЗагрузкиЗаказовКонтекстноеМеню" id="65"/>
+									<ExtendedTooltip name="ДатаЗагрузкиЗаказовРасширеннаяПодсказка" id="66"/>
+								</LabelField>
+							</ChildItems>
+						</ColumnGroup>
+						<LabelField name="ДатаУспешнойЗагрузкиЗаказов" id="52">
+							<DataPath>Список.ДатаУспешнойЗагрузкиЗаказов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Успешная</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДатаУспешнойЗагрузкиЗаказовКонтекстноеМеню" id="53"/>
+							<ExtendedTooltip name="ДатаУспешнойЗагрузкиЗаказовРасширеннаяПодсказка" id="54"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ГруппаВыгрузкаЗаказов" id="41">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выгрузка заказов</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="ГруппаВыгрузкаЗаказовРасширеннаяПодсказка" id="42"/>
+					<ChildItems>
+						<ColumnGroup name="Группа3" id="43">
+							<Group>InCell</Group>
+							<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="44"/>
+							<ChildItems>
+								<PictureField name="РезультатВыгрузкиЗаказов" id="58">
+									<DataPath>Список.РезультатВыгрузкиЗаказов</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ValuesPicture>
+										<xr:Ref>CommonPicture.СостояниеОбмена</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</ValuesPicture>
+									<ContextMenu name="РезультатВыгрузкиЗаказовКонтекстноеМеню" id="59"/>
+									<ExtendedTooltip name="РезультатВыгрузкиЗаказовРасширеннаяПодсказка" id="60"/>
+								</PictureField>
+								<LabelField name="ДатаВыгрузкиЗаказов" id="61">
+									<DataPath>Список.ДатаВыгрузкиЗаказов</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Последняя</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДатаВыгрузкиЗаказовКонтекстноеМеню" id="62"/>
+									<ExtendedTooltip name="ДатаВыгрузкиЗаказовРасширеннаяПодсказка" id="63"/>
+								</LabelField>
+							</ChildItems>
+						</ColumnGroup>
+						<LabelField name="ДатаУспешнойВыгрузкиЗаказов" id="49">
+							<DataPath>Список.ДатаУспешнойВыгрузкиЗаказов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Успешная</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДатаУспешнойВыгрузкиЗаказовКонтекстноеМеню" id="50"/>
+							<ExtendedTooltip name="ДатаУспешнойВыгрузкиЗаказовРасширеннаяПодсказка" id="51"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ГруппаЗагрузкаОплат" id="69">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Загрузка оплат</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа загрузка оплат</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="ГруппаЗагрузкаОплатРасширеннаяПодсказка" id="70"/>
+					<ChildItems>
+						<ColumnGroup name="Группа6" id="71">
+							<Group>InCell</Group>
+							<ExtendedTooltip name="Группа6РасширеннаяПодсказка" id="72"/>
+							<ChildItems>
+								<PictureField name="РезультатЗагрузкиОплат" id="75">
+									<DataPath>Список.РезультатЗагрузкиОплат</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ValuesPicture>
+										<xr:Ref>CommonPicture.СостояниеОбмена</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</ValuesPicture>
+									<ContextMenu name="РезультатЗагрузкиОплатКонтекстноеМеню" id="76"/>
+									<ExtendedTooltip name="РезультатЗагрузкиОплатРасширеннаяПодсказка" id="77"/>
+								</PictureField>
+								<LabelField name="ДатаЗагрузкиОплат" id="81">
+									<DataPath>Список.ДатаЗагрузкиОплат</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Последняя</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДатаЗагрузкиОплатКонтекстноеМеню" id="82"/>
+									<ExtendedTooltip name="ДатаЗагрузкиОплатРасширеннаяПодсказка" id="83"/>
+								</LabelField>
+							</ChildItems>
+						</ColumnGroup>
+						<LabelField name="ДатаУспешнойЗагрузкиОплат" id="90">
+							<DataPath>Список.ДатаУспешнойЗагрузкиОплат</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Успешная</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДатаУспешнойЗагрузкиОплатКонтекстноеМеню" id="91"/>
+							<ExtendedTooltip name="ДатаУспешнойЗагрузкиОплатРасширеннаяПодсказка" id="92"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ГруппаВыгрузкаОплат" id="67">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выгрузка оплат</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="ГруппаВыгрузкаОплатРасширеннаяПодсказка" id="68"/>
+					<ChildItems>
+						<ColumnGroup name="Группа7" id="73">
+							<Group>InCell</Group>
+							<ExtendedTooltip name="Группа7РасширеннаяПодсказка" id="74"/>
+							<ChildItems>
+								<PictureField name="РезультатВыгрузкиОплат" id="78">
+									<DataPath>Список.РезультатВыгрузкиОплат</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ValuesPicture>
+										<xr:Ref>CommonPicture.СостояниеОбмена</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</ValuesPicture>
+									<ContextMenu name="РезультатВыгрузкиОплатКонтекстноеМеню" id="79"/>
+									<ExtendedTooltip name="РезультатВыгрузкиОплатРасширеннаяПодсказка" id="80"/>
+								</PictureField>
+								<LabelField name="ДатаВыгрузкиОплат" id="84">
+									<DataPath>Список.ДатаВыгрузкиОплат</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Последняя</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДатаВыгрузкиОплатКонтекстноеМеню" id="85"/>
+									<ExtendedTooltip name="ДатаВыгрузкиОплатРасширеннаяПодсказка" id="86"/>
+								</LabelField>
+							</ChildItems>
+						</ColumnGroup>
+						<LabelField name="ДатаУспешнойВыгрузкиОплат" id="87">
+							<DataPath>Список.ДатаУспешнойВыгрузкиОплат</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Успешная</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДатаУспешнойВыгрузкиОплатКонтекстноеМеню" id="88"/>
+							<ExtendedTooltip name="ДатаУспешнойВыгрузкиОплатРасширеннаяПодсказка" id="89"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ПланОбменаОбменСWikki.Ссылка КАК Ссылка,
+	ПланОбменаОбменСWikki.ПометкаУдаления КАК ПометкаУдаления,
+	ПланОбменаОбменСWikki.ЭтотУзел КАК ЭтотУзел,
+	ПланОбменаОбменСWikki.Код КАК Код,
+	ПланОбменаОбменСWikki.Наименование КАК Наименование,
+	ПланОбменаОбменСWikki.Сайт КАК Сайт,
+	ПланОбменаОбменСWikki.НомерОтправленного КАК НомерОтправленного,
+	ПланОбменаОбменСWikki.НомерПринятого КАК НомерПринятого,
+	ПланОбменаОбменСWikki.Организация КАК Организация,
+	ПланОбменаОбменСWikki.ВидЦеныОсновной КАК ВидЦеныОсновной,
+	//ПланОбменаОбменСWikki.ВидЦеныДополнительный КАК ВидЦеныДополнительный,
+	ПланОбменаОбменСWikki.АдресСайта КАК АдресСайта,
+	ПланОбменаОбменСWikki.РекомендованныеЦены КАК РекомендованныеЦены,
+	ПланОбменаОбменСWikki.ОбменТоварами КАК ОбменТоварами,
+	ПланОбменаОбменСWikki.ОбменЗаказами КАК ОбменЗаказами,
+	
+	ЕСТЬNULL(ПоследняяВыгрузкаТоваров.ДатаНачала, ДАТАВРЕМЯ(1, 1, 1)) КАК ДатаВыгрузкиТоваров,
+	ЕСТЬNULL(ПоследняяУспешнаяВыгрузкаТоваров.ДатаНачала, ДАТАВРЕМЯ(1, 1, 1)) КАК ДатаУспешнойВыгрузкиТоваров,
+	ВЫБОР
+		КОГДА ПоследняяВыгрузкаТоваров.РезультатВыполненияОбмена = ЗНАЧЕНИЕ(Перечисление.РезультатыВыполненияОбмена.Ошибка)
+			ТОГДА 1
+		КОГДА ПоследняяВыгрузкаТоваров.РезультатВыполненияОбмена = ЗНАЧЕНИЕ(Перечисление.РезультатыВыполненияОбмена.Выполнено)
+			ТОГДА 2
+		ИНАЧЕ 0
+	КОНЕЦ КАК РезультатВыгрузкиТоваров,
+	
+	ЕСТЬNULL(ПоследняяЗагрузкаЗаказов.ДатаНачала, ДАТАВРЕМЯ(1, 1, 1)) КАК ДатаЗагрузкиЗаказов,
+	ЕСТЬNULL(ПоследняяУспешнаяЗагрузкаЗаказов.ДатаНачала, ДАТАВРЕМЯ(1, 1, 1)) КАК ДатаУспешнойЗагрузкиЗаказов,
+	ВЫБОР
+		КОГДА ПоследняяЗагрузкаЗаказов.РезультатВыполненияОбмена = ЗНАЧЕНИЕ(Перечисление.РезультатыВыполненияОбмена.Ошибка)
+			ТОГДА 1
+		КОГДА ПоследняяЗагрузкаЗаказов.РезультатВыполненияОбмена = ЗНАЧЕНИЕ(Перечисление.РезультатыВыполненияОбмена.Выполнено)
+			ТОГДА 2
+		ИНАЧЕ 0
+	КОНЕЦ КАК РезультатЗагрузкиЗаказов,	
+	
+	ЕСТЬNULL(ПоследняяВыгрузкаЗаказов.ДатаНачала, ДАТАВРЕМЯ(1, 1, 1)) КАК ДатаВыгрузкиЗаказов,
+	ЕСТЬNULL(ПоследняяУспешнаяВыгрузкаЗаказов.ДатаНачала, ДАТАВРЕМЯ(1, 1, 1)) КАК ДатаУспешнойВыгрузкиЗаказов,
+	ВЫБОР
+		КОГДА ПоследняяВыгрузкаЗаказов.РезультатВыполненияОбмена = ЗНАЧЕНИЕ(Перечисление.РезультатыВыполненияОбмена.Ошибка)
+			ТОГДА 1
+		КОГДА ПоследняяВыгрузкаЗаказов.РезультатВыполненияОбмена = ЗНАЧЕНИЕ(Перечисление.РезультатыВыполненияОбмена.Выполнено)
+			ТОГДА 2
+		ИНАЧЕ 0
+	КОНЕЦ КАК РезультатВыгрузкиЗаказов,
+	
+	ЕСТЬNULL(ПоследняяЗагрузкаОплат.ДатаНачала, ДАТАВРЕМЯ(1, 1, 1)) КАК ДатаЗагрузкиОплат,
+	ЕСТЬNULL(ПоследняяУспешнаяЗагрузкаОплат.ДатаНачала, ДАТАВРЕМЯ(1, 1, 1)) КАК ДатаУспешнойЗагрузкиОплат,
+	ВЫБОР
+		КОГДА ПоследняяЗагрузкаОплат.РезультатВыполненияОбмена = ЗНАЧЕНИЕ(Перечисление.РезультатыВыполненияОбмена.Ошибка)
+			ТОГДА 1
+		КОГДА ПоследняяЗагрузкаОплат.РезультатВыполненияОбмена = ЗНАЧЕНИЕ(Перечисление.РезультатыВыполненияОбмена.Выполнено)
+			ТОГДА 2
+		ИНАЧЕ 0
+	КОНЕЦ КАК РезультатЗагрузкиОплат,	
+	
+	ЕСТЬNULL(ПоследняяВыгрузкаОплат.ДатаНачала, ДАТАВРЕМЯ(1, 1, 1)) КАК ДатаВыгрузкиОплат,
+	ЕСТЬNULL(ПоследняяУспешнаяВыгрузкаОплат.ДатаНачала, ДАТАВРЕМЯ(1, 1, 1)) КАК ДатаУспешнойВыгрузкиОплат,
+	ВЫБОР
+		КОГДА ПоследняяВыгрузкаОплат.РезультатВыполненияОбмена = ЗНАЧЕНИЕ(Перечисление.РезультатыВыполненияОбмена.Ошибка)
+			ТОГДА 1
+		КОГДА ПоследняяВыгрузкаОплат.РезультатВыполненияОбмена = ЗНАЧЕНИЕ(Перечисление.РезультатыВыполненияОбмена.Выполнено)
+			ТОГДА 2
+		ИНАЧЕ 0
+	КОНЕЦ КАК РезультатВыгрузкиОплат
+	
+ИЗ
+	ПланОбмена.ОбменСWikki КАК ПланОбменаОбменСWikki
+	
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияОбменовСWikki КАК ПоследняяВыгрузкаТоваров
+		ПО ПланОбменаОбменСWikki.Сайт = ПоследняяВыгрузкаТоваров.Сайт
+			И (ПоследняяВыгрузкаТоваров.ДействиеПриОбмене = ЗНАЧЕНИЕ(Перечисление.Wikki_ДействияПриОбмене.ВыгрузкаТоваров))
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияУспешныхОбменовСWikki КАК ПоследняяУспешнаяВыгрузкаТоваров
+		ПО ПланОбменаОбменСWikki.Сайт = ПоследняяУспешнаяВыгрузкаТоваров.Сайт
+			И (ПоследняяУспешнаяВыгрузкаТоваров.ДействиеПриОбмене = ЗНАЧЕНИЕ(Перечисление.Wikki_ДействияПриОбмене.ВыгрузкаТоваров))
+			
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияОбменовСWikki КАК ПоследняяЗагрузкаЗаказов
+		ПО ПланОбменаОбменСWikki.Сайт = ПоследняяЗагрузкаЗаказов.Сайт
+			И (ПоследняяЗагрузкаЗаказов.ДействиеПриОбмене = ЗНАЧЕНИЕ(Перечисление.Wikki_ДействияПриОбмене.ЗагрузкаЗаказов))
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияУспешныхОбменовСWikki КАК ПоследняяУспешнаяЗагрузкаЗаказов
+		ПО ПланОбменаОбменСWikki.Сайт = ПоследняяУспешнаяЗагрузкаЗаказов.Сайт
+			И (ПоследняяУспешнаяЗагрузкаЗаказов.ДействиеПриОбмене = ЗНАЧЕНИЕ(Перечисление.Wikki_ДействияПриОбмене.ЗагрузкаЗаказов))
+			
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияОбменовСWikki КАК ПоследняяВыгрузкаЗаказов
+		ПО ПланОбменаОбменСWikki.Сайт = ПоследняяВыгрузкаЗаказов.Сайт
+			И (ПоследняяВыгрузкаЗаказов.ДействиеПриОбмене = ЗНАЧЕНИЕ(Перечисление.Wikki_ДействияПриОбмене.ВыгрузкаЗаказов))
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияУспешныхОбменовСWikki КАК ПоследняяУспешнаяВыгрузкаЗаказов
+		ПО ПланОбменаОбменСWikki.Сайт = ПоследняяУспешнаяВыгрузкаЗаказов.Сайт
+			И (ПоследняяУспешнаяВыгрузкаЗаказов.ДействиеПриОбмене = ЗНАЧЕНИЕ(Перечисление.Wikki_ДействияПриОбмене.ВыгрузкаЗаказов))
+			
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияОбменовСWikki КАК ПоследняяЗагрузкаОплат
+		ПО ПланОбменаОбменСWikki.Сайт = ПоследняяЗагрузкаОплат.Сайт
+			И (ПоследняяЗагрузкаОплат.ДействиеПриОбмене = ЗНАЧЕНИЕ(Перечисление.Wikki_ДействияПриОбмене.ЗагрузкаОплат))
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияУспешныхОбменовСWikki КАК ПоследняяУспешнаяЗагрузкаОплат
+		ПО ПланОбменаОбменСWikki.Сайт = ПоследняяУспешнаяЗагрузкаОплат.Сайт
+			И (ПоследняяУспешнаяЗагрузкаОплат.ДействиеПриОбмене = ЗНАЧЕНИЕ(Перечисление.Wikki_ДействияПриОбмене.ЗагрузкаОплат))
+			
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияОбменовСWikki КАК ПоследняяВыгрузкаОплат
+		ПО ПланОбменаОбменСWikki.Сайт = ПоследняяВыгрузкаОплат.Сайт
+			И (ПоследняяВыгрузкаОплат.ДействиеПриОбмене = ЗНАЧЕНИЕ(Перечисление.Wikki_ДействияПриОбмене.ВыгрузкаОплат))
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияУспешныхОбменовСWikki КАК ПоследняяУспешнаяВыгрузкаОплат
+		ПО ПланОбменаОбменСWikki.Сайт = ПоследняяУспешнаяВыгрузкаОплат.Сайт
+			И (ПоследняяУспешнаяВыгрузкаОплат.ДействиеПриОбмене = ЗНАЧЕНИЕ(Перечисление.Wikki_ДействияПриОбмене.ВыгрузкаОплат))
+ГДЕ
+	ПланОбменаОбменСWikki.Ссылка &lt;&gt; &amp;ЭтотУзел</QueryText>
+				<MainTable>ExchangePlan.ОбменСWikki</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+</Form>

@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>LockOwner</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="49">
+			<Height>3</Height>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<VerticalAlign>Center</VerticalAlign>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="50"/>
+			<ChildItems>
+				<Button name="ФормаЗаписатьИЗакрыть" id="29">
+					<Type>UsualButton</Type>
+					<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
+					<TextColor>#000000</TextColor>
+					<BackColor>#FFE629</BackColor>
+					<Shape>Oval</Shape>
+					<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="30"/>
+				</Button>
+				<Button name="ФормаЗаписать" id="31">
+					<Type>UsualButton</Type>
+					<CommandName>Form.StandardCommand.Write</CommandName>
+					<Shape>Oval</Shape>
+					<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="32"/>
+				</Button>
+				<Button name="ФормаСправка" id="33">
+					<Type>UsualButton</Type>
+					<Representation>Picture</Representation>
+					<Width>3</Width>
+					<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+					<CommandName>Form.Command.СправкаГлавная</CommandName>
+					<Picture>
+						<xr:Ref>CommonPicture.КСУ_ВопросСиний</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<Shape>Oval</Shape>
+					<ShapeRepresentation>None</ShapeRepresentation>
+					<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+					<ButtonImportance>Supplementary</ButtonImportance>
+					<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="34"/>
+				</Button>
+				<Button name="ПодробнееОГруппах" id="53">
+					<Type>UsualButton</Type>
+					<CommandName>Form.StandardCommand.Help</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подробнее о группах</v8:content>
+						</v8:item>
+					</Title>
+					<Shape>Oval</Shape>
+					<ExtendedTooltip name="ПодробнееОГруппахРасширеннаяПодсказка" id="54"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<DefaultItem>true</DefaultItem>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование группы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6">
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Наименование группы компаний используется лишь 
+для формального отличия одной группы от другой. 
+При работе с документами модуля 
+“Финансовое планирование” группа идентифицируется 
+по головной организации. Поэтому в поле 
+“Наименование группы” можно писать свободный текст.</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+		</InputField>
+		<InputField name="ГоловнаяОрганизация" id="7">
+			<DataPath>Объект.ГоловнаяОрганизация</DataPath>
+			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ListChoiceMode>true</ListChoiceMode>
+			<ContextMenu name="ГоловнаяОрганизацияКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ГоловнаяОрганизацияРасширеннаяПодсказка" id="9">
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Головная организация входит в состав группы. 
+Остальные организации, входящие в группу, 
+должны быть добавлены в таблице ниже.
+
+В списке показываются только те организации, 
+которые еще не вошли в другие группы. 
+Организации, помеченные на удаление, 
+не отображаются.</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+			<Events>
+				<Event name="OnChange">ГоловнаяОрганизацияПриИзменении</Event>
+				<Event name="StartChoice">ГоловнаяОрганизацияНачалоВыбора</Event>
+			</Events>
+		</InputField>
+		<Table name="ДочерниеОрганизации" id="10">
+			<Representation>List</Representation>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.ДочерниеОрганизации</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ДочерниеОрганизацииКонтекстноеМеню" id="11">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ДочерниеОрганизацииКонтекстноеМенюДобавить" id="41">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.ДочерниеОрганизации.StandardCommand.Add</CommandName>
+						<ExtendedTooltip name="ДочерниеОрганизацииКонтекстноеМенюДобавитьРасширеннаяПодсказка" id="42"/>
+					</Button>
+					<Button name="ДочерниеОрганизацииКонтекстноеМенюУдалить" id="43">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.ДочерниеОрганизации.StandardCommand.Delete</CommandName>
+						<ExtendedTooltip name="ДочерниеОрганизацииКонтекстноеМенюУдалитьРасширеннаяПодсказка" id="44"/>
+					</Button>
+					<Button name="ДочерниеОрганизацииКонтекстноеМенюПереместитьВверх" id="45">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.ДочерниеОрганизации.StandardCommand.MoveUp</CommandName>
+						<ExtendedTooltip name="ДочерниеОрганизацииКонтекстноеМенюПереместитьВверхРасширеннаяПодсказка" id="46"/>
+					</Button>
+					<Button name="ДочерниеОрганизацииКонтекстноеМенюПереместитьВниз" id="47">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.ДочерниеОрганизации.StandardCommand.MoveDown</CommandName>
+						<ExtendedTooltip name="ДочерниеОрганизацииКонтекстноеМенюПереместитьВнизРасширеннаяПодсказка" id="48"/>
+					</Button>
+				</ChildItems>
+			</ContextMenu>
+			<AutoCommandBar name="ДочерниеОрганизацииКоманднаяПанель" id="12">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ДочерниеОрганизацииДобавить" id="35">
+						<Type>CommandBarButton</Type>
+						<Representation>Picture</Representation>
+						<CommandName>Form.Item.ДочерниеОрганизации.StandardCommand.Add</CommandName>
+						<ShapeRepresentation>None</ShapeRepresentation>
+						<ButtonImportance>Supplementary</ButtonImportance>
+						<ExtendedTooltip name="ДочерниеОрганизацииДобавитьРасширеннаяПодсказка" id="36"/>
+					</Button>
+					<Button name="ДочерниеОрганизацииПереместитьВверх" id="37">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.ДочерниеОрганизации.StandardCommand.MoveUp</CommandName>
+						<ShapeRepresentation>None</ShapeRepresentation>
+						<ButtonImportance>Supplementary</ButtonImportance>
+						<ExtendedTooltip name="ДочерниеОрганизацииПереместитьВверхРасширеннаяПодсказка" id="38"/>
+					</Button>
+					<Button name="ДочерниеОрганизацииПереместитьВниз" id="39">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.ДочерниеОрганизации.StandardCommand.MoveDown</CommandName>
+						<ShapeRepresentation>None</ShapeRepresentation>
+						<ButtonImportance>Supplementary</ButtonImportance>
+						<ExtendedTooltip name="ДочерниеОрганизацииПереместитьВнизРасширеннаяПодсказка" id="40"/>
+					</Button>
+					<Button name="ДочерниеОрганизацииСправкаСостав" id="51">
+						<Type>CommandBarButton</Type>
+						<Representation>Picture</Representation>
+						<CommandName>Form.Command.СправкаСостав</CommandName>
+						<Picture>
+							<xr:Ref>CommonPicture.КСУ_ВопросСиний</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ShapeRepresentation>None</ShapeRepresentation>
+						<ButtonImportance>Supplementary</ButtonImportance>
+						<ExtendedTooltip name="ДочерниеОрганизацииСправкаСоставРасширеннаяПодсказка" id="52"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ДочерниеОрганизацииРасширеннаяПодсказка" id="13"/>
+			<SearchStringAddition name="ДочерниеОрганизацииСтрокаПоиска" id="14">
+				<AdditionSource>
+					<Item>ДочерниеОрганизации</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДочерниеОрганизацииСтрокаПоискаКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="ДочерниеОрганизацииСтрокаПоискаРасширеннаяПодсказка" id="16"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ДочерниеОрганизацииСостояниеПросмотра" id="17">
+				<AdditionSource>
+					<Item>ДочерниеОрганизации</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДочерниеОрганизацииСостояниеПросмотраКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="ДочерниеОрганизацииСостояниеПросмотраРасширеннаяПодсказка" id="19"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ДочерниеОрганизацииУправлениеПоиском" id="20">
+				<AdditionSource>
+					<Item>ДочерниеОрганизации</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ДочерниеОрганизацииУправлениеПоискомКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="ДочерниеОрганизацииУправлениеПоискомРасширеннаяПодсказка" id="22"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateRow">ДочерниеОрганизацииПриАктивизацииСтроки</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="ДочерниеОрганизацииНомерСтроки" id="23">
+					<DataPath>Объект.ДочерниеОрганизации.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ДочерниеОрганизацииНомерСтрокиКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ДочерниеОрганизацииНомерСтрокиРасширеннаяПодсказка" id="25"/>
+				</LabelField>
+				<InputField name="ДочерниеОрганизацииОрганизация" id="26">
+					<DataPath>Объект.ДочерниеОрганизации.Организация</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состав группы (помимо головной)</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="ДочерниеОрганизацииОрганизацияКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ДочерниеОрганизацииОрганизацияРасширеннаяПодсказка" id="28"/>
+					<Events>
+						<Event name="OnChange">ДочерниеОрганизацииОрганизацияПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ИА_ГруппыКомпаний</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СправкаГлавная" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Справка главная</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Справка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СправкаГлавная</Action>
+		</Command>
+		<Command name="СправкаСостав" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Справка состав</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Справка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СправкаСостав</Action>
+		</Command>
+	</Commands>
+</Form>

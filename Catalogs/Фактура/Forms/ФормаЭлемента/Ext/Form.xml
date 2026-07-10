@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>LockOwner</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование фактуры</v8:content>
+				</v8:item>
+			</Title>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+			<Events>
+				<Event name="OnChange">НаименованиеПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="Родитель" id="36">
+			<DataPath>Объект.Parent</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Входит в группу</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="РодительКонтекстноеМеню" id="37"/>
+			<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="38"/>
+		</InputField>
+		<InputField name="ШиринаПолотна" id="10">
+			<DataPath>Объект.ШиринаПолотна</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<ContextMenu name="ШиринаПолотнаКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="ШиринаПолотнаРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<InputField name="Каталог" id="22">
+			<DataPath>Объект.Каталог</DataPath>
+			<ContextMenu name="КаталогКонтекстноеМеню" id="23"/>
+			<ExtendedTooltip name="КаталогРасширеннаяПодсказка" id="24"/>
+		</InputField>
+		<InputField name="Материал" id="25">
+			<DataPath>Объект.Материал</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фактура</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="МатериалКонтекстноеМеню" id="26"/>
+			<ExtendedTooltip name="МатериалРасширеннаяПодсказка" id="27"/>
+		</InputField>
+		<InputField name="Производитель" id="42">
+			<DataPath>Объект.Производитель</DataPath>
+			<ContextMenu name="ПроизводительКонтекстноеМеню" id="43"/>
+			<ExtendedTooltip name="ПроизводительРасширеннаяПодсказка" id="44"/>
+		</InputField>
+		<InputField name="Страна" id="45">
+			<DataPath>Объект.Страна</DataPath>
+			<ContextMenu name="СтранаКонтекстноеМеню" id="46"/>
+			<ExtendedTooltip name="СтранаРасширеннаяПодсказка" id="47"/>
+		</InputField>
+		<InputField name="ТипФактуры" id="48">
+			<DataPath>Объект.ТипФактуры</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ТипФактурыКонтекстноеМеню" id="49"/>
+			<ExtendedTooltip name="ТипФактурыРасширеннаяПодсказка" id="50"/>
+		</InputField>
+		<InputField name="Гарантия" id="39">
+			<DataPath>Объект.Гарантия</DataPath>
+			<SpinButton>true</SpinButton>
+			<ContextMenu name="ГарантияКонтекстноеМеню" id="40"/>
+			<ExtendedTooltip name="ГарантияРасширеннаяПодсказка" id="41"/>
+		</InputField>
+		<UsualGroup name="ГруппаМобильныйПостроитель" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Реквизиты для мобильного построителя</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа мобильный построитель</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>HorizontalIfPossible</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Button</ControlRepresentation>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаМобильныйПостроительРасширеннаяПодсказка" id="29"/>
+			<ChildItems>
+				<InputField name="МобильныйПостроитель_id" id="33">
+					<DataPath>Объект.МобильныйПостроитель_Код</DataPath>
+					<ContextMenu name="МобильныйПостроитель_idКонтекстноеМеню" id="34"/>
+					<ExtendedTooltip name="МобильныйПостроитель_idРасширеннаяПодсказка" id="35"/>
+				</InputField>
+				<InputField name="МобильныйПостроитель_Группа" id="30">
+					<DataPath>Объект.МобильныйПостроитель_Группа</DataPath>
+					<ContextMenu name="МобильныйПостроитель_ГруппаКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="МобильныйПостроитель_ГруппаРасширеннаяПодсказка" id="32"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Фактура</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МаксимальноеЗначение</dataPath>
+			<field>МаксимальноеЗначение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МинимальноеЗначение</dataPath>
+			<field>МинимальноеЗначение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Аналитика1</dataPath>
+			<field>Аналитика1</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Аналитика2</dataPath>
+			<field>Аналитика2</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Аналитика3</dataPath>
+			<field>Аналитика3</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодДетализации</dataPath>
+			<field>ПериодДетализации</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидСтатистики</dataPath>
+			<field>ВидСтатистики</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИА_ПериодКвоты</dataPath>
+			<field>ИА_ПериодКвоты</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИА_ТипКвоты</dataPath>
+			<field>ИА_ТипКвоты</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ИА_НастройкиРабочегоСтолаСтатистикСтатистики.ВидСтатистики,
+	ИА_НастройкиРабочегоСтолаСтатистикСтатистики.Аналитика1,
+	ИА_НастройкиРабочегоСтолаСтатистикСтатистики.Аналитика2,
+	ИА_НастройкиРабочегоСтолаСтатистикСтатистики.Аналитика3,
+	ИА_НастройкиРабочегоСтолаСтатистикСтатистики.ПериодДетализации КАК ПериодДетализации,
+	ИА_НастройкиРабочегоСтолаСтатистикСтатистики.МинимальноеЗначение КАК МинимальноеЗначение,
+	ИА_НастройкиРабочегоСтолаСтатистикСтатистики.МаксимальноеЗначение КАК МаксимальноеЗначение,
+	ИА_НастройкиРабочегоСтолаСтатистикСтатистики.ИА_ТипКвоты,
+	ИА_НастройкиРабочегоСтолаСтатистикСтатистики.ИА_ПериодКвоты
+ИЗ
+	Справочник.ИА_НастройкиРабочегоСтолаСтатистик.Статистики КАК ИА_НастройкиРабочегоСтолаСтатистикСтатистики
+
+УПОРЯДОЧИТЬ ПО
+	ИА_НастройкиРабочегоСтолаСтатистикСтатистики.НомерСтроки</query>
+	</dataSet>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows"/>
+	</settingsVariant>
+</DataCompositionSchema>

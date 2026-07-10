@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаОтметитьВсе" id="9">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.Command.ОтметитьВсе</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.CheckAll</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаОтметитьВсеExtendedTooltip" id="11"/>
+			</Button>
+			<Button name="ФормаСнятьВсе" id="10">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.Command.СнятьВсе</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаСнятьВсеExtendedTooltip" id="12"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="СписокПользователей" id="1">
+			<Representation>List</Representation>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>СписокПользователей</DataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СписокПользователейКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СписокПользователейКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокПользователейExtendedTooltip" id="13"/>
+			<SearchStringAddition name="СписокПользователейСтрокаПоиска" id="17">
+				<AdditionSource>
+					<Item>СписокПользователей</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокПользователейСтрокаПоискаКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="СписокПользователейСтрокаПоискаРасширеннаяПодсказка" id="19"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокПользователейСостояниеПросмотра" id="20">
+				<AdditionSource>
+					<Item>СписокПользователей</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокПользователейСостояниеПросмотраКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="СписокПользователейСостояниеПросмотраРасширеннаяПодсказка" id="22"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокПользователейУправлениеПоиском" id="23">
+				<AdditionSource>
+					<Item>СписокПользователей</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокПользователейУправлениеПоискомКонтекстноеМеню" id="24"/>
+				<ExtendedTooltip name="СписокПользователейУправлениеПоискомРасширеннаяПодсказка" id="25"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<CheckBoxField name="СписокПользователейФлаг" id="4">
+					<DataPath>СписокПользователей.Флаг</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СписокПользователейФлагКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="СписокПользователейФлагExtendedTooltip" id="14"/>
+				</CheckBoxField>
+				<InputField name="СписокПользователейПользователь" id="6">
+					<DataPath>СписокПользователей.Пользователь</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СписокПользователейПользовательКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="СписокПользователейПользовательExtendedTooltip" id="15"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<Button name="ОК" id="8">
+			<Type>UsualButton</Type>
+			<Representation>PictureAndText</Representation>
+			<CommandName>Form.Command.ОК</CommandName>
+			<Picture>
+				<xr:Ref>StdPicture.SaveFile</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<ExtendedTooltip name="ОКExtendedTooltip" id="16"/>
+		</Button>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="СписокПользователей" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список пользователей</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Список пользователей</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>az</v8:lang>
+					<v8:content>Список пользователей</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>be</v8:lang>
+					<v8:content>Список пользователей</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>kk</v8:lang>
+					<v8:content>Список пользователей</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ky</v8:lang>
+					<v8:content>Список пользователей</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>md</v8:lang>
+					<v8:content>Список пользователей</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tg</v8:lang>
+					<v8:content>Список пользователей</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tk</v8:lang>
+					<v8:content>Список пользователей</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uz</v8:lang>
+					<v8:content>Список пользователей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Флаг" id="1">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Пользователь" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователь</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Пользователь</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>az</v8:lang>
+							<v8:content>Пользователь</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>be</v8:lang>
+							<v8:content>Пользователь</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>kk</v8:lang>
+							<v8:content>Пользователь</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ky</v8:lang>
+							<v8:content>Пользователь</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>md</v8:lang>
+							<v8:content>Пользователь</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tg</v8:lang>
+							<v8:content>Пользователь</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tk</v8:lang>
+							<v8:content>Пользователь</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uz</v8:lang>
+							<v8:content>Пользователь</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Инструкция" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Инструкция</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Инструкция</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>az</v8:lang>
+					<v8:content>Инструкция</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>be</v8:lang>
+					<v8:content>Инструкция</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>kk</v8:lang>
+					<v8:content>Инструкция</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ky</v8:lang>
+					<v8:content>Инструкция</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>md</v8:lang>
+					<v8:content>Инструкция</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tg</v8:lang>
+					<v8:content>Инструкция</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tk</v8:lang>
+					<v8:content>Инструкция</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uz</v8:lang>
+					<v8:content>Инструкция</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ИА_Инструкции</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОК" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>az</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>be</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>kk</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ky</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>md</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tg</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tk</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uz</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>az</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>be</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>kk</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ky</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>md</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tg</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tk</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uz</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОК</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтметитьВсе" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>az</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>be</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>kk</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ky</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>md</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tg</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tk</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uz</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>az</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>be</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>kk</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ky</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>md</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tg</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tk</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uz</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтметитьВсе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СнятьВсе" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>az</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>be</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>kk</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ky</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>md</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tg</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tk</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uz</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>az</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>be</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>kk</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ky</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>md</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tg</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tk</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uz</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СнятьВсе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

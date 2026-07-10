@@ -1,0 +1,938 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<CommandSet>
+		<ExcludedCommand>Copy</ExcludedCommand>
+		<ExcludedCommand>Create</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Popup name="МонтажПодменюСоздать" id="202">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Создать</v8:content>
+					</v8:item>
+				</Title>
+				<Picture>
+					<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="МонтажПодменюСоздатьРасширеннаяПодсказка" id="203"/>
+				<ChildItems>
+					<Button name="МонтажиСоздатьМонтажМонтаж" id="204">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СоздатьМонтажМонтаж</CommandName>
+						<ExtendedTooltip name="МонтажиСоздатьМонтажМонтажРасширеннаяПодсказка" id="205"/>
+					</Button>
+					<Button name="МонтажиСоздатьМонтажПродажа" id="206">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СоздатьМонтажПродажа</CommandName>
+						<ExtendedTooltip name="МонтажиСоздатьМонтажПродажаРасширеннаяПодсказка" id="207"/>
+					</Button>
+					<Button name="МонтажиСоздатьМонтажРекламация" id="208">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СоздатьМонтажРекламация</CommandName>
+						<ExtendedTooltip name="МонтажиСоздатьМонтажРекламацияРасширеннаяПодсказка" id="209"/>
+					</Button>
+					<Button name="МонтажиСоздатьМонтажСервис" id="210">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СоздатьМонтажСервис</CommandName>
+						<ExtendedTooltip name="МонтажиСоздатьМонтажСервисРасширеннаяПодсказка" id="211"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+			<Button name="ФормаСкопировать" id="212">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Item.Список.StandardCommand.Copy</CommandName>
+				<ExtendedTooltip name="ФормаСкопироватьРасширеннаяПодсказка" id="213"/>
+			</Button>
+			<Popup name="ПодменюПечать" id="186">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Печать</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Команды печати</v8:content>
+					</v8:item>
+				</ToolTip>
+				<Picture>
+					<xr:Ref>StdPicture.Print</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ПодменюПечатьРасширеннаяПодсказка" id="187"/>
+			</Popup>
+			<Popup name="ПодменюСоздатьНаОсновании" id="188">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Создать на основании</v8:content>
+					</v8:item>
+				</Title>
+				<Picture>
+					<xr:Ref>CommonPicture.ЗаполнитьПоШаблону</xr:Ref>
+					<xr:LoadTransparent>false</xr:LoadTransparent>
+				</Picture>
+				<Representation>Text</Representation>
+				<ExtendedTooltip name="ПодменюСоздатьНаОснованииРасширеннаяПодсказка" id="189"/>
+				<ChildItems>
+					<ButtonGroup name="ПодменюСоздатьНаОснованииВажное" id="190">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Создать на основании (Важное)</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ПодменюСоздатьНаОснованииВажноеРасширеннаяПодсказка" id="191"/>
+					</ButtonGroup>
+					<ButtonGroup name="ПодменюСоздатьНаОснованииОбычное" id="192">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Создать на основании (Обычное)</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ПодменюСоздатьНаОснованииОбычноеРасширеннаяПодсказка" id="193"/>
+					</ButtonGroup>
+					<ButtonGroup name="ПодменюСоздатьНаОснованииСмТакже" id="194">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Создать на основании (См. также)</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ПодменюСоздатьНаОснованииСмТакжеРасширеннаяПодсказка" id="195"/>
+					</ButtonGroup>
+				</ChildItems>
+			</Popup>
+			<Popup name="ПодменюУстановитьНастроитьСостояниеОригинала" id="252">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Состояние оригинала</v8:content>
+					</v8:item>
+				</Title>
+				<Picture>
+					<xr:Ref>CommonPicture.УстановитьСостояниеОригиналаПервичногоДокумента</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Representation>Picture</Representation>
+				<ExtendedTooltip name="ПодменюУстановитьНастроитьСостояниеОригиналаРасширеннаяПодсказка" id="253"/>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<Representation>WeakSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="2"/>
+		</UsualGroup>
+		<Table name="Список" id="3">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<CommandSet>
+				<ExcludedCommand>Create</ExcludedCommand>
+			</CommandSet>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокКонтекстноеМеню" id="4">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Popup name="МонтажиКонтекстноеМенюПодменюСоздать" id="214">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Создать</v8:content>
+							</v8:item>
+						</Title>
+						<Picture>
+							<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="МонтажиКонтекстноеМенюПодменюСоздатьРасширеннаяПодсказка" id="215"/>
+						<ChildItems>
+							<Button name="МонтажиКонтекстноеМенюСоздатьМонтажМонтаж" id="216">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СоздатьМонтажМонтаж</CommandName>
+								<ExtendedTooltip name="МонтажиКонтекстноеМенюСоздатьМонтажМонтажРасширеннаяПодсказка" id="217"/>
+							</Button>
+							<Button name="МонтажиКонтекстноеМенюСоздатьМонтажПродажа" id="218">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СоздатьМонтажПродажа</CommandName>
+								<ExtendedTooltip name="МонтажиКонтекстноеМенюСоздатьМонтажПродажаРасширеннаяПодсказка" id="219"/>
+							</Button>
+							<Button name="МонтажиКонтекстноеМенюСоздатьМонтажРекламация" id="220">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СоздатьМонтажРекламация</CommandName>
+								<ExtendedTooltip name="МонтажиКонтекстноеМенюСоздатьМонтажРекламацияРасширеннаяПодсказка" id="221"/>
+							</Button>
+							<Button name="МонтажиКонтекстноеМенюСоздатьМонтажСервис" id="222">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СоздатьМонтажСервис</CommandName>
+								<ExtendedTooltip name="МонтажиКонтекстноеМенюСоздатьМонтажСервисРасширеннаяПодсказка" id="223"/>
+							</Button>
+						</ChildItems>
+					</Popup>
+					<ButtonGroup name="МонтажиКонтекстноеМенюГруппаОсновное" id="224">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заказ договоры контекстное меню группа основное</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="МонтажиКонтекстноеМенюГруппаОсновноеРасширеннаяПодсказка" id="225"/>
+						<ChildItems>
+							<Button name="МонтажиКонтекстноеМенюСкопировать" id="226">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Список.StandardCommand.Copy</CommandName>
+								<ExtendedTooltip name="МонтажиКонтекстноеМенюСкопироватьРасширеннаяПодсказка" id="227"/>
+							</Button>
+							<Button name="МонтажиКонтекстноеМенюИзменить" id="228">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Список.StandardCommand.Change</CommandName>
+								<ExtendedTooltip name="МонтажиКонтекстноеМенюИзменитьРасширеннаяПодсказка" id="229"/>
+							</Button>
+							<Button name="МонтажиКонтекстноеМенюУстановитьПометкуУдаления" id="230">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Список.StandardCommand.SetDeletionMark</CommandName>
+								<ExtendedTooltip name="МонтажиКонтекстноеМенюУстановитьПометкуУдаленияРасширеннаяПодсказка" id="231"/>
+							</Button>
+							<ButtonGroup name="МонтажиГруппаУстановитьИнтервалКонтекст" id="232">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Список группа установить интервал</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="МонтажиГруппаУстановитьИнтервалКонтекстРасширеннаяПодсказка" id="233"/>
+								<ChildItems>
+									<Button name="МонтажиУстановитьИнтервалКонтекст" id="234">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.Список.StandardCommand.SetDateInterval</CommandName>
+										<Picture>
+											<xr:Ref>StdPicture.SetDateInterval</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<ExtendedTooltip name="МонтажиУстановитьИнтервалКонтекстРасширеннаяПодсказка" id="235"/>
+									</Button>
+								</ChildItems>
+							</ButtonGroup>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="МонтажиКонтекстноеМенюГруппаДополнительно" id="236">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заказ договоры контекстное меню группа дополнительно</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="МонтажиКонтекстноеМенюГруппаДополнительноРасширеннаяПодсказка" id="237"/>
+						<ChildItems>
+							<Button name="МонтажиКонтекстноеМенюПровести" id="238">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Список.StandardCommand.Post</CommandName>
+								<ExtendedTooltip name="МонтажиКонтекстноеМенюПровестиРасширеннаяПодсказка" id="239"/>
+							</Button>
+							<Button name="МонтажиКонтекстноеМенюОтменаПроведения" id="240">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Список.StandardCommand.UndoPosting</CommandName>
+								<ExtendedTooltip name="МонтажиКонтекстноеМенюОтменаПроведенияРасширеннаяПодсказка" id="241"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="МонтажиГруппаПоискКонтекст" id="242">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Список группа поиск</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="МонтажиГруппаПоискКонтекстРасширеннаяПодсказка" id="243"/>
+						<ChildItems>
+							<Button name="МонтажиПоискПоТекущемуЗначениюКонтекст" id="244">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Список.StandardCommand.FindByCurrentValue</CommandName>
+								<ExtendedTooltip name="МонтажиПоискПоТекущемуЗначениюКонтекстРасширеннаяПодсказка" id="245"/>
+							</Button>
+							<Button name="МонтажиНайтиКонтекст" id="246">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Список.StandardCommand.Find</CommandName>
+								<ExtendedTooltip name="МонтажиНайтиКонтекстРасширеннаяПодсказка" id="247"/>
+							</Button>
+							<Button name="МонтажиОтменитьПоискКонтекст" id="248">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Список.StandardCommand.CancelSearch</CommandName>
+								<ExtendedTooltip name="МонтажиОтменитьПоискКонтекстРасширеннаяПодсказка" id="249"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<Button name="МонтажиКонтекстноеМенюКопироватьВБуферОбмена" id="250">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.Список.StandardCommand.CopyToClipboard</CommandName>
+						<ExtendedTooltip name="МонтажиКонтекстноеМенюКопироватьВБуферОбменаРасширеннаяПодсказка" id="251"/>
+					</Button>
+				</ChildItems>
+			</ContextMenu>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="5">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="6"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="7">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="10"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="11"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="12">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="16"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="17">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="20"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="21"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">СписокВыбор</Event>
+				<Event name="OnGetDataAtServer">СписокПриПолученииДанныхНаСервере</Event>
+			</Events>
+			<ChildItems>
+				<PictureField name="ОбеспечениеМатериалами" id="160">
+					<DataPath>Список.ОбеспечениеМатериалами</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Обеспечение материалами:
+(пусто) - не требуется
+зеленый незакрашенный - не обеспечен
+зеленый закрашенный - обеспечен полностью
+зеленый частично закрашенный - частично обеспечен
+красный частично закрашенный - обеспечено больше, чем требуется</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HeaderPicture>
+						<xr:Ref>StdPicture.LoadReportSettings</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<Width>4</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.СостояниеЗаказа</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="ОбеспечениеМатериаламиКонтекстноеМеню" id="161"/>
+					<ExtendedTooltip name="ОбеспечениеМатериаламиРасширеннаяПодсказка" id="162"/>
+				</PictureField>
+				<PictureField name="СоответствиеДоговору" id="169">
+					<DataPath>Список.СоответствиеДоговору</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Соответствие заказ-договору:
+пустое - соответствует
+восклицательный знак - не соответствует</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HeaderPicture>
+						<xr:Ref>StdPicture.CheckSyntax</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<Width>4</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.Предупреждение</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="СоответствиеДоговоруКонтекстноеМеню" id="170"/>
+					<ExtendedTooltip name="СоответствиеДоговоруРасширеннаяПодсказка" id="171"/>
+				</PictureField>
+				<PictureField name="СостояниеОплаты" id="196">
+					<DataPath>Список.СостояниеОплаты</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние оплаты</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HeaderPicture>
+						<xr:Ref>CommonPicture.Монеты</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<Width>2</Width>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.СостояниеЗаказа</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="СостояниеОплатыКонтекстноеМеню" id="197"/>
+					<ExtendedTooltip name="СостояниеОплатыРасширеннаяПодсказка" id="198"/>
+				</PictureField>
+				<LabelField name="Дата" id="145">
+					<DataPath>Список.Дата</DataPath>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="146"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="147"/>
+				</LabelField>
+				<LabelField name="Номер" id="25">
+					<DataPath>Список.Номер</DataPath>
+					<ContextMenu name="НомерКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="27"/>
+				</LabelField>
+				<LabelField name="ДатаМонтажа" id="199">
+					<DataPath>Список.ДатаМонтажа</DataPath>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=dd.MM.yyyy</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="ДатаМонтажаКонтекстноеМеню" id="200"/>
+					<ExtendedTooltip name="ДатаМонтажаРасширеннаяПодсказка" id="201"/>
+				</LabelField>
+				<LabelField name="ВидОперации" id="166">
+					<DataPath>Список.ВидОперации</DataPath>
+					<ContextMenu name="ВидОперацииКонтекстноеМеню" id="167"/>
+					<ExtendedTooltip name="ВидОперацииРасширеннаяПодсказка" id="168"/>
+				</LabelField>
+				<LabelField name="Контрагент" id="34">
+					<DataPath>Список.Контрагент</DataPath>
+					<ContextMenu name="КонтрагентКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="36"/>
+				</LabelField>
+				<LabelField name="Адрес" id="37">
+					<DataPath>Список.Адрес</DataPath>
+					<ContextMenu name="АдресКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="АдресРасширеннаяПодсказка" id="39"/>
+				</LabelField>
+				<LabelField name="Бригада" id="31">
+					<DataPath>Список.Бригада</DataPath>
+					<ContextMenu name="БригадаКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="БригадаРасширеннаяПодсказка" id="33"/>
+				</LabelField>
+				<LabelField name="Результат" id="52">
+					<DataPath>Список.Результат</DataPath>
+					<ContextMenu name="РезультатКонтекстноеМеню" id="53"/>
+					<ExtendedTooltip name="РезультатРасширеннаяПодсказка" id="54"/>
+				</LabelField>
+				<LabelField name="ДатаНачалаМонтажа" id="180">
+					<DataPath>Список.ДатаНачалаМонтажа</DataPath>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ='dd.MM.yy HH:mm'</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="ДатаНачалаМонтажаКонтекстноеМеню" id="181"/>
+					<ExtendedTooltip name="ДатаНачалаМонтажаРасширеннаяПодсказка" id="182"/>
+				</LabelField>
+				<LabelField name="ДатаОкончанияМонтажа" id="183">
+					<DataPath>Список.ДатаОкончанияМонтажа</DataPath>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ='dd.MM.yy HH:mm'</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="ДатаОкончанияМонтажаКонтекстноеМеню" id="184"/>
+					<ExtendedTooltip name="ДатаОкончанияМонтажаРасширеннаяПодсказка" id="185"/>
+				</LabelField>
+				<LabelField name="СуммаДокумента" id="49">
+					<DataPath>Список.СуммаДокумента</DataPath>
+					<ContextMenu name="СуммаДокументаКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="СуммаДокументаРасширеннаяПодсказка" id="51"/>
+				</LabelField>
+				<LabelField name="ДатаВыполнения" id="148">
+					<DataPath>Список.ДатаВыполнения</DataPath>
+					<ContextMenu name="ДатаВыполненияКонтекстноеМеню" id="149"/>
+					<ExtendedTooltip name="ДатаВыполненияРасширеннаяПодсказка" id="150"/>
+				</LabelField>
+				<LabelField name="ДатаЗакрытия" id="172">
+					<DataPath>Список.ДатаЗакрытия</DataPath>
+					<ContextMenu name="ДатаЗакрытияКонтекстноеМеню" id="173"/>
+					<ExtendedTooltip name="ДатаЗакрытияРасширеннаяПодсказка" id="174"/>
+				</LabelField>
+				<LabelField name="Подразделение" id="151">
+					<DataPath>Список.Подразделение</DataPath>
+					<ContextMenu name="ПодразделениеКонтекстноеМеню" id="152"/>
+					<ExtendedTooltip name="ПодразделениеРасширеннаяПодсказка" id="153"/>
+				</LabelField>
+				<LabelField name="Ссылка" id="163">
+					<DataPath>Список.Ссылка</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="СсылкаКонтекстноеМеню" id="164"/>
+					<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="165"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>~Список.Ref</Field>
+				<Field>Список.ОбщееСостояние</Field>
+				<Field>Список.СостояниеОригиналаПервичногоДокумента</Field>
+				<Field>Список.Ссылка</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДокументМонтаж.Ссылка КАК Ссылка,
+	ДокументМонтаж.ПометкаУдаления КАК ПометкаУдаления,
+	ДокументМонтаж.Номер КАК Номер,
+	ДокументМонтаж.Дата КАК Дата,
+	ДокументМонтаж.Проведен КАК Проведен,
+	ДокументМонтаж.Адрес КАК Адрес,
+	ДокументМонтаж.Бригада КАК Бригада,
+	ДокументМонтаж.Бригадир КАК Бригадир,
+	ДокументМонтаж.Валюта КАК Валюта,
+	ДокументМонтаж.ВидЦен КАК ВидЦен,
+	ДокументМонтаж.ВремяНачала КАК ВремяНачала,
+	ДокументМонтаж.ВремяОкончания КАК ВремяОкончания,
+	ДокументМонтаж.ДатаМонтажа КАК ДатаМонтажа,
+	ВЫБОР 
+	    КОГДА ДокументМонтаж.СрокМонтажа = ЗНАЧЕНИЕ(Перечисление.СрокиМонтажа.ДатаМонтажаНеОпределена)
+	    ТОГДА ИСТИНА
+	    ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК ДатаМонтажаНеОпределена,
+	ВЫБОР 
+		КОГДА ДокументМонтаж.СрокМонтажа = ЗНАЧЕНИЕ(Перечисление.СрокиМонтажа.МонтажНаНесколькоДней)
+		ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК НаНесколькоДней,	
+	ДокументМонтаж.СрокМонтажа КАК СрокМонтажа,
+	// №12802 ДокументМонтаж.ДатаСоздания КАК ДатаСоздания,
+	ДокументМонтаж.ДисконтнаяКарта КАК ДисконтнаяКарта,
+	ДокументМонтаж.ДоговорКонтрагента КАК ДоговорКонтрагента,
+	ДокументМонтаж.КомментарийКМонтажу КАК КомментарийКМонтажу,
+	ДокументМонтаж.Контрагент КАК Контрагент,
+	ДокументМонтаж.Организация КАК Организация,
+	ДокументМонтаж.Основание КАК Основание,
+	ДокументМонтаж.Автор КАК Автор,
+	ДокументМонтаж.Подразделение КАК Подразделение,
+	ДокументМонтаж.Результат КАК Результат,
+	ДокументМонтаж.Склад КАК Склад,
+	ДокументМонтаж.СкладТоваров КАК СкладТоваров,
+	ДокументМонтаж.СтатьяДоходов КАК СтатьяДоходов,
+	ДокументМонтаж.СтатьяРасходов КАК СтатьяРасходов,
+	ДокументМонтаж.СуммаДокумента КАК СуммаДокумента,
+	ДокументМонтаж.СуммаДополнительныхЗатрат КАК СуммаДополнительныхЗатрат,
+	ДокументМонтаж.УДАЛИТЬ_ДатаВыполнения КАК УДАЛИТЬ_ДатаВыполнения,
+	ДокументМонтаж.МоментВремени КАК МоментВремени,
+	ВЫБОР
+		КОГДА ПотребностьВМатериалахДляМонтажаОбороты.КоличествоПриход = 0
+			ТОГДА -1
+		КОГДА ПотребностьВМатериалахДляМонтажаОбороты.КоличествоРасход = 0
+			ТОГДА 2
+		КОГДА ПотребностьВМатериалахДляМонтажаОбороты.КоличествоПриход = ПотребностьВМатериалахДляМонтажаОбороты.КоличествоРасход
+			ТОГДА 0
+		КОГДА ПотребностьВМатериалахДляМонтажаОбороты.КоличествоПриход &gt; ПотребностьВМатериалахДляМонтажаОбороты.КоличествоРасход
+			ТОГДА 1
+		КОГДА ПотребностьВМатериалахДляМонтажаОбороты.КоличествоПриход &lt; ПотребностьВМатериалахДляМонтажаОбороты.КоличествоРасход
+			ТОГДА 5
+		ИНАЧЕ -1
+	КОНЕЦ КАК ОбеспечениеМатериалами,
+	ДокументМонтаж.ВидОперации КАК ВидОперации,
+	ВЫБОР
+		КОГДА СоответствиеДоговораИМонтажей.Монтаж ЕСТЬ NULL
+			ТОГДА -1
+		ИНАЧЕ 0
+	КОНЕЦ КАК СоответствиеДоговору,
+	ДокументМонтаж.ДатаВыполнения КАК ДатаВыполнения,
+	ДокументМонтаж.ДатаЗакрытия КАК ДатаЗакрытия,
+	//++ №11520 дата и время монтажа вместе
+	ДОБАВИТЬКДАТЕ(ДокументМонтаж.ДатаМонтажа, СЕКУНДА, РАЗНОСТЬДАТ(ДАТАВРЕМЯ(1,1,1), ДокументМонтаж.ВремяНачала, СЕКУНДА)) КАК ДатаНачалаМонтажа,
+	ВЫБОР
+		КОГДА ДокументМонтаж.СрокМонтажа = ЗНАЧЕНИЕ(Перечисление.СрокиМонтажа.МонтажНаНесколькоДней)
+			ТОГДА ЕСТЬNULL(ДатыМонтажей.ДатаОкончания, ДАТАВРЕМЯ(1,1,1))
+		ИНАЧЕ ДОБАВИТЬКДАТЕ(ДокументМонтаж.ДатаМонтажа, СЕКУНДА, РАЗНОСТЬДАТ(ДАТАВРЕМЯ(1,1,1), ДокументМонтаж.ВремяОкончания, СЕКУНДА))
+	КОНЕЦ КАК ДатаОкончанияМонтажа ,
+	//-- №11520
+	
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ДокументМонтаж.СуммаДокумента, 0) = 0
+				ИЛИ ЕСТЬNULL(РасчетыПоЗаказамОбороты.СуммаРасход, 0) = 0
+			ТОГДА 2
+		ИНАЧЕ ВЫБОР
+				КОГДА ЕСТЬNULL(ДокументМонтаж.СуммаДокумента, 0) &lt;= ЕСТЬNULL(РасчетыПоЗаказамОбороты.СуммаРасход, 0)
+						И ЕСТЬNULL(РасчетыПоЗаказамОбороты.СуммаРасход, 0) &gt; 0
+					ТОГДА 0
+				ИНАЧЕ 1
+			КОНЕЦ
+	КОНЕЦ КАК СостояниеОплаты,
+	
+	NULL КАК СостояниеОригиналаПервичногоДокумента,
+	ИСТИНА КАК ОбщееСостояние,
+	0 КАК СостояниеОригиналПолучен
+ИЗ
+	Документ.Монтаж КАК ДокументМонтаж
+		
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ПотребностьВМатериалахДляМонтажа.Обороты() КАК ПотребностьВМатериалахДляМонтажаОбороты
+		ПО ДокументМонтаж.Ссылка = ПотребностьВМатериалахДляМонтажаОбороты.Монтаж
+		
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СоответствиеДоговораИМонтажей КАК СоответствиеДоговораИМонтажей
+		ПО ДокументМонтаж.Ссылка = СоответствиеДоговораИМонтажей.Монтаж
+		
+		{ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.РасчетыПоЗаказам.Обороты КАК РасчетыПоЗаказамОбороты
+		ПО ДокументМонтаж.Ссылка = РасчетыПоЗаказамОбороты.Заказ}
+		
+		//++ №11520 дата окончания монтажа может быть другой, если он на несколько дней
+		ЛЕВОЕ СОЕДИНЕНИЕ (
+			ВЫБРАТЬ
+				ГрафикМонтажей.Ссылка КАК МонтажСсылка,
+				МАКСИМУМ(ДОБАВИТЬКДАТЕ(ГрафикМонтажей.ДатаМонтажа, СЕКУНДА, РАЗНОСТЬДАТ(ДАТАВРЕМЯ(1,1,1), ГрафикМонтажей.ВремяОкончания, СЕКУНДА))) КАК ДатаОкончания
+			ИЗ
+				Документ.Монтаж.ГрафикМонтажей КАК ГрафикМонтажей
+			
+			СГРУППИРОВАТЬ ПО
+				ГрафикМонтажей.Ссылка) КАК ДатыМонтажей
+		ПО ДокументМонтаж.Ссылка = ДатыМонтажей.МонтажСсылка
+		//-- №11520
+		</QueryText>
+				<MainTable>Document.Монтаж</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Дата</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ДатаМонтажаНеОпределена</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemGroup">
+									<dcsset:groupType>AndGroup</dcsset:groupType>
+									<dcsset:item xsi:type="dcsset:FilterItemComparison">
+										<dcsset:left xsi:type="dcscor:Field">Проведен</dcsset:left>
+										<dcsset:comparisonType>Equal</dcsset:comparisonType>
+										<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+									</dcsset:item>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">#FFFF00</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СоздатьМонтажМонтаж" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Монтаж</v8:content>
+				</v8:item>
+			</Title>
+			<Action>СоздатьМонтаж</Action>
+		</Command>
+		<Command name="СоздатьМонтажПродажа" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Продажа</v8:content>
+				</v8:item>
+			</Title>
+			<Action>СоздатьМонтаж</Action>
+		</Command>
+		<Command name="СоздатьМонтажРекламация" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рекламация</v8:content>
+				</v8:item>
+			</Title>
+			<Action>СоздатьМонтаж</Action>
+		</Command>
+		<Command name="СоздатьМонтажСервис" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сервисная заявка</v8:content>
+				</v8:item>
+			</Title>
+			<Action>СоздатьМонтаж</Action>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<CommandBar>
+			<Item>
+				<Command>Document.ОплатаБанковскойКартой.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.ПриходныйКассовыйОрдер.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormCommandBarCreateBasedOn</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.НачислениеЗарплаты.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Report.АнализОбеспеченностиРозницы.Command.АнализОбеспеченностиРозницы</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>BusinessProcess.Задание.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.ЗаказПоставщику.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.НачислениеЗарплаты.Command.СоздатьНаОснованииНачислениеЗарплаты</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.ЗаявкаНаРасходованиеДенежныхСредств.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.ОплатаБанковскойКартой.Command.СоздатьНаОснованииОплатаБанковскойКартой</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.ПоступлениеТоваровИУслуг.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.РасходныйКассовыйОрдер.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.СнятиеРезервов.Command.СоздатьНаОснованииСнятиеРезервов</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.СписаниеСРасчетногоСчета.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.СчетФактураВыданный.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.Штраф.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.Резервирование.Command.СоздатьНаОснованииРезервирование</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.Премия.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.ПриходныйКассовыйОрдер.Command.СоздатьНаОснованииПриходныйКассовыйОрдер</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.ПлатежноеПоручениеИсходящее.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.ПеремещениеТоваров.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.ВыплатаЗарплатыВНатуральнойФорме.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.ПоступлениеНаРасчетныйСчет.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.Резервирование.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.СнятиеРезервов.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.ОприходованиеТоваров.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</CommandBar>
+	</CommandInterface>
+</Form>

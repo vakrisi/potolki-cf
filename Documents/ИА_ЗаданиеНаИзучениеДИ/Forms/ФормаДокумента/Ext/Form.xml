@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<ScalingMode>Compact</ScalingMode>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="72">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="73"/>
+			<ChildItems>
+				<InputField name="Дата" id="1">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Автор" id="4">
+					<DataPath>Объект.Автор</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="АвторКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="Сотрудник" id="7">
+					<DataPath>Объект.Сотрудник</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СотрудникКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="СотрудникРасширеннаяПодсказка" id="9"/>
+				</InputField>
+				<InputField name="Срок" id="74">
+					<DataPath>Объект.Срок</DataPath>
+					<ContextMenu name="СрокКонтекстноеМеню" id="75"/>
+					<ExtendedTooltip name="СрокРасширеннаяПодсказка" id="76"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="Инструкции" id="14">
+			<Representation>List</Representation>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.Инструкции</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ИнструкцииКонтекстноеМеню" id="15"/>
+			<AutoCommandBar name="ИнструкцииКоманднаяПанель" id="16">
+				<ChildItems>
+					<Button name="ИнструкцииЗаполнитьВсемиДоступными" id="77">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ЗаполнитьВсемиДоступными</CommandName>
+						<ExtendedTooltip name="ИнструкцииЗаполнитьВсемиДоступнымиРасширеннаяПодсказка" id="78"/>
+					</Button>
+					<Button name="ИнструкцииЗаполнитьНовыми" id="83">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ЗаполнитьНовыми</CommandName>
+						<ExtendedTooltip name="ИнструкцииЗаполнитьНовымиРасширеннаяПодсказка" id="84"/>
+					</Button>
+					<Button name="ИнструкцииКнопкаВверх" id="79">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.Инструкции.StandardCommand.MoveUp</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ИнструкцииКнопкаВверхРасширеннаяПодсказка" id="80"/>
+					</Button>
+					<Button name="ИнструкцииКнопкаВниз" id="81">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.Инструкции.StandardCommand.MoveDown</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="ИнструкцииКнопкаВнизРасширеннаяПодсказка" id="82"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ИнструкцииРасширеннаяПодсказка" id="17"/>
+			<SearchStringAddition name="ИнструкцииСтрокаПоиска" id="18">
+				<AdditionSource>
+					<Item>Инструкции</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ИнструкцииСтрокаПоискаКонтекстноеМеню" id="19"/>
+				<ExtendedTooltip name="ИнструкцииСтрокаПоискаРасширеннаяПодсказка" id="20"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ИнструкцииСостояниеПросмотра" id="21">
+				<AdditionSource>
+					<Item>Инструкции</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ИнструкцииСостояниеПросмотраКонтекстноеМеню" id="22"/>
+				<ExtendedTooltip name="ИнструкцииСостояниеПросмотраРасширеннаяПодсказка" id="23"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ИнструкцииУправлениеПоиском" id="24">
+				<AdditionSource>
+					<Item>Инструкции</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ИнструкцииУправлениеПоискомКонтекстноеМеню" id="25"/>
+				<ExtendedTooltip name="ИнструкцииУправлениеПоискомРасширеннаяПодсказка" id="26"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateRow">ИнструкцииПриАктивизацииСтроки</Event>
+				<Event name="AfterDeleteRow">ИнструкцииПослеУдаления</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="ИнструкцииНомерСтроки" id="27">
+					<DataPath>Объект.Инструкции.LineNumber</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ИнструкцииНомерСтрокиКонтекстноеМеню" id="28"/>
+					<ExtendedTooltip name="ИнструкцииНомерСтрокиРасширеннаяПодсказка" id="29"/>
+				</LabelField>
+				<InputField name="ИнструкцииИнструкция" id="30">
+					<DataPath>Объект.Инструкции.Инструкция</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ИнструкцииИнструкцияКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="ИнструкцииИнструкцияРасширеннаяПодсказка" id="32"/>
+					<Events>
+						<Event name="OnChange">ИнструкцииИнструкцияПриИзменении</Event>
+					</Events>
+				</InputField>
+				<CheckBoxField name="ИнструкцииИзучено" id="33">
+					<DataPath>Объект.Инструкции.Изучено</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ИнструкцииИзученоКонтекстноеМеню" id="34"/>
+					<ExtendedTooltip name="ИнструкцииИзученоРасширеннаяПодсказка" id="35"/>
+				</CheckBoxField>
+				<CheckBoxField name="ИнструкцииСдано" id="36">
+					<DataPath>Объект.Инструкции.Сдано</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ИнструкцииСданоКонтекстноеМеню" id="37"/>
+					<ExtendedTooltip name="ИнструкцииСданоРасширеннаяПодсказка" id="38"/>
+					<Events>
+						<Event name="OnChange">ИнструкцииСданоПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="ИнструкцииДатаСдачи" id="39">
+					<DataPath>Объект.Инструкции.ДатаСдачи</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ИнструкцииДатаСдачиКонтекстноеМеню" id="40"/>
+					<ExtendedTooltip name="ИнструкцииДатаСдачиРасширеннаяПодсказка" id="41"/>
+				</InputField>
+				<InputField name="ИнструкцииУИДстроки" id="42">
+					<DataPath>Объект.Инструкции.УИДстроки</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ИнструкцииУИДстрокиКонтекстноеМеню" id="43"/>
+					<ExtendedTooltip name="ИнструкцииУИДстрокиРасширеннаяПодсказка" id="44"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<Table name="Вопросы" id="47">
+			<Representation>List</Representation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.Вопросы</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ВопросыКонтекстноеМеню" id="48"/>
+			<AutoCommandBar name="ВопросыКоманднаяПанель" id="49">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ВопросыРасширеннаяПодсказка" id="50"/>
+			<SearchStringAddition name="ВопросыСтрокаПоиска" id="51">
+				<AdditionSource>
+					<Item>Вопросы</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ВопросыСтрокаПоискаКонтекстноеМеню" id="52"/>
+				<ExtendedTooltip name="ВопросыСтрокаПоискаРасширеннаяПодсказка" id="53"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ВопросыСостояниеПросмотра" id="54">
+				<AdditionSource>
+					<Item>Вопросы</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ВопросыСостояниеПросмотраКонтекстноеМеню" id="55"/>
+				<ExtendedTooltip name="ВопросыСостояниеПросмотраРасширеннаяПодсказка" id="56"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ВопросыУправлениеПоиском" id="57">
+				<AdditionSource>
+					<Item>Вопросы</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ВопросыУправлениеПоискомКонтекстноеМеню" id="58"/>
+				<ExtendedTooltip name="ВопросыУправлениеПоискомРасширеннаяПодсказка" id="59"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ВопросыНомерСтроки" id="60">
+					<DataPath>Объект.Вопросы.LineNumber</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ВопросыНомерСтрокиКонтекстноеМеню" id="61"/>
+					<ExtendedTooltip name="ВопросыНомерСтрокиРасширеннаяПодсказка" id="62"/>
+				</LabelField>
+				<InputField name="ВопросыВопрос" id="63">
+					<DataPath>Объект.Вопросы.Вопрос</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ВопросыВопросКонтекстноеМеню" id="64"/>
+					<ExtendedTooltip name="ВопросыВопросРасширеннаяПодсказка" id="65"/>
+				</InputField>
+				<InputField name="ВопросыОтвет" id="66">
+					<DataPath>Объект.Вопросы.Ответ</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ВопросыОтветКонтекстноеМеню" id="67"/>
+					<ExtendedTooltip name="ВопросыОтветРасширеннаяПодсказка" id="68"/>
+				</InputField>
+				<InputField name="ВопросыУИДстроки" id="69">
+					<DataPath>Объект.Вопросы.УИДстроки</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ВопросыУИДстрокиКонтекстноеМеню" id="70"/>
+					<ExtendedTooltip name="ВопросыУИДстрокиРасширеннаяПодсказка" id="71"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ИА_ЗаданиеНаИзучениеДИ</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаполнитьВсемиДоступными" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить всеми доступными</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить всеми доступными</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьВсемиДоступными</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаполнитьНовыми" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить новыми</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить новыми</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьНовыми</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>LockOwner</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ПеренестиВДокумент" id="1">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ПеренестиВДокумент</CommandName>
+				<ButtonImportance>Main</ButtonImportance>
+				<ExtendedTooltip name="ПеренестиВДокументРасширеннаяПодсказка" id="2"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="СписокНоменклатуры" id="3">
+			<HeightInTableRows>10</HeightInTableRows>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>СписокНоменклатуры</DataPath>
+			<RowPictureDataPath>СписокНоменклатуры.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокНоменклатурыКонтекстноеМеню" id="4"/>
+			<AutoCommandBar name="СписокНоменклатурыКоманднаяПанель" id="5">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокНоменклатурыРасширеннаяПодсказка" id="6"/>
+			<SearchStringAddition name="СписокНоменклатурыСтрокаПоиска" id="7">
+				<Enabled>false</Enabled>
+				<AdditionSource>
+					<Item>СписокНоменклатуры</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокНоменклатурыСтрокаПоискаКонтекстноеМеню" id="8"/>
+				<ExtendedTooltip name="СписокНоменклатурыСтрокаПоискаРасширеннаяПодсказка" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокНоменклатурыСостояниеПросмотра" id="10">
+				<Enabled>false</Enabled>
+				<AdditionSource>
+					<Item>СписокНоменклатуры</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокНоменклатурыСостояниеПросмотраКонтекстноеМеню" id="11"/>
+				<ExtendedTooltip name="СписокНоменклатурыСостояниеПросмотраРасширеннаяПодсказка" id="12"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокНоменклатурыУправлениеПоиском" id="13">
+				<Enabled>false</Enabled>
+				<AdditionSource>
+					<Item>СписокНоменклатуры</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокНоменклатурыУправлениеПоискомКонтекстноеМеню" id="14"/>
+				<ExtendedTooltip name="СписокНоменклатурыУправлениеПоискомРасширеннаяПодсказка" id="15"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateRow">СписокНоменклатурыПриАктивизацииСтроки</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="СписокНоменклатурыНоменклатураСсылка" id="16">
+					<DataPath>СписокНоменклатуры.НоменклатураСсылка</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СписокНоменклатурыНоменклатураСсылкаКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="СписокНоменклатурыНоменклатураСсылкаРасширеннаяПодсказка" id="18"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+		<Table name="СписокСпецификаций" id="19">
+			<Representation>List</Representation>
+			<HeightInTableRows>3</HeightInTableRows>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>СписокСпецификаций</DataPath>
+			<RowPictureDataPath>СписокСпецификаций.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокСпецификацийКонтекстноеМеню" id="20"/>
+			<AutoCommandBar name="СписокСпецификацийКоманднаяПанель" id="21">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокСпецификацийРасширеннаяПодсказка" id="22"/>
+			<SearchStringAddition name="СписокСпецификацийСтрокаПоиска" id="23">
+				<Enabled>false</Enabled>
+				<AdditionSource>
+					<Item>СписокСпецификаций</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСпецификацийСтрокаПоискаКонтекстноеМеню" id="24"/>
+				<ExtendedTooltip name="СписокСпецификацийСтрокаПоискаРасширеннаяПодсказка" id="25"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСпецификацийСостояниеПросмотра" id="26">
+				<Enabled>false</Enabled>
+				<AdditionSource>
+					<Item>СписокСпецификаций</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСпецификацийСостояниеПросмотраКонтекстноеМеню" id="27"/>
+				<ExtendedTooltip name="СписокСпецификацийСостояниеПросмотраРасширеннаяПодсказка" id="28"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокСпецификацийУправлениеПоиском" id="29">
+				<Enabled>false</Enabled>
+				<AdditionSource>
+					<Item>СписокСпецификаций</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСпецификацийУправлениеПоискомКонтекстноеМеню" id="30"/>
+				<ExtendedTooltip name="СписокСпецификацийУправлениеПоискомРасширеннаяПодсказка" id="31"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateRow">СписокСпецификацийПриАктивизацииСтроки</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="СписокСпецификацийСсылка" id="35">
+					<DataPath>СписокСпецификаций.Ref</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Спецификации</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СписокСпецификацийСсылкаКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="СписокСпецификацийСсылкаРасширеннаяПодсказка" id="37"/>
+				</LabelField>
+				<LabelField name="СписокСпецификацийВидСпецификации" id="69">
+					<DataPath>СписокСпецификаций.ВидСпецификации</DataPath>
+					<ContextMenu name="СписокСпецификацийВидСпецификацииКонтекстноеМеню" id="70"/>
+					<ExtendedTooltip name="СписокСпецификацийВидСпецификацииРасширеннаяПодсказка" id="71"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+		<Table name="СоставСпецификации" id="38">
+			<Representation>List</Representation>
+			<HeightInTableRows>5</HeightInTableRows>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>СоставСпецификации</DataPath>
+			<RowPictureDataPath>СоставСпецификации.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СоставСпецификацииКонтекстноеМеню" id="39"/>
+			<AutoCommandBar name="СоставСпецификацииКоманднаяПанель" id="40">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СоставСпецификацииРасширеннаяПодсказка" id="41"/>
+			<SearchStringAddition name="СоставСпецификацииСтрокаПоиска" id="42">
+				<Enabled>false</Enabled>
+				<AdditionSource>
+					<Item>СоставСпецификации</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставСпецификацииСтрокаПоискаКонтекстноеМеню" id="43"/>
+				<ExtendedTooltip name="СоставСпецификацииСтрокаПоискаРасширеннаяПодсказка" id="44"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СоставСпецификацииСостояниеПросмотра" id="45">
+				<Enabled>false</Enabled>
+				<AdditionSource>
+					<Item>СоставСпецификации</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставСпецификацииСостояниеПросмотраКонтекстноеМеню" id="46"/>
+				<ExtendedTooltip name="СоставСпецификацииСостояниеПросмотраРасширеннаяПодсказка" id="47"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СоставСпецификацииУправлениеПоиском" id="48">
+				<Enabled>false</Enabled>
+				<AdditionSource>
+					<Item>СоставСпецификации</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставСпецификацииУправлениеПоискомКонтекстноеМеню" id="49"/>
+				<ExtendedTooltip name="СоставСпецификацииУправлениеПоискомРасширеннаяПодсказка" id="50"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="СоставСпецификацииНоменклатура" id="63">
+					<DataPath>СоставСпецификации.Номенклатура</DataPath>
+					<ContextMenu name="СоставСпецификацииНоменклатураКонтекстноеМеню" id="64"/>
+					<ExtendedTooltip name="СоставСпецификацииНоменклатураРасширеннаяПодсказка" id="65"/>
+				</LabelField>
+				<LabelField name="СоставСпецификацииХарактеристикаНоменклатуры" id="66">
+					<DataPath>СоставСпецификации.ХарактеристикаНоменклатуры</DataPath>
+					<ContextMenu name="СоставСпецификацииХарактеристикаНоменклатурыКонтекстноеМеню" id="67"/>
+					<ExtendedTooltip name="СоставСпецификацииХарактеристикаНоменклатурыРасширеннаяПодсказка" id="68"/>
+				</LabelField>
+				<LabelField name="СоставСпецификацииЕдиницаИзмерения" id="54">
+					<DataPath>СоставСпецификации.ЕдиницаИзмерения</DataPath>
+					<ContextMenu name="СоставСпецификацииЕдиницаИзмеренияКонтекстноеМеню" id="55"/>
+					<ExtendedTooltip name="СоставСпецификацииЕдиницаИзмеренияРасширеннаяПодсказка" id="56"/>
+				</LabelField>
+				<LabelField name="СоставСпецификацииКоличество" id="57">
+					<DataPath>СоставСпецификации.Количество</DataPath>
+					<ContextMenu name="СоставСпецификацииКоличествоКонтекстноеМеню" id="58"/>
+					<ExtendedTooltip name="СоставСпецификацииКоличествоРасширеннаяПодсказка" id="59"/>
+				</LabelField>
+				<LabelField name="СоставСпецификацииКоэффициент" id="60">
+					<DataPath>СоставСпецификации.Коэффициент</DataPath>
+					<ContextMenu name="СоставСпецификацииКоэффициентКонтекстноеМеню" id="61"/>
+					<ExtendedTooltip name="СоставСпецификацииКоэффициентРасширеннаяПодсказка" id="62"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="СписокНоменклатуры" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список номенклатуры</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СправочникНоменклатура.Ссылка КАК НоменклатураСсылка
+ИЗ
+	Справочник.Номенклатура КАК СправочникНоменклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.Спецификации КАК СправочникСпецификации
+		ПО СправочникНоменклатура.Ссылка = СправочникСпецификации.Владелец
+			И СправочникСпецификации.ВидСпецификации = &amp;ВидСпецификации
+
+ГДЕ
+	//(
+	НЕ СправочникСпецификации.Ссылка ЕСТЬ NULL
+	//		ИЛИ 
+			//СправочникНоменклатура.ЭтоГруппа
+		//)
+
+СГРУППИРОВАТЬ ПО
+	СправочникНоменклатура.Ссылка</QueryText>
+				<MainTable>Catalog.Номенклатура</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="СписокСпецификаций" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список спецификаций</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>СписокСпецификаций.Owner</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	Спецификации.Ссылка,
+	Спецификации.Владелец,
+	Спецификации.ВидСпецификации
+ИЗ
+	Справочник.Спецификации КАК Спецификации
+ГДЕ
+	НЕ Спецификации.ПометкаУдаления</QueryText>
+				<MainTable>Catalog.Спецификации</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="СоставСпецификации" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состав спецификации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>СоставСпецификации.Ref</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	СпецификацииСостав.Ссылка,
+	СпецификацииСостав.Номенклатура,
+	СпецификацииСостав.ХарактеристикаНоменклатуры,
+	СпецификацииСостав.ЕдиницаИзмерения,
+	СпецификацииСостав.Коэффициент,
+	СпецификацииСостав.Количество
+ИЗ
+	Справочник.Спецификации.Состав КАК СпецификацииСостав</QueryText>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ВидСпецификации" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид спецификации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыСпецификации</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПеренестиВДокумент" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести спецификацию в документ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести в документ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПеренестиВДокумент</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

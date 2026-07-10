@@ -1,0 +1,73 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="ОстаткиПоРегистрам">
+	<valueType name="Идентификатор" base="xs:string" variety="Atomic" minLength="1" maxLength="40"/>
+	<objectType name="ОстаткиПоРегистрам">
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ТоварыНаСкладах" type="d3p1:ТоварыНаСкладах" lowerBound="0" upperBound="-1" nillable="false" fixed="false"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="БонусыКонтрагентов" type="d3p1:БонусыКонтрагентов" lowerBound="0" upperBound="-1" nillable="false" fixed="false"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ВзаиморасчетыСКонтрагентами" type="d3p1:ВзаиморасчетыСКонтрагентами" lowerBound="0" upperBound="-1" nillable="false" fixed="false"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ВзаиморасчетыСКонтрагентамиВВалюте" type="d3p1:ВзаиморасчетыСКонтрагентамиВВалюте" lowerBound="0" upperBound="-1" nillable="false" fixed="false"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="РасчетыСПерсоналом" type="d3p1:РасчетыСПерсоналом" lowerBound="0" upperBound="-1" nillable="false" fixed="false"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="РасчетыСПодотчетниками" type="d3p1:РасчетыСПодотчетниками" lowerBound="0" upperBound="-1" nillable="false" fixed="false"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="МатериалыВЭксплуатации" type="d3p1:МатериалыВЭксплуатации" lowerBound="0" upperBound="-1" nillable="false" fixed="false"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ДенежныеСредства" type="d3p1:ДенежныеСредства" lowerBound="0" upperBound="-1" nillable="false" fixed="false"/>
+	</objectType>
+	<objectType name="ТоварыНаСкладах">
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Организация" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Склад" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Номенклатура" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_ХарактеристикаНоменклатуры" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_СерияНоменклатуры" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property name="Количество" type="xs:float" lowerBound="1"/>
+		<property name="Сумма" type="xs:float" lowerBound="1"/>
+		<property name="Коэффициент" type="xs:float" lowerBound="1"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_ЕдиницаИзмерения" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Валюта" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="БонусыКонтрагентов">
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Контрагент" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_ДисконтнаяКарта" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property name="Сумма" type="xs:float" lowerBound="1"/>
+	</objectType>
+	<objectType name="ВзаиморасчетыСКонтрагентами">
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Организация" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Контрагент" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Договор" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property name="Сумма" type="xs:float" lowerBound="1"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Валюта" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ВзаиморасчетыСКонтрагентамиВВалюте">
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Организация" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Контрагент" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Договор" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Валюта" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property name="Сумма" type="xs:float" lowerBound="1"/>
+	</objectType>
+	<objectType name="РасчетыСПерсоналом">
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Организация" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Сотрудник" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property name="Сумма" type="xs:float" lowerBound="1"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Валюта" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="РасчетыСПодотчетниками">
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Организация" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Сотрудник" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property name="Сумма" type="xs:float" lowerBound="1"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Валюта" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="МатериалыВЭксплуатации">
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Организация" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Ответственный" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Номенклатура" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_ХарактеристикаНоменклатуры" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_СерияНоменклатуры" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property name="Количество" type="xs:float" lowerBound="1"/>
+		<property name="Сумма" type="xs:float" lowerBound="1"/>
+		<property name="ТипСправочника_Ответственный" type="xs:string" upperBound="1" nillable="true" form="Attribute"/>
+	</objectType>
+	<objectType name="ДенежныеСредства">
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Организация" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_СчетКасса" type="d3p1:Идентификатор" lowerBound="0" nillable="true" form="Element"/>
+		<property xmlns:d3p1="ОстаткиПоРегистрам" name="ИД_Валюта" type="d3p1:Идентификатор" lowerBound="0" nillable="true"/>
+		<property name="Сумма" type="xs:float" lowerBound="1"/>
+		<property name="ТипСправочника_СчетКасса" type="xs:string" upperBound="1" nillable="true" form="Attribute"/>
+	</objectType>
+</package>

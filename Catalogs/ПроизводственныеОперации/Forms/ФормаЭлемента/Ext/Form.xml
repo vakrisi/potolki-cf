@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>LockOwner</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Popup name="ФормаГруппаПечать" id="71">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Печать</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма группа печать</v8:content>
+					</v8:item>
+				</ToolTip>
+				<Picture>
+					<xr:Ref>StdPicture.Print</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Representation>PictureAndText</Representation>
+				<ExtendedTooltip name="ФормаГруппаПечатьРасширеннаяПодсказка" id="72"/>
+				<ChildItems>
+					<Button name="ФормаПечатьШК" id="73">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПечатьШК</CommandName>
+						<ExtendedTooltip name="ФормаПечатьШКРасширеннаяПодсказка" id="74"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<UsualGroup name="ГруппаКодНаименование" id="46">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа код наименование</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа код наименование</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКодНаименованиеРасширеннаяПодсказка" id="47"/>
+			<ChildItems>
+				<InputField name="Наименование" id="4">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="СписокНоменклатуры" id="16">
+			<Representation>List</Representation>
+			<Visible>false</Visible>
+			<Enabled>false</Enabled>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.УДАЛИТЬ_СписокНоменклатуры</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СписокНоменклатурыКонтекстноеМеню" id="17"/>
+			<AutoCommandBar name="СписокНоменклатурыКоманднаяПанель" id="18">
+				<ChildItems>
+					<Button name="СписокНоменклатурыЗаполнитьПоГруппе" id="37">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ЗаполнитьПоГруппе</CommandName>
+						<ExtendedTooltip name="СписокНоменклатурыЗаполнитьПоГруппеРасширеннаяПодсказка" id="38"/>
+					</Button>
+					<Popup name="СписокНоменклатурыГруппаЗаполнить" id="65">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заполнить</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заполнить</v8:content>
+							</v8:item>
+						</ToolTip>
+						<ExtendedTooltip name="СписокНоменклатурыГруппаЗаполнитьРасширеннаяПодсказка" id="66"/>
+						<ChildItems>
+							<Button name="СписокНоменклатурыВсеПоВыработке" id="39">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ВсеПоВыработке</CommandName>
+								<ExtendedTooltip name="СписокНоменклатурыВсеПоВыработкеРасширеннаяПодсказка" id="40"/>
+							</Button>
+							<Button name="СписокНоменклатурыВсеПоКоличеству" id="41">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ВсеПоКоличеству</CommandName>
+								<ExtendedTooltip name="СписокНоменклатурыВсеПоКоличествуРасширеннаяПодсказка" id="42"/>
+							</Button>
+							<Button name="СписокНоменклатурыУстановитьОбщуюСтоимостьПоСтроке" id="69">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.УстановитьОбщуюСтоимостьПоСтроке</CommandName>
+								<ExtendedTooltip name="СписокНоменклатурыУстановитьОбщуюСтоимостьПоСтрокеРасширеннаяПодсказка" id="70"/>
+							</Button>
+							<Button name="СписокНоменклатурыУстановитьОбщуюСтоимость" id="67">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.УстановитьОбщуюСтоимость</CommandName>
+								<ExtendedTooltip name="СписокНоменклатурыУстановитьОбщуюСтоимостьРасширеннаяПодсказка" id="68"/>
+							</Button>
+						</ChildItems>
+					</Popup>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокНоменклатурыРасширеннаяПодсказка" id="19"/>
+			<SearchStringAddition name="СписокНоменклатурыСтрокаПоиска" id="20">
+				<AdditionSource>
+					<Item>СписокНоменклатуры</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокНоменклатурыСтрокаПоискаКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="СписокНоменклатурыСтрокаПоискаРасширеннаяПодсказка" id="22"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокНоменклатурыСостояниеПросмотра" id="23">
+				<AdditionSource>
+					<Item>СписокНоменклатуры</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокНоменклатурыСостояниеПросмотраКонтекстноеМеню" id="24"/>
+				<ExtendedTooltip name="СписокНоменклатурыСостояниеПросмотраРасширеннаяПодсказка" id="25"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокНоменклатурыУправлениеПоиском" id="26">
+				<AdditionSource>
+					<Item>СписокНоменклатуры</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокНоменклатурыУправлениеПоискомКонтекстноеМеню" id="27"/>
+				<ExtendedTooltip name="СписокНоменклатурыУправлениеПоискомРасширеннаяПодсказка" id="28"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="СписокНоменклатурыНомерСтроки" id="29">
+					<DataPath>Объект.УДАЛИТЬ_СписокНоменклатуры.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СписокНоменклатурыНомерСтрокиКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="СписокНоменклатурыНомерСтрокиРасширеннаяПодсказка" id="31"/>
+				</LabelField>
+				<InputField name="СписокНоменклатурыВидНоменклатуры" id="48">
+					<DataPath>Объект.УДАЛИТЬ_СписокНоменклатуры.ВидНоменклатуры</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СписокНоменклатурыВидНоменклатурыКонтекстноеМеню" id="49"/>
+					<ExtendedTooltip name="СписокНоменклатурыВидНоменклатурыРасширеннаяПодсказка" id="50"/>
+				</InputField>
+				<InputField name="СписокНоменклатурыНоменклатура" id="32">
+					<DataPath>Объект.УДАЛИТЬ_СписокНоменклатуры.Номенклатура</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СписокНоменклатурыНоменклатураКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="СписокНоменклатурыНоменклатураРасширеннаяПодсказка" id="34"/>
+					<Events>
+						<Event name="OnChange">СписокНоменклатурыНоменклатураПриИзменении</Event>
+					</Events>
+				</InputField>
+				<CheckBoxField name="СписокНоменклатурыКоличествоПоВыработке" id="43">
+					<DataPath>Объект.УДАЛИТЬ_СписокНоменклатуры.КоличествоПоВыработке</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Считать по выработке</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СписокНоменклатурыКоличествоПоВыработкеКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="СписокНоменклатурыКоличествоПоВыработкеРасширеннаяПодсказка" id="45"/>
+				</CheckBoxField>
+				<ColumnGroup name="СписокНоменклатурыГруппаСтоимость" id="63">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Стоимость выработки по виду продукции</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Список номенклатуры группа стоимость</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="СписокНоменклатурыГруппаСтоимостьРасширеннаяПодсказка" id="64"/>
+					<ChildItems>
+						<InputField name="СписокНоменклатурыСтоимостьВыработкиПотолок" id="51">
+							<DataPath>Объект.УДАЛИТЬ_СписокНоменклатуры.СтоимостьВыработкиПотолок</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="СписокНоменклатурыСтоимостьВыработкиПотолокКонтекстноеМеню" id="52"/>
+							<ExtendedTooltip name="СписокНоменклатурыСтоимостьВыработкиПотолокРасширеннаяПодсказка" id="53"/>
+						</InputField>
+						<InputField name="СписокНоменклатурыСтоимостьВыработкиОтрез" id="54">
+							<DataPath>Объект.УДАЛИТЬ_СписокНоменклатуры.СтоимостьВыработкиОтрез</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="СписокНоменклатурыСтоимостьВыработкиОтрезКонтекстноеМеню" id="55"/>
+							<ExtendedTooltip name="СписокНоменклатурыСтоимостьВыработкиОтрезРасширеннаяПодсказка" id="56"/>
+						</InputField>
+						<InputField name="СписокНоменклатурыСтоимостьВыработкиМногофактурныйПотолок" id="57">
+							<DataPath>Объект.УДАЛИТЬ_СписокНоменклатуры.СтоимостьВыработкиМногофактурныйПотолок</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="СписокНоменклатурыСтоимостьВыработкиМногофактурныйПотолокКонтекстноеМеню" id="58"/>
+							<ExtendedTooltip name="СписокНоменклатурыСтоимостьВыработкиМногофактурныйПотолокРасширеннаяПодсказка" id="59"/>
+						</InputField>
+						<InputField name="СписокНоменклатурыСтоимостьВыработкиМногофактурныйОтрез" id="60">
+							<DataPath>Объект.УДАЛИТЬ_СписокНоменклатуры.СтоимостьВыработкиМногофактурныйОтрез</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="СписокНоменклатурыСтоимостьВыработкиМногофактурныйОтрезКонтекстноеМеню" id="61"/>
+							<ExtendedTooltip name="СписокНоменклатурыСтоимостьВыработкиМногофактурныйОтрезРасширеннаяПодсказка" id="62"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ПроизводственныеОперации</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаполнитьПоГруппе" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по группе</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по группе</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьПоГруппе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВсеПоВыработке" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все по выработке</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все по выработке</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВсеПоВыработке</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВсеПоКоличеству" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все по количеству</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все по количеству</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВсеПоКоличеству</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УстановитьОбщуюСтоимость" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить общую стоимость</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить общую стоимость</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.DataCompositionOrder</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьОбщуюСтоимость</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УстановитьОбщуюСтоимостьПоСтроке" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить общую стоимость по строке</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить общую стоимость по строке</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УстановитьОбщуюСтоимостьПоСтроке</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПечатьШК" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать ШК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать ШК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПечатьШК</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

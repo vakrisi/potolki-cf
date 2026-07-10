@@ -1,0 +1,893 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Служба поддержки</v8:content>
+		</v8:item>
+	</Title>
+	<Width>90</Width>
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<Group>Vertical</Group>
+	<CommandBarLocation>None</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<ScalingMode>Normal</ScalingMode>
+	<CommandSet>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>Close</ExcludedCommand>
+		<ExcludedCommand>CustomizeForm</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
+	</CommandSet>
+	<ShowCommandBar>false</ShowCommandBar>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="ИнформационныйТекстЗаканчиваетсяПоддержка" id="111">
+			<Visible>false</Visible>
+			<Width>90</Width>
+			<TextColor>#C80000</TextColor>
+			<Font ref="sys:DefaultGUIFont" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+			<Title formatted="true">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ВНИМАНИЕ! У Вас завершился срок действия договора сопровождения!
+
+При отсутствии действующего договора сопровождения вам более не доступны:
+* обновления программы
+* консультации по настройке и работе в программе
+* индивидуальные настройки и доработки
+* дополнительные сервисы интеграции с другими граммами
+(более подробный список ограничений см. на сайте разработчика)
+
+Вам необходимо обратиться в отдел продаж или техническую службу разработчика по указанным ниже реквизитам.
+
+Информационно техническое сопровождение (ИТС) осуществляется только при наличии активной подписки и по актуальным версиям конфигураций.  
+Для восстановления не продленного договора ИТС необходимо иметь актуальную версию конфигурации.Стоимость установки обновлений в таких случаях определяется индивидуально.</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ИнформационныйТекстЗаканчиваетсяПоддержкаКонтекстноеМеню" id="112"/>
+			<ExtendedTooltip name="ИнформационныйТекстЗаканчиваетсяПоддержкаРасширеннаяПодсказка" id="113"/>
+		</LabelDecoration>
+		<UsualGroup name="ГруппаНеНапоминать" id="151">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа не напоминать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа не напоминать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>HorizontalIfPossible</Group>
+			<Representation>WeakSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНеНапоминатьРасширеннаяПодсказка" id="152"/>
+			<ChildItems>
+				<InputField name="НеНапоминатьДней" id="153">
+					<DataPath>НеНапоминатьДней</DataPath>
+					<DropListButton>true</DropListButton>
+					<ChoiceButton>false</ChoiceButton>
+					<ClearButton>false</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<MinValue xsi:type="xs:decimal">1</MinValue>
+					<MaxValue xsi:type="xs:decimal">7</MaxValue>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>1 день</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">1</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>3 дня</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">3</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>7 дней</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">7</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="НеНапоминатьДнейКонтекстноеМеню" id="154"/>
+					<ExtendedTooltip name="НеНапоминатьДнейРасширеннаяПодсказка" id="155"/>
+				</InputField>
+				<Button name="ПрименитьНеНапоминать" id="156">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ПрименитьНеНапоминать</CommandName>
+					<ExtendedTooltip name="ПрименитьНеНапоминатьРасширеннаяПодсказка" id="157"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="ИнформационныйТекстНетПоддержки" id="108">
+			<Visible>false</Visible>
+			<Width>90</Width>
+			<TextColor>#C80000</TextColor>
+			<Font ref="sys:DefaultGUIFont" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+			<Title formatted="true">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ВНИМАНИЕ! У Вас завершился срок действия договора сопровождения!
+
+При отсутствии действующего договора сопровождения вам более не доступны:
+* обновления программы
+* консультации по настройке и работе в программе
+* индивидуальные настройки и доработки
+* дополнительные сервисы интеграции с другими граммами
+(более подробный список ограничений см. на сайте разработчика)
+
+Вам необходимо обратиться в отдел продаж или техническую службу разработчика по указанным ниже реквизитам.
+
+Информационно техническое сопровождение (ИТС) осуществляется только при наличии активной подписки и по актуальным версиям конфигураций.  
+Для восстановления не продленного договора ИТС необходимо иметь актуальную версию конфигурации.Стоимость установки обновлений в таких случаях определяется индивидуально.
+</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ИнформационныйТекстНетПоддержкиКонтекстноеМеню" id="109"/>
+			<ExtendedTooltip name="ИнформационныйТекстНетПоддержкиРасширеннаяПодсказка" id="110"/>
+		</LabelDecoration>
+		<UsualGroup name="ГруппаКонтактыТехПоддержки" id="146">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа контакты тех поддержки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа контакты тех поддержки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКонтактыТехПоддержкиРасширеннаяПодсказка" id="147"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаЛинияКонсультации" id="32">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа линия консультации</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа линия консультации</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЛинияКонсультацииРасширеннаяПодсказка" id="67"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаТекст" id="47">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Техническая поддержка программы</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа team viewer</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Width>90</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<Group>Vertical</Group>
+							<Representation>WeakSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаТекстРасширеннаяПодсказка" id="68"/>
+						</UsualGroup>
+						<UsualGroup name="ГруппаРеквизиты" id="33">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Служба поддержки</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа реквизиты</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Width>60</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<Group>Horizontal</Group>
+							<Representation>WeakSeparation</Representation>
+							<ExtendedTooltip name="ГруппаРеквизитыРасширеннаяПодсказка" id="72"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаЛевая" id="57">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа левая</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа левая</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаЛеваяРасширеннаяПодсказка" id="73"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаХелпДеск" id="22">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа хелп деск</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа хелп деск</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаХелпДескРасширеннаяПодсказка" id="86"/>
+											<ChildItems>
+												<PictureDecoration name="ДекорацияWWW" id="23">
+													<Width>4</Width>
+													<Height>2</Height>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Декорация WWW</v8:content>
+														</v8:item>
+													</Title>
+													<Picture>
+														<xr:Ref>CommonPicture.ФорматHTML</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
+													</Picture>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="ДекорацияWWWКонтекстноеМеню" id="24"/>
+													<ExtendedTooltip name="ДекорацияWWWРасширеннаяПодсказка" id="87"/>
+												</PictureDecoration>
+												<Button name="СтраницаВИнтернете" id="95">
+													<Type>Hyperlink</Type>
+													<Width>20</Width>
+													<Height>2</Height>
+													<GroupVerticalAlign>Center</GroupVerticalAlign>
+													<CommandName>Form.Command.СтраницаВИнтернете</CommandName>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>https://help.smartceilings.ru/</v8:content>
+														</v8:item>
+													</Title>
+													<ExtendedTooltip name="СтраницаВИнтернетеРасширеннаяПодсказка" id="96"/>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаEMail" id="15">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа e mail</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа e mail</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаEMailРасширеннаяПодсказка" id="82"/>
+											<ChildItems>
+												<PictureDecoration name="E_Mail" id="10">
+													<Width>4</Width>
+													<Height>2</Height>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>E mail</v8:content>
+														</v8:item>
+													</Title>
+													<Picture>
+														<xr:Ref>CommonPicture.ОтправитьЭлектронноеПисьмо</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
+													</Picture>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="E_MailКонтекстноеМеню" id="11"/>
+													<ExtendedTooltip name="E_MailРасширеннаяПодсказка" id="83"/>
+												</PictureDecoration>
+												<Button name="ЭлектронноеПисьмо" id="16">
+													<Type>Hyperlink</Type>
+													<Width>20</Width>
+													<Height>2</Height>
+													<GroupVerticalAlign>Center</GroupVerticalAlign>
+													<CommandName>Form.Command.ЭлектронноеПисьмо</CommandName>
+													<TextColor>#164996</TextColor>
+													<ExtendedTooltip name="ЭлектронноеПисьмоРасширеннаяПодсказка" id="84"/>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаТелефон" id="17">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа телефон</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа телефон</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаТелефонРасширеннаяПодсказка" id="74"/>
+											<ChildItems>
+												<PictureDecoration name="ДекорацияТелефон" id="18">
+													<Width>4</Width>
+													<Height>2</Height>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Декорация телефон</v8:content>
+														</v8:item>
+													</Title>
+													<Picture>
+														<xr:Ref>CommonPicture.Позвонить</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
+													</Picture>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="ДекорацияТелефонКонтекстноеМеню" id="19"/>
+													<ExtendedTooltip name="ДекорацияТелефонРасширеннаяПодсказка" id="75"/>
+												</PictureDecoration>
+												<LabelDecoration name="ДекорацияНомерТелефона" id="20">
+													<Width>20</Width>
+													<Height>2</Height>
+													<TextColor>#164996</TextColor>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>8-927-048-05-22</v8:content>
+														</v8:item>
+													</Title>
+													<GroupVerticalAlign>Center</GroupVerticalAlign>
+													<VerticalAlign>Center</VerticalAlign>
+													<ContextMenu name="ДекорацияНомерТелефонаКонтекстноеМеню" id="21"/>
+													<ExtendedTooltip name="ДекорацияНомерТелефонаРасширеннаяПодсказка" id="76"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаПравая" id="56">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа правая</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа правая</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПраваяРасширеннаяПодсказка" id="81"/>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаКонтактОтделаПродаж" id="122">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа контакт отдела продаж</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКонтактОтделаПродажРасширеннаяПодсказка" id="123"/>
+			<ChildItems>
+				<UsualGroup name="Группа1" id="142">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отдел продаж</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Representation>WeakSeparation</Representation>
+					<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="143"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаСайт" id="158">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа сайт</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа сайт</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСайтРасширеннаяПодсказка" id="159"/>
+							<ChildItems>
+								<PictureDecoration name="ДекорацияWWW1" id="160">
+									<Width>4</Width>
+									<Height>2</Height>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Декорация WWW</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.ФорматHTML</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="ДекорацияWWW1КонтекстноеМеню" id="161"/>
+									<ExtendedTooltip name="ДекорацияWWW1РасширеннаяПодсказка" id="162"/>
+								</PictureDecoration>
+								<Button name="СтраницаВИнтернете1" id="163">
+									<Type>Hyperlink</Type>
+									<Width>20</Width>
+									<Height>2</Height>
+									<GroupVerticalAlign>Center</GroupVerticalAlign>
+									<CommandName>Form.Command.СтраницаСайта</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>http://smartceilings.ru/</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="СтраницаВИнтернете1РасширеннаяПодсказка" id="164"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаEMail1" id="124">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа e mail</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа e mail</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаEMail1РасширеннаяПодсказка" id="125"/>
+							<ChildItems>
+								<PictureDecoration name="E_Mail1" id="126">
+									<Width>4</Width>
+									<Height>2</Height>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>E mail</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.ОтправитьЭлектронноеПисьмо</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="E_Mail1КонтекстноеМеню" id="127"/>
+									<ExtendedTooltip name="E_Mail1РасширеннаяПодсказка" id="128"/>
+								</PictureDecoration>
+								<Button name="ЭлектронноеПисьмоОтделПродаж" id="144">
+									<Type>Hyperlink</Type>
+									<Width>20</Width>
+									<Height>2</Height>
+									<GroupVerticalAlign>Center</GroupVerticalAlign>
+									<CommandName>Form.Command.ЭлектронноеПисьмоОтделПродаж</CommandName>
+									<ExtendedTooltip name="ЭлектронноеПисьмоОтделПродажРасширеннаяПодсказка" id="145"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаТелефон1" id="131">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа телефон</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа телефон</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаТелефон1РасширеннаяПодсказка" id="132"/>
+							<ChildItems>
+								<PictureDecoration name="ДекорацияТелефон1" id="133">
+									<Width>4</Width>
+									<Height>2</Height>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Декорация телефон</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.Позвонить</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="ДекорацияТелефон1КонтекстноеМеню" id="134"/>
+									<ExtendedTooltip name="ДекорацияТелефон1РасширеннаяПодсказка" id="135"/>
+								</PictureDecoration>
+								<LabelDecoration name="ДекорацияНомерТелефона1" id="136">
+									<Width>20</Width>
+									<Height>2</Height>
+									<TextColor>#164996</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>8-800-550-56-10</v8:content>
+										</v8:item>
+									</Title>
+									<GroupVerticalAlign>Center</GroupVerticalAlign>
+									<VerticalAlign>Center</VerticalAlign>
+									<ContextMenu name="ДекорацияНомерТелефона1КонтекстноеМеню" id="137"/>
+									<ExtendedTooltip name="ДекорацияНомерТелефона1РасширеннаяПодсказка" id="138"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаTeamViewer" id="14">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удаленная поддержка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа team viewer</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Width>90</Width>
+			<HorizontalStretch>false</HorizontalStretch>
+			<Group>Horizontal</Group>
+			<Representation>WeakSeparation</Representation>
+			<ExtendedTooltip name="ГруппаTeamViewerРасширеннаяПодсказка" id="90"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаСкачатьTeamViewer" id="41">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа скачать team viewer</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа скачать team viewer</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСкачатьTeamViewerРасширеннаяПодсказка" id="92"/>
+					<ChildItems>
+						<PictureDecoration name="TeamViewer" id="12">
+							<Width>4</Width>
+							<Height>2</Height>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Team viewer</v8:content>
+								</v8:item>
+							</Title>
+							<PictureSize>Proportionally</PictureSize>
+							<Picture>
+								<xr:Ref>CommonPicture.TeamViewer</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="TeamViewerКонтекстноеМеню" id="13"/>
+							<ExtendedTooltip name="TeamViewerРасширеннаяПодсказка" id="93"/>
+						</PictureDecoration>
+						<Button name="СкачатьТимВьювер" id="99">
+							<Type>Hyperlink</Type>
+							<Height>2</Height>
+							<CommandName>Form.Command.СкачатьТимВьювер</CommandName>
+							<ExtendedTooltip name="СкачатьТимВьюверРасширеннаяПодсказка" id="100"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<LabelDecoration name="Декорация3" id="148">
+					<Width>2</Width>
+					<ContextMenu name="Декорация3КонтекстноеМеню" id="149"/>
+					<ExtendedTooltip name="Декорация3РасширеннаяПодсказка" id="150"/>
+				</LabelDecoration>
+				<LabelDecoration name="ДекорацияТекст" id="38">
+					<Width>90</Width>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>В некоторых случаях сотрудник службы технической поддержки может попросить Вас предоставить доступ к Вашему рабочему столу. Для удаленного подключения используется программа TeamViewer</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияТекстКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ДекорацияТекстРасширеннаяПодсказка" id="91"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="НеНапоминатьДней" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Не напоминать дней</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>3</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОсталосьПоддержки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Осталось поддержки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗакрытьПрограммуПриЗакрытииФормы" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть программу при закрытии формы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЭлектронноеПисьмо" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>help@smartceilings.ru</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Написать письмо на mail@aspotolki.ru</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЭлектронноеПисьмо</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УсловияОказанияТехническойПоддержки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Условия оказания технической поддержки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Условия оказания технической поддержки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УсловияОказанияТехническойПоддержки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СтраницаВИнтернете" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страница в интернете</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть страницу www.crm-potolki.ru</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СтраницаВИнтернете</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СкачатьСкайп" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скачать скайп</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть официальную страницу Skype</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СкачатьСкайп</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СкачатьТимВьювер" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скачать TeamViewer</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть официальную страницу TeamViewer</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СкачатьТимВьювер</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КаналЮтюб" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Канал YouTube</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть страницу с каналом YouTube</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КаналЮтюб</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЭлектронноеПисьмоОтделПродаж" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>info@smartceilings.ru</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Электронное письмо отдел продаж</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЭлектронноеПисьмоОтделПродаж</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПрименитьНеНапоминать" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применить не напоминать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПрименитьНеНапоминать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СтраницаСайта" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страница сайта</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страница сайта</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СтраницаСайта</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ПоказатьНеНапоминать">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

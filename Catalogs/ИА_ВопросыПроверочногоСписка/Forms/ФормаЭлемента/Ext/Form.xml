@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>LockOwner</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelField name="Владелец" id="7">
+			<DataPath>Объект.Owner</DataPath>
+			<Visible>false</Visible>
+			<ReadOnly>true</ReadOnly>
+			<SkipOnInput>true</SkipOnInput>
+			<WarningOnEditRepresentation>DontShow</WarningOnEditRepresentation>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<ContextMenu name="ВладелецКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="9"/>
+		</LabelField>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<Visible>false</Visible>
+			<ReadOnly>true</ReadOnly>
+			<SkipOnInput>true</SkipOnInput>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<MultiLine>false</MultiLine>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<UsualGroup name="Группа1" id="47">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="48"/>
+			<ChildItems>
+				<InputField name="Наименование" id="4">
+					<DataPath>Объект.Вопрос</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вопрос</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MultiLine>true</MultiLine>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа2" id="49">
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="50"/>
+			<ChildItems>
+				<CheckBoxField name="ВариантныйОтвет" id="13">
+					<DataPath>Объект.ВариантныйОтвет</DataPath>
+					<SkipOnInput>true</SkipOnInput>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вариантный ответ</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Left</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<CheckBoxType>Tumbler</CheckBoxType>
+					<ContextMenu name="ВариантныйОтветКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="ВариантныйОтветРасширеннаяПодсказка" id="15"/>
+					<Events>
+						<Event name="OnChange">ТипВопросаПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<UsualGroup name="Группа4" id="59">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="60"/>
+					<ChildItems>
+						<RadioButtonField name="ОтветВопроса" id="19">
+							<DataPath>Объект.ОтветВопроса</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вид ответа</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>None</ToolTipRepresentation>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<RadioButtonType>Auto</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Число</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">1</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Булево</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">2</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="ОтветВопросаКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="ОтветВопросаРасширеннаяПодсказка" id="21"/>
+						</RadioButtonField>
+						<InputField name="БаллВопроса" id="16">
+							<DataPath>Объект.БаллВопроса</DataPath>
+							<SkipOnInput>true</SkipOnInput>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<Width>7</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<MultiLine>false</MultiLine>
+							<ChoiceButton>true</ChoiceButton>
+							<BackColor>style:FormBackColor</BackColor>
+							<ContextMenu name="БаллВопросаКонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="БаллВопросаРасширеннаяПодсказка" id="18"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа3" id="54">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Варианты ответов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTipRepresentation>None</ToolTipRepresentation>
+			<Group>Horizontal</Group>
+			<Representation>WeakSeparation</Representation>
+			<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="55"/>
+			<ChildItems>
+				<Table name="ВариантыОтветов" id="22">
+					<Representation>List</Representation>
+					<SelectionMode>SingleRow</SelectionMode>
+					<RowSelectionMode>Cell</RowSelectionMode>
+					<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>Объект.ВариантыОтветов</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ВариантыОтветовКонтекстноеМеню" id="23"/>
+					<AutoCommandBar name="ВариантыОтветовКоманднаяПанель" id="24">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<Button name="ВариантыОтветовКнопка1" id="61">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.ВариантыОтветов.StandardCommand.Add</CommandName>
+								<ExtendedTooltip name="ВариантыОтветовКнопка1РасширеннаяПодсказка" id="62"/>
+							</Button>
+							<Button name="ВариантыОтветовСкопироватьОтвет" id="67">
+								<Type>CommandBarButton</Type>
+								<Representation>Picture</Representation>
+								<CommandName>Form.Command.СкопироватьОтвет</CommandName>
+								<ExtendedTooltip name="ВариантыОтветовСкопироватьОтветРасширеннаяПодсказка" id="68"/>
+							</Button>
+							<Button name="ВариантыОтветовКнопка2" id="63">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.ВариантыОтветов.StandardCommand.MoveUp</CommandName>
+								<ExtendedTooltip name="ВариантыОтветовКнопка2РасширеннаяПодсказка" id="64"/>
+							</Button>
+							<Button name="ВариантыОтветовКнопка3" id="65">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.ВариантыОтветов.StandardCommand.MoveDown</CommandName>
+								<ExtendedTooltip name="ВариантыОтветовКнопка3РасширеннаяПодсказка" id="66"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ВариантыОтветовРасширеннаяПодсказка" id="25"/>
+					<SearchStringAddition name="ВариантыОтветовСтрокаПоиска" id="26">
+						<AdditionSource>
+							<Item>ВариантыОтветов</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ВариантыОтветовСтрокаПоискаКонтекстноеМеню" id="27"/>
+						<ExtendedTooltip name="ВариантыОтветовСтрокаПоискаРасширеннаяПодсказка" id="28"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ВариантыОтветовСостояниеПросмотра" id="29">
+						<AdditionSource>
+							<Item>ВариантыОтветов</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ВариантыОтветовСостояниеПросмотраКонтекстноеМеню" id="30"/>
+						<ExtendedTooltip name="ВариантыОтветовСостояниеПросмотраРасширеннаяПодсказка" id="31"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ВариантыОтветовУправлениеПоиском" id="32">
+						<AdditionSource>
+							<Item>ВариантыОтветов</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ВариантыОтветовУправлениеПоискомКонтекстноеМеню" id="33"/>
+						<ExtendedTooltip name="ВариантыОтветовУправлениеПоискомРасширеннаяПодсказка" id="34"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="OnActivateCell">ВариантыОтветовПриАктивизацииЯчейки</Event>
+					</Events>
+					<ChildItems>
+						<LabelField name="ВариантыОтветовНомерСтроки" id="35">
+							<DataPath>Объект.ВариантыОтветов.LineNumber</DataPath>
+							<Visible>false</Visible>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="ВариантыОтветовНомерСтрокиКонтекстноеМеню" id="36"/>
+							<ExtendedTooltip name="ВариантыОтветовНомерСтрокиРасширеннаяПодсказка" id="37"/>
+						</LabelField>
+						<InputField name="ВариантыОтветовОтвет" id="41">
+							<DataPath>Объект.ВариантыОтветов.Ответ</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInFooter>false</ShowInFooter>
+							<AutoEditMode>true</AutoEditMode>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ВариантыОтветовОтветКонтекстноеМеню" id="42"/>
+							<ExtendedTooltip name="ВариантыОтветовОтветРасширеннаяПодсказка" id="43"/>
+						</InputField>
+						<InputField name="ВариантыОтветовБалл" id="44">
+							<DataPath>Объект.ВариантыОтветов.Балл</DataPath>
+							<SkipOnInput>true</SkipOnInput>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<Width>12</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<MultiLine>false</MultiLine>
+							<ChoiceButton>true</ChoiceButton>
+							<ChooseType>false</ChooseType>
+							<ContextMenu name="ВариантыОтветовБаллКонтекстноеМеню" id="45"/>
+							<ExtendedTooltip name="ВариантыОтветовБаллРасширеннаяПодсказка" id="46"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ИА_ВопросыПроверочногоСписка</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ТипОтвета" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип ответа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+				<v8:TypeSet>cfg:DocumentRef</v8:TypeSet>
+				<v8:TypeSet>cfg:EnumRef</v8:TypeSet>
+				<v8:TypeSet>cfg:CatalogRef</v8:TypeSet>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СкопироватьОтвет" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скопировать ответ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скопировать ответ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CloneListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СкопироватьОтвет</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

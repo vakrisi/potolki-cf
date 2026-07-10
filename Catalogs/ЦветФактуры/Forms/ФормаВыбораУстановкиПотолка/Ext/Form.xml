@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>LockOwner</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<ShowCommandBar>true</ShowCommandBar>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Фактура" id="4">
+			<DataPath>Фактура</DataPath>
+			<ClearButton>true</ClearButton>
+			<OpenButton>true</OpenButton>
+			<ContextMenu name="ФактураКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ФактураРасширеннаяПодсказка" id="6"/>
+			<Events>
+				<Event name="OnChange">ФактураПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="Цвет" id="1">
+			<DataPath>Цвет</DataPath>
+			<ClearButton>true</ClearButton>
+			<ChoiceParameterLinks>
+				<xr:Link>
+					<xr:Name>Отбор.Владелец</xr:Name>
+					<xr:DataPath xsi:type="xs:string">Фактура</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+			</ChoiceParameterLinks>
+			<ContextMenu name="ЦветКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ЦветРасширеннаяПодсказка" id="3"/>
+			<Events>
+				<Event name="OnChange">ЦветПриИзменении</Event>
+			</Events>
+		</InputField>
+		<Table name="СписокНоменклатуры" id="17">
+			<Representation>List</Representation>
+			<SelectionMode>SingleRow</SelectionMode>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>СписокНоменклатуры</DataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокНоменклатурыКонтекстноеМеню" id="18"/>
+			<AutoCommandBar name="СписокНоменклатурыКоманднаяПанель" id="19">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокНоменклатурыРасширеннаяПодсказка" id="20"/>
+			<SearchStringAddition name="СписокНоменклатурыСтрокаПоиска" id="21">
+				<AdditionSource>
+					<Item>СписокНоменклатуры</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокНоменклатурыСтрокаПоискаКонтекстноеМеню" id="22"/>
+				<ExtendedTooltip name="СписокНоменклатурыСтрокаПоискаРасширеннаяПодсказка" id="23"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокНоменклатурыСостояниеПросмотра" id="24">
+				<AdditionSource>
+					<Item>СписокНоменклатуры</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокНоменклатурыСостояниеПросмотраКонтекстноеМеню" id="25"/>
+				<ExtendedTooltip name="СписокНоменклатурыСостояниеПросмотраРасширеннаяПодсказка" id="26"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокНоменклатурыУправлениеПоиском" id="27">
+				<AdditionSource>
+					<Item>СписокНоменклатуры</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокНоменклатурыУправлениеПоискомКонтекстноеМеню" id="28"/>
+				<ExtendedTooltip name="СписокНоменклатурыУправлениеПоискомРасширеннаяПодсказка" id="29"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">СписокНоменклатурыВыбор</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="СписокНоменклатурыНоменклатура" id="35">
+					<DataPath>СписокНоменклатуры.Номенклатура</DataPath>
+					<ContextMenu name="СписокНоменклатурыНоменклатураКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="СписокНоменклатурыНоменклатураРасширеннаяПодсказка" id="37"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+		<InputField name="Номенклатура" id="10">
+			<DataPath>Номенклатура</DataPath>
+			<Visible>false</Visible>
+			<ReadOnly>true</ReadOnly>
+			<TitleTextColor>#339966</TitleTextColor>
+			<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<TitleLocation>Top</TitleLocation>
+			<ContextMenu name="НоменклатураКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="НоменклатураРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<UsualGroup name="ГруппаКнопок" id="33">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа кнопок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа кнопок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+			<Group>HorizontalIfPossible</Group>
+			<Representation>WeakSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКнопокРасширеннаяПодсказка" id="34"/>
+			<ChildItems>
+				<Button name="ФормаОК" id="13">
+					<Type>UsualButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.Command.ОК</CommandName>
+					<ButtonImportance>Main</ButtonImportance>
+					<ExtendedTooltip name="ФормаОКРасширеннаяПодсказка" id="14"/>
+				</Button>
+				<Button name="ФормаЗакрыть" id="15">
+					<Type>UsualButton</Type>
+					<CommandName>Form.StandardCommand.Close</CommandName>
+					<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="16"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Цвет" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цвет</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ЦветФактуры</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Фактура" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фактура</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Фактура</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Номенклатура" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Будет добавлена номенклатура</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокНоменклатуры" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список номенклатуры</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	Номенклатура.Ссылка КАК Номенклатура
+ИЗ
+	Справочник.Номенклатура КАК Номенклатура
+ГДЕ
+	ВЫБОР
+			КОГДА &amp;Фактура &lt;&gt; ЗНАЧЕНИЕ(Справочник.Фактура.ПустаяСсылка)
+				ТОГДА Номенклатура.Ссылка В
+						(ВЫБРАТЬ РАЗЛИЧНЫЕ
+							ЦветФактуры.УслугаУстановкиПотолка КАК Номенклатура
+						ИЗ
+							Справочник.ЦветФактуры КАК ЦветФактуры
+						ГДЕ
+							ЦветФактуры.Владелец = &amp;Фактура
+							И ВЫБОР
+								КОГДА &amp;Цвет &lt;&gt; ЗНАЧЕНИЕ(Справочник.ЦветФактуры.ПустаяСсылка)
+									ТОГДА ЦветФактуры.Ссылка = &amp;Цвет
+								ИНАЧЕ ИСТИНА
+							КОНЕЦ
+							И НЕ ЦветФактуры.УслугаУстановкиПотолка = ЗНАЧЕНИЕ(Справочник.Номенклатура.ПустаяСсылка)
+		
+						ОБЪЕДИНИТЬ
+		
+						ВЫБРАТЬ РАЗЛИЧНЫЕ
+							НоменклатураСФактурой.Ссылка КАК Номенклатура
+						ИЗ
+							Справочник.Номенклатура.Потолок_Фактура КАК НоменклатураСФактурой
+						ГДЕ
+							НоменклатураСФактурой.ПродукцияФактура = &amp;Фактура
+							И ВЫБОР
+								КОГДА &amp;Цвет &lt;&gt; ЗНАЧЕНИЕ(Справочник.ЦветФактуры.ПустаяСсылка)
+									ТОГДА НоменклатураСФактурой.ПродукцияЦвет = &amp;Цвет
+								ИНАЧЕ ИСТИНА
+							КОНЕЦ)
+			ИНАЧЕ ИСТИНА
+		КОНЕЦ
+	И Номенклатура.УчитыватьКакПотолокВОтчетахПоЭффективности</QueryText>
+				<MainTable>Catalog.Номенклатура</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="Количество" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>12</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОК" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОК</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

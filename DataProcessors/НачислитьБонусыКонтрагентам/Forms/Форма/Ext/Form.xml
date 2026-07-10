@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Рассчитать и начислить бонусы контрагентам</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<Group>Vertical</Group>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаПериодПродаж" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа период продаж</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа период продаж</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПериодПродажРасширеннаяПодсказка" id="42"/>
+			<ChildItems>
+				<InputField name="ПериодПродажНачало" id="1">
+					<DataPath>Объект.ПериодПродажНачало</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отбор данных по продажам за период с</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ПериодПродажНачалоКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ПериодПродажНачалоРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="ПериодПродажКонец" id="4">
+					<DataPath>Объект.ПериодПродажКонец</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>по</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ПериодПродажКонецКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ПериодПродажКонецРасширеннаяПодсказка" id="6"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Button name="ПолучитьДанныеОПродажах" id="43">
+			<Type>UsualButton</Type>
+			<Representation>PictureAndText</Representation>
+			<CommandName>Form.Command.ПолучитьДанныеОПродажах</CommandName>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<ExtendedTooltip name="ПолучитьДанныеОПродажахРасширеннаяПодсказка" id="44"/>
+		</Button>
+		<InputField name="ПроцентОтПродажДляНачисленияБонусов" id="7">
+			<DataPath>Объект.ПроцентОтПродажДляНачисленияБонусов</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учитывать % от продаж для начисления бонусов</v8:content>
+				</v8:item>
+			</Title>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<ContextMenu name="ПроцентОтПродажДляНачисленияБонусовКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ПроцентОтПродажДляНачисленияБонусовРасширеннаяПодсказка" id="9"/>
+			<Events>
+				<Event name="OnChange">ПроцентОтПродажДляНачисленияБонусовПриИзменении</Event>
+			</Events>
+		</InputField>
+		<Table name="Бонусы" id="10">
+			<Representation>List</Representation>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.Бонусы</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="БонусыКонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="БонусыКоманднаяПанель" id="12"/>
+			<ExtendedTooltip name="БонусыРасширеннаяПодсказка" id="13"/>
+			<SearchStringAddition name="БонусыСтрокаПоиска" id="14">
+				<AdditionSource>
+					<Item>Бонусы</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="БонусыСтрокаПоискаКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="БонусыСтрокаПоискаРасширеннаяПодсказка" id="16"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="БонусыСостояниеПросмотра" id="17">
+				<AdditionSource>
+					<Item>Бонусы</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="БонусыСостояниеПросмотраКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="БонусыСостояниеПросмотраРасширеннаяПодсказка" id="19"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="БонусыУправлениеПоиском" id="20">
+				<AdditionSource>
+					<Item>Бонусы</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="БонусыУправлениеПоискомКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="БонусыУправлениеПоискомРасширеннаяПодсказка" id="22"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="БонусыНомерСтроки" id="23">
+					<DataPath>Объект.Бонусы.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="БонусыНомерСтрокиКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="БонусыНомерСтрокиРасширеннаяПодсказка" id="25"/>
+				</LabelField>
+				<InputField name="БонусыКонтрагент" id="26">
+					<DataPath>Объект.Бонусы.Контрагент</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="БонусыКонтрагентКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="БонусыКонтрагентРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="БонусыДисконтнаяКарта" id="47">
+					<DataPath>Объект.Бонусы.ДисконтнаяКарта</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="БонусыДисконтнаяКартаКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="БонусыДисконтнаяКартаРасширеннаяПодсказка" id="49"/>
+				</InputField>
+				<InputField name="БонусыСуммаПродаж" id="29">
+					<DataPath>Объект.Бонусы.СуммаПродаж</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="БонусыСуммаПродажКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="БонусыСуммаПродажРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="БонусыСуммаПоступившихОплат" id="32">
+					<DataPath>Объект.Бонусы.СуммаПоступившихОплат</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="БонусыСуммаПоступившихОплатКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="БонусыСуммаПоступившихОплатРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="БонусыСуммаЗадолженности" id="35">
+					<DataPath>Объект.Бонусы.СуммаЗадолженности</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="БонусыСуммаЗадолженностиКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="БонусыСуммаЗадолженностиРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="БонусыСумма" id="38">
+					<DataPath>Объект.Бонусы.Сумма</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="БонусыСуммаКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="БонусыСуммаРасширеннаяПодсказка" id="40"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<Button name="НачислитьБонусы" id="45">
+			<Type>UsualButton</Type>
+			<Representation>PictureAndText</Representation>
+			<CommandName>Form.Command.НачислитьБонусы</CommandName>
+			<Picture>
+				<xr:Ref>StdPicture.QueryWizard</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<ExtendedTooltip name="НачислитьБонусыРасширеннаяПодсказка" id="46"/>
+		</Button>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.НачислитьБонусыКонтрагентам</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПолучитьДанныеОПродажах" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить данные о продажах</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить данные о продажах</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПолучитьДанныеОПродажах</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="НачислитьБонусы" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начислить бонусы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начислить бонусы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НачислитьБонусы</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

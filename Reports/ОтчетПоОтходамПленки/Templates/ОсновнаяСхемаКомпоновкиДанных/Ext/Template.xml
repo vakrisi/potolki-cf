@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Склад</dataPath>
+			<field>Склад</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЕдиницаИзмеренияОтходов</dataPath>
+			<field>ЕдиницаИзмеренияОтходов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ед. изм. отходов</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КолвоРазличныхПродукция</dataPath>
+			<field>КолвоРазличныхПродукция</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол-во потолков</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоМешков</dataPath>
+			<field>КоличествоМешков</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол-во мешков</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоКВыработке</dataPath>
+			<field>КоличествоКВыработке</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Квадратура</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЕдиницаИзмеренияПродукции</dataPath>
+			<field>ЕдиницаИзмеренияПродукции</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ед. изм. продукции</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КолвоПленкиНаУпаковкуМ2</dataPath>
+			<field>КолвоПленкиНаУпаковкуМ2</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол-во пленки на упаковку (м2)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроцентОтходов</dataPath>
+			<field>ПроцентОтходов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>% отходов</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КолвоПленкиНаУпаковкуКГ</dataPath>
+			<field>КолвоПленкиНаУпаковкуКГ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол-во пленки на упаковку (кг)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбщийПроцентОтходов</dataPath>
+			<field>ОбщийПроцентОтходов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общий % отходов</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ОприходованиеТоваровТовары.Ссылка.Склад КАК Склад,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ОприходованиеТоваровТовары.Ссылка) КАК КоличествоМешков,
+	ОприходованиеТоваровТовары.ЕдиницаИзмерения КАК ЕдиницаИзмерения,
+	СУММА(ОприходованиеТоваровТовары.Количество) КАК Количество
+ПОМЕСТИТЬ ВТ_Оприходования
+ИЗ
+	Документ.ОприходованиеТоваров.Товары КАК ОприходованиеТоваровТовары
+ГДЕ
+	ОприходованиеТоваровТовары.Номенклатура = &amp;Номенклатура
+	И ОприходованиеТоваровТовары.Ссылка.Дата МЕЖДУ &amp;Д1 И &amp;Д2
+
+СГРУППИРОВАТЬ ПО
+	ОприходованиеТоваровТовары.Ссылка.Склад,
+	ОприходованиеТоваровТовары.ЕдиницаИзмерения
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВыпускПродукцииМатериалы.Ссылка.СкладМатериалов КАК Склад,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВыпускПродукцииМатериалы.Ссылка.ПродукцияНоменклатура) КАК КолвоРазличныхПродукция,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВыпускПродукцииМатериалы.Номенклатура) КАК КолвоРазличныхНоменклатура,
+	СУММА(ВыпускПродукцииМатериалы.Количество) КАК Количество,
+	СУММА(ВыпускПродукцииМатериалы.КоличествоКВыработке) КАК КоличествоКВыработке,
+	ВыпускПродукцииМатериалы.ЕдиницаИзмерения КАК ЕдиницаИзмерения
+ПОМЕСТИТЬ ВТ_Выпуски
+ИЗ
+	Документ.ВыпускПродукции.Материалы КАК ВыпускПродукцииМатериалы
+ГДЕ
+	(ВыпускПродукцииМатериалы.Номенклатура.ВидНоменклатуры = ЗНАЧЕНИЕ(Справочник.ВидыНоменклатуры.Полотно)
+			ИЛИ ВыпускПродукцииМатериалы.Номенклатура.ВидНоменклатуры = ЗНАЧЕНИЕ(Справочник.ВидыНоменклатуры.ОстатокПленки))
+	И ВыпускПродукцииМатериалы.Ссылка.Дата МЕЖДУ &amp;Д1 И &amp;Д2
+
+СГРУППИРОВАТЬ ПО
+	ВыпускПродукцииМатериалы.ЕдиницаИзмерения,
+	ВыпускПродукцииМатериалы.Ссылка.СкладМатериалов
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЕСТЬNULL(ВТ_Оприходования.Склад, ВТ_Выпуски.Склад) КАК Склад,
+	ВТ_Выпуски.КолвоРазличныхПродукция КАК КолвоРазличныхПродукция,
+	ВТ_Выпуски.КоличествоКВыработке КАК КоличествоКВыработке,
+	ВТ_Выпуски.ЕдиницаИзмерения КАК ЕдиницаИзмеренияПродукции,
+	ВТ_Оприходования.КоличествоМешков КАК КоличествоМешков,
+	ВТ_Оприходования.Количество КАК Количество,
+	ВТ_Оприходования.ЕдиницаИзмерения КАК ЕдиницаИзмеренияОтходов,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ВТ_Выпуски.КоличествоКВыработке, 0) = 0
+			ТОГДА 0
+		ИНАЧЕ ВТ_Оприходования.Количество / 0.22 * 100 / ВТ_Выпуски.КоличествоКВыработке
+	КОНЕЦ КАК ПроцентОтходов,
+	ЕСТЬNULL(ВТ_Выпуски.КолвоРазличныхПродукция, 0) * 0.7 КАК КолвоПленкиНаУпаковкуМ2,
+	ЕСТЬNULL(ВТ_Выпуски.КолвоРазличныхПродукция, 0) * 0.7 * 0.22 КАК КолвоПленкиНаУпаковкуКГ,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ВТ_Выпуски.КоличествоКВыработке, 0) = 0
+			ТОГДА 0
+		ИНАЧЕ ВТ_Оприходования.Количество / 0.22 * 100 / ВТ_Выпуски.КоличествоКВыработке + ЕСТЬNULL(ВТ_Выпуски.КолвоРазличныхПродукция, 0) * 0.7 * 100 / ВТ_Выпуски.КоличествоКВыработке
+	КОНЕЦ КАК ОбщийПроцентОтходов
+ИЗ
+	ВТ_Выпуски КАК ВТ_Выпуски
+		ПОЛНОЕ СОЕДИНЕНИЕ ВТ_Оприходования КАК ВТ_Оприходования
+		ПО (ВТ_Оприходования.Склад = ВТ_Выпуски.Склад)</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>ПроцентПленкиНаУпаковку</dataPath>
+		<expression>Сумма(ОбщийПроцентОтходов) - Сумма(ПроцентОтходов)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Процент пленки на упаковку</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<totalField>
+		<dataPath>КолвоПленкиНаУпаковкуКГ</dataPath>
+		<expression>Сумма(КолвоПленкиНаУпаковкуКГ)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КолвоПленкиНаУпаковкуМ2</dataPath>
+		<expression>Сумма(КолвоПленкиНаУпаковкуМ2)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КолвоРазличныхПродукция</dataPath>
+		<expression>Сумма(КолвоРазличныхПродукция)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоКВыработке</dataPath>
+		<expression>Сумма(КоличествоКВыработке)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Количество</dataPath>
+		<expression>Сумма(Количество)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоМешков</dataPath>
+		<expression>Сумма(КоличествоМешков)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОбщийПроцентОтходов</dataPath>
+		<expression>Сумма(ОбщийПроцентОтходов)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентОтходов</dataPath>
+		<expression>Сумма(ПроцентОтходов)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОбщийПроцентОтходов</dataPath>
+		<expression>Среднее(ОбщийПроцентОтходов)</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентОтходов</dataPath>
+		<expression>Среднее(ПроцентОтходов)</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентПленкиНаУпаковку</dataPath>
+		<expression>ПроцентПленкиНаУпаковку</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентПленкиНаУпаковку</dataPath>
+		<expression>Среднее(ОбщийПроцентОтходов) - Среднее(ПроцентОтходов)</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Д1</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Д1</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>Д2</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Д2</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>Номенклатура</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Номенклатура</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Номенклатура</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<expression>Справочники.Номенклатура.НайтиПоКоду("000479479")</expression>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Склад</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоМешков</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Количество</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоКВыработке</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПроцентОтходов</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПроцентПленкиНаУпаковку</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>% отходов на упаковку</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КолвоРазличныхПродукция</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КолвоПленкиНаУпаковкуМ2</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КолвоПленкиНаУпаковкуКГ</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОбщийПроцентОтходов</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>340bb177-c127-4411-9e6b-40365c18b351</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Античный</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

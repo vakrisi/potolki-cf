@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Rights xmlns="http://v8.1c.ru/8.2/roles" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Rights" version="2.21">
+	<setForNewObjects>false</setForNewObjects>
+	<setForAttributesByDefault>true</setForAttributesByDefault>
+	<independentRightsOfChildObjects>false</independentRightsOfChildObjects>
+	<object>
+		<name>Subsystem.Финансы.Subsystem.НаличныеРасчеты</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>DocumentJournal.КассовыеДокументы</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+			<restrictionByCondition>
+				<condition>ТекущаяТаблица 
+ГДЕ 
+    ИСТИНА
+    И #ШаблонКассы("Касса")
+    И #ШаблонОрганизации("Организация")
+    И #ШаблонКонтрагенты("Контрагент")</condition>
+			</restrictionByCondition>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.Финансы.Subsystem.БезналичныеРасчеты</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ПриходныйКассовыйОрдер</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+			<restrictionByCondition>
+				<condition>ТекущаяТаблица 
+ГДЕ 
+    ИСТИНА
+    И #ШаблонКассы("Касса")
+    И #ШаблонОрганизации("Организация")
+    И #ШаблонКонтрагенты("Контрагент")</condition>
+			</restrictionByCondition>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InputByString</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.Финансы</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Configuration.Потолки</name>
+		<right>
+			<name>MainWindowModeNormal</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeWorkplace</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeEmbeddedWorkplace</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeFullscreenWorkplace</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeKiosk</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>AnalyticsSystemClient</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.Финансы.Subsystem.Дополнительно</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.Финансы.Subsystem.Эквайринг</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<restrictionTemplate>
+		<name>ШаблонКассы</name>
+		<condition>#Если &amp;ОграничиватьДоступПоКассамИБанковскимСчетамОрганизаций #Тогда
+    #ТекущаяТаблица.#Параметр(1) В
+            (ВЫБРАТЬ
+                ДоступныеКассы.Касса
+            ИЗ
+                Справочник.Пользователи.ДоступныеКассы КАК ДоступныеКассы
+            ГДЕ
+                ДоступныеКассы.Ссылка = &amp;Пользователь
+            )
+    
+#ИначеЕсли &amp;ОграничиватьДоступПоКассамИБанковскимСчетамОрганизацийПоЗапрещенным #Тогда
+    НЕ #ТекущаяТаблица.#Параметр(1) В
+            (ВЫБРАТЬ
+                ДоступныеКассы.Касса
+            ИЗ
+                Справочник.Пользователи.ДоступныеКассы КАК ДоступныеКассы
+            ГДЕ
+                ДоступныеКассы.Ссылка = &amp;Пользователь
+            )
+#Иначе
+    ИСТИНА  
+#КонецЕсли</condition>
+	</restrictionTemplate>
+	<restrictionTemplate>
+		<name>ШаблонКонтрагенты</name>
+		<condition>#Если &amp;ОграничиватьДоступККонтрагентамПоГруппамДоступа #Тогда
+    ВЫБОР 
+        КОГДА НЕ (#ТекущаяТаблица.#Параметр(1)).ЭтоГруппа 
+            ТОГДА 
+                (#ТекущаяТаблица.#Параметр(1)).ГруппаДоступа В
+                    (ВЫБРАТЬ
+                        ДоступныеГруппы.ГруппаКонтрагентов
+                    ИЗ
+                        Справочник.Пользователи.ДоступныеГруппыКонтрагентов КАК ДоступныеГруппы
+                    ГДЕ
+                        ДоступныеГруппы.Ссылка = &amp;Пользователь)
+        ИНАЧЕ 
+            ИСТИНА 
+    КОНЕЦ   
+#Иначе
+    ИСТИНА
+#КонецЕсли</condition>
+	</restrictionTemplate>
+	<restrictionTemplate>
+		<name>ШаблонОрганизации</name>
+		<condition>#Если &amp;ОграничиватьДоступПоОрганизациям #Тогда
+    #ТекущаяТаблица.#Параметр(1) В
+            (ВЫБРАТЬ
+                ДоступныеОрганизации.Организация
+            ИЗ
+                Справочник.Пользователи.ДоступныеОрганизации КАК ДоступныеОрганизации
+            ГДЕ
+                ДоступныеОрганизации.Ссылка = &amp;Пользователь
+            )
+#Иначе
+    ИСТИНА  
+#КонецЕсли</condition>
+	</restrictionTemplate>
+</Rights>

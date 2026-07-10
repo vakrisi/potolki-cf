@@ -1,0 +1,508 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Доходы</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Документ</dataPath>
+			<field>Документ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидДохода</dataPath>
+			<field>ВидДохода</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДоходСуммаБезнал</dataPath>
+			<field>ДоходСуммаБезнал</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Доход сумма безнал</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДоходСуммаНал</dataPath>
+			<field>ДоходСуммаНал</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Доход сумма нал</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	Т.Ссылка КАК Документ,
+	Т.ВидДохода,
+	Т.Подразделение,
+	СУММА(Т.СуммаНал) КАК ДоходСуммаНал,
+	СУММА(Т.СуммаБезнал) КАК ДоходСуммаБезнал
+ПОМЕСТИТЬ Таб
+ИЗ
+	Документ.ИА_ФинансовоеПланирование.ДоходыИтого КАК Т
+ГДЕ
+	(&amp;ВыводитьПустые
+			ИЛИ Т.СуммаНал + Т.СуммаБезнал &lt;&gt; 0)
+{ГДЕ
+	(Т.Ссылка = &amp;ФП)}
+
+СГРУППИРОВАТЬ ПО
+	Т.Ссылка,
+	Т.ВидДохода,
+	Т.Подразделение
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Таб.Документ КАК Документ,
+	Таб.ВидДохода КАК ВидДохода,
+	Таб.Подразделение как Подразделение,
+	Таб.ДоходСуммаНал КАК ДоходСуммаНал,
+	Таб.ДоходСуммаБезнал КАК ДоходСуммаБезнал
+{ВЫБРАТЬ
+	Документ.*,
+	ВидДохода.*,
+	Подразделение.*,
+	ДоходСуммаНал,
+	ДоходСуммаБезнал}
+ИЗ
+	Таб КАК Таб
+{ГДЕ
+	Таб.Документ.*,
+	Таб.ВидДохода.*,
+	Таб.Подразделение.*,
+	Таб.ДоходСуммаНал,
+	Таб.ДоходСуммаБезнал}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Политика1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Статья</dataPath>
+			<field>Статья</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фонд</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РаспределениеСуммаНал</dataPath>
+			<field>РаспределениеСуммаНал</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распределение сумма нал</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Раздел</dataPath>
+			<field>Раздел</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РаспределениеСуммаБезналАвто</dataPath>
+			<field>РаспределениеСуммаБезналАвто</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распределение сумма безнал авто</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РаспределениеСуммаБезнал</dataPath>
+			<field>РаспределениеСуммаБезнал</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распределение сумма безнал</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РаспределениеСуммаНалАвто</dataPath>
+			<field>РаспределениеСуммаНалАвто</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распределение сумма нал авто</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Документ</dataPath>
+			<field>Документ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СпособРасчета</dataPath>
+			<field>СпособРасчета</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидДохода</dataPath>
+			<field>ВидДохода</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	Т.Ссылка КАК Документ,
+	Т.ВидДохода,
+	Т.Подразделение,
+	СУММА(0) КАК РаспределениеСуммаНал,
+	СУММА(Т.Сумма) КАК РаспределениеСуммаБезнал,
+	Т.Раздел,
+	Т.Статья,
+	Т.РежимРасчета КАК СпособРасчета,
+	СУММА(0) КАК РаспределениеСуммаНалАвто,
+	СУММА(Т.СуммаАвто) КАК РаспределениеСуммаБезналАвто
+ПОМЕСТИТЬ Таб
+ИЗ
+	Документ.ИА_ФинансовоеПланирование.Политика1 КАК Т
+{ГДЕ
+	(Т.Ссылка = &amp;ФП)}
+
+СГРУППИРОВАТЬ ПО
+	Т.Подразделение,
+	Т.Раздел,
+	Т.Статья,
+	Т.РежимРасчета,
+	Т.ВидДохода,
+	Т.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Таб.Документ КАК Документ,
+	Таб.ВидДохода КАК ВидДохода,
+	Таб.РаспределениеСуммаНал КАК РаспределениеСуммаНал,
+	Таб.РаспределениеСуммаБезнал КАК РаспределениеСуммаБезнал,
+	Таб.Раздел КАК Раздел,
+	Таб.Подразделение КАК Подразделение,
+	Таб.Статья КАК Статья,
+	Таб.СпособРасчета КАК СпособРасчета,
+	Таб.РаспределениеСуммаНалАвто КАК РаспределениеСуммаНалАвто,
+	Таб.РаспределениеСуммаБезналАвто КАК РаспределениеСуммаБезналАвто
+{ВЫБРАТЬ
+	Документ.*,
+	ВидДохода.*,
+	РаспределениеСуммаНал,
+	РаспределениеСуммаБезнал,
+	Раздел.*,
+	Подразделение.*,
+	Статья.*,
+	СпособРасчета.*,
+	РаспределениеСуммаНалАвто,
+	РаспределениеСуммаБезналАвто}
+ИЗ
+	Таб КАК Таб
+{ГДЕ
+	Таб.Документ.*,
+	Таб.ВидДохода.*,
+	Таб.РаспределениеСуммаНал,
+	Таб.РаспределениеСуммаБезнал,
+	Таб.Раздел.*,
+	Таб.Подразделение.*,
+	Таб.Статья.*,
+	Таб.СпособРасчета.*,
+	Таб.РаспределениеСуммаНалАвто,
+	Таб.РаспределениеСуммаБезналАвто}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<dataSetLink>
+		<sourceDataSet>Доходы</sourceDataSet>
+		<destinationDataSet>Политика1</destinationDataSet>
+		<sourceExpression>Документ</sourceExpression>
+		<destinationExpression>Документ</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>Доходы</sourceDataSet>
+		<destinationDataSet>Политика1</destinationDataSet>
+		<sourceExpression>ВидДохода</sourceExpression>
+		<destinationExpression>ВидДохода</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>Доходы</sourceDataSet>
+		<destinationDataSet>Политика1</destinationDataSet>
+		<sourceExpression>Подразделение</sourceExpression>
+		<destinationExpression>Подразделение</destinationExpression>
+	</dataSetLink>
+	<calculatedField>
+		<dataPath>ВаловаяПрибыльНал</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Валовая прибыль нал</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>15</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ВаловаяПрибыльБезнал</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Валовая прибыль безнал</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>15</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<totalField>
+		<dataPath>ДоходСуммаБезнал</dataPath>
+		<expression>Сумма(ДоходСуммаБезнал)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДоходСуммаНал</dataPath>
+		<expression>Сумма(ДоходСуммаНал)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РаспределениеСуммаБезнал</dataPath>
+		<expression>Сумма(РаспределениеСуммаБезнал)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РаспределениеСуммаБезналАвто</dataPath>
+		<expression>Сумма(РаспределениеСуммаБезналАвто)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РаспределениеСуммаНал</dataPath>
+		<expression>Сумма(РаспределениеСуммаНал)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РаспределениеСуммаНалАвто</dataPath>
+		<expression>Сумма(РаспределениеСуммаНалАвто)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВаловаяПрибыльНал</dataPath>
+		<expression>Сумма(ДоходСуммаНал)-Сумма(   ISNULL(РаспределениеСуммаНал,0))</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВаловаяПрибыльБезнал</dataPath>
+		<expression>Сумма(ДоходСуммаБезНал)-Сумма(  ISNULL(    РаспределениеСуммаБезНал,0)  )</expression>
+	</totalField>
+	<parameter>
+		<name>ФП</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>ФП</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.ИА_ФинансовоеПланирование</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВыводитьПустые</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Выводить пустые</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>ДоходСуммаНал</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДоходСуммаБезнал</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доход</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>РаспределениеСуммаНал</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РаспределениеСуммаБезнал</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Распределение</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>РаспределениеСуммаНалАвто</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>РаспределениеСуммаБезналАвто</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>ВаловаяПрибыльНал</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВаловаяПрибыльБезнал</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Валовая прибыль</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ФП</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>f852fc0a-4c86-4d7e-a5ad-8da04a384364</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПустые</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					<dcsset:userSettingID>b738ae36-22c9-47bc-a5b3-1cef6bee24bb</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Море</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Документ</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Подразделение</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ВидДохода</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:item xsi:type="dcsset:StructureItemGroup">
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>Статья</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:use>false</dcsset:use>
+									<dcsset:field>ДоходСуммаНал</dcsset:field>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:use>false</dcsset:use>
+									<dcsset:field>ДоходСуммаБезнал</dcsset:field>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:use>false</dcsset:use>
+									<dcsset:field>ВаловаяПрибыльБезнал</dcsset:field>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:use>false</dcsset:use>
+									<dcsset:field>ВаловаяПрибыльНал</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

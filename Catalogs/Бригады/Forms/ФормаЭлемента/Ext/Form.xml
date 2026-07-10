@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="Родитель" id="56">
+			<DataPath>Объект.Parent</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="РодительКонтекстноеМеню" id="57"/>
+			<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="58"/>
+		</InputField>
+		<InputField name="Бригадир" id="13">
+			<DataPath>Объект.Бригадир</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<ContextMenu name="БригадирКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="БригадирРасширеннаяПодсказка" id="15"/>
+		</InputField>
+		<InputField name="Подразделение" id="59">
+			<DataPath>Объект.Подразделение</DataPath>
+			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<ContextMenu name="ПодразделениеКонтекстноеМеню" id="60"/>
+			<ExtendedTooltip name="ПодразделениеРасширеннаяПодсказка" id="61">
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>если у пользователя установлена галка "Ограничивать видимость монтажных бригад по подразделению пользователя", то в графике монтажей (в монтаже и в отчете) будут показаны только те бригады, у которых подразделение соответствует подразделению пользователя.</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+		</InputField>
+		<InputField name="ТочкаПродаж" id="44">
+			<DataPath>Объект.ТочкаПродаж</DataPath>
+			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<ContextMenu name="ТочкаПродажКонтекстноеМеню" id="45"/>
+			<ExtendedTooltip name="ТочкаПродажРасширеннаяПодсказка" id="46">
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>1. при построении графика монтажей, если заполнен отбор "Точка продаж", то отбираются монтажи тех бригад, чьи точки продаж совпадают с отбором.
+2. если у пользователя установлена галка "Ограничивать видимость монтажей в графике точкой продаж пользователя" на форме монтажа в графике отображается поле "Точка продаж (фильтр на графике)". При заполненном поле "Точка продаж (фильтр на графике)" при построении графика на форме монтажа:
+- отображаются только те бригады, у которых "Точка продаж" совпадает с "Точка продаж (фильтр на графике)"
+- отображаются только те монтажи, у которых "Бригада" равна отобранным бригадам.</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+		</InputField>
+		<InputField name="ВидБригады" id="7">
+			<DataPath>Объект.ВидБригады</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<ContextMenu name="ВидБригадыКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ВидБригадыРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<InputField name="СкладТоваров" id="41">
+			<DataPath>Объект.СкладТоваров</DataPath>
+			<ContextMenu name="СкладТоваровКонтекстноеМеню" id="42"/>
+			<ExtendedTooltip name="СкладТоваровРасширеннаяПодсказка" id="43"/>
+		</InputField>
+		<InputField name="Склад" id="10">
+			<DataPath>Объект.Склад</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<ContextMenu name="СкладКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="СкладРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<CheckBoxField name="НеПроверятьПересечениеМонтажейВГрафике" id="16">
+			<DataPath>Объект.НеПроверятьПересечениеМонтажейВГрафике</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<ContextMenu name="НеПроверятьПересечениеМонтажейВГрафикеКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="НеПроверятьПересечениеМонтажейВГрафикеРасширеннаяПодсказка" id="18"/>
+		</CheckBoxField>
+		<CheckBoxField name="НеАктивная" id="38">
+			<DataPath>Объект.НеАктивная</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<ContextMenu name="НеАктивнаяКонтекстноеМеню" id="39"/>
+			<ExtendedTooltip name="НеАктивнаяРасширеннаяПодсказка" id="40"/>
+		</CheckBoxField>
+		<Table name="Сотрудники" id="19">
+			<Representation>List</Representation>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.Сотрудники</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СотрудникиКонтекстноеМеню" id="20"/>
+			<AutoCommandBar name="СотрудникиКоманднаяПанель" id="21"/>
+			<ExtendedTooltip name="СотрудникиРасширеннаяПодсказка" id="22"/>
+			<SearchStringAddition name="СотрудникиСтрокаПоиска" id="23">
+				<AdditionSource>
+					<Item>Сотрудники</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СотрудникиСтрокаПоискаКонтекстноеМеню" id="24"/>
+				<ExtendedTooltip name="СотрудникиСтрокаПоискаРасширеннаяПодсказка" id="25"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СотрудникиСостояниеПросмотра" id="26">
+				<AdditionSource>
+					<Item>Сотрудники</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СотрудникиСостояниеПросмотраКонтекстноеМеню" id="27"/>
+				<ExtendedTooltip name="СотрудникиСостояниеПросмотраРасширеннаяПодсказка" id="28"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СотрудникиУправлениеПоиском" id="29">
+				<AdditionSource>
+					<Item>Сотрудники</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СотрудникиУправлениеПоискомКонтекстноеМеню" id="30"/>
+				<ExtendedTooltip name="СотрудникиУправлениеПоискомРасширеннаяПодсказка" id="31"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="СотрудникиНомерСтроки" id="32">
+					<DataPath>Объект.Сотрудники.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СотрудникиНомерСтрокиКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="СотрудникиНомерСтрокиРасширеннаяПодсказка" id="34"/>
+				</LabelField>
+				<InputField name="СотрудникиСотрудник" id="35">
+					<DataPath>Объект.Сотрудники.Сотрудник</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СотрудникиСотрудникКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="СотрудникиСотрудникРасширеннаяПодсказка" id="37"/>
+					<Events>
+						<Event name="OnChange">СотрудникиСотрудникПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="СотрудникиКоэффициент" id="47">
+					<DataPath>Объект.Сотрудники.Коэффициент</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СотрудникиКоэффициентКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="СотрудникиКоэффициентРасширеннаяПодсказка" id="49"/>
+				</InputField>
+				<InputField name="СотрудникиТарифИсполнителя" id="50">
+					<DataPath>Объект.Сотрудники.ТарифИсполнителя</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СотрудникиТарифИсполнителяКонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="СотрудникиТарифИсполнителяРасширеннаяПодсказка" id="52"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<InputField name="Описание" id="53">
+			<DataPath>Объект.Описание</DataPath>
+			<Width>50</Width>
+			<MultiLine>true</MultiLine>
+			<ContextMenu name="ОписаниеКонтекстноеМеню" id="54"/>
+			<ExtendedTooltip name="ОписаниеРасширеннаяПодсказка" id="55"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Бригады</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

@@ -1,0 +1,603 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<CommandSet>
+		<ExcludedCommand>Delete</ExcludedCommand>
+		<ExcludedCommand>ShowInList</ExcludedCommand>
+	</CommandSet>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаВыполнитьСинхронизацию" id="19">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ВыполнитьСинхронизацию</CommandName>
+				<ExtendedTooltip name="ФормаВыполнитьСинхронизациюРасширеннаяПодсказка" id="20"/>
+			</Button>
+			<Button name="ФормаОткрытьЛог" id="31">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОткрытьЛог</CommandName>
+				<ExtendedTooltip name="ФормаОткрытьЛогРасширеннаяПодсказка" id="32"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+		<Event name="OnWriteAtServer">ПриЗаписиНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<UsualGroup name="ГруппаНастройкиПодключения" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные для подключения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа настройки подключения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>WeakSeparation</Representation>
+			<ExtendedTooltip name="ГруппаНастройкиПодключенияРасширеннаяПодсказка" id="30"/>
+			<ChildItems>
+				<InputField name="Токен" id="16">
+					<DataPath>Токен</DataPath>
+					<PasswordMode>true</PasswordMode>
+					<ContextMenu name="ТокенКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="ТокенРасширеннаяПодсказка" id="18"/>
+					<Events>
+						<Event name="OnChange">ТокенНаФормеПриИзменении</Event>
+						<Event name="TextEditEnd">ТокенНаФормеОкончаниеВводаТекста</Event>
+					</Events>
+				</InputField>
+				<InputField name="Портал" id="10">
+					<DataPath>Объект.Портал</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заполняется автоматически после ввода ключа подключения (ключ должен быть корректный и действующий)</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ПорталКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ПорталРасширеннаяПодсказка" id="12"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаНастройкиЗагрузкиДанных" id="36">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка загрузки данных</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа настройки загрузки данных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>WeakSeparation</Representation>
+			<ExtendedTooltip name="ГруппаНастройкиЗагрузкиДанныхРасширеннаяПодсказка" id="37"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаКоличествоДнейЗагрузки" id="38">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа количество дней загрузки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа количество дней загрузки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>WeakSeparation</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКоличествоДнейЗагрузкиРасширеннаяПодсказка" id="39"/>
+					<ChildItems>
+						<InputField name="КоличествоДнейЗагрузки" id="33">
+							<DataPath>Объект.КоличествоДнейЗагрузки</DataPath>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<SpinButton>true</SpinButton>
+							<ContextMenu name="КоличествоДнейЗагрузкиКонтекстноеМеню" id="34"/>
+							<ExtendedTooltip name="КоличествоДнейЗагрузкиРасширеннаяПодсказка" id="35">
+								<Title formatted="true">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Задаёт отбор модифицированных данных. Рассчитывается как текущая дата минус указанное количество дней на начало дня.
+Рекумендуемое количество не более 3-х дней.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаСинхронизацияСделок" id="83">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Синхронизация лидов (сделок)</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа синхронизация сделок</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>HorizontalIfPossible</Group>
+					<Representation>WeakSeparation</Representation>
+					<ExtendedTooltip name="ГруппаСинхронизацияСделокРасширеннаяПодсказка" id="84"/>
+					<ChildItems>
+						<CheckBoxField name="СинхронизацияСделок" id="85">
+							<DataPath>Объект.СинхронизацияСделок</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Включено</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="СинхронизацияСделокКонтекстноеМеню" id="86"/>
+							<ExtendedTooltip name="СинхронизацияСделокРасширеннаяПодсказка" id="87"/>
+							<Events>
+								<Event name="OnChange">СинхронизацияСделокПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<Button name="ДетальнаяНастройкаСинхронизацииЛидов" id="40">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ДетальнаяНастройкаСинхронизацииЛидов</CommandName>
+							<ExtendedTooltip name="ДетальнаяНастройкаСинхронизацииЛидовРасширеннаяПодсказка" id="41"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаСинхронизацияКонтрагентов" id="88">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Синхронизация контрагентов</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа синхронизация контрагентов</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>HorizontalIfPossible</Group>
+					<Representation>WeakSeparation</Representation>
+					<ExtendedTooltip name="ГруппаСинхронизацияКонтрагентовРасширеннаяПодсказка" id="89"/>
+					<ChildItems>
+						<CheckBoxField name="СинхронизацияКонтрагентов" id="90">
+							<DataPath>Объект.СинхронизацияКонтрагентов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Включено</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="СинхронизацияКонтрагентовКонтекстноеМеню" id="91"/>
+							<ExtendedTooltip name="СинхронизацияКонтрагентовРасширеннаяПодсказка" id="92"/>
+							<Events>
+								<Event name="OnChange">СинхронизацияКонтрагентовПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<Button name="ДетальнаяНастройкаСинхронизацииКонтрагентов" id="93">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ДетальнаяНастройкаСинхронизацииКонтрагентов</CommandName>
+							<ExtendedTooltip name="ДетальнаяНастройкаСинхронизацииКонтрагентовРасширеннаяПодсказка" id="94"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСпособСинхронизации" id="74">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ синхронизации данных</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>WeakSeparation</Representation>
+			<ExtendedTooltip name="ГруппаСпособСинхронизацииРасширеннаяПодсказка" id="75"/>
+			<ChildItems>
+				<RadioButtonField name="СпособСинхронизацииДанных" id="76">
+					<DataPath>Объект.СпособСинхронизацииДанных</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<RadioButtonType>Tumbler</RadioButtonType>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>По расписанию</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:string">ПоРасписанию</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Только ручной режим</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:string">Только ручной режим</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="СпособСинхронизацииДанныхКонтекстноеМеню" id="77"/>
+					<ExtendedTooltip name="СпособСинхронизацииДанныхРасширеннаяПодсказка" id="78"/>
+					<Events>
+						<Event name="OnChange">СпособСинхронизацииДанныхПриИзменении</Event>
+					</Events>
+				</RadioButtonField>
+				<UsualGroup name="ГруппаНастройкаОбменаПоРасписанию" id="79">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа настройка обмена по расписанию</v8:content>
+						</v8:item>
+					</Title>
+					<Group>HorizontalIfPossible</Group>
+					<Representation>WeakSeparation</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНастройкаОбменаПоРасписаниюРасширеннаяПодсказка" id="80"/>
+					<ChildItems>
+						<Button name="НастроитьРасписаниеОбмена" id="81">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.НастроитьРасписаниеОбмена</CommandName>
+							<ExtendedTooltip name="НастроитьРасписаниеОбменаРасширеннаяПодсказка" id="82"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаЛогирование" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки логирования</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа логирование</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>WeakSeparation</Representation>
+			<ExtendedTooltip name="ГруппаЛогированиеРасширеннаяПодсказка" id="28"/>
+			<ChildItems>
+				<CheckBoxField name="ОбрезатьИсториюОбменов" id="24">
+					<DataPath>Объект.ОбрезатьИсториюОбменов</DataPath>
+					<ContextMenu name="ОбрезатьИсториюОбменовКонтекстноеМеню" id="25"/>
+					<ExtendedTooltip name="ОбрезатьИсториюОбменовРасширеннаяПодсказка" id="26"/>
+				</CheckBoxField>
+				<InputField name="ЧислоДнейХраненияИстории" id="21">
+					<DataPath>Объект.ЧислоДнейХраненияИстории</DataPath>
+					<SpinButton>true</SpinButton>
+					<ContextMenu name="ЧислоДнейХраненияИсторииКонтекстноеМеню" id="22"/>
+					<ExtendedTooltip name="ЧислоДнейХраненияИсторииРасширеннаяПодсказка" id="23"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="СопоставлениеПользователей1СИПортала" id="42">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сопоставление пользователей 1С и Битрикс24</v8:content>
+				</v8:item>
+			</Title>
+			<Width>60</Width>
+			<HorizontalStretch>false</HorizontalStretch>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="СопоставлениеПользователей1СИПорталаРасширеннаяПодсказка" id="43"/>
+			<ChildItems>
+				<LabelDecoration name="ИнформацияОСопоставленииПользователей" id="44">
+					<Width>63</Width>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заполняется, если необходимо, чтобы устанавливался автор в документах</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ИнформацияОСопоставленииПользователейКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ИнформацияОСопоставленииПользователейРасширеннаяПодсказка" id="46"/>
+				</LabelDecoration>
+				<Button name="ЗагрузитьПользователейСПортала" id="47">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ЗагрузитьПользователейСПортала</CommandName>
+					<ExtendedTooltip name="ЗагрузитьПользователейСПорталаРасширеннаяПодсказка" id="48"/>
+				</Button>
+				<Table name="СопоставлениеПользователей" id="49">
+					<Representation>List</Representation>
+					<ChangeRowOrder>false</ChangeRowOrder>
+					<Height>7</Height>
+					<AutoMaxHeight>false</AutoMaxHeight>
+					<RowSelectionMode>Cell</RowSelectionMode>
+					<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<VerticalStretch>false</VerticalStretch>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>Объект.СопоставлениеПользователей</DataPath>
+					<CommandSet>
+						<ExcludedCommand>Add</ExcludedCommand>
+						<ExcludedCommand>CancelSearch</ExcludedCommand>
+						<ExcludedCommand>Change</ExcludedCommand>
+						<ExcludedCommand>Copy</ExcludedCommand>
+						<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+						<ExcludedCommand>Delete</ExcludedCommand>
+						<ExcludedCommand>EndEdit</ExcludedCommand>
+						<ExcludedCommand>Find</ExcludedCommand>
+						<ExcludedCommand>MoveDown</ExcludedCommand>
+						<ExcludedCommand>MoveUp</ExcludedCommand>
+						<ExcludedCommand>OutputList</ExcludedCommand>
+						<ExcludedCommand>SelectAll</ExcludedCommand>
+						<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+						<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+						<ExcludedCommand>SortListAsc</ExcludedCommand>
+						<ExcludedCommand>SortListDesc</ExcludedCommand>
+					</CommandSet>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="СопоставлениеПользователейКонтекстноеМеню" id="50"/>
+					<AutoCommandBar name="СопоставлениеПользователейКоманднаяПанель" id="51"/>
+					<ExtendedTooltip name="СопоставлениеПользователейРасширеннаяПодсказка" id="52"/>
+					<SearchStringAddition name="СопоставлениеПользователейСтрокаПоиска" id="53">
+						<AdditionSource>
+							<Item>СопоставлениеПользователей</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СопоставлениеПользователейСтрокаПоискаКонтекстноеМеню" id="54"/>
+						<ExtendedTooltip name="СопоставлениеПользователейСтрокаПоискаРасширеннаяПодсказка" id="55"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="СопоставлениеПользователейСостояниеПросмотра" id="56">
+						<AdditionSource>
+							<Item>СопоставлениеПользователей</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СопоставлениеПользователейСостояниеПросмотраКонтекстноеМеню" id="57"/>
+						<ExtendedTooltip name="СопоставлениеПользователейСостояниеПросмотраРасширеннаяПодсказка" id="58"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="СопоставлениеПользователейУправлениеПоиском" id="59">
+						<AdditionSource>
+							<Item>СопоставлениеПользователей</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="СопоставлениеПользователейУправлениеПоискомКонтекстноеМеню" id="60"/>
+						<ExtendedTooltip name="СопоставлениеПользователейУправлениеПоискомРасширеннаяПодсказка" id="61"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="СопоставлениеПользователейНомерСтроки" id="62">
+							<DataPath>Объект.СопоставлениеПользователей.LineNumber</DataPath>
+							<Visible>false</Visible>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="СопоставлениеПользователейНомерСтрокиКонтекстноеМеню" id="63"/>
+							<ExtendedTooltip name="СопоставлениеПользователейНомерСтрокиРасширеннаяПодсказка" id="64"/>
+						</LabelField>
+						<InputField name="СопоставлениеПользователейИдПользователя" id="65">
+							<DataPath>Объект.СопоставлениеПользователей.ИдПользователя</DataPath>
+							<Visible>false</Visible>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="СопоставлениеПользователейИдПользователяКонтекстноеМеню" id="66"/>
+							<ExtendedTooltip name="СопоставлениеПользователейИдПользователяРасширеннаяПодсказка" id="67"/>
+						</InputField>
+						<InputField name="СопоставлениеПользователейФИО" id="68">
+							<DataPath>Объект.СопоставлениеПользователей.ФИО</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="СопоставлениеПользователейФИОКонтекстноеМеню" id="69"/>
+							<ExtendedTooltip name="СопоставлениеПользователейФИОРасширеннаяПодсказка" id="70"/>
+						</InputField>
+						<InputField name="СопоставлениеПользователейПользователь1С" id="71">
+							<DataPath>Объект.СопоставлениеПользователей.Пользователь1С</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="СопоставлениеПользователейПользователь1СКонтекстноеМеню" id="72"/>
+							<ExtendedTooltip name="СопоставлениеПользователейПользователь1СРасширеннаяПодсказка" id="73"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.НастройкиСинхронизацииСБитрикс24</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="Токен" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ключ подключения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РасписаниеРегламентногоЗадания" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расписание регламентного задания</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="НужноЗакрытьОкно" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Нужно закрыть окно</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НастройкаПодключения" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка подключения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.НастройкиСинхронизацииСБитрикс24</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВыполнитьСинхронизацию" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить синхронизацию</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить синхронизацию</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыполнитьСинхронизацию</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьЛог" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть лог обмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть лог</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьЛог</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДетальнаяНастройкаСинхронизацииЛидов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Детальная настройка синхронизации лидов (сделок)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Детальная настройка синхронизации лидов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДетальнаяНастройкаСинхронизацииЛидов</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗагрузитьПользователейСПортала" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить пользователей Битрикс24</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить пользователей с портала</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьПользователейСПортала</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="НастроитьРасписаниеОбмена" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настроить расписание обмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настроить расписание обмена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НастроитьРасписаниеОбмена</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДетальнаяНастройкаСинхронизацииКонтрагентов" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Детальная настройка выгрузки контрагентов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Детальная настройка синхронизации контрагентов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДетальнаяНастройкаСинхронизацииКонтрагентов</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

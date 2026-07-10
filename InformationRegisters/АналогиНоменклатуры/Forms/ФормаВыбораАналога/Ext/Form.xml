@@ -1,0 +1,801 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>LockOwner</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Button name="ЗаменитьВДокументе" id="1">
+			<Type>UsualButton</Type>
+			<DefaultButton>true</DefaultButton>
+			<CommandName>Form.Command.ЗаменитьВДокументе</CommandName>
+			<ButtonImportance>Main</ButtonImportance>
+			<ExtendedTooltip name="ЗаменитьВДокументеРасширеннаяПодсказка" id="2"/>
+		</Button>
+		<Pages name="СтраницыАналогов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы аналогов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы аналогов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыАналоговРасширеннаяПодсказка" id="4"/>
+			<ChildItems>
+				<Page name="СтраницаАналогиНоменклатура" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница аналоги номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница аналоги номенклатура</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<ScrollOnCompress>false</ScrollOnCompress>
+					<ExtendedTooltip name="СтраницаАналогиНоменклатураРасширеннаяПодсказка" id="6"/>
+					<ChildItems>
+						<Table name="СписокАналогов" id="7">
+							<Representation>List</Representation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<HeightInTableRows>4</HeightInTableRows>
+							<RowSelectionMode>Cell</RowSelectionMode>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>СписокАналогов</DataPath>
+							<RowPictureDataPath>СписокАналогов.ПризнакАналога</RowPictureDataPath>
+							<RowsPicture>
+								<xr:Ref>CommonPicture.ВидыАналогов</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</RowsPicture>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="СписокАналоговКонтекстноеМеню" id="8"/>
+							<AutoCommandBar name="СписокАналоговКоманднаяПанель" id="9">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СписокАналоговРасширеннаяПодсказка" id="10"/>
+							<SearchStringAddition name="СписокАналоговСтрокаПоиска" id="11">
+								<AdditionSource>
+									<Item>СписокАналогов</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокАналоговСтрокаПоискаКонтекстноеМеню" id="12"/>
+								<ExtendedTooltip name="СписокАналоговСтрокаПоискаРасширеннаяПодсказка" id="13"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СписокАналоговСостояниеПросмотра" id="14">
+								<AdditionSource>
+									<Item>СписокАналогов</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокАналоговСостояниеПросмотраКонтекстноеМеню" id="15"/>
+								<ExtendedTooltip name="СписокАналоговСостояниеПросмотраРасширеннаяПодсказка" id="16"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СписокАналоговУправлениеПоиском" id="17">
+								<AdditionSource>
+									<Item>СписокАналогов</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокАналоговУправлениеПоискомКонтекстноеМеню" id="18"/>
+								<ExtendedTooltip name="СписокАналоговУправлениеПоискомРасширеннаяПодсказка" id="19"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">СписокАналоговВыбор</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="СписокАналоговНоменклатура" id="85">
+									<DataPath>СписокАналогов.Номенклатура</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Номенклатура</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СписокАналоговНоменклатураКонтекстноеМеню" id="86"/>
+									<ExtendedTooltip name="СписокАналоговНоменклатураРасширеннаяПодсказка" id="87"/>
+								</LabelField>
+								<LabelField name="СписокАналоговАртикул" id="70">
+									<DataPath>СписокАналогов.Артикул</DataPath>
+									<Width>16</Width>
+									<ContextMenu name="СписокАналоговАртикулКонтекстноеМеню" id="71"/>
+									<ExtendedTooltip name="СписокАналоговАртикулРасширеннаяПодсказка" id="72"/>
+								</LabelField>
+								<LabelField name="СписокАналоговПриоритет" id="91">
+									<DataPath>СписокАналогов.Приоритет</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>П</v8:content>
+										</v8:item>
+									</Title>
+									<Width>4</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="СписокАналоговПриоритетКонтекстноеМеню" id="92"/>
+									<ExtendedTooltip name="СписокАналоговПриоритетРасширеннаяПодсказка" id="93"/>
+								</LabelField>
+								<LabelField name="СписокАналоговКоличество" id="124">
+									<DataPath>СписокАналогов.Остаток</DataPath>
+									<ContextMenu name="СписокАналоговКоличествоКонтекстноеМеню" id="125"/>
+									<ExtendedTooltip name="СписокАналоговКоличествоРасширеннаяПодсказка" id="126"/>
+								</LabelField>
+								<LabelField name="СписокАналоговЦена" id="94">
+									<DataPath>СписокАналогов.Цена</DataPath>
+									<Format>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ЧДЦ=2</v8:content>
+										</v8:item>
+									</Format>
+									<ContextMenu name="СписокАналоговЦенаКонтекстноеМеню" id="95"/>
+									<ExtendedTooltip name="СписокАналоговЦенаРасширеннаяПодсказка" id="96"/>
+								</LabelField>
+								<LabelField name="СписокАналоговЦенаПоставщика" id="97">
+									<DataPath>СписокАналогов.ЦенаПоставщика</DataPath>
+									<ContextMenu name="СписокАналоговЦенаПоставщикаКонтекстноеМеню" id="98"/>
+									<ExtendedTooltip name="СписокАналоговЦенаПоставщикаРасширеннаяПодсказка" id="99"/>
+								</LabelField>
+								<LabelField name="СписокАналоговКомментарийАналога" id="82">
+									<DataPath>СписокАналогов.КомментарийАналога</DataPath>
+									<ContextMenu name="СписокАналоговКомментарийАналогаКонтекстноеМеню" id="83"/>
+									<ExtendedTooltip name="СписокАналоговКомментарийАналогаРасширеннаяПодсказка" id="84"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаАналогиХарактеристики" id="41">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница аналоги характеристики</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница аналоги характеристики</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<ScrollOnCompress>false</ScrollOnCompress>
+					<ExtendedTooltip name="СтраницаАналогиХарактеристикиРасширеннаяПодсказка" id="42"/>
+					<ChildItems>
+						<Table name="СписокХарактеристикАналогов" id="43">
+							<HeightInTableRows>4</HeightInTableRows>
+							<RowSelectionMode>Cell</RowSelectionMode>
+							<EnableStartDrag>true</EnableStartDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>СписокХарактеристикАналогов</DataPath>
+							<RowPictureDataPath>СписокХарактеристикАналогов.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="СписокХарактеристикАналоговКонтекстноеМеню" id="44"/>
+							<AutoCommandBar name="СписокХарактеристикАналоговКоманднаяПанель" id="45">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="СписокХарактеристикАналоговВернутьсяКСпискуАналогов" id="68">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ВернутьсяКСпискуАналогов</CommandName>
+										<ExtendedTooltip name="СписокХарактеристикАналоговВернутьсяКСпискуАналоговРасширеннаяПодсказка" id="69"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СписокХарактеристикАналоговРасширеннаяПодсказка" id="46"/>
+							<SearchStringAddition name="СписокХарактеристикАналоговСтрокаПоиска" id="47">
+								<AdditionSource>
+									<Item>СписокХарактеристикАналогов</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокХарактеристикАналоговСтрокаПоискаКонтекстноеМеню" id="48"/>
+								<ExtendedTooltip name="СписокХарактеристикАналоговСтрокаПоискаРасширеннаяПодсказка" id="49"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СписокХарактеристикАналоговСостояниеПросмотра" id="50">
+								<AdditionSource>
+									<Item>СписокХарактеристикАналогов</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокХарактеристикАналоговСостояниеПросмотраКонтекстноеМеню" id="51"/>
+								<ExtendedTooltip name="СписокХарактеристикАналоговСостояниеПросмотраРасширеннаяПодсказка" id="52"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СписокХарактеристикАналоговУправлениеПоиском" id="53">
+								<AdditionSource>
+									<Item>СписокХарактеристикАналогов</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокХарактеристикАналоговУправлениеПоискомКонтекстноеМеню" id="54"/>
+								<ExtendedTooltip name="СписокХарактеристикАналоговУправлениеПоискомРасширеннаяПодсказка" id="55"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">СписокХарактеристикАналоговВыбор</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="СписокХарактеристикАналоговХарактеристикаНоменклатуры" id="112">
+									<DataPath>СписокХарактеристикАналогов.ХарактеристикаНоменклатуры</DataPath>
+									<ContextMenu name="СписокХарактеристикАналоговХарактеристикаНоменклатурыКонтекстноеМеню" id="113"/>
+									<ExtendedTooltip name="СписокХарактеристикАналоговХарактеристикаНоменклатурыРасширеннаяПодсказка" id="114"/>
+								</LabelField>
+								<LabelField name="СписокХарактеристикАналоговКоличество" id="106">
+									<DataPath>СписокХарактеристикАналогов.Количество</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Остаток</v8:content>
+										</v8:item>
+									</Title>
+									<Width>16</Width>
+									<ContextMenu name="СписокХарактеристикАналоговКоличествоКонтекстноеМеню" id="107"/>
+									<ExtendedTooltip name="СписокХарактеристикАналоговКоличествоРасширеннаяПодсказка" id="108"/>
+								</LabelField>
+								<LabelField name="СписокХарактеристикАналоговЦена" id="115">
+									<DataPath>СписокХарактеристикАналогов.Цена</DataPath>
+									<ContextMenu name="СписокХарактеристикАналоговЦенаКонтекстноеМеню" id="116"/>
+									<ExtendedTooltip name="СписокХарактеристикАналоговЦенаРасширеннаяПодсказка" id="117"/>
+								</LabelField>
+								<LabelField name="СписокХарактеристикАналоговЦенаПоставщика" id="118">
+									<DataPath>СписокХарактеристикАналогов.ЦенаПоставщика</DataPath>
+									<ContextMenu name="СписокХарактеристикАналоговЦенаПоставщикаКонтекстноеМеню" id="119"/>
+									<ExtendedTooltip name="СписокХарактеристикАналоговЦенаПоставщикаРасширеннаяПодсказка" id="120"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="СписокАналогов" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список аналогов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>~СписокАналогов.ЕдИзм</Field>
+				<Field>~СписокАналогов.НоменклатураСсылка</Field>
+				<Field>СписокАналогов.ЕдиницаИзмерения</Field>
+				<Field>СписокАналогов.ИмеютсяХарактеристики</Field>
+				<Field>СписокАналогов.Номенклатура</Field>
+				<Field>СписокАналогов.ПризнакАналога</Field>
+				<Field>СписокАналогов.Цена</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЦеныНоменклатурыИндивидуальныеСрезПоследних.Номенклатура КАК Номенклатура,
+	ЦеныНоменклатурыИндивидуальныеСрезПоследних.ХарактеристикаНоменклатуры КАК ХарактеристикаНоменклатуры,
+	ЦеныНоменклатурыИндивидуальныеСрезПоследних.ЕдиницаИзмерения КАК ЕдиницаИзмерения,
+	ЦеныНоменклатурыИндивидуальныеСрезПоследних.Валюта КАК Валюта,
+	ВЫБОР
+		КОГДА ЦеныНоменклатурыИндивидуальныеСрезПоследних.ВидЦены = ЗНАЧЕНИЕ(Справочник.ВидыЦен.ПустаяСсылка)
+			ТОГДА ЦеныНоменклатурыИндивидуальныеСрезПоследних.Цена
+		ИНАЧЕ ЕСТЬNULL(ЦеныНоменклатурыСрезПоследних.Цена, 0)
+	КОНЕЦ КАК Цена,
+	ЦеныНоменклатурыИндивидуальныеСрезПоследних.Отменена КАК Отменена
+ПОМЕСТИТЬ ВТ_ИндивидуальныеЦены
+ИЗ
+	РегистрСведений.ЦеныНоменклатурыИндивидуальные.СрезПоследних(
+			,
+			Контрагент = &amp;Контрагент
+				И ДоговорКонтрагента = &amp;ДоговорКонтрагента
+				И Валюта = &amp;Валюта
+				И ХарактеристикаНоменклатуры = &amp;ХарактеристикаНоменклатуры) КАК ЦеныНоменклатурыИндивидуальныеСрезПоследних
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныНоменклатуры.СрезПоследних(
+				,
+				Валюта = &amp;Валюта
+					И ХарактеристикаНоменклатуры = &amp;ХарактеристикаНоменклатуры) КАК ЦеныНоменклатурыСрезПоследних
+		ПО ЦеныНоменклатурыИндивидуальныеСрезПоследних.Номенклатура = ЦеныНоменклатурыСрезПоследних.Номенклатура
+			И ЦеныНоменклатурыИндивидуальныеСрезПоследних.ХарактеристикаНоменклатуры = ЦеныНоменклатурыСрезПоследних.ХарактеристикаНоменклатуры
+			И ЦеныНоменклатурыИндивидуальныеСрезПоследних.ЕдиницаИзмерения = ЦеныНоменклатурыСрезПоследних.ЕдиницаИзмерения
+			И ЦеныНоменклатурыИндивидуальныеСрезПоследних.ВидЦены = ЦеныНоменклатурыСрезПоследних.ВидЦены
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СправочникНоменклатура.Ссылка КАК Номенклатура,
+	СправочникНоменклатура.Артикул КАК Артикул,
+	СправочникНоменклатура.БазоваяЕдиницаИзмерения КАК ЕдиницаИзмерения,
+	ВЫБОР
+		КОГДА НЕ ЦеныНоменклатурыИндивидуальныеСрезПоследних.Цена ЕСТЬ NULL
+			ТОГДА ВЫБОР
+					КОГДА НЕ ЦеныНоменклатурыИндивидуальныеСрезПоследних.Отменена
+						ТОГДА ЦеныНоменклатурыИндивидуальныеСрезПоследних.Цена
+					ИНАЧЕ ЕСТЬNULL(ЦеныНоменклатурыСрезПоследних.Цена, 0)
+				КОНЕЦ
+		ИНАЧЕ ЕСТЬNULL(ЦеныНоменклатурыСрезПоследних.Цена, 0)
+	КОНЕЦ КАК Цена,
+	ЕСТЬNULL(ЦеныПоставщиковСрезПоследних.Цена, 0) КАК ЦенаПоставщика,
+	ВЫБОР
+		КОГДА &amp;ВАльтернативнойЕдиницеИзмерения
+				И НЕ СправочникНоменклатура.АльтернативнаяЕдиницаИзмерения.Коэффициент = 0
+			ТОГДА ЕСТЬNULL(ТоварыНаСкладахОстатки.КоличествоОстаток, 0) / СправочникНоменклатура.АльтернативнаяЕдиницаИзмерения.Коэффициент
+		ИНАЧЕ ЕСТЬNULL(ТоварыНаСкладахОстатки.КоличествоОстаток, 0)
+	КОНЕЦ КАК Остаток,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ВЗ_ХарактеристикиНоменклатуры.НаличиеХарактеристик, 0) &gt; 0
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК ИмеютсяХарактеристики,
+	ВЫБОР
+		КОГДА ПрямыеАналогиНоменклатуры.Аналог ЕСТЬ NULL
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ПризнакАналога,
+	ВЫБОР
+		КОГДА НЕ ПрямыеАналогиНоменклатуры.Аналог ЕСТЬ NULL
+			ТОГДА ЕСТЬNULL(ПрямыеАналогиНоменклатуры.Приоритет, 0)
+		ИНАЧЕ ЕСТЬNULL(ОбратныеАналогиНоменклатуры.Приоритет, 0)
+	КОНЕЦ КАК Приоритет,
+	ВЫБОР
+		КОГДА НЕ ПрямыеАналогиНоменклатуры.Аналог ЕСТЬ NULL
+			ТОГДА ЕСТЬNULL(ПрямыеАналогиНоменклатуры.Комментарий, "")
+		ИНАЧЕ ЕСТЬNULL(ОбратныеАналогиНоменклатуры.Комментарий, "")
+	КОНЕЦ КАК КомментарийАналога
+ИЗ
+	Справочник.Номенклатура КАК СправочникНоменклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ТоварыНаСкладах.Остатки(
+				,
+				ВЫБОР
+						КОГДА &amp;ИспользуютсяОбщиеСклады
+							ТОГДА ИСТИНА
+						ИНАЧЕ Организация = &amp;Организация
+					КОНЕЦ
+					И Склад = &amp;Склад) КАК ТоварыНаСкладахОстатки
+		ПО СправочникНоменклатура.Ссылка = ТоварыНаСкладахОстатки.Номенклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныНоменклатуры.СрезПоследних(
+				,
+				ВидЦены = &amp;ВидЦены
+					И Валюта = &amp;Валюта
+					И ХарактеристикаНоменклатуры = &amp;ХарактеристикаНоменклатуры) КАК ЦеныНоменклатурыСрезПоследних
+		ПО СправочникНоменклатура.Ссылка = ЦеныНоменклатурыСрезПоследних.Номенклатура
+			И СправочникНоменклатура.БазоваяЕдиницаИзмерения = ЦеныНоменклатурыСрезПоследних.ЕдиницаИзмерения
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ИндивидуальныеЦены КАК ЦеныНоменклатурыИндивидуальныеСрезПоследних
+		ПО (&amp;ИспользоватьИндивидуальныеЦены)
+			И СправочникНоменклатура.Ссылка = ЦеныНоменклатурыИндивидуальныеСрезПоследних.Номенклатура
+			И СправочникНоменклатура.БазоваяЕдиницаИзмерения = ЦеныНоменклатурыИндивидуальныеСрезПоследних.ЕдиницаИзмерения
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныПоставщиков.СрезПоследних(
+				,
+				Поставщик = &amp;Поставщик
+					И Валюта = &amp;Валюта) КАК ЦеныПоставщиковСрезПоследних
+		ПО СправочникНоменклатура.Ссылка = ЦеныПоставщиковСрезПоследних.Номенклатура
+			И СправочникНоменклатура.БазоваяЕдиницаИзмерения = ЦеныПоставщиковСрезПоследних.ЕдиницаИзмерения
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			ХарактеристикиНоменклатуры.Владелец КАК Владелец,
+			КОЛИЧЕСТВО(ХарактеристикиНоменклатуры.Ссылка) КАК НаличиеХарактеристик
+		ИЗ
+			Справочник.ХарактеристикиНоменклатуры КАК ХарактеристикиНоменклатуры
+		ГДЕ
+			НЕ ХарактеристикиНоменклатуры.ПометкаУдаления
+		
+		СГРУППИРОВАТЬ ПО
+			ХарактеристикиНоменклатуры.Владелец) КАК ВЗ_ХарактеристикиНоменклатуры
+		ПО (ВЗ_ХарактеристикиНоменклатуры.Владелец = СправочникНоменклатура.Ссылка)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.АналогиНоменклатуры КАК ПрямыеАналогиНоменклатуры
+		ПО (ПрямыеАналогиНоменклатуры.Номенклатура = &amp;НоменклатураРодительАналога)
+			И СправочникНоменклатура.Ссылка = ПрямыеАналогиНоменклатуры.Аналог
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.АналогиНоменклатуры КАК ОбратныеАналогиНоменклатуры
+		ПО (ОбратныеАналогиНоменклатуры.Аналог = &amp;НоменклатураРодительАналога)
+			И СправочникНоменклатура.Ссылка = ОбратныеАналогиНоменклатуры.Номенклатура
+ГДЕ
+	НЕ СправочникНоменклатура.ЭтоГруппа
+	И ВЫБОР
+			КОГДА &amp;ТолькоВНаличии
+				ТОГДА ЕСТЬNULL(ТоварыНаСкладахОстатки.КоличествоОстаток, 0) &gt; 0
+			ИНАЧЕ ИСТИНА
+		КОНЕЦ</QueryText>
+				<MainTable>Catalog.Номенклатура</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ПризнакАналога</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Приоритет</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ПризнакАналога</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:decimal">1</dcsset:right>
+									<dcsset:presentation xsi:type="v8:LocalStringType">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подсветка обратного аналога</v8:content>
+										</v8:item>
+									</dcsset:presentation>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">web:LightGray</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="СписокХарактеристикАналогов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список характеристик аналогов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>~СписокХарактеристикАналогов.ЕдИзм</Field>
+				<Field>~СписокХарактеристикАналогов.НоменклатураСсылка</Field>
+				<Field>СписокХарактеристикАналогов.ЕдиницаИзмерения</Field>
+				<Field>СписокХарактеристикАналогов.Номенклатура</Field>
+				<Field>СписокХарактеристикАналогов.ХарактеристикаНоменклатуры</Field>
+				<Field>СписокХарактеристикАналогов.Цена</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЦеныНоменклатурыИндивидуальныеСрезПоследних.Номенклатура КАК Номенклатура,
+	ЦеныНоменклатурыИндивидуальныеСрезПоследних.ХарактеристикаНоменклатуры КАК ХарактеристикаНоменклатуры,
+	ЦеныНоменклатурыИндивидуальныеСрезПоследних.ЕдиницаИзмерения КАК ЕдиницаИзмерения,
+	ЦеныНоменклатурыИндивидуальныеСрезПоследних.Валюта КАК Валюта,
+	ВЫБОР
+		КОГДА ЦеныНоменклатурыИндивидуальныеСрезПоследних.ВидЦены = ЗНАЧЕНИЕ(Справочник.ВидыЦен.ПустаяСсылка)
+			ТОГДА ЦеныНоменклатурыИндивидуальныеСрезПоследних.Цена
+		ИНАЧЕ ЕСТЬNULL(ЦеныНоменклатурыСрезПоследних.Цена, 0)
+	КОНЕЦ КАК Цена,
+	ЦеныНоменклатурыИндивидуальныеСрезПоследних.Отменена КАК Отменена
+ПОМЕСТИТЬ ВТ_ИндивидуальныеЦены
+ИЗ
+	РегистрСведений.ЦеныНоменклатурыИндивидуальные.СрезПоследних(
+			,
+			Контрагент = &amp;Контрагент
+				И ДоговорКонтрагента = &amp;ДоговорКонтрагента
+				И Валюта = &amp;Валюта) КАК ЦеныНоменклатурыИндивидуальныеСрезПоследних
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныНоменклатуры.СрезПоследних(
+				,
+				Валюта = &amp;Валюта) КАК ЦеныНоменклатурыСрезПоследних
+		ПО ЦеныНоменклатурыИндивидуальныеСрезПоследних.Номенклатура = ЦеныНоменклатурыСрезПоследних.Номенклатура
+			И ЦеныНоменклатурыИндивидуальныеСрезПоследних.ХарактеристикаНоменклатуры = ЦеныНоменклатурыСрезПоследних.ХарактеристикаНоменклатуры
+			И ЦеныНоменклатурыИндивидуальныеСрезПоследних.ЕдиницаИзмерения = ЦеныНоменклатурыСрезПоследних.ЕдиницаИзмерения
+			И ЦеныНоменклатурыИндивидуальныеСрезПоследних.ВидЦены = ЦеныНоменклатурыСрезПоследних.ВидЦены
+;
+
+////////////////////////////////////////////////////////////////////////////////
+
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ХарактеристикиНоменклатуры.Владелец КАК Номенклатура,
+	ХарактеристикиНоменклатуры.Ссылка КАК ХарактеристикаНоменклатуры,
+	ХарактеристикиНоменклатуры.Владелец.БазоваяЕдиницаИзмерения КАК ЕдиницаИзмерения,
+	//ЕСТЬNULL(ЦеныНоменклатурыСрезПоследних.Цена, 0)  как Цена,
+	ВЫБОР
+		КОГДА НЕ ЦеныНоменклатурыИндивидуальныеСрезПоследних.Цена ЕСТЬ NULL
+			ТОГДА ВЫБОР
+					КОГДА НЕ ЦеныНоменклатурыИндивидуальныеСрезПоследних.Отменена
+						ТОГДА ЦеныНоменклатурыИндивидуальныеСрезПоследних.Цена
+					ИНАЧЕ ЕСТЬNULL(ЦеныНоменклатурыСрезПоследних.Цена, 0)
+				КОНЕЦ
+		ИНАЧЕ ЕСТЬNULL(ЦеныНоменклатурыСрезПоследних.Цена, 0)
+	КОНЕЦ КАК Цена,
+	ЦеныПоставщиковСрезПоследних.Цена КАК ЦенаПоставщика,
+	ТоварыНаСкладахОстатки.КоличествоОстаток КАК Количество
+ИЗ
+	Справочник.ХарактеристикиНоменклатуры КАК ХарактеристикиНоменклатуры
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ТоварыНаСкладах.Остатки(
+				,
+				ВЫБОР
+						КОГДА &amp;ИспользуютсяОбщиеСклады
+							ТОГДА ИСТИНА
+						ИНАЧЕ Организация = &amp;Организация
+					КОНЕЦ
+					И Склад = &amp;Склад) КАК ТоварыНаСкладахОстатки
+		ПО ХарактеристикиНоменклатуры.Владелец = ТоварыНаСкладахОстатки.Номенклатура
+			И ХарактеристикиНоменклатуры.Ссылка = ТоварыНаСкладахОстатки.ХарактеристикаНоменклатуры
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныНоменклатуры.СрезПоследних(
+				,
+				ВидЦены = &amp;ВидЦены
+					И Валюта = &amp;Валюта) КАК ЦеныНоменклатурыСрезПоследних
+		ПО ХарактеристикиНоменклатуры.Владелец = ЦеныНоменклатурыСрезПоследних.Номенклатура
+			И ХарактеристикиНоменклатуры.Ссылка = ЦеныНоменклатурыСрезПоследних.ХарактеристикаНоменклатуры
+			И ХарактеристикиНоменклатуры.Владелец.БазоваяЕдиницаИзмерения = ЦеныНоменклатурыСрезПоследних.ЕдиницаИзмерения
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ИндивидуальныеЦены КАК ЦеныНоменклатурыИндивидуальныеСрезПоследних
+		ПО (&amp;ИспользоватьИндивидуальныеЦены)
+			И ХарактеристикиНоменклатуры.Владелец = ЦеныНоменклатурыИндивидуальныеСрезПоследних.Номенклатура
+			И ХарактеристикиНоменклатуры.Ссылка = ЦеныНоменклатурыИндивидуальныеСрезПоследних.ХарактеристикаНоменклатуры
+			И ХарактеристикиНоменклатуры.Владелец.БазоваяЕдиницаИзмерения = ЦеныНоменклатурыИндивидуальныеСрезПоследних.ЕдиницаИзмерения
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныПоставщиков.СрезПоследних(
+				,
+				Поставщик = &amp;Поставщик
+					И Валюта = &amp;Валюта) КАК ЦеныПоставщиковСрезПоследних
+		ПО ХарактеристикиНоменклатуры.Владелец = ЦеныПоставщиковСрезПоследних.Номенклатура
+			И ХарактеристикиНоменклатуры.Владелец.БазоваяЕдиницаИзмерения = ЦеныПоставщиковСрезПоследних.ЕдиницаИзмерения</QueryText>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="НоменклатураРодитель" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номенклатура родитель</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Контрагент" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДоговорКонтрагента" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор контрагента</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВидЦены" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид цены</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ВидыЦен</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВАльтернативнойЕдиницеИзмерения" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>В альтернативной единице измерения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Валюта" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Валюта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Поставщик" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поставщик</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТолькоВНаличии" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Только в наличии</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Склад" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склад</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Склады</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Организация" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаменитьВДокументе" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заменить в документе</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заменить в документе</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаменитьВДокументе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВернутьсяКСпискуАналогов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назад</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вернуться к списку аналогов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.MoveLeft</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВернутьсяКСпискуАналогов</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Номенклатура">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="Контрагент">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ДоговорКонтрагента">
+			<Type>
+				<v8:Type>cfg:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ВАльтернативнойЕдиницеИзмерения">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="Валюта">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ВидЦены">
+			<Type>
+				<v8:Type>cfg:CatalogRef.ВидыЦен</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ИспользоватьЦеныПоставщиков">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="Поставщик">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ТолькоВНаличии">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="Организация">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="Склад">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Склады</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

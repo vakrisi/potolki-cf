@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="http://localhost/ConvertDoc"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="http://localhost/ConvertDoc"
+		name="ConvertDoc"
+		targetNamespace="http://localhost/ConvertDoc">
+	<types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				xmlns:xs1="http://localhost/ConvertDoc"
+				targetNamespace="http://localhost/ConvertDoc"
+				elementFormDefault="qualified">
+			<xs:element name="ConvertDoc">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="DocData"
+								type="xs:base64Binary"
+								nillable="true"/>
+						<xs:element name="DocName"
+								type="xs:string"
+								nillable="true"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ConvertDocResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetDocFromHTML">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="HtmlText"
+								type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetDocFromHTMLResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="return"
+								type="xs:base64Binary"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</types>
+	<message name="ConvertDocRequestMessage">
+		<part name="parameters"
+				element="tns:ConvertDoc"/>
+	</message>
+	<message name="ConvertDocResponseMessage">
+		<part name="parameters"
+				element="tns:ConvertDocResponse"/>
+	</message>
+	<message name="GetDocFromHTMLRequestMessage">
+		<part name="parameters"
+				element="tns:GetDocFromHTML"/>
+	</message>
+	<message name="GetDocFromHTMLResponseMessage">
+		<part name="parameters"
+				element="tns:GetDocFromHTMLResponse"/>
+	</message>
+	<portType name="ConvertDocPortType">
+		<operation name="ConvertDoc">
+			<input name="ConvertDocRequest"
+					message="tns:ConvertDocRequestMessage"/>
+			<output name="ConvertDocResponse"
+					message="tns:ConvertDocResponseMessage"/>
+		</operation>
+		<operation name="GetDocFromHTML">
+			<input name="GetDocFromHTMLRequest"
+					message="tns:GetDocFromHTMLRequestMessage"/>
+			<output name="GetDocFromHTMLResponse"
+					message="tns:GetDocFromHTMLResponseMessage"/>
+		</operation>
+	</portType>
+	<binding name="ConvertDocSoapBinding"
+			type="tns:ConvertDocPortType">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="ConvertDoc">
+			<soapbind:operation style="document"
+					soapAction="http://localhost/ConvertDoc#ConvertDoc:ConvertDoc"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetDocFromHTML">
+			<soapbind:operation style="document"
+					soapAction="http://localhost/ConvertDoc#ConvertDoc:GetDocFromHTML"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<binding name="ConvertDocSoap12Binding"
+			type="tns:ConvertDocPortType">
+		<soap12bind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="ConvertDoc">
+			<soap12bind:operation style="document"
+					soapAction="http://localhost/ConvertDoc#ConvertDoc:ConvertDoc"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetDocFromHTML">
+			<soap12bind:operation style="document"
+					soapAction="http://localhost/ConvertDoc#ConvertDoc:GetDocFromHTML"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ConvertDoc">
+		<port name="ConvertDocSoap"
+				binding="tns:ConvertDocSoapBinding">
+			<documentation> 
+				<wsi:Claim xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
+						conformsTo="http://ws-i.org/profiles/basic/1.1"/>
+			</documentation>
+			<soapbind:address location="http://188.246.234.20/WebWord/ws/ConvertDoc"/>
+		</port>
+		<port name="ConvertDocSoap12"
+				binding="tns:ConvertDocSoap12Binding">
+			<soap12bind:address location="http://188.246.234.20/WebWord/ws/ConvertDoc"/>
+		</port>
+	</service>
+</definitions>

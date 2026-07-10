@@ -1,0 +1,16 @@
+﻿ymaps.geocode('#ADRES#', {results: 1}).then(
+			function (res)
+			{
+				var firstGeoObject = res.geoObjects.get(0);
+				var myPlacemark = new ymaps.Placemark(firstGeoObject.geometry.getCoordinates(), 
+					{
+						iconContent: '#CONTENT#',
+						balloonContent: '#CONTENT#'
+					}, 
+					{
+						preset: '#STYLE#'
+					}
+				);
+				myMap.geoObjects.add(myPlacemark);
+			}, function(reason) {alert("Ошибка добавления метки по адресу #ADRES# на карту.")}
+		);

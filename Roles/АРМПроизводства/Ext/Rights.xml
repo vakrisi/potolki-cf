@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Rights xmlns="http://v8.1c.ru/8.2/roles" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Rights" version="2.21">
+	<setForNewObjects>false</setForNewObjects>
+	<setForAttributesByDefault>true</setForAttributesByDefault>
+	<independentRightsOfChildObjects>false</independentRightsOfChildObjects>
+	<object>
+		<name>Document.ЗаказПоставщику.Attribute.Автор</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.TabularSection.Товары.Attribute.Номенклатура</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.Attribute.Комментарий</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.Attribute.ТекущийСтатус</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПокупателя</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+			<restrictionByCondition>
+				<condition>ТекущаяТаблица 
+	ГДЕ 
+	ИСТИНА = ИСТИНА
+	#Если &amp;ОграничиватьДоступПоСкладам #Тогда
+		И ТекущаяТаблица.Склад В
+		(ВЫБРАТЬ	
+			ДоступныеСклады.Склад 
+		ИЗ	
+			Справочник.Пользователи.ДоступныеСклады КАК ДоступныеСклады 
+		ГДЕ	ДоступныеСклады.Ссылка = &amp;Пользователь 
+		СГРУППИРОВАТЬ ПО	ДоступныеСклады.Склад)
+	#КонецЕсли
+	#Если &amp;ОграничиватьДоступПоОрганизациям #Тогда
+		И ТекущаяТаблица.Организация В
+		(ВЫБРАТЬ	
+			ДоступныеОрганизации.Организация 
+		ИЗ	
+			Справочник.Пользователи.ДоступныеОрганизации КАК ДоступныеОрганизации 
+		ГДЕ	ДоступныеОрганизации.Ссылка = &amp;Пользователь 
+		СГРУППИРОВАТЬ ПО	ДоступныеОрганизации.Организация)
+	#КонецЕсли
+	#Если &amp;ОграничиватьДоступККонтрагентамПоГруппамДоступа #Тогда
+    И 
+    	ВЫБОР КОГДА НЕ ТекущаяТаблица.Контрагент.ЭтоГруппа ТОГДА
+    	  	ТекущаяТаблица.Контрагент.ГруппаДоступа        	
+        	 В
+            (ВЫБРАТЬ
+				ДоступныеГруппы.ГруппаКонтрагентов
+			ИЗ
+				Справочник.Пользователи.ДоступныеГруппыКонтрагентов КАК ДоступныеГруппы
+			ГДЕ
+				ДоступныеГруппы.Ссылка = &amp;Пользователь				
+			СГРУППИРОВАТЬ ПО
+			ДоступныеГруппы.ГруппаКонтрагентов)
+		ИНАЧЕ ИСТИНА КОНЕЦ	
+	#КонецЕсли
+	#Если &amp;ОграничиватьДоступПоСкладамВЗависимостиОтРабочегоМеста #Тогда
+		И ТекущаяТаблица.Склад В
+			(ВЫБРАТЬ
+				РабочиеМеста.Склад КАК Склад
+			ИЗ
+				Справочник.РабочиеМеста КАК РабочиеМеста
+			ГДЕ
+				РабочиеМеста.Ссылка = &amp;РабочееМестоКлиента
+
+			СГРУППИРОВАТЬ ПО
+				РабочиеМеста.Склад)
+	#КонецЕсли
+</condition>
+			</restrictionByCondition>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.Attribute.Основание</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.Attribute.Организация</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.Производство.Subsystem.РабочееМесто</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ВыпускПродукции</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+			<restrictionByCondition>
+				<condition>ВыпускПродукции ГДЕ ИСТИНА = ИСТИНА
+#Если &amp;ОграничиватьДоступПоСкладам #Тогда
+И ВыпускПродукции.СкладМатериалов В
+			(ВЫБРАТЬ
+		ДоступныеСклады.Склад
+ИЗ
+	Справочник.Пользователи.ДоступныеСклады КАК ДоступныеСклады
+ГДЕ
+	ДоступныеСклады.Ссылка = &amp;Пользователь
+
+СГРУППИРОВАТЬ ПО
+	ДоступныеСклады.Склад)
+	
+	И
+	
+	ВыпускПродукции.СкладПродукции В
+			(ВЫБРАТЬ
+		ДоступныеСклады.Склад
+ИЗ
+	Справочник.Пользователи.ДоступныеСклады КАК ДоступныеСклады
+ГДЕ
+	ДоступныеСклады.Ссылка = &amp;Пользователь
+
+СГРУППИРОВАТЬ ПО
+	ДоступныеСклады.Склад)
+#КонецЕсли
+#Если &amp;ОграничиватьДоступПоОрганизациям #Тогда
+		И ВыпускПродукции.Организация В
+		(ВЫБРАТЬ	
+			ДоступныеОрганизации.Организация 
+		ИЗ	
+			Справочник.Пользователи.ДоступныеОрганизации КАК ДоступныеОрганизации 
+		ГДЕ	ДоступныеОрганизации.Ссылка = &amp;Пользователь 
+		СГРУППИРОВАТЬ ПО	ДоступныеОрганизации.Организация)
+#КонецЕсли</condition>
+			</restrictionByCondition>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.Производство.Subsystem.Производство</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.Attribute.ДоговорКонтрагента</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.Attribute.СуммаДокумента</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.TabularSection.Товары.Attribute.Количество</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.TabularSection.Товары.Attribute.Цена</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.TabularSection.Товары.Attribute.ЕдиницаИзмерения</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.Attribute.Контрагент</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.TabularSection.Товары.Attribute.ХарактеристикаНоменклатуры</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.TabularSection.Товары.Attribute.Спецификация</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.TabularSection.Товары.Attribute.Коэффициент</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.Attribute.СрокПоставки</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Configuration.Потолки</name>
+		<right>
+			<name>MainWindowModeNormal</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeWorkplace</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeEmbeddedWorkplace</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeFullscreenWorkplace</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>MainWindowModeKiosk</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>AnalyticsSystemClient</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказНаПроизводство</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+			<restrictionByCondition>
+				<condition>ТекущаяТаблица 
+ГДЕ
+ИСТИНА = ИСТИНА
+#Если &amp;ОграничиватьДоступПоСкладам #Тогда
+	И ТекущаяТаблица.Склад В
+	(ВЫБРАТЬ	
+		ДоступныеСклады.Склад 
+	ИЗ	
+		Справочник.Пользователи.ДоступныеСклады КАК ДоступныеСклады 
+	ГДЕ	ДоступныеСклады.Ссылка = &amp;Пользователь 
+	СГРУППИРОВАТЬ ПО	ДоступныеСклады.Склад)
+#КонецЕсли
+#Если &amp;ОграничиватьДоступПоОрганизациям #Тогда
+	И ТекущаяТаблица.Организация В
+	(ВЫБРАТЬ	
+		ДоступныеОрганизации.Организация 
+	ИЗ	
+		Справочник.Пользователи.ДоступныеОрганизации КАК ДоступныеОрганизации 
+	ГДЕ	ДоступныеОрганизации.Ссылка = &amp;Пользователь 
+	СГРУППИРОВАТЬ ПО	ДоступныеОрганизации.Организация)
+#КонецЕсли
+#Если &amp;ОграничиватьДоступККонтрагентамПоГруппамДоступа #Тогда
+    И 
+    	ВЫБОР КОГДА НЕ ТекущаяТаблица.Контрагент.ЭтоГруппа ТОГДА
+    	  	ТекущаяТаблица.Контрагент.ГруппаДоступа        	
+        	 В
+            (ВЫБРАТЬ
+				ДоступныеГруппы.ГруппаКонтрагентов
+			ИЗ
+				Справочник.Пользователи.ДоступныеГруппыКонтрагентов КАК ДоступныеГруппы
+			ГДЕ
+				ДоступныеГруппы.Ссылка = &amp;Пользователь				
+			СГРУППИРОВАТЬ ПО
+			ДоступныеГруппы.ГруппаКонтрагентов)
+	ИНАЧЕ ИСТИНА КОНЕЦ	
+#КонецЕсли
+</condition>
+			</restrictionByCondition>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonCommand.АРМПроизводства</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.Attribute.Склад</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.TabularSection.Товары</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.TabularSection.Товары.Attribute.Сумма</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+			<restrictionByCondition>
+				<condition>ТекущаяТаблица 
+    ГДЕ 
+    ИСТИНА = ИСТИНА
+    #Если &amp;ОграничиватьДоступПоОрганизациям #Тогда
+        И ТекущаяТаблица.Организация В
+        (ВЫБРАТЬ    
+            ДоступныеОрганизации.Организация 
+        ИЗ  
+            Справочник.Пользователи.ДоступныеОрганизации КАК ДоступныеОрганизации 
+        ГДЕ ДоступныеОрганизации.Ссылка = &amp;Пользователь 
+        СГРУППИРОВАТЬ ПО    ДоступныеОрганизации.Организация)
+    #КонецЕсли
+    #Если &amp;ОграничиватьДоступККонтрагентамПоГруппамДоступа #Тогда
+    И 
+    	ВЫБОР КОГДА НЕ ТекущаяТаблица.Контрагент.ЭтоГруппа ТОГДА
+    	  	ТекущаяТаблица.Контрагент.ГруппаДоступа        	
+        	 В
+            (ВЫБРАТЬ
+				ДоступныеГруппы.ГруппаКонтрагентов
+			ИЗ
+				Справочник.Пользователи.ДоступныеГруппыКонтрагентов КАК ДоступныеГруппы
+			ГДЕ
+				ДоступныеГруппы.Ссылка = &amp;Пользователь				
+			СГРУППИРОВАТЬ ПО
+			ДоступныеГруппы.ГруппаКонтрагентов)
+		ИНАЧЕ ИСТИНА КОНЕЦ	
+	#КонецЕсли
+    #Если &amp;ОграничиватьДоступПоСкладамВЗависимостиОтРабочегоМеста #Тогда
+		И ТекущаяТаблица.Склад В
+			(ВЫБРАТЬ
+				РабочиеМеста.Склад КАК Склад
+			ИЗ
+				Справочник.РабочиеМеста КАК РабочиеМеста
+			ГДЕ
+				РабочиеМеста.Ссылка = &amp;РабочееМестоКлиента
+
+			СГРУППИРОВАТЬ ПО
+				РабочиеМеста.Склад)
+	#КонецЕсли
+</condition>
+			</restrictionByCondition>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.StandardAttribute.Posted</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.StandardAttribute.Ref</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.StandardAttribute.DeletionMark</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.StandardAttribute.Date</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.StandardAttribute.Number</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.TabularSection.Товары.Attribute.Потолок</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Document.ЗаказПоставщику.Attribute.Валюта</name>
+		<right>
+			<name>View</name>
+			<value>false</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.Производство</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+</Rights>

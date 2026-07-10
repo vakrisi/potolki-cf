@@ -1,0 +1,560 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Номенклатура</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОстатокПоВсемМагазинам</dataPath>
+			<field>ОстатокПоВсемМагазинам</field>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>12</v8:Digits>
+					<v8:FractionDigits>3</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string"/>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОстатокПоМагазину</dataPath>
+			<field>ОстатокПоМагазину</field>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>12</v8:Digits>
+					<v8:FractionDigits>3</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РозничнаяЦена</dataPath>
+			<field>РозничнаяЦена</field>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Склад</dataPath>
+			<field>Склад</field>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Склады</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Код</dataPath>
+			<field>НоменклатураКод</field>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>11</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Наименование</dataPath>
+			<field>НоменклатураНаименование</field>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Артикул</dataPath>
+			<field>НоменклатураАртикул</field>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>25</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Характеристика</dataPath>
+			<field>Характеристика</field>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ХарактеристикиНоменклатуры</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ХарактеристикаНаименование</dataPath>
+			<field>ХарактеристикаНаименование</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование характеристики</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ХарактеристикаНоменклатуры</dataPath>
+			<field>ХарактеристикаНоменклатуры</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументУстановкиЦены</dataPath>
+			<field>ДокументУстановкиЦены</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидЦены</dataPath>
+			<field>ВидЦены</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументРезерва</dataPath>
+			<field>ДокументРезерва</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЕдиницаИзмерения</dataPath>
+			<field>ЕдиницаИзмерения</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Валюта</dataPath>
+			<field>Валюта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СерияНоменклатуры</dataPath>
+			<field>СерияНоменклатуры</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	Номенклатура.Ссылка КАК Ссылка,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ВЗ_ХарактеристикиНоменклатуры.НаличиеХарактеристик, 0) &gt; 0
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК ИспользоватьХарактеристики,
+	Номенклатура.Ссылка КАК ВладелецХарактеристик
+ПОМЕСТИТЬ ТаблицаНоменклатуры
+ИЗ
+	Справочник.Номенклатура КАК Номенклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			ХарактеристикиНоменклатуры.Владелец КАК Владелец,
+			КОЛИЧЕСТВО(ХарактеристикиНоменклатуры.Ссылка) КАК НаличиеХарактеристик
+		ИЗ
+			Справочник.ХарактеристикиНоменклатуры КАК ХарактеристикиНоменклатуры
+		ГДЕ
+			НЕ ХарактеристикиНоменклатуры.ПометкаУдаления
+		
+		СГРУППИРОВАТЬ ПО
+			ХарактеристикиНоменклатуры.Владелец) КАК ВЗ_ХарактеристикиНоменклатуры
+		ПО (ВЗ_ХарактеристикиНоменклатуры.Владелец = Номенклатура.Ссылка)
+ГДЕ
+	НЕ Номенклатура.ЭтоГруппа
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ТаблицаНоменклатуры.Ссылка КАК Номенклатура,
+	ЗНАЧЕНИЕ(Справочник.ХарактеристикиНоменклатуры.ПустаяСсылка) КАК Характеристика
+ПОМЕСТИТЬ ТаблицаНоменклатураХарактеристика
+ИЗ
+	ТаблицаНоменклатуры КАК ТаблицаНоменклатуры
+ГДЕ
+	НЕ ТаблицаНоменклатуры.ИспользоватьХарактеристики
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВложенныйЗапрос.Ссылка,
+	ХарактеристикиНоменклатуры.Ссылка
+ИЗ
+	(ВЫБРАТЬ
+		ТаблицаНоменклатуры.Ссылка КАК Ссылка,
+		ТаблицаНоменклатуры.ВладелецХарактеристик КАК ВладелецХарактеристик
+	ИЗ
+		ТаблицаНоменклатуры КАК ТаблицаНоменклатуры
+	ГДЕ
+		ТаблицаНоменклатуры.ИспользоватьХарактеристики) КАК ВложенныйЗапрос
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ХарактеристикиНоменклатуры КАК ХарактеристикиНоменклатуры
+		ПО ВложенныйЗапрос.ВладелецХарактеристик = ХарактеристикиНоменклатуры.Владелец
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ТоварыНаСкладахОстатки.Номенклатура КАК Номенклатура,
+	ТоварыНаСкладахОстатки.ХарактеристикаНоменклатуры КАК Характеристика,
+	СУММА(ТоварыНаСкладахОстатки.КоличествоОстаток - ЕСТЬNULL(ТоварыВРезервеНаСкладах.КоличествоОстаток, 0)) КАК ОстатокВсего
+ПОМЕСТИТЬ ТаблицаОстатковПоМагазину
+ИЗ
+	РегистрНакопления.ТоварыНаСкладах.Остатки(, Склад = &amp;СкладМагазина) КАК ТоварыНаСкладахОстатки
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ТоварыВРезервеНаСкладах.Остатки(, Склад = &amp;СкладМагазина) КАК ТоварыВРезервеНаСкладах
+		ПО ТоварыНаСкладахОстатки.Номенклатура = ТоварыВРезервеНаСкладах.Номенклатура
+			И ТоварыНаСкладахОстатки.ХарактеристикаНоменклатуры = ТоварыВРезервеНаСкладах.ХарактеристикаНоменклатуры
+			И ТоварыНаСкладахОстатки.Склад = ТоварыВРезервеНаСкладах.Склад
+
+СГРУППИРОВАТЬ ПО
+	ТоварыНаСкладахОстатки.Номенклатура,
+	ТоварыНаСкладахОстатки.ХарактеристикаНоменклатуры
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ТоварыНаСкладахОстатки.Номенклатура КАК Номенклатура,
+	ТоварыНаСкладахОстатки.ХарактеристикаНоменклатуры КАК Характеристика,
+	СУММА(ТоварыНаСкладахОстатки.КоличествоОстаток - ЕСТЬNULL(ТоварыВРезервеНаСкладах.КоличествоОстаток, 0)) КАК ОстатокВсего
+ПОМЕСТИТЬ ТаблицаОстатковПоСети
+ИЗ
+	РегистрНакопления.ТоварыНаСкладах.Остатки(, ) КАК ТоварыНаСкладахОстатки
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ТоварыВРезервеНаСкладах.Остатки(, ) КАК ТоварыВРезервеНаСкладах
+		ПО ТоварыНаСкладахОстатки.Номенклатура = ТоварыВРезервеНаСкладах.Номенклатура
+			И ТоварыНаСкладахОстатки.ХарактеристикаНоменклатуры = ТоварыВРезервеНаСкладах.ХарактеристикаНоменклатуры
+			И ТоварыНаСкладахОстатки.Склад = ТоварыВРезервеНаСкладах.Склад
+
+СГРУППИРОВАТЬ ПО
+	ТоварыНаСкладахОстатки.Номенклатура,
+	ТоварыНаСкладахОстатки.ХарактеристикаНоменклатуры
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ДействующиеЦеныНоменклатурыСрезПоследних.Номенклатура КАК Номенклатура,
+	ДействующиеЦеныНоменклатурыСрезПоследних.ХарактеристикаНоменклатуры КАК Характеристика,
+	ДействующиеЦеныНоменклатурыСрезПоследних.Цена КАК Цена
+ПОМЕСТИТЬ ТаблицаДействующихЦен
+ИЗ
+	РегистрСведений.ЦеныНоменклатуры.СрезПоследних(&amp;Период, ВидЦены = &amp;ВидЦены И Валюта = &amp;Валюта) КАК ДействующиеЦеныНоменклатурыСрезПоследних
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ТаблицаНоменклатураХарактеристика.Номенклатура КАК Номенклатура,
+	ТаблицаНоменклатураХарактеристика.Характеристика КАК Характеристика,
+	ЕСТЬNULL(ТаблицаДействующихЦен.Цена, 0) КАК Цена
+ПОМЕСТИТЬ ТаблицаНоменклатурыСЦенами
+ИЗ
+	ТаблицаНоменклатураХарактеристика КАК ТаблицаНоменклатураХарактеристика
+		ЛЕВОЕ СОЕДИНЕНИЕ ТаблицаДействующихЦен КАК ТаблицаДействующихЦен
+		ПО ТаблицаНоменклатураХарактеристика.Номенклатура = ТаблицаДействующихЦен.Номенклатура
+			И ТаблицаНоменклатураХарактеристика.Характеристика = ТаблицаДействующихЦен.Характеристика
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ТаблицаНоменклатурыСЦенами.Номенклатура КАК Номенклатура,
+	ЕСТЬNULL(ТаблицаОстатковПоСети.ОстатокВсего, 0) КАК ОстатокВсегоСеть,
+	ЕСТЬNULL(ТаблицаОстатковПоМагазину.ОстатокВсего, 0) КАК ОстатокВсегоМагазин,
+	ТаблицаНоменклатурыСЦенами.Цена КАК РозничнаяЦена,
+	ТаблицаНоменклатурыСЦенами.Номенклатура.Код КАК НоменклатураКод,
+	ТаблицаНоменклатурыСЦенами.Номенклатура.Наименование КАК НоменклатураНаименование,
+	ТаблицаНоменклатурыСЦенами.Номенклатура.Артикул КАК НоменклатураАртикул,
+	ТаблицаНоменклатурыСЦенами.Характеристика КАК Характеристика,
+	ТаблицаНоменклатурыСЦенами.Характеристика.Наименование КАК ХарактеристикаНаименование
+ПОМЕСТИТЬ ТаблицаПредварительныйРезультат
+ИЗ
+	ТаблицаНоменклатурыСЦенами КАК ТаблицаНоменклатурыСЦенами
+		ЛЕВОЕ СОЕДИНЕНИЕ ТаблицаОстатковПоМагазину КАК ТаблицаОстатковПоМагазину
+		ПО ТаблицаНоменклатурыСЦенами.Номенклатура = ТаблицаОстатковПоМагазину.Номенклатура
+			И ТаблицаНоменклатурыСЦенами.Характеристика = ТаблицаОстатковПоМагазину.Характеристика
+		ЛЕВОЕ СОЕДИНЕНИЕ ТаблицаОстатковПоСети КАК ТаблицаОстатковПоСети
+		ПО ТаблицаНоменклатурыСЦенами.Номенклатура = ТаблицаОстатковПоСети.Номенклатура
+			И ТаблицаНоменклатурыСЦенами.Характеристика = ТаблицаОстатковПоСети.Характеристика
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ТаблицаПредварительныйРезультат.Номенклатура КАК Номенклатура,
+	ТаблицаПредварительныйРезультат.ОстатокВсегоСеть КАК ОстатокПоВсемМагазинам,
+	ТаблицаПредварительныйРезультат.ОстатокВсегоМагазин КАК ОстатокПоМагазину,
+	ТаблицаПредварительныйРезультат.РозничнаяЦена КАК РозничнаяЦена,
+	ТаблицаПредварительныйРезультат.НоменклатураКод КАК НоменклатураКод,
+	ТаблицаПредварительныйРезультат.НоменклатураНаименование КАК НоменклатураНаименование,
+	ТаблицаПредварительныйРезультат.НоменклатураАртикул КАК НоменклатураАртикул,
+	ТаблицаПредварительныйРезультат.Характеристика КАК Характеристика,
+	ТаблицаПредварительныйРезультат.ХарактеристикаНаименование КАК ХарактеристикаНаименование
+ИЗ
+	ТаблицаПредварительныйРезультат КАК ТаблицаПредварительныйРезультат
+{ГДЕ
+	ТаблицаПредварительныйРезультат.Номенклатура.*,
+	ТаблицаПредварительныйРезультат.Характеристика.*,
+	ТаблицаПредварительныйРезультат.ОстатокВсегоСеть КАК ОстатокПоВсемМагазинам,
+	ТаблицаПредварительныйРезультат.ОстатокВсегоМагазин КАК ОстатокПоМагазину,
+	ТаблицаПредварительныйРезультат.РозничнаяЦена}</query>
+	</dataSet>
+	<totalField>
+		<dataPath>ОстатокПоВсемМагазинам</dataPath>
+		<expression>ОстатокПоВсемМагазинам</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОстатокПоМагазину</dataPath>
+		<expression>ОстатокПоМагазину</expression>
+	</totalField>
+	<totalField>
+		<dataPath>РозничнаяЦена</dataPath>
+		<expression>РозничнаяЦена</expression>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВидЦены</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид цены</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ВидыЦен</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>СкладМагазина</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Склад магазина</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Склады</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Валюта</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Валюта</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Валюты</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОстатокПоВсемМагазинам</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОстатокПоМагазину</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РозничнаяЦена</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Номенклатура</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Характеристика</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Наименование</dcsset:left>
+					<dcsset:comparisonType>Contains</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string"/>
+					<dcsset:userSettingID>ab5b5cd5-934c-40db-8738-e46cb17f0dc9</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Артикул</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string"/>
+					<dcsset:userSettingID>d55d6498-c683-45bd-8dd2-3424714631fd</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Код</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string"/>
+					<dcsset:userSettingID>71ebdbeb-3563-4c2c-bc23-7b1133e7cc0b</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ХарактеристикаНаименование</dcsset:left>
+					<dcsset:comparisonType>Contains</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string"/>
+					<dcsset:userSettingID>0606e11c-1192-416b-99f1-73ea68027042</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">РозничнаяЦена</dcsset:left>
+					<dcsset:comparisonType>LessOrEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					<dcsset:userSettingID>4451e9c3-12f8-46cf-b0fb-f95ad675e939</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ОстатокПоМагазину</dcsset:left>
+					<dcsset:comparisonType>GreaterOrEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					<dcsset:userSettingID>97940c52-5e59-44f0-965e-b799faae2071</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ОстатокПоВсемМагазинам</dcsset:left>
+					<dcsset:comparisonType>GreaterOrEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					<dcsset:userSettingID>92d48308-9dda-46e4-b416-6e42ada05362</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">РозничнаяЦена</dcsset:left>
+					<dcsset:comparisonType>Greater</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					<dcsset:presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Только с заданными розничными ценами</v8:content>
+						</v8:item>
+					</dcsset:presentation>
+					<dcsset:userSettingID>e0e92f06-89fc-4512-8d1e-2fdf809ff31d</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Только с заданными розничными ценами</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ОстатокПоМагазину</dcsset:left>
+					<dcsset:comparisonType>Greater</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					<dcsset:presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Только с остатками по магазину</v8:content>
+						</v8:item>
+					</dcsset:presentation>
+					<dcsset:userSettingID>1085372e-9cff-446b-82b2-5c93dce08d66</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Только с остатками по магазину</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ОстатокПоВсемМагазинам</dcsset:left>
+					<dcsset:comparisonType>Greater</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					<dcsset:presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Только с остатками в любом из магазинов</v8:content>
+						</v8:item>
+					</dcsset:presentation>
+					<dcsset:userSettingID>48351023-db4e-409f-8aab-248cb600f411</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Только с остатками в любом из магазинов</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+				<dcsset:userSettingID>2c847bfc-1ad6-4f4d-9374-afdc79f4812b</dcsset:userSettingID>
+			</dcsset:filter>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Номенклатура</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Номенклатура</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Характеристика</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

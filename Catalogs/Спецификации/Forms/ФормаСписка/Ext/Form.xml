@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Спецификации</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<Group>Vertical</Group>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаОсновнаяСпецификация" id="22">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОсновнаяСпецификация</CommandName>
+				<ExtendedTooltip name="ФормаОсновнаяСпецификацияРасширеннаяПодсказка" id="23"/>
+			</Button>
+			<Button name="ПоказыватьСостав" id="30">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПоказыватьСостав</CommandName>
+				<ExtendedTooltip name="ПоказыватьСоставРасширеннаяПодсказка" id="31"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<Representation>WeakSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="2"/>
+		</UsualGroup>
+		<Table name="Список" id="3">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокКонтекстноеМеню" id="4"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="5">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="6"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="7">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="8"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="10">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="11"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="12"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="13">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="14"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="15"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="Владелец" id="27">
+					<DataPath>Список.Owner</DataPath>
+					<ContextMenu name="ВладелецКонтекстноеМеню" id="28"/>
+					<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="29"/>
+				</LabelField>
+				<LabelField name="Наименование" id="16">
+					<DataPath>Список.Description</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="18"/>
+				</LabelField>
+				<LabelField name="Код" id="19">
+					<DataPath>Список.Code</DataPath>
+					<ContextMenu name="КодКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="21"/>
+				</LabelField>
+				<CheckBoxField name="ЭтоОсновнаяСпецификация" id="24">
+					<DataPath>Список.ЭтоОсновнаяСпецификация</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основная</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ЭтоОсновнаяСпецификацияКонтекстноеМеню" id="25"/>
+					<ExtendedTooltip name="ЭтоОсновнаяСпецификацияРасширеннаяПодсказка" id="26"/>
+				</CheckBoxField>
+				<LabelField name="ВидСпецификации" id="72">
+					<DataPath>Список.ВидСпецификации</DataPath>
+					<ContextMenu name="ВидСпецификацииКонтекстноеМеню" id="73"/>
+					<ExtendedTooltip name="ВидСпецификацииРасширеннаяПодсказка" id="74"/>
+				</LabelField>
+				<LabelField name="Ссылка" id="69">
+					<DataPath>Список.Ref</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="СсылкаКонтекстноеМеню" id="70"/>
+					<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="71"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+		<Table name="СоставСпецификации" id="32">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<ReadOnly>true</ReadOnly>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<HeightInTableRows>5</HeightInTableRows>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>СоставСпецификации</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СоставСпецификацииКонтекстноеМеню" id="33"/>
+			<AutoCommandBar name="СоставСпецификацииКоманднаяПанель" id="34"/>
+			<ExtendedTooltip name="СоставСпецификацииРасширеннаяПодсказка" id="35"/>
+			<SearchStringAddition name="СоставСпецификацииСтрокаПоиска" id="36">
+				<AdditionSource>
+					<Item>СоставСпецификации</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставСпецификацииСтрокаПоискаКонтекстноеМеню" id="37"/>
+				<ExtendedTooltip name="СоставСпецификацииСтрокаПоискаРасширеннаяПодсказка" id="38"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СоставСпецификацииСостояниеПросмотра" id="39">
+				<AdditionSource>
+					<Item>СоставСпецификации</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставСпецификацииСостояниеПросмотраКонтекстноеМеню" id="40"/>
+				<ExtendedTooltip name="СоставСпецификацииСостояниеПросмотраРасширеннаяПодсказка" id="41"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СоставСпецификацииУправлениеПоиском" id="42">
+				<AdditionSource>
+					<Item>СоставСпецификации</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставСпецификацииУправлениеПоискомКонтекстноеМеню" id="43"/>
+				<ExtendedTooltip name="СоставСпецификацииУправлениеПоискомРасширеннаяПодсказка" id="44"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<InputField name="СоставСпецификацииНоменклатура" id="45">
+					<DataPath>СоставСпецификации.Номенклатура</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СоставСпецификацииНоменклатураКонтекстноеМеню" id="46"/>
+					<ExtendedTooltip name="СоставСпецификацииНоменклатураРасширеннаяПодсказка" id="47"/>
+				</InputField>
+				<InputField name="СоставСпецификацииХарактеристика" id="48">
+					<DataPath>СоставСпецификации.Характеристика</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СоставСпецификацииХарактеристикаКонтекстноеМеню" id="49"/>
+					<ExtendedTooltip name="СоставСпецификацииХарактеристикаРасширеннаяПодсказка" id="50"/>
+				</InputField>
+				<InputField name="СоставСпецификацииЕдиницаИзмерения" id="51">
+					<DataPath>СоставСпецификации.ЕдиницаИзмерения</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>6</Width>
+					<ContextMenu name="СоставСпецификацииЕдиницаИзмеренияКонтекстноеМеню" id="52"/>
+					<ExtendedTooltip name="СоставСпецификацииЕдиницаИзмеренияРасширеннаяПодсказка" id="53"/>
+				</InputField>
+				<InputField name="СоставСпецификацииКоэффициент" id="54">
+					<DataPath>СоставСпецификации.Коэффициент</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>6</Width>
+					<ContextMenu name="СоставСпецификацииКоэффициентКонтекстноеМеню" id="55"/>
+					<ExtendedTooltip name="СоставСпецификацииКоэффициентРасширеннаяПодсказка" id="56"/>
+				</InputField>
+				<InputField name="СоставСпецификацииКоличество" id="57">
+					<DataPath>СоставСпецификации.Количество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СоставСпецификацииКоличествоКонтекстноеМеню" id="58"/>
+					<ExtendedTooltip name="СоставСпецификацииКоличествоРасширеннаяПодсказка" id="59"/>
+				</InputField>
+				<CheckBoxField name="СоставСпецификацииФиксированноеКоличество" id="60">
+					<DataPath>СоставСпецификации.ФиксированноеКоличество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СоставСпецификацииФиксированноеКоличествоКонтекстноеМеню" id="61"/>
+					<ExtendedTooltip name="СоставСпецификацииФиксированноеКоличествоРасширеннаяПодсказка" id="62"/>
+				</CheckBoxField>
+				<InputField name="СоставСпецификацииПорядокОкругленияЧислом" id="66">
+					<DataPath>СоставСпецификации.ПорядокОкругленияЧислом</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СоставСпецификацииПорядокОкругленияЧисломКонтекстноеМеню" id="67"/>
+					<ExtendedTooltip name="СоставСпецификацииПорядокОкругленияЧисломРасширеннаяПодсказка" id="68"/>
+				</InputField>
+				<CheckBoxField name="СоставСпецификацииОкруглятьВБольшуюСторону" id="63">
+					<DataPath>СоставСпецификации.ОкруглятьВБольшуюСторону</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СоставСпецификацииОкруглятьВБольшуюСторонуКонтекстноеМеню" id="64"/>
+					<ExtendedTooltip name="СоставСпецификацииОкруглятьВБольшуюСторонуРасширеннаяПодсказка" id="65"/>
+				</CheckBoxField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>Список.Owner</Field>
+				<Field>Список.Ref</Field>
+				<Field>Список.ВидСпецификации</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	СправочникСпецификации.Ссылка,
+	СправочникСпецификации.ПометкаУдаления,
+	СправочникСпецификации.Владелец,
+	СправочникСпецификации.Код,
+	СправочникСпецификации.Наименование,
+	СправочникСпецификации.ВидСпецификации,
+	СправочникСпецификации.Состав.(
+		Ссылка,
+		НомерСтроки,
+		Номенклатура,
+		ЕдиницаИзмерения,
+		Коэффициент,
+		Количество,
+		ПорядокОкругленияЧислом,
+		ОкруглятьВБольшуюСторону
+	),
+	СправочникСпецификации.Предопределенный,
+	СправочникСпецификации.ИмяПредопределенныхДанных,
+	ВЫБОР
+		КОГДА СправочникСпецификации.Владелец.ОсновнаяСпецификация = СправочникСпецификации.Ссылка
+			ИЛИ СправочникСпецификации.Владелец.ОсновнаяСпецификацияСопутствующиеМатериалы = СправочникСпецификации.Ссылка
+			ИЛИ СправочникСпецификации.Владелец.ОсновнаяСпецификацияКомплектация = СправочникСпецификации.Ссылка
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК ЭтоОсновнаяСпецификация
+ИЗ
+	Справочник.Спецификации КАК СправочникСпецификации</QueryText>
+				<MainTable>Catalog.Спецификации</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ПоказыватьСостав" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать состав</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СоставСпецификации" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состав спецификации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Номенклатура" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Характеристика" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Характеристика</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ХарактеристикиНоменклатуры</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЕдиницаИзмерения" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ед.</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.КлассификаторЕдиницИзмерения</v8:Type>
+						<v8:Type>cfg:CatalogRef.ЕдиницыИзмерений</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Коэффициент" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>К.</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>4</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Количество" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОкруглятьВБольшуюСторону" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Всегда в большую сторону</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПорядокОкругленияЧислом" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Порядок округления</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ФиксированноеКоличество" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фиксированное количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>Список</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Список.ЭтоОсновнаяСпецификация</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ОсновнаяСпецификация" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная спецификация</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОсновнаяСпецификация</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПоказыватьСостав" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать состав</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать состав</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоказыватьСостав</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаУстановитьВсе" id="38">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.УстановитьВсе</CommandName>
+				<ExtendedTooltip name="ФормаУстановитьВсеРасширеннаяПодсказка" id="39"/>
+			</Button>
+			<Button name="ФормаСнятьВсе" id="40">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СнятьВсе</CommandName>
+				<ExtendedTooltip name="ФормаСнятьВсеРасширеннаяПодсказка" id="41"/>
+			</Button>
+			<Button name="ФормаИнвертироватьВсе" id="45">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ИнвертироватьВсе</CommandName>
+				<ExtendedTooltip name="ФормаИнвертироватьВсеРасширеннаяПодсказка" id="46"/>
+			</Button>
+			<Popup name="ФормаГруппаЗаполнитьКомнату" id="47">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Заполнить комнату</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Группа заполнить</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ФормаГруппаЗаполнитьКомнатуРасширеннаяПодсказка" id="48"/>
+				<ChildItems>
+					<Button name="ФормаЗаполнитьКомнатуВоВсехСтроках" id="49">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ЗаполнитьКомнатуВоВсехСтроках</CommandName>
+						<ExtendedTooltip name="ФормаЗаполнитьКомнатуВоВсехСтрокахРасширеннаяПодсказка" id="50"/>
+					</Button>
+					<Button name="ФормаЗаполнитьКомнатуВСтрокахГдеНеЗаполнено" id="51">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ЗаполнитьКомнатуВСтрокахГдеНеЗаполнено</CommandName>
+						<ExtendedTooltip name="ФормаЗаполнитьКомнатуВСтрокахГдеНеЗаполненоРасширеннаяПодсказка" id="52"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="СписокПозиций" id="1">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>СписокПозиций</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Add</ExcludedCommand>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+				<ExcludedCommand>MoveDown</ExcludedCommand>
+				<ExcludedCommand>MoveUp</ExcludedCommand>
+				<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+				<ExcludedCommand>SortListAsc</ExcludedCommand>
+				<ExcludedCommand>SortListDesc</ExcludedCommand>
+			</CommandSet>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СписокПозицийКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СписокПозицийКоманднаяПанель" id="3"/>
+			<ExtendedTooltip name="СписокПозицийРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="СписокПозицийСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>СписокПозиций</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокПозицийСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="СписокПозицийСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокПозицийСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>СписокПозиций</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокПозицийСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="СписокПозицийСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокПозицийУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>СписокПозиций</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокПозицийУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="СписокПозицийУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnChange">СписокПозицийПриИзменении</Event>
+			</Events>
+			<ChildItems>
+				<CheckBoxField name="СписокПозицийОтметка" id="42">
+					<DataPath>СписокПозиций.Отметка</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>Directly</EditMode>
+					<ContextMenu name="СписокПозицийОтметкаКонтекстноеМеню" id="43"/>
+					<ExtendedTooltip name="СписокПозицийОтметкаРасширеннаяПодсказка" id="44"/>
+				</CheckBoxField>
+				<PictureField name="СписокПозицийПозицияВТоварахМонтажа" id="53">
+					<DataPath>СписокПозиций.ПозицияВТоварахМонтажа</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content> </v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данная номенклатура присутствует в товарах монтажа</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.ВосклицательныйЗнакКрасный</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="СписокПозицийПозицияВТоварахМонтажаКонтекстноеМеню" id="54"/>
+					<ExtendedTooltip name="СписокПозицийПозицияВТоварахМонтажаРасширеннаяПодсказка" id="55"/>
+				</PictureField>
+				<InputField name="СписокПозицийКомната" id="26">
+					<DataPath>СписокПозиций.Комната</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<MarkRequiredComplete>true</MarkRequiredComplete>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>20</Width>
+					<DropListButton>false</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ClearButton>true</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<QuickChoice>true</QuickChoice>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="СписокПозицийКомнатаКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="СписокПозицийКомнатаРасширеннаяПодсказка" id="28"/>
+					<Events>
+						<Event name="StartChoice">СписокПозицийКомнатаНачалоВыбора</Event>
+					</Events>
+				</InputField>
+				<InputField name="СписокПозицийНоменклатура" id="14">
+					<DataPath>СписокПозиций.Номенклатура</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СписокПозицийНоменклатураКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="СписокПозицийНоменклатураРасширеннаяПодсказка" id="16"/>
+				</InputField>
+				<InputField name="СписокПозицийХарактеристика" id="17">
+					<DataPath>СписокПозиций.ХарактеристикаНоменклатуры</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СписокПозицийХарактеристикаКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="СписокПозицийХарактеристикаРасширеннаяПодсказка" id="19"/>
+				</InputField>
+				<InputField name="СписокПозицийКоличество" id="23">
+					<DataPath>СписокПозиций.Количество</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>8</Width>
+					<ContextMenu name="СписокПозицийКоличествоКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="СписокПозицийКоличествоРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<InputField name="СписокПозицийЕдиницаИзмерения" id="20">
+					<DataPath>СписокПозиций.ЕдиницаИзмерения</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>5</Width>
+					<ContextMenu name="СписокПозицийЕдиницаИзмеренияКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="СписокПозицийЕдиницаИзмеренияРасширеннаяПодсказка" id="22"/>
+				</InputField>
+				<InputField name="СписокПозицийКоэффициет" id="29">
+					<DataPath>СписокПозиций.Коэффициент</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>5</Width>
+					<ContextMenu name="СписокПозицийКоэффициетКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="СписокПозицийКоэффициетРасширеннаяПодсказка" id="31"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ГруппаКнопки" id="36">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа кнопки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа кнопки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+			<Group>Horizontal</Group>
+			<Representation>WeakSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКнопкиРасширеннаяПодсказка" id="37"/>
+			<ChildItems>
+				<Button name="КнопкаОтмена" id="34">
+					<Type>UsualButton</Type>
+					<CommandName>Form.StandardCommand.Close</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отмена</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="КнопкаОтменаРасширеннаяПодсказка" id="35"/>
+				</Button>
+				<Button name="Перенести" id="32">
+					<Type>UsualButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<CommandName>Form.Command.Перенести</CommandName>
+					<ButtonImportance>Main</ButtonImportance>
+					<ExtendedTooltip name="ПеренестиРасширеннаяПодсказка" id="33"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="СписокПозиций" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список позиций</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Номенклатура" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ХарактеристикаНоменклатуры" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Характеристика</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ХарактеристикиНоменклатуры</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЕдиницаИзмерения" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ед.</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.КлассификаторЕдиницИзмерения</v8:Type>
+						<v8:Type>cfg:CatalogRef.ЕдиницыИзмерений</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Количество" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Комната" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комната</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>25</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Коэффициент" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>К.</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>4</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Отметка" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отметка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПозицияВТоварахМонтажа" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Позиция в товарах монтажа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СписокКомнат" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список комнат</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТоварыМонтажа" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Товары монтажа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Комната" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комната</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Номенклатура" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ХарактеристикаНоменклатуры" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Характеристика</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ХарактеристикиНоменклатуры</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Перенести" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Перенести</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УстановитьВсе" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьВсе</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СнятьВсе" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СнятьВсе</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ИнвертироватьВсе" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Инвертировать выделение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Инвертировать выделение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SwitchActivity</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ИнвертироватьВсе</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаполнитьКомнатуВоВсехСтроках" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>во всех строках</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить комнату во всех строках</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьКомнатуВоВсехСтроках</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаполнитьКомнатуВСтрокахГдеНеЗаполнено" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>в строках, где не заполнено</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить комнату в строках где не заполнено</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьКомнатуВСтрокахГдеНеЗаполнено</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="СписокКомнат">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ДокументИсточник">
+			<Type>
+				<v8:Type>cfg:DocumentRef.ЗаказПокупателя</v8:Type>
+				<v8:Type>cfg:DocumentRef.ПоступлениеТоваровИУслуг</v8:Type>
+				<v8:Type>cfg:DocumentRef.ПеремещениеТоваров</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="МассивТоваровМонтажа">
+			<Type/>
+		</Parameter>
+	</Parameters>
+</Form>

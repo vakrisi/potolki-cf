@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>LockOwner</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<CheckBoxField name="УДАЛИТЬ_НеОбновлятьПриЗагрузкиИзПостроителя" id="26">
+			<DataPath>Объект.УДАЛИТЬ_НеОбновлятьПриЗагрузкиИзПостроителя</DataPath>
+			<Visible>false</Visible>
+			<Enabled>false</Enabled>
+			<TitleLocation>Right</TitleLocation>
+			<ContextMenu name="УДАЛИТЬ_НеОбновлятьПриЗагрузкиИзПостроителяКонтекстноеМеню" id="27"/>
+			<ExtendedTooltip name="УДАЛИТЬ_НеОбновлятьПриЗагрузкиИзПостроителяРасширеннаяПодсказка" id="28"/>
+		</CheckBoxField>
+		<Table name="УДАЛИТЬ_ДоступныеПоследующиеСтатусы" id="7">
+			<Representation>List</Representation>
+			<Visible>false</Visible>
+			<TitleLocation>Top</TitleLocation>
+			<Enabled>false</Enabled>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.УДАЛИТЬ_ДоступныеПоследующиеСтатусы</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="УДАЛИТЬ_ДоступныеПоследующиеСтатусыКонтекстноеМеню" id="8"/>
+			<AutoCommandBar name="УДАЛИТЬ_ДоступныеПоследующиеСтатусыКоманднаяПанель" id="9"/>
+			<ExtendedTooltip name="УДАЛИТЬ_ДоступныеПоследующиеСтатусыРасширеннаяПодсказка" id="10"/>
+			<SearchStringAddition name="УДАЛИТЬ_ДоступныеПоследующиеСтатусыСтрокаПоиска" id="11">
+				<AdditionSource>
+					<Item>УДАЛИТЬ_ДоступныеПоследующиеСтатусы</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="УДАЛИТЬ_ДоступныеПоследующиеСтатусыСтрокаПоискаКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="УДАЛИТЬ_ДоступныеПоследующиеСтатусыСтрокаПоискаРасширеннаяПодсказка" id="13"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="УДАЛИТЬ_ДоступныеПоследующиеСтатусыСостояниеПросмотра" id="14">
+				<AdditionSource>
+					<Item>УДАЛИТЬ_ДоступныеПоследующиеСтатусы</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="УДАЛИТЬ_ДоступныеПоследующиеСтатусыСостояниеПросмотраКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="УДАЛИТЬ_ДоступныеПоследующиеСтатусыСостояниеПросмотраРасширеннаяПодсказка" id="16"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="УДАЛИТЬ_ДоступныеПоследующиеСтатусыУправлениеПоиском" id="17">
+				<AdditionSource>
+					<Item>УДАЛИТЬ_ДоступныеПоследующиеСтатусы</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="УДАЛИТЬ_ДоступныеПоследующиеСтатусыУправлениеПоискомКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="УДАЛИТЬ_ДоступныеПоследующиеСтатусыУправлениеПоискомРасширеннаяПодсказка" id="19"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ДоступныеПоследующиеСтатусыНомерСтроки" id="20">
+					<DataPath>Объект.УДАЛИТЬ_ДоступныеПоследующиеСтатусы.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ДоступныеПоследующиеСтатусыНомерСтрокиКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ДоступныеПоследующиеСтатусыНомерСтрокиРасширеннаяПодсказка" id="22"/>
+				</LabelField>
+				<InputField name="ДоступныеПоследующиеСтатусыСтатус" id="23">
+					<DataPath>Объект.УДАЛИТЬ_ДоступныеПоследующиеСтатусы.Статус</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ДоступныеПоследующиеСтатусыСтатусКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ДоступныеПоследующиеСтатусыСтатусРасширеннаяПодсказка" id="25"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.СтатусыЗаказовНаПроизводство</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

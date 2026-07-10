@@ -1,0 +1,1388 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="17"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="ГруппаСтраницы" id="194">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="195"/>
+			<ChildItems>
+				<Page name="ГруппаСтраницаПроценты" id="196">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Проценты</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа страница проценты</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<ScrollOnCompress>false</ScrollOnCompress>
+					<ExtendedTooltip name="ГруппаСтраницаПроцентыРасширеннаяПодсказка" id="197"/>
+					<ChildItems>
+						<CheckBoxField name="РазделятьПоВидамТоваров" id="51">
+							<DataPath>Объект.РазделятьПоВидамТоваров</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ContextMenu name="РазделятьПоВидамТоваровКонтекстноеМеню" id="52"/>
+							<ExtendedTooltip name="РазделятьПоВидамТоваровРасширеннаяПодсказка" id="53"/>
+							<Events>
+								<Event name="OnChange">РазделятьПоВидамТоваровПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<UsualGroup name="ГруппаБезРазделенияПоВидам" id="47">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа без разделения по видам</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа без разделения по видам</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаБезРазделенияПоВидамРасширеннаяПодсказка" id="48"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаЗамерщикБ" id="18">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа замерщик Б</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа замерщик Б</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаЗамерщикБРасширеннаяПодсказка" id="19"/>
+									<ChildItems>
+										<InputField name="ПроцентЗаМонтажиДляЗарплатыЗамерщика" id="7">
+											<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыЗамерщика</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoEditMode>true</AutoEditMode>
+											<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыЗамерщикаКонтекстноеМеню" id="8"/>
+											<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыЗамерщикаРасширеннаяПодсказка" id="9"/>
+										</InputField>
+										<LabelDecoration name="ДекорацияЗамерщик" id="20">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>%</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ДекорацияЗамерщикКонтекстноеМеню" id="21"/>
+											<ExtendedTooltip name="ДекорацияЗамерщикРасширеннаяПодсказка" id="22"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаМенеджерБ" id="23">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа менеджер Б</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа менеджер Б</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаМенеджерБРасширеннаяПодсказка" id="24"/>
+									<ChildItems>
+										<InputField name="ПроцентЗаМонтажиДляЗарплатыМенеджера" id="10">
+											<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыМенеджера</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoEditMode>true</AutoEditMode>
+											<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыМенеджераКонтекстноеМеню" id="11"/>
+											<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыМенеджераРасширеннаяПодсказка" id="12"/>
+										</InputField>
+										<LabelDecoration name="ДекорацияМенеджер" id="25">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>%</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ДекорацияМенеджерКонтекстноеМеню" id="26"/>
+											<ExtendedTooltip name="ДекорацияМенеджерРасширеннаяПодсказка" id="27"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаМенеджерДоговораБ" id="36">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа менеджер</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа менеджер</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаМенеджерДоговораБРасширеннаяПодсказка" id="37"/>
+									<ChildItems>
+										<InputField name="ПроцентЗаМонтажиДляЗарплатыМенеджераДоговора" id="44">
+											<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыМенеджераДоговора</DataPath>
+											<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыМенеджераДоговораКонтекстноеМеню" id="45"/>
+											<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыМенеджераДоговораРасширеннаяПодсказка" id="46"/>
+										</InputField>
+										<LabelDecoration name="ДекорацияМенеджер1" id="41">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>%</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ДекорацияМенеджер1КонтекстноеМеню" id="42"/>
+											<ExtendedTooltip name="ДекорацияМенеджер1РасширеннаяПодсказка" id="43"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаБригадирМонтажниковБ" id="224">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа бригадир монтажников Б</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа бригадир монтажников Б</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаБригадирМонтажниковБРасширеннаяПодсказка" id="225"/>
+									<ChildItems>
+										<InputField name="ПроцентЗаМонтажиДляЗарплатыБригадираМонтажников" id="226">
+											<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыБригадираМонтажников</DataPath>
+											<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыБригадираМонтажниковКонтекстноеМеню" id="227"/>
+											<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыБригадираМонтажниковРасширеннаяПодсказка" id="228"/>
+										</InputField>
+										<LabelDecoration name="ДекорацияМонтажников1" id="229">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>%</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ДекорацияМонтажников1КонтекстноеМеню" id="230"/>
+											<ExtendedTooltip name="ДекорацияМонтажников1РасширеннаяПодсказка" id="231"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаМонтажниковБ" id="28">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Монтажники</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа монтажников Б</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Representation>StrongSeparation</Representation>
+									<ExtendedTooltip name="ГруппаМонтажниковБРасширеннаяПодсказка" id="29"/>
+									<ChildItems>
+										<UsualGroup name="Группа1" id="324">
+											<Group>Horizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="325"/>
+											<ChildItems>
+												<InputField name="ПроцентЗаМонтажиДляЗарплатыМонтажника" id="13">
+													<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыМонтажников</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Процент за монтаж</v8:content>
+														</v8:item>
+													</Title>
+													<EditMode>EnterOnInput</EditMode>
+													<AutoEditMode>true</AutoEditMode>
+													<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыМонтажникаКонтекстноеМеню" id="14"/>
+													<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыМонтажникаРасширеннаяПодсказка" id="15"/>
+												</InputField>
+												<LabelDecoration name="ДекорацияМонтажников" id="30">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>%</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДекорацияМонтажниковКонтекстноеМеню" id="31"/>
+													<ExtendedTooltip name="ДекорацияМонтажниковРасширеннаяПодсказка" id="32"/>
+												</LabelDecoration>
+												<CheckBoxField name="ОтЧистойПрибыли" id="33">
+													<DataPath>Объект.ОтЧистойПрибыли</DataPath>
+													<TitleLocation>Right</TitleLocation>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Выработка в размере указанного % будет расчитана за вычетом из выручки себестоимости товаров и материалов</v8:content>
+														</v8:item>
+													</ToolTip>
+													<ToolTipRepresentation>Button</ToolTipRepresentation>
+													<ContextMenu name="ОтЧистойПрибылиКонтекстноеМеню" id="34"/>
+													<ExtendedTooltip name="ОтЧистойПрибылиРасширеннаяПодсказка" id="35"/>
+												</CheckBoxField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="Группа2" id="326">
+											<Group>Horizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="327"/>
+											<ChildItems>
+												<InputField name="ПроцентЗаМонтажиДляЗарплатыМонтажников_МинимальноеЗначение" id="271">
+													<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыМонтажников_МинимальноеЗначение</DataPath>
+													<ToolTipRepresentation>Button</ToolTipRepresentation>
+													<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыМонтажников_МинимальноеЗначениеКонтекстноеМеню" id="272"/>
+													<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыМонтажников_МинимальноеЗначениеРасширеннаяПодсказка" id="273"/>
+												</InputField>
+												<LabelField name="Валюта" id="274">
+													<DataPath>Валюта</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<Width>5</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="ВалютаКонтекстноеМеню" id="275"/>
+													<ExtendedTooltip name="ВалютаРасширеннаяПодсказка" id="276"/>
+												</LabelField>
+												<InputField name="ПроцентЗаМонтажиДляЗарплатыМонтажников_МаксимальноеЗначениеПроцент" id="295">
+													<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыМонтажников_МаксимальноеЗначениеПроцент</DataPath>
+													<ToolTipRepresentation>Button</ToolTipRepresentation>
+													<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыМонтажников_МаксимальноеЗначениеПроцентКонтекстноеМеню" id="296"/>
+													<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыМонтажников_МаксимальноеЗначениеПроцентРасширеннаяПодсказка" id="297"/>
+												</InputField>
+												<LabelDecoration name="ДекорацияМонтажников5" id="298">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>%</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДекорацияМонтажников5КонтекстноеМеню" id="299"/>
+													<ExtendedTooltip name="ДекорацияМонтажников5РасширеннаяПодсказка" id="300"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаСРазделениемПоВидам" id="49">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа с разделением по видам</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа с разделением по видам</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСРазделениемПоВидамРасширеннаяПодсказка" id="50"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаСРазделениемЛеваяПраваяЛевая" id="319">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа с разделением левая правая левая</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа с разделением левая правая левая</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаСРазделениемЛеваяПраваяЛеваяРасширеннаяПодсказка" id="320"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаСРазделениемЛевая" id="267">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа с разделением левая</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа с разделением левая</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСРазделениемЛеваяРасширеннаяПодсказка" id="268"/>
+											<ChildItems>
+												<UsualGroup name="ГруппаМенеджерС" id="62">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>% от суммы монтажа в зарплату менеджера лида</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа менеджер Б</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>Vertical</Group>
+													<Representation>StrongSeparation</Representation>
+													<ExtendedTooltip name="ГруппаМенеджерСРасширеннаяПодсказка" id="63"/>
+													<ChildItems>
+														<UsualGroup name="ГруппаМенеджерСТовары" id="116">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа менеджер Б</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа менеджер Б</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Horizontal</Group>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаМенеджерСТоварыРасширеннаяПодсказка" id="117"/>
+															<ChildItems>
+																<InputField name="ПроцентЗаМонтажиДляЗарплатыМенеджера_товары" id="131">
+																	<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыМенеджера_товары</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>за товары</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыМенеджера_товарыКонтекстноеМеню" id="132"/>
+																	<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыМенеджера_товарыРасширеннаяПодсказка" id="133"/>
+																</InputField>
+																<LabelDecoration name="ДекорацияМенеджер4" id="118">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>%</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ДекорацияМенеджер4КонтекстноеМеню" id="119"/>
+																	<ExtendedTooltip name="ДекорацияМенеджер4РасширеннаяПодсказка" id="120"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+														<UsualGroup name="ГруппаМенеджерСУслуги" id="121">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа менеджер Б</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа менеджер Б</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Horizontal</Group>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаМенеджерСУслугиРасширеннаяПодсказка" id="122"/>
+															<ChildItems>
+																<InputField name="ПроцентЗаМонтажиДляЗарплатыМенеджера_услуги" id="134">
+																	<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыМенеджера_услуги</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>за услуги</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыМенеджера_услугиКонтекстноеМеню" id="135"/>
+																	<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыМенеджера_услугиРасширеннаяПодсказка" id="136"/>
+																</InputField>
+																<LabelDecoration name="ДекорацияМенеджер5" id="123">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>%</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ДекорацияМенеджер5КонтекстноеМеню" id="124"/>
+																	<ExtendedTooltip name="ДекорацияМенеджер5РасширеннаяПодсказка" id="125"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+														<UsualGroup name="ГруппаМенеджерСПотолки" id="126">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа менеджер Б</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа менеджер Б</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Horizontal</Group>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаМенеджерСПотолкиРасширеннаяПодсказка" id="127"/>
+															<ChildItems>
+																<InputField name="ПроцентЗаМонтажиДляЗарплатыМенеджера_потолки" id="137">
+																	<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыМенеджера_потолки</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>за потолки</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыМенеджера_потолкиКонтекстноеМеню" id="138"/>
+																	<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыМенеджера_потолкиРасширеннаяПодсказка" id="139"/>
+																</InputField>
+																<LabelDecoration name="ДекорацияМенеджер6" id="128">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>%</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ДекорацияМенеджер6КонтекстноеМеню" id="129"/>
+																	<ExtendedTooltip name="ДекорацияМенеджер6РасширеннаяПодсказка" id="130"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="ГруппаМенеджерДоговораС" id="70">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>% от суммы монтажа в зарплату менеджера договора</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа менеджер</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>Vertical</Group>
+													<Representation>StrongSeparation</Representation>
+													<ExtendedTooltip name="ГруппаМенеджерДоговораСРасширеннаяПодсказка" id="71"/>
+													<ChildItems>
+														<UsualGroup name="ГруппаМенеджерДоговораСТовары" id="140">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа менеджер</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа менеджер</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Horizontal</Group>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаМенеджерДоговораСТоварыРасширеннаяПодсказка" id="141"/>
+															<ChildItems>
+																<InputField name="ПроцентЗаМонтажиДляЗарплатыМенеджераДоговора_товары" id="155">
+																	<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыМенеджераДоговора_товары</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>за товары</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыМенеджераДоговора_товарыКонтекстноеМеню" id="156"/>
+																	<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыМенеджераДоговора_товарыРасширеннаяПодсказка" id="157"/>
+																</InputField>
+																<LabelDecoration name="ДекорацияМенеджер7" id="142">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>%</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ДекорацияМенеджер7КонтекстноеМеню" id="143"/>
+																	<ExtendedTooltip name="ДекорацияМенеджер7РасширеннаяПодсказка" id="144"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+														<UsualGroup name="ГруппаМенеджерДоговораСУслуги" id="145">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа менеджер</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа менеджер</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Horizontal</Group>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаМенеджерДоговораСУслугиРасширеннаяПодсказка" id="146"/>
+															<ChildItems>
+																<InputField name="ПроцентЗаМонтажиДляЗарплатыМенеджераДоговора_услуги" id="158">
+																	<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыМенеджераДоговора_услуги</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>за услуги</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыМенеджераДоговора_услугиКонтекстноеМеню" id="159"/>
+																	<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыМенеджераДоговора_услугиРасширеннаяПодсказка" id="160"/>
+																</InputField>
+																<LabelDecoration name="ДекорацияМенеджер8" id="147">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>%</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ДекорацияМенеджер8КонтекстноеМеню" id="148"/>
+																	<ExtendedTooltip name="ДекорацияМенеджер8РасширеннаяПодсказка" id="149"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+														<UsualGroup name="ГруппаМенеджерДоговораСПотолки" id="150">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа менеджер</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа менеджер</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Horizontal</Group>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаМенеджерДоговораСПотолкиРасширеннаяПодсказка" id="151"/>
+															<ChildItems>
+																<InputField name="ПроцентЗаМонтажиДляЗарплатыМенеджераДоговора_потолки" id="161">
+																	<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыМенеджераДоговора_потолки</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>за потолки</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыМенеджераДоговора_потолкиКонтекстноеМеню" id="162"/>
+																	<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыМенеджераДоговора_потолкиРасширеннаяПодсказка" id="163"/>
+																</InputField>
+																<LabelDecoration name="ДекорацияМенеджер9" id="152">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>%</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ДекорацияМенеджер9КонтекстноеМеню" id="153"/>
+																	<ExtendedTooltip name="ДекорацияМенеджер9РасширеннаяПодсказка" id="154"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаСРазделениемПравая" id="269">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа с разделением левая</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа с разделением левая</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСРазделениемПраваяРасширеннаяПодсказка" id="270"/>
+											<ChildItems>
+												<UsualGroup name="ГруппаЗамерщикС" id="54">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>% от суммы монтажа в зарплату замерщика</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа замерщик Б</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>Vertical</Group>
+													<Representation>StrongSeparation</Representation>
+													<ExtendedTooltip name="ГруппаЗамерщикСРасширеннаяПодсказка" id="55"/>
+													<ChildItems>
+														<UsualGroup name="ГруппаЗамерщикСТовары" id="89">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа замерщик с товары</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа замерщик с товары</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Horizontal</Group>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаЗамерщикСТоварыРасширеннаяПодсказка" id="90"/>
+															<ChildItems>
+																<InputField name="ПроцентЗаМонтажиДляЗарплатыЗамерщика_товары" id="91">
+																	<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыЗамерщика_товары</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>за товары</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыЗамерщика_товарыКонтекстноеМеню" id="92"/>
+																	<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыЗамерщика_товарыРасширеннаяПодсказка" id="93"/>
+																</InputField>
+																<LabelDecoration name="ДекорацияЗамерщик1" id="59">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>%</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ДекорацияЗамерщик1КонтекстноеМеню" id="60"/>
+																	<ExtendedTooltip name="ДекорацияЗамерщик1РасширеннаяПодсказка" id="61"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+														<UsualGroup name="ГруппаЗамерщикСУслуги" id="94">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа замерщик с товары</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа замерщик с товары</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Horizontal</Group>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаЗамерщикСУслугиРасширеннаяПодсказка" id="95"/>
+															<ChildItems>
+																<InputField name="ПроцентЗаМонтажиДляЗарплатыЗамерщика_услуги" id="110">
+																	<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыЗамерщика_услуги</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>за услуги</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыЗамерщика_услугиКонтекстноеМеню" id="111"/>
+																	<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыЗамерщика_услугиРасширеннаяПодсказка" id="112"/>
+																</InputField>
+																<LabelDecoration name="ДекорацияЗамерщик2" id="99">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>%</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ДекорацияЗамерщик2КонтекстноеМеню" id="100"/>
+																	<ExtendedTooltip name="ДекорацияЗамерщик2РасширеннаяПодсказка" id="101"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+														<UsualGroup name="ГруппаЗамерщикСПотолки" id="102">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа замерщик с товары</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа замерщик с товары</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Horizontal</Group>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаЗамерщикСПотолкиРасширеннаяПодсказка" id="103"/>
+															<ChildItems>
+																<InputField name="ПроцентЗаМонтажиДляЗарплатыЗамерщика_потолки" id="113">
+																	<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыЗамерщика_потолки</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>за потолки</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыЗамерщика_потолкиКонтекстноеМеню" id="114"/>
+																	<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыЗамерщика_потолкиРасширеннаяПодсказка" id="115"/>
+																</InputField>
+																<LabelDecoration name="ДекорацияЗамерщик3" id="107">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>%</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ДекорацияЗамерщик3КонтекстноеМеню" id="108"/>
+																	<ExtendedTooltip name="ДекорацияЗамерщик3РасширеннаяПодсказка" id="109"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="ГруппаБригадирМонтажниковС" id="232">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>% от суммы монтажа в зарплату бригадира монтажников</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа замерщик Б</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>Vertical</Group>
+													<Representation>StrongSeparation</Representation>
+													<ExtendedTooltip name="ГруппаБригадирМонтажниковСРасширеннаяПодсказка" id="233"/>
+													<ChildItems>
+														<UsualGroup name="ГруппаБригадирМонтажниковСТовары" id="234">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа замерщик с товары</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа замерщик с товары</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Horizontal</Group>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаБригадирМонтажниковСТоварыРасширеннаяПодсказка" id="235"/>
+															<ChildItems>
+																<InputField name="ПроцентЗаМонтажиДляЗарплатыБригадираМонтажников_товары" id="258">
+																	<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыБригадираМонтажников_товары</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>за товары</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыБригадираМонтажников_товарыКонтекстноеМеню" id="259"/>
+																	<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыБригадираМонтажников_товарыРасширеннаяПодсказка" id="260"/>
+																</InputField>
+																<LabelDecoration name="ДекорацияЗамерщик4" id="239">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>%</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ДекорацияЗамерщик4КонтекстноеМеню" id="240"/>
+																	<ExtendedTooltip name="ДекорацияЗамерщик4РасширеннаяПодсказка" id="241"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+														<UsualGroup name="ГруппаБригадирМонтажниковСУслуги" id="242">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа замерщик с товары</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа замерщик с товары</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Horizontal</Group>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаБригадирМонтажниковСУслугиРасширеннаяПодсказка" id="243"/>
+															<ChildItems>
+																<InputField name="ПроцентЗаМонтажиДляЗарплатыБригадираМонтажников_услуги" id="261">
+																	<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыБригадираМонтажников_услуги</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>за услуги</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыБригадираМонтажников_услугиКонтекстноеМеню" id="262"/>
+																	<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыБригадираМонтажников_услугиРасширеннаяПодсказка" id="263"/>
+																</InputField>
+																<LabelDecoration name="ДекорацияЗамерщик5" id="247">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>%</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ДекорацияЗамерщик5КонтекстноеМеню" id="248"/>
+																	<ExtendedTooltip name="ДекорацияЗамерщик5РасширеннаяПодсказка" id="249"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+														<UsualGroup name="ГруппаБригадирМонтажниковСПотолки" id="250">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа замерщик с товары</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа замерщик с товары</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Horizontal</Group>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаБригадирМонтажниковСПотолкиРасширеннаяПодсказка" id="251"/>
+															<ChildItems>
+																<InputField name="ПроцентЗаМонтажиДляЗарплатыБригадираМонтажников_потолки" id="264">
+																	<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыБригадираМонтажников_потолки</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>за потолки</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыБригадираМонтажников_потолкиКонтекстноеМеню" id="265"/>
+																	<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыБригадираМонтажников_потолкиРасширеннаяПодсказка" id="266"/>
+																</InputField>
+																<LabelDecoration name="ДекорацияЗамерщик6" id="255">
+																	<Title formatted="false">
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>%</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ContextMenu name="ДекорацияЗамерщик6КонтекстноеМеню" id="256"/>
+																	<ExtendedTooltip name="ДекорацияЗамерщик6РасширеннаяПодсказка" id="257"/>
+																</LabelDecoration>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаМонтажниковС" id="78">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>% от суммы монтажа в зарплату монтажников</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа монтажников Б</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Representation>StrongSeparation</Representation>
+									<ExtendedTooltip name="ГруппаМонтажниковСРасширеннаяПодсказка" id="79"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаМонтажниковСТовары" id="164">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа монтажников Б</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа монтажников Б</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаМонтажниковСТоварыРасширеннаяПодсказка" id="165"/>
+											<ChildItems>
+												<InputField name="ПроцентЗаМонтажиДляЗарплатыМонтажников_товары" id="185">
+													<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыМонтажников_товары</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>за товары</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыМонтажников_товарыКонтекстноеМеню" id="186"/>
+													<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыМонтажников_товарыРасширеннаяПодсказка" id="187"/>
+												</InputField>
+												<LabelDecoration name="ДекорацияМонтажников2" id="166">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>%</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДекорацияМонтажников2КонтекстноеМеню" id="167"/>
+													<ExtendedTooltip name="ДекорацияМонтажников2РасширеннаяПодсказка" id="168"/>
+												</LabelDecoration>
+												<InputField name="ПроцентЗаМонтажиДляЗарплатыМонтажников_товары_МинимальноеЗначение" id="277">
+													<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыМонтажников_товары_МинимальноеЗначение</DataPath>
+													<ToolTipRepresentation>Button</ToolTipRepresentation>
+													<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыМонтажников_товары_МинимальноеЗначениеКонтекстноеМеню" id="278"/>
+													<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыМонтажников_товары_МинимальноеЗначениеРасширеннаяПодсказка" id="279"/>
+												</InputField>
+												<LabelField name="Валюта1" id="286">
+													<DataPath>Валюта</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<Width>5</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="Валюта1КонтекстноеМеню" id="287"/>
+													<ExtendedTooltip name="Валюта1РасширеннаяПодсказка" id="288"/>
+												</LabelField>
+												<InputField name="ПроцентЗаМонтажиДляЗарплатыМонтажников_товары_МаксимальноеЗначениеПроцент" id="321">
+													<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыМонтажников_товары_МаксимальноеЗначениеПроцент</DataPath>
+													<ToolTipRepresentation>Button</ToolTipRepresentation>
+													<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыМонтажников_товары_МаксимальноеЗначениеПроцентКонтекстноеМеню" id="322"/>
+													<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыМонтажников_товары_МаксимальноеЗначениеПроцентРасширеннаяПодсказка" id="323"/>
+												</InputField>
+												<LabelDecoration name="ДекорацияМонтажников6" id="304">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>%</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДекорацияМонтажников6КонтекстноеМеню" id="305"/>
+													<ExtendedTooltip name="ДекорацияМонтажников6РасширеннаяПодсказка" id="306"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаМонтажниковСУслуги" id="172">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа монтажников Б</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа монтажников Б</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаМонтажниковСУслугиРасширеннаяПодсказка" id="173"/>
+											<ChildItems>
+												<InputField name="ПроцентЗаМонтажиДляЗарплатыМонтажников_услуги" id="188">
+													<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыМонтажников_услуги</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>за услуги</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыМонтажников_услугиКонтекстноеМеню" id="189"/>
+													<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыМонтажников_услугиРасширеннаяПодсказка" id="190"/>
+												</InputField>
+												<LabelDecoration name="ДекорацияМонтажников3" id="174">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>%</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДекорацияМонтажников3КонтекстноеМеню" id="175"/>
+													<ExtendedTooltip name="ДекорацияМонтажников3РасширеннаяПодсказка" id="176"/>
+												</LabelDecoration>
+												<InputField name="ПроцентЗаМонтажиДляЗарплатыМонтажников_услуги_МинимальноеЗначение" id="283">
+													<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыМонтажников_услуги_МинимальноеЗначение</DataPath>
+													<ToolTipRepresentation>Button</ToolTipRepresentation>
+													<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыМонтажников_услуги_МинимальноеЗначениеКонтекстноеМеню" id="284"/>
+													<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыМонтажников_услуги_МинимальноеЗначениеРасширеннаяПодсказка" id="285"/>
+												</InputField>
+												<LabelField name="Валюта2" id="289">
+													<DataPath>Валюта</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<Width>5</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="Валюта2КонтекстноеМеню" id="290"/>
+													<ExtendedTooltip name="Валюта2РасширеннаяПодсказка" id="291"/>
+												</LabelField>
+												<InputField name="ПроцентЗаМонтажиДляЗарплатыМонтажников_услуги_МаксимальноеЗначениеПроцент" id="307">
+													<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыМонтажников_услуги_МаксимальноеЗначениеПроцент</DataPath>
+													<ToolTipRepresentation>Button</ToolTipRepresentation>
+													<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыМонтажников_услуги_МаксимальноеЗначениеПроцентКонтекстноеМеню" id="308"/>
+													<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыМонтажников_услуги_МаксимальноеЗначениеПроцентРасширеннаяПодсказка" id="309"/>
+												</InputField>
+												<LabelDecoration name="ДекорацияМонтажников7" id="310">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>%</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДекорацияМонтажников7КонтекстноеМеню" id="311"/>
+													<ExtendedTooltip name="ДекорацияМонтажников7РасширеннаяПодсказка" id="312"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаМонтажниковСПотолки" id="180">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа монтажников Б</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа монтажников Б</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаМонтажниковСПотолкиРасширеннаяПодсказка" id="181"/>
+											<ChildItems>
+												<InputField name="ПроцентЗаМонтажиДляЗарплатыМонтажников_потолки" id="191">
+													<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыМонтажников_потолки</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>за потолки</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыМонтажников_потолкиКонтекстноеМеню" id="192"/>
+													<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыМонтажников_потолкиРасширеннаяПодсказка" id="193"/>
+												</InputField>
+												<LabelDecoration name="ДекорацияМонтажников4" id="182">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>%</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДекорацияМонтажников4КонтекстноеМеню" id="183"/>
+													<ExtendedTooltip name="ДекорацияМонтажников4РасширеннаяПодсказка" id="184"/>
+												</LabelDecoration>
+												<InputField name="ПроцентЗаМонтажиДляЗарплатыМонтажников_потолки_МинимальноеЗначение" id="280">
+													<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыМонтажников_потолки_МинимальноеЗначение</DataPath>
+													<ToolTipRepresentation>Button</ToolTipRepresentation>
+													<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыМонтажников_потолки_МинимальноеЗначениеКонтекстноеМеню" id="281"/>
+													<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыМонтажников_потолки_МинимальноеЗначениеРасширеннаяПодсказка" id="282"/>
+												</InputField>
+												<LabelField name="Валюта3" id="292">
+													<DataPath>Валюта</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<Width>5</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="Валюта3КонтекстноеМеню" id="293"/>
+													<ExtendedTooltip name="Валюта3РасширеннаяПодсказка" id="294"/>
+												</LabelField>
+												<InputField name="ПроцентЗаМонтажиДляЗарплатыМонтажников_потолки_МаксимальноеЗначениеПроцент" id="313">
+													<DataPath>Объект.ПроцентЗаМонтажиДляЗарплатыМонтажников_потолки_МаксимальноеЗначениеПроцент</DataPath>
+													<ToolTipRepresentation>Button</ToolTipRepresentation>
+													<ContextMenu name="ПроцентЗаМонтажиДляЗарплатыМонтажников_потолки_МаксимальноеЗначениеПроцентКонтекстноеМеню" id="314"/>
+													<ExtendedTooltip name="ПроцентЗаМонтажиДляЗарплатыМонтажников_потолки_МаксимальноеЗначениеПроцентРасширеннаяПодсказка" id="315"/>
+												</InputField>
+												<LabelDecoration name="ДекорацияМонтажников8" id="316">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>%</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДекорацияМонтажников8КонтекстноеМеню" id="317"/>
+													<ExtendedTooltip name="ДекорацияМонтажников8РасширеннаяПодсказка" id="318"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+										<CheckBoxField name="ОтЧистойПрибыли1" id="86">
+											<DataPath>Объект.ОтЧистойПрибыли</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Выработка в размере указанного % будет расчитана за вычетом из выручки себестоимости товаров и материалов</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ToolTipRepresentation>Button</ToolTipRepresentation>
+											<ContextMenu name="ОтЧистойПрибыли1КонтекстноеМеню" id="87"/>
+											<ExtendedTooltip name="ОтЧистойПрибыли1РасширеннаяПодсказка" id="88"/>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаИсключаемыеПозиции" id="198">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Исключаемые позиции</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа исключаемые позиции</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<ScrollOnCompress>false</ScrollOnCompress>
+					<ExtendedTooltip name="ГруппаИсключаемыеПозицииРасширеннаяПодсказка" id="199"/>
+					<ChildItems>
+						<LabelDecoration name="Декорация1" id="219">
+							<TextColor>#008000</TextColor>
+							<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Список позиций (товары или услуги) которые будут исключены из стоимости монтажа перед рассчетом % для зарплаты сотрудников</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Декорация1КонтекстноеМеню" id="220"/>
+							<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="221"/>
+						</LabelDecoration>
+						<Table name="ИсключаемыеПозиции" id="200">
+							<RowSelectionMode>Cell</RowSelectionMode>
+							<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.ИсключаемыеПозиции</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ИсключаемыеПозицииКонтекстноеМеню" id="201"/>
+							<AutoCommandBar name="ИсключаемыеПозицииКоманднаяПанель" id="202">
+								<ChildItems>
+									<Button name="ИсключаемыеПозицииЗаполнитьПоГруппе" id="222">
+										<Type>CommandBarButton</Type>
+										<Representation>PictureAndText</Representation>
+										<CommandName>Form.Command.ЗаполнитьПоГруппе</CommandName>
+										<Picture>
+											<xr:Ref>StdPicture.OpenFile</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<ExtendedTooltip name="ИсключаемыеПозицииЗаполнитьПоГруппеРасширеннаяПодсказка" id="223"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ИсключаемыеПозицииРасширеннаяПодсказка" id="203"/>
+							<SearchStringAddition name="ИсключаемыеПозицииСтрокаПоиска" id="204">
+								<AdditionSource>
+									<Item>ИсключаемыеПозиции</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ИсключаемыеПозицииСтрокаПоискаКонтекстноеМеню" id="205"/>
+								<ExtendedTooltip name="ИсключаемыеПозицииСтрокаПоискаРасширеннаяПодсказка" id="206"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ИсключаемыеПозицииСостояниеПросмотра" id="207">
+								<AdditionSource>
+									<Item>ИсключаемыеПозиции</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ИсключаемыеПозицииСостояниеПросмотраКонтекстноеМеню" id="208"/>
+								<ExtendedTooltip name="ИсключаемыеПозицииСостояниеПросмотраРасширеннаяПодсказка" id="209"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ИсключаемыеПозицииУправлениеПоиском" id="210">
+								<AdditionSource>
+									<Item>ИсключаемыеПозиции</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ИсключаемыеПозицииУправлениеПоискомКонтекстноеМеню" id="211"/>
+								<ExtendedTooltip name="ИсключаемыеПозицииУправлениеПоискомРасширеннаяПодсказка" id="212"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnChange">ИсключаемыеПозицииПриИзменении</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ИсключаемыеПозицииНомерСтроки" id="213">
+									<DataPath>Объект.ИсключаемыеПозиции.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="ИсключаемыеПозицииНомерСтрокиКонтекстноеМеню" id="214"/>
+									<ExtendedTooltip name="ИсключаемыеПозицииНомерСтрокиРасширеннаяПодсказка" id="215"/>
+								</LabelField>
+								<InputField name="ИсключаемыеПозицииНоменклатура" id="216">
+									<DataPath>Объект.ИсключаемыеПозиции.Номенклатура</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="ИсключаемыеПозицииНоменклатураКонтекстноеМеню" id="217"/>
+									<ExtendedTooltip name="ИсключаемыеПозицииНоменклатураРасширеннаяПодсказка" id="218"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.УДАЛИТЬ_УстановкаПроцентаВыработкиРозницы</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="Валюта" id="2">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаполнитьПоГруппе" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по группе</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по группе</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьПоГруппе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

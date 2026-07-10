@@ -1,0 +1,845 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<Width>150</Width>
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<Group>Vertical</Group>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="Декорация4" id="79">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Height>2</Height>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Font ref="style:NormalTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>     Непогашенные займы
+</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalAlign>Center</VerticalAlign>
+			<BackColor>#E7E7E7</BackColor>
+			<ContextMenu name="Декорация4КонтекстноеМеню" id="80"/>
+			<ExtendedTooltip name="Декорация4РасширеннаяПодсказка" id="81"/>
+		</LabelDecoration>
+		<UsualGroup name="Группа1" id="82">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="83"/>
+			<ChildItems>
+				<PictureDecoration name="Декорация5" id="84">
+					<Width>1</Width>
+					<ContextMenu name="Декорация5КонтекстноеМеню" id="85"/>
+					<ExtendedTooltip name="Декорация5РасширеннаяПодсказка" id="86"/>
+				</PictureDecoration>
+				<UsualGroup name="Группа2" id="87">
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="88"/>
+					<ChildItems>
+						<LabelDecoration name="Декорация1" id="89">
+							<Height>2</Height>
+							<Font ref="style:NormalTextFont" height="12" kind="StyleItem"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выберите займы для возврата</v8:content>
+								</v8:item>
+							</Title>
+							<VerticalAlign>Center</VerticalAlign>
+							<ContextMenu name="Декорация1КонтекстноеМеню" id="90"/>
+							<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="91"/>
+						</LabelDecoration>
+						<Table name="ТаблицаЗаймов" id="32">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<RowSelectionMode>Cell</RowSelectionMode>
+							<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ТаблицаЗаймов</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ТаблицаЗаймовКонтекстноеМеню" id="33"/>
+							<AutoCommandBar name="ТаблицаЗаймовКоманднаяПанель" id="34">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ТаблицаЗаймовРасширеннаяПодсказка" id="35"/>
+							<SearchStringAddition name="ТаблицаЗаймовСтрокаПоиска" id="57">
+								<AdditionSource>
+									<Item>ТаблицаЗаймов</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаЗаймовСтрокаПоискаКонтекстноеМеню" id="58"/>
+								<ExtendedTooltip name="ТаблицаЗаймовСтрокаПоискаРасширеннаяПодсказка" id="59"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТаблицаЗаймовСостояниеПросмотра" id="60">
+								<AdditionSource>
+									<Item>ТаблицаЗаймов</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаЗаймовСостояниеПросмотраКонтекстноеМеню" id="61"/>
+								<ExtendedTooltip name="ТаблицаЗаймовСостояниеПросмотраРасширеннаяПодсказка" id="62"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТаблицаЗаймовУправлениеПоиском" id="63">
+								<AdditionSource>
+									<Item>ТаблицаЗаймов</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаЗаймовУправлениеПоискомКонтекстноеМеню" id="64"/>
+								<ExtendedTooltip name="ТаблицаЗаймовУправлениеПоискомРасширеннаяПодсказка" id="65"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<CheckBoxField name="ТаблицаЗаймовВыбрать" id="36">
+									<DataPath>ТаблицаЗаймов.Выбрать</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="ТаблицаЗаймовВыбратьКонтекстноеМеню" id="37"/>
+									<ExtendedTooltip name="ТаблицаЗаймовВыбратьРасширеннаяПодсказка" id="38"/>
+								</CheckBoxField>
+								<ColumnGroup name="ТаблицаЗаймовГруппа2" id="77">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вернуть с</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Horizontal</Group>
+									<ShowInHeader>true</ShowInHeader>
+									<ExtendedTooltip name="ТаблицаЗаймовГруппа2РасширеннаяПодсказка" id="78"/>
+									<ChildItems>
+										<InputField name="ТаблицаЗаймовСФонда" id="66">
+											<DataPath>ТаблицаЗаймов.Фонд</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<SkipOnInput>true</SkipOnInput>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Фонда</v8:content>
+												</v8:item>
+											</Title>
+											<WarningOnEditRepresentation>DontShow</WarningOnEditRepresentation>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoEditMode>true</AutoEditMode>
+											<MultiLine>false</MultiLine>
+											<ContextMenu name="ТаблицаЗаймовСФондаКонтекстноеМеню" id="67"/>
+											<ExtendedTooltip name="ТаблицаЗаймовСФондаРасширеннаяПодсказка" id="68"/>
+										</InputField>
+										<InputField name="ТаблицаЗаймовСПодразделения" id="69">
+											<DataPath>ТаблицаЗаймов.Подразделение</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<SkipOnInput>true</SkipOnInput>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Подразделения</v8:content>
+												</v8:item>
+											</Title>
+											<WarningOnEditRepresentation>DontShow</WarningOnEditRepresentation>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoEditMode>true</AutoEditMode>
+											<MultiLine>false</MultiLine>
+											<ContextMenu name="ТаблицаЗаймовСПодразделенияКонтекстноеМеню" id="70"/>
+											<ExtendedTooltip name="ТаблицаЗаймовСПодразделенияРасширеннаяПодсказка" id="71"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ТаблицаЗаймовГруппа1" id="75">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вернуть на</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Horizontal</Group>
+									<ShowInHeader>true</ShowInHeader>
+									<ExtendedTooltip name="ТаблицаЗаймовГруппа1РасширеннаяПодсказка" id="76"/>
+									<ChildItems>
+										<InputField name="ТаблицаЗаймовФонд" id="39">
+											<DataPath>ТаблицаЗаймов.СФонда</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoEditMode>true</AutoEditMode>
+											<ContextMenu name="ТаблицаЗаймовФондКонтекстноеМеню" id="40"/>
+											<ExtendedTooltip name="ТаблицаЗаймовФондРасширеннаяПодсказка" id="41"/>
+										</InputField>
+										<InputField name="ТаблицаЗаймовПодразделние" id="42">
+											<DataPath>ТаблицаЗаймов.СПодразделения</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoEditMode>true</AutoEditMode>
+											<ContextMenu name="ТаблицаЗаймовПодразделниеКонтекстноеМеню" id="43"/>
+											<ExtendedTooltip name="ТаблицаЗаймовПодразделниеРасширеннаяПодсказка" id="44"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="ТаблицаЗаймовСумма" id="54">
+									<DataPath>ТаблицаЗаймов.Сумма</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Остаток займа</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uk</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>az</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>be</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>kk</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ky</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>md</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>tg</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>tk</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>uz</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="ТаблицаЗаймовСуммаКонтекстноеМеню" id="55"/>
+									<ExtendedTooltip name="ТаблицаЗаймовСуммаРасширеннаяПодсказка" id="56"/>
+								</InputField>
+								<InputField name="ТаблицаЗаймовПричинаЗайма" id="51">
+									<DataPath>ТаблицаЗаймов.ПричинаЗайма</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="ТаблицаЗаймовПричинаЗаймаКонтекстноеМеню" id="52"/>
+									<ExtendedTooltip name="ТаблицаЗаймовПричинаЗаймаРасширеннаяПодсказка" id="53"/>
+								</InputField>
+								<InputField name="ТаблицаЗаймовКрайнийСрок" id="72">
+									<DataPath>ТаблицаЗаймов.КрайнийСрок</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Срок возврата</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="ТаблицаЗаймовКрайнийСрокКонтекстноеМеню" id="73"/>
+									<ExtendedTooltip name="ТаблицаЗаймовКрайнийСрокРасширеннаяПодсказка" id="74"/>
+								</InputField>
+								<InputField name="ТаблицаЗаймовДатаЗайма" id="132">
+									<DataPath>ТаблицаЗаймов.ДатаЗайма</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="ТаблицаЗаймовДатаЗаймаКонтекстноеМеню" id="133"/>
+									<ExtendedTooltip name="ТаблицаЗаймовДатаЗаймаРасширеннаяПодсказка" id="134"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<UsualGroup name="Группа4" id="114">
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="115"/>
+							<ChildItems>
+								<Button name="Отмена" id="130">
+									<Type>UsualButton</Type>
+									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+									<CommandName>Form.StandardCommand.Cancel</CommandName>
+									<Shape>Oval</Shape>
+									<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="131"/>
+								</Button>
+								<Button name="КомандаОк" id="128">
+									<Type>UsualButton</Type>
+									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+									<CommandName>Form.Command.КомандаОк</CommandName>
+									<TextColor>#000000</TextColor>
+									<BackColor>#FFE629</BackColor>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Перенести в ФП</v8:content>
+										</v8:item>
+									</Title>
+									<Shape>Oval</Shape>
+									<ExtendedTooltip name="КомандаОкРасширеннаяПодсказка" id="129"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<PictureDecoration name="Декорация3" id="125">
+					<Width>1</Width>
+					<ContextMenu name="Декорация3КонтекстноеМеню" id="126"/>
+					<ExtendedTooltip name="Декорация3РасширеннаяПодсказка" id="127"/>
+				</PictureDecoration>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ТаблицаЗаймов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица займов</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Таблица займов</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>az</v8:lang>
+					<v8:content>Таблица займов</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>be</v8:lang>
+					<v8:content>Таблица займов</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>kk</v8:lang>
+					<v8:content>Таблица займов</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ky</v8:lang>
+					<v8:content>Таблица займов</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>md</v8:lang>
+					<v8:content>Таблица займов</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tg</v8:lang>
+					<v8:content>Таблица займов</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tk</v8:lang>
+					<v8:content>Таблица займов</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uz</v8:lang>
+					<v8:content>Таблица займов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Выбрать" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбрать</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Выбрать</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>az</v8:lang>
+							<v8:content>Выбрать</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>be</v8:lang>
+							<v8:content>Выбрать</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>kk</v8:lang>
+							<v8:content>Выбрать</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ky</v8:lang>
+							<v8:content>Выбрать</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>md</v8:lang>
+							<v8:content>Выбрать</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tg</v8:lang>
+							<v8:content>Выбрать</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tk</v8:lang>
+							<v8:content>Выбрать</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uz</v8:lang>
+							<v8:content>Выбрать</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Фонд" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фонд</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Фонд</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>az</v8:lang>
+							<v8:content>Фонд</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>be</v8:lang>
+							<v8:content>Фонд</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>kk</v8:lang>
+							<v8:content>Фонд</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ky</v8:lang>
+							<v8:content>Фонд</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>md</v8:lang>
+							<v8:content>Фонд</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tg</v8:lang>
+							<v8:content>Фонд</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tk</v8:lang>
+							<v8:content>Фонд</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uz</v8:lang>
+							<v8:content>Фонд</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИА_Фонды</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Подразделение" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>az</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>be</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>kk</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ky</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>md</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tg</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tk</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uz</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИА_ЦФО</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Сумма" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Сумма безнал</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>az</v8:lang>
+							<v8:content>Сумма безнал</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>be</v8:lang>
+							<v8:content>Сумма безнал</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>kk</v8:lang>
+							<v8:content>Сумма безнал</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ky</v8:lang>
+							<v8:content>Сумма безнал</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>md</v8:lang>
+							<v8:content>Сумма безнал</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tg</v8:lang>
+							<v8:content>Сумма безнал</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tk</v8:lang>
+							<v8:content>Сумма безнал</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uz</v8:lang>
+							<v8:content>Сумма безнал</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПричинаЗайма" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Причина займа</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Причина займа</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>az</v8:lang>
+							<v8:content>Причина займа</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>be</v8:lang>
+							<v8:content>Причина займа</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>kk</v8:lang>
+							<v8:content>Причина займа</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ky</v8:lang>
+							<v8:content>Причина займа</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>md</v8:lang>
+							<v8:content>Причина займа</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tg</v8:lang>
+							<v8:content>Причина займа</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tk</v8:lang>
+							<v8:content>Причина займа</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uz</v8:lang>
+							<v8:content>Причина займа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.КСУ_ПричиныЗайма</v8:Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СФонда" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>С фонда</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Фонд</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>az</v8:lang>
+							<v8:content>Фонд</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>be</v8:lang>
+							<v8:content>Фонд</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>kk</v8:lang>
+							<v8:content>Фонд</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ky</v8:lang>
+							<v8:content>Фонд</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>md</v8:lang>
+							<v8:content>Фонд</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tg</v8:lang>
+							<v8:content>Фонд</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tk</v8:lang>
+							<v8:content>Фонд</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uz</v8:lang>
+							<v8:content>Фонд</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИА_Фонды</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СПодразделения" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>С подразделения</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>az</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>be</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>kk</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ky</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>md</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tg</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tk</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uz</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИА_ЦФО</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КрайнийСрок" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Крайний срок</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИсточникОтложенногоДохода" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Источник отложенного дохода</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИА_ИсточникиСпецДохода</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ид" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ид</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.КСУ_Займы</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДатаЗайма" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата займа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаОк" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>az</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>be</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>kk</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ky</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>md</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tg</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tk</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uz</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>az</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>be</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>kk</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ky</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>md</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tg</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tk</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uz</v8:lang>
+					<v8:content>Команда ок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаОк</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

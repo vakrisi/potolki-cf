@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<Group>Vertical</Group>
+	<ScalingMode>Compact</ScalingMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnSaveDataInSettingsAtServer">ПриСохраненииДанныхВНастройкахНаСервере</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаПутьКФайлу" id="71">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расположение файла</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа путь к файлу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>WeakSeparation</Representation>
+			<BackColor>style:ReportGroup1BackColor</BackColor>
+			<ExtendedTooltip name="ГруппаПутьКФайлуРасширеннаяПодсказка" id="72"/>
+			<ChildItems>
+				<InputField name="ПутьКФайлу" id="126">
+					<DataPath>Объект.ПутьКФайлу</DataPath>
+					<ChoiceButton>true</ChoiceButton>
+					<ContextMenu name="ПутьКФайлуКонтекстноеМеню" id="127"/>
+					<ExtendedTooltip name="ПутьКФайлуРасширеннаяПодсказка" id="128"/>
+					<Events>
+						<Event name="StartChoice">ПутьКФайлуНачалоВыбора</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа1" id="69">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="70"/>
+			<ChildItems>
+				<UsualGroup name="Группа5" id="84">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры отбора</v8:content>
+						</v8:item>
+					</Title>
+					<Width>40</Width>
+					<Group>Vertical</Group>
+					<Representation>WeakSeparation</Representation>
+					<BackColor>style:ReportGroup2BackColor</BackColor>
+					<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="85"/>
+					<ChildItems>
+						<InputField name="ПериодОтбора" id="81">
+							<DataPath>Объект.ПериодОтбора</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Период</v8:content>
+								</v8:item>
+							</Title>
+							<MaxWidth>21</MaxWidth>
+							<ContextMenu name="ПериодОтбораКонтекстноеМеню" id="82"/>
+							<ExtendedTooltip name="ПериодОтбораРасширеннаяПодсказка" id="83"/>
+						</InputField>
+						<InputField name="Организация" id="86">
+							<DataPath>Объект.Организация</DataPath>
+							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="87"/>
+							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="88"/>
+						</InputField>
+						<Table name="ВидыДокументов" id="14">
+							<Representation>List</Representation>
+							<TitleLocation>Top</TitleLocation>
+							<ChoiceMode>true</ChoiceMode>
+							<SelectionMode>SingleRow</SelectionMode>
+							<RowSelectionMode>Row</RowSelectionMode>
+							<Header>false</Header>
+							<HorizontalLinesBWA>false</HorizontalLinesBWA>
+							<VerticalLinesBWA>false</VerticalLinesBWA>
+							<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.ВидыДокументов</DataPath>
+							<RowPictureDataPath>Объект.ВидыДокументов.Picture</RowPictureDataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Виды документов для выгрузки</v8:content>
+								</v8:item>
+							</Title>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Choose</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>Pickup</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+							</CommandSet>
+							<ContextMenu name="ВидыДокументовКонтекстноеМеню" id="15"/>
+							<AutoCommandBar name="ВидыДокументовКоманднаяПанель" id="16">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="ВидыДокументовУстановитьФлажки" id="97">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<CommandName>Form.Item.ВидыДокументов.StandardCommand.CheckAll</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="ВидыДокументовУстановитьФлажкиРасширеннаяПодсказка" id="98"/>
+									</Button>
+									<Button name="ВидыДокументовСнятьФлажки" id="99">
+										<Type>CommandBarButton</Type>
+										<Representation>Picture</Representation>
+										<CommandName>Form.Item.ВидыДокументов.StandardCommand.UncheckAll</CommandName>
+										<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="ВидыДокументовСнятьФлажкиРасширеннаяПодсказка" id="100"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ВидыДокументовРасширеннаяПодсказка" id="17"/>
+							<SearchStringAddition name="ВидыДокументовСтрокаПоиска" id="18">
+								<AdditionSource>
+									<Item>ВидыДокументов</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВидыДокументовСтрокаПоискаКонтекстноеМеню" id="19"/>
+								<ExtendedTooltip name="ВидыДокументовСтрокаПоискаРасширеннаяПодсказка" id="20"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ВидыДокументовСостояниеПросмотра" id="21">
+								<AdditionSource>
+									<Item>ВидыДокументов</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВидыДокументовСостояниеПросмотраКонтекстноеМеню" id="22"/>
+								<ExtendedTooltip name="ВидыДокументовСостояниеПросмотраРасширеннаяПодсказка" id="23"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ВидыДокументовУправлениеПоиском" id="24">
+								<AdditionSource>
+									<Item>ВидыДокументов</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ВидыДокументовУправлениеПоискомКонтекстноеМеню" id="25"/>
+								<ExtendedTooltip name="ВидыДокументовУправлениеПоискомРасширеннаяПодсказка" id="26"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<CheckBoxField name="ВидыДокументовПометка" id="30">
+									<DataPath>Объект.ВидыДокументов.Check</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="ВидыДокументовПометкаКонтекстноеМеню" id="31"/>
+									<ExtendedTooltip name="ВидыДокументовПометкаРасширеннаяПодсказка" id="32"/>
+									<Events>
+										<Event name="OnChange">ВидыДокументовПометкаПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<InputField name="ВидыДокументовПредставление" id="27">
+									<DataPath>Объект.ВидыДокументов.Presentation</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="ВидыДокументовПредставлениеКонтекстноеМеню" id="28"/>
+									<ExtendedTooltip name="ВидыДокументовПредставлениеРасширеннаяПодсказка" id="29"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Группа4" id="79">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документы CRM:SmartCeilings для выгрузки</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>WeakSeparation</Representation>
+					<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="80"/>
+					<ChildItems>
+						<UsualGroup name="Группа3" id="77">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="78"/>
+							<ChildItems>
+								<Button name="ДокументыCRMПолучитьДокументы" id="75">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ПолучитьДокументы</CommandName>
+									<ExtendedTooltip name="ДокументыCRMПолучитьДокументыРасширеннаяПодсказка" id="76"/>
+								</Button>
+								<Button name="ЗагрузитьДокументы" id="92">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ВыгрузитьДокументы</CommandName>
+									<ExtendedTooltip name="ЗагрузитьДокументыРасширеннаяПодсказка" id="93"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ДокументыCRM" id="35">
+							<Representation>List</Representation>
+							<ChoiceMode>true</ChoiceMode>
+							<RowSelectionMode>Cell</RowSelectionMode>
+							<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.ДокументыCRM</DataPath>
+							<RowPictureDataPath>Объект.ДокументыCRM.СостояниеДокумента</RowPictureDataPath>
+							<RowsPicture>
+								<xr:Ref>CommonPicture.СтатусыДокумента</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</RowsPicture>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>CancelSearch</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Choose</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>Find</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>OutputList</ExcludedCommand>
+								<ExcludedCommand>SelectAll</ExcludedCommand>
+								<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+							</CommandSet>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ДокументыCRMКонтекстноеМеню" id="36"/>
+							<AutoCommandBar name="ДокументыCRMКоманднаяПанель" id="37">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="ДокументыCRMУстановитьФлажки" id="101">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.УстановитьФлажки</CommandName>
+										<ExtendedTooltip name="ДокументыCRMУстановитьФлажкиРасширеннаяПодсказка" id="102"/>
+									</Button>
+									<Button name="ДокументыCRMСнятьФлажки" id="103">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.СнятьФлажки</CommandName>
+										<ExtendedTooltip name="ДокументыCRMСнятьФлажкиРасширеннаяПодсказка" id="104"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ДокументыCRMРасширеннаяПодсказка" id="38"/>
+							<SearchStringAddition name="ДокументыCRMСтрокаПоиска" id="39">
+								<AdditionSource>
+									<Item>ДокументыCRM</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДокументыCRMСтрокаПоискаКонтекстноеМеню" id="40"/>
+								<ExtendedTooltip name="ДокументыCRMСтрокаПоискаРасширеннаяПодсказка" id="41"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДокументыCRMСостояниеПросмотра" id="42">
+								<AdditionSource>
+									<Item>ДокументыCRM</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДокументыCRMСостояниеПросмотраКонтекстноеМеню" id="43"/>
+								<ExtendedTooltip name="ДокументыCRMСостояниеПросмотраРасширеннаяПодсказка" id="44"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДокументыCRMУправлениеПоиском" id="45">
+								<AdditionSource>
+									<Item>ДокументыCRM</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДокументыCRMУправлениеПоискомКонтекстноеМеню" id="46"/>
+								<ExtendedTooltip name="ДокументыCRMУправлениеПоискомРасширеннаяПодсказка" id="47"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ДокументыCRMВыбор</Event>
+							</Events>
+							<ChildItems>
+								<CheckBoxField name="ДокументыCRMПометка" id="94">
+									<DataPath>Объект.ДокументыCRM.Пометка</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="ДокументыCRMПометкаКонтекстноеМеню" id="95"/>
+									<ExtendedTooltip name="ДокументыCRMПометкаРасширеннаяПодсказка" id="96"/>
+									<Events>
+										<Event name="OnChange">ДокументыCRMПометкаПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<InputField name="ДокументыCRMВидДокумента" id="54">
+									<DataPath>Объект.ДокументыCRM.ВидДокумента</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="ДокументыCRMВидДокументаКонтекстноеМеню" id="55"/>
+									<ExtendedTooltip name="ДокументыCRMВидДокументаРасширеннаяПодсказка" id="56"/>
+								</InputField>
+								<InputField name="ДокументыCRMНомер" id="51">
+									<DataPath>Объект.ДокументыCRM.Номер</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="ДокументыCRMНомерКонтекстноеМеню" id="52"/>
+									<ExtendedTooltip name="ДокументыCRMНомерРасширеннаяПодсказка" id="53"/>
+								</InputField>
+								<InputField name="ДокументыCRMДата" id="48">
+									<DataPath>Объект.ДокументыCRM.Дата</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="ДокументыCRMДатаКонтекстноеМеню" id="49"/>
+									<ExtendedTooltip name="ДокументыCRMДатаРасширеннаяПодсказка" id="50"/>
+									<Events>
+										<Event name="OnChange">ДокументыCRMДатаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ДокументыCRMОрганизация" id="57">
+									<DataPath>Объект.ДокументыCRM.Организация</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="ДокументыCRMОрганизацияКонтекстноеМеню" id="58"/>
+									<ExtendedTooltip name="ДокументыCRMОрганизацияРасширеннаяПодсказка" id="59"/>
+								</InputField>
+								<InputField name="ДокументыCRMКонтрагент" id="60">
+									<DataPath>Объект.ДокументыCRM.Контрагент</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="ДокументыCRMКонтрагентКонтекстноеМеню" id="61"/>
+									<ExtendedTooltip name="ДокументыCRMКонтрагентРасширеннаяПодсказка" id="62"/>
+								</InputField>
+								<InputField name="ДокументыCRMДоговорКонтрагента" id="105">
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="ДокументыCRMДоговорКонтрагентаКонтекстноеМеню" id="106"/>
+									<ExtendedTooltip name="ДокументыCRMДоговорКонтрагентаРасширеннаяПодсказка" id="107"/>
+								</InputField>
+								<InputField name="ДокументыCRMСумма" id="63">
+									<DataPath>Объект.ДокументыCRM.Сумма</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="ДокументыCRMСуммаКонтекстноеМеню" id="64"/>
+									<ExtendedTooltip name="ДокументыCRMСуммаРасширеннаяПодсказка" id="65"/>
+								</InputField>
+								<InputField name="ДокументыCRMКомментарий" id="66">
+									<DataPath>Объект.ДокументыCRM.Комментарий</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="ДокументыCRMКомментарийКонтекстноеМеню" id="67"/>
+									<ExtendedTooltip name="ДокументыCRMКомментарийРасширеннаяПодсказка" id="68"/>
+								</InputField>
+								<InputField name="ДокументыCRMОписаниеОшибки" id="129">
+									<DataPath>Объект.ДокументыCRM.ОписаниеОшибки</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoEditMode>true</AutoEditMode>
+									<ContextMenu name="ДокументыCRMОписаниеОшибкиКонтекстноеМеню" id="130"/>
+									<ExtendedTooltip name="ДокументыCRMОписаниеОшибкиРасширеннаяПодсказка" id="131"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ВыгрузкаДокументовИзSmartCeilingsВ1СБухгалтерия</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>1/0:28afc299-639d-461c-aea2-9baeb5516c65</Field>
+				<Field>1/0:71ad1456-02e4-42e3-b8bf-b699fdf4c22b</Field>
+				<Field>1/0:fa4f471a-71e6-4624-8ff8-3c03c7453070</Field>
+				<Field>Объект.Организация</Field>
+				<Field>Объект.ПериодОтбора</Field>
+				<Field>Объект.ПутьКФайлу</Field>
+			</Save>
+			<Columns>
+				<AdditionalColumns table="Объект.ДокументыCRM"/>
+			</Columns>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ДокументыCRM</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>OrGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Объект.ДокументыCRM.Контрагент</dcsset:left>
+							<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Объект.ДокументыCRM.НеНайденаНоменклатура</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FF0000</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ПолучитьДокументы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить документы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить документы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ExternalDataSourceFunction</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПолучитьДокументы</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВыгрузитьДокументы" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить документы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить документы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.BusinessProcessStart</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыгрузитьДокументы</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УстановитьФлажки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьФлажки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СнятьФлажки" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять флажки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СнятьФлажки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

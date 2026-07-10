@@ -1,0 +1,893 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<ScalingMode>Compact</ScalingMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаОбновитьСхемы" id="61">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОбновитьСхемы</CommandName>
+				<ExtendedTooltip name="ФормаОбновитьСхемыРасширеннаяПодсказка" id="62"/>
+			</Button>
+			<Button name="ФормаРедактор" id="115">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Редактор</CommandName>
+				<ExtendedTooltip name="ФормаРедакторРасширеннаяПодсказка" id="116"/>
+			</Button>
+			<ButtonGroup name="ФормаГруппаРедактор" id="153">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма группа редактор</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма группа редактор</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ФормаГруппаРедакторРасширеннаяПодсказка" id="154"/>
+				<ChildItems>
+					<Button name="ВыполнитьПереход" id="151">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ВыполнитьПереход</CommandName>
+						<ExtendedTooltip name="ВыполнитьПереходРасширеннаяПодсказка" id="152"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа3" id="67">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="68"/>
+			<ChildItems>
+				<InputField name="БП" id="45">
+					<DataPath>БП</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<OpenButton>true</OpenButton>
+					<ContextMenu name="БПКонтекстноеМеню" id="46"/>
+					<ExtendedTooltip name="БПРасширеннаяПодсказка" id="47"/>
+					<Events>
+						<Event name="OnChange">БППриИзменении</Event>
+					</Events>
+				</InputField>
+				<UsualGroup name="ГруппаОтображатьКарты" id="78">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа отображать карты</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа отображать карты</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОтображатьКартыРасширеннаяПодсказка" id="79"/>
+					<ChildItems>
+						<LabelDecoration name="Декорация1" id="80">
+							<Font bold="true" kind="AutoFont"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отображать карты:</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Декорация1КонтекстноеМеню" id="81"/>
+							<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="82"/>
+						</LabelDecoration>
+						<CheckBoxField name="ОтображатьКартуТекущую" id="72">
+							<DataPath>ОтображатьКартуТекущую</DataPath>
+							<ContextMenu name="ОтображатьКартуТекущуюКонтекстноеМеню" id="73"/>
+							<ExtendedTooltip name="ОтображатьКартуТекущуюРасширеннаяПодсказка" id="74"/>
+							<Events>
+								<Event name="OnChange">ОтображатьКартуТекущуюПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<UsualGroup name="ГруппаОтображатьКартыРедактор" id="117">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа отображать карты редактор</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа отображать карты редактор</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОтображатьКартыРедакторРасширеннаяПодсказка" id="118"/>
+							<ChildItems>
+								<CheckBoxField name="ОтображатьКартуНовую" id="75">
+									<DataPath>ОтображатьКартуНовую</DataPath>
+									<ContextMenu name="ОтображатьКартуНовуюКонтекстноеМеню" id="76"/>
+									<ExtendedTooltip name="ОтображатьКартуНовуюРасширеннаяПодсказка" id="77"/>
+									<Events>
+										<Event name="OnChange">ОтображатьКартуНовуюПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ОтображатьКартуРезультат" id="69">
+									<DataPath>ОтображатьКартуРезультат</DataPath>
+									<ContextMenu name="ОтображатьКартуРезультатКонтекстноеМеню" id="70"/>
+									<ExtendedTooltip name="ОтображатьКартуРезультатРасширеннаяПодсказка" id="71"/>
+									<Events>
+										<Event name="OnChange">ОтображатьКартуРезультатПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСхемы" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Схемы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа схемы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСхемыРасширеннаяПодсказка" id="11"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаТекущая" id="51">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа текущая</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа текущая</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаТекущаяРасширеннаяПодсказка" id="52"/>
+					<ChildItems>
+						<InputField name="КартаМаршрутаТекущая" id="55">
+							<DataPath>КартаМаршрутаТекущая</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="КартаМаршрутаТекущаяКонтекстноеМеню" id="56"/>
+							<ExtendedTooltip name="КартаМаршрутаТекущаяРасширеннаяПодсказка" id="57"/>
+						</InputField>
+						<GraphicalSchemaField name="КартаБПТекущая" id="42">
+							<DataPath>КартаБПТекущая</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="КартаБПТекущаяКонтекстноеМеню" id="43"/>
+							<ExtendedTooltip name="КартаБПТекущаяРасширеннаяПодсказка" id="44"/>
+							<Events>
+								<Event name="Selection">КартаБПТекущаяВыбор</Event>
+							</Events>
+						</GraphicalSchemaField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаРедактор" id="113">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Редактор</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа редактор</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаРедакторРасширеннаяПодсказка" id="114"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаНовая" id="53">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа новая</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа новая</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНоваяРасширеннаяПодсказка" id="54"/>
+							<ChildItems>
+								<InputField name="КартаМаршрутаНовая" id="58">
+									<DataPath>КартаМаршрутаНовая</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="КартаМаршрутаНоваяКонтекстноеМеню" id="59"/>
+									<ExtendedTooltip name="КартаМаршрутаНоваяРасширеннаяПодсказка" id="60"/>
+									<Events>
+										<Event name="OnChange">КартаМаршрутаНоваяПриИзменении</Event>
+									</Events>
+								</InputField>
+								<GraphicalSchemaField name="КартаБПНовая" id="39">
+									<DataPath>КартаБПНовая</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="КартаБПНоваяКонтекстноеМеню" id="40"/>
+									<ExtendedTooltip name="КартаБПНоваяРасширеннаяПодсказка" id="41"/>
+									<Events>
+										<Event name="Selection">КартаБПНоваяВыбор</Event>
+									</Events>
+								</GraphicalSchemaField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаДействия" id="12">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Действия</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа действия</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Width>50</Width>
+							<Group>Vertical</Group>
+							<Representation>WeakSeparation</Representation>
+							<ExtendedTooltip name="ГруппаДействияРасширеннаяПодсказка" id="13"/>
+							<ChildItems>
+								<Table name="ТабЗадачиКИзменению" id="14">
+									<Representation>List</Representation>
+									<CommandBarLocation>Top</CommandBarLocation>
+									<Width>7</Width>
+									<RowSelectionMode>Cell</RowSelectionMode>
+									<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<VerticalStretch>false</VerticalStretch>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>ТабЗадачиКИзменению</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Переход к задачам</v8:content>
+										</v8:item>
+									</Title>
+									<CommandSet>
+										<ExcludedCommand>Copy</ExcludedCommand>
+									</CommandSet>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ТабЗадачиКИзменениюКонтекстноеМеню" id="15"/>
+									<AutoCommandBar name="ТабЗадачиКИзменениюКоманднаяПанель" id="16">
+										<Autofill>false</Autofill>
+										<ChildItems>
+											<Button name="ТабЗадачиКИзменениюКнопка1" id="63">
+												<Type>CommandBarButton</Type>
+												<Representation>Picture</Representation>
+												<CommandName>Form.Item.ТабЗадачиКИзменению.StandardCommand.Add</CommandName>
+												<ExtendedTooltip name="ТабЗадачиКИзменениюКнопка1РасширеннаяПодсказка" id="64"/>
+											</Button>
+											<Button name="ТабЗадачиКИзменениюКнопка2" id="65">
+												<Type>CommandBarButton</Type>
+												<Representation>Picture</Representation>
+												<CommandName>Form.Item.ТабЗадачиКИзменению.StandardCommand.Delete</CommandName>
+												<ExtendedTooltip name="ТабЗадачиКИзменениюКнопка2РасширеннаяПодсказка" id="66"/>
+											</Button>
+											<Button name="ТабЗадачиКИзменениюОчиститьНовыеЗадачи" id="147">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ОчиститьНовыеЗадачи</CommandName>
+												<ExtendedTooltip name="ТабЗадачиКИзменениюОчиститьНовыеЗадачиРасширеннаяПодсказка" id="148"/>
+											</Button>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ТабЗадачиКИзменениюРасширеннаяПодсказка" id="17"/>
+									<SearchStringAddition name="ТабЗадачиКИзменениюСтрокаПоиска" id="18">
+										<AdditionSource>
+											<Item>ТабЗадачиКИзменению</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТабЗадачиКИзменениюСтрокаПоискаКонтекстноеМеню" id="21"/>
+										<ExtendedTooltip name="ТабЗадачиКИзменениюСтрокаПоискаРасширеннаяПодсказка" id="22"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ТабЗадачиКИзменениюСостояниеПросмотра" id="23">
+										<AdditionSource>
+											<Item>ТабЗадачиКИзменению</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТабЗадачиКИзменениюСостояниеПросмотраКонтекстноеМеню" id="26"/>
+										<ExtendedTooltip name="ТабЗадачиКИзменениюСостояниеПросмотраРасширеннаяПодсказка" id="27"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ТабЗадачиКИзменениюУправлениеПоиском" id="28">
+										<AdditionSource>
+											<Item>ТабЗадачиКИзменению</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ТабЗадачиКИзменениюУправлениеПоискомКонтекстноеМеню" id="31"/>
+										<ExtendedTooltip name="ТабЗадачиКИзменениюУправлениеПоискомРасширеннаяПодсказка" id="32"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="OnChange">ТабЗадачиКИзменениюПриИзменении</Event>
+									</Events>
+									<ChildItems>
+										<InputField name="ТабЗадачиКИзменениюТочка" id="33">
+											<DataPath>ТабЗадачиКИзменению.Точка</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Новая точка</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoEditMode>true</AutoEditMode>
+											<ChoiceParameterLinks>
+												<xr:Link>
+													<xr:Name>Отбор.Владелец</xr:Name>
+													<xr:DataPath xsi:type="xs:string">КартаМаршрутаНовая</xr:DataPath>
+													<xr:ValueChange>Clear</xr:ValueChange>
+												</xr:Link>
+											</ChoiceParameterLinks>
+											<ChoiceParameters>
+												<app:item name="Отбор.Тип">
+													<app:value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation/>
+														<Value xsi:type="v8:FixedArray">
+															<v8:Value xsi:type="FormChoiceListDesTimeValue">
+																<Presentation/>
+																<Value xsi:type="xr:DesignTimeRef">Enum.ИА_БПТипыТочекМаршрута.EnumValue.Действие</Value>
+															</v8:Value>
+															<v8:Value xsi:type="FormChoiceListDesTimeValue">
+																<Presentation/>
+																<Value xsi:type="xr:DesignTimeRef">Enum.ИА_БПТипыТочекМаршрута.EnumValue.Условие</Value>
+															</v8:Value>
+															<v8:Value xsi:type="FormChoiceListDesTimeValue">
+																<Presentation/>
+																<Value xsi:type="xr:DesignTimeRef">Enum.ИА_БПТипыТочекМаршрута.EnumValue.Завершение</Value>
+															</v8:Value>
+														</Value>
+													</app:value>
+												</app:item>
+											</ChoiceParameters>
+											<ContextMenu name="ТабЗадачиКИзменениюТочкаКонтекстноеМеню" id="34"/>
+											<ExtendedTooltip name="ТабЗадачиКИзменениюТочкаРасширеннаяПодсказка" id="35"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+								<Table name="ТабВыполняемыеДействия" id="85">
+									<Representation>List</Representation>
+									<TitleLocation>Top</TitleLocation>
+									<CommandBarLocation>None</CommandBarLocation>
+									<RowSelectionMode>Cell</RowSelectionMode>
+									<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>ТабВыполняемыеДействия</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Выполняемые действия:</v8:content>
+										</v8:item>
+									</Title>
+									<CommandSet>
+										<ExcludedCommand>Copy</ExcludedCommand>
+									</CommandSet>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ТабВыполняемыеДействияКонтекстноеМеню" id="86"/>
+									<AutoCommandBar name="ТабВыполняемыеДействияКоманднаяПанель" id="87"/>
+									<ExtendedTooltip name="ТабВыполняемыеДействияРасширеннаяПодсказка" id="88"/>
+									<SearchStringAddition name="ТабВыполняемыеДействияСтрокаПоиска" id="89">
+										<AdditionSource>
+											<Item>ТабВыполняемыеДействия</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТабВыполняемыеДействияСтрокаПоискаКонтекстноеМеню" id="92"/>
+										<ExtendedTooltip name="ТабВыполняемыеДействияСтрокаПоискаРасширеннаяПодсказка" id="93"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ТабВыполняемыеДействияСостояниеПросмотра" id="94">
+										<AdditionSource>
+											<Item>ТабВыполняемыеДействия</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТабВыполняемыеДействияСостояниеПросмотраКонтекстноеМеню" id="97"/>
+										<ExtendedTooltip name="ТабВыполняемыеДействияСостояниеПросмотраРасширеннаяПодсказка" id="98"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ТабВыполняемыеДействияУправлениеПоиском" id="99">
+										<AdditionSource>
+											<Item>ТабВыполняемыеДействия</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ТабВыполняемыеДействияУправлениеПоискомКонтекстноеМеню" id="102"/>
+										<ExtendedTooltip name="ТабВыполняемыеДействияУправлениеПоискомРасширеннаяПодсказка" id="103"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="OnChange">ТабВыполняемыеДействияПриИзменении</Event>
+									</Events>
+									<ChildItems>
+										<InputField name="ТабВыполняемыеДействияТочка" id="104">
+											<DataPath>ТабВыполняемыеДействия.Точка</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoEditMode>true</AutoEditMode>
+											<Width>10</Width>
+											<ContextMenu name="ТабВыполняемыеДействияТочкаКонтекстноеМеню" id="105"/>
+											<ExtendedTooltip name="ТабВыполняемыеДействияТочкаРасширеннаяПодсказка" id="106"/>
+										</InputField>
+										<InputField name="ТабВыполняемыеДействияДействие" id="110">
+											<DataPath>ТабВыполняемыеДействия.Действие</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoEditMode>true</AutoEditMode>
+											<Width>10</Width>
+											<ContextMenu name="ТабВыполняемыеДействияДействиеКонтекстноеМеню" id="111"/>
+											<ExtendedTooltip name="ТабВыполняемыеДействияДействиеРасширеннаяПодсказка" id="112"/>
+										</InputField>
+										<InputField name="ТабВыполняемыеДействияЗадача" id="107">
+											<DataPath>ТабВыполняемыеДействия.Задача</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoEditMode>true</AutoEditMode>
+											<Width>10</Width>
+											<ChoiceParameterLinks>
+												<xr:Link>
+													<xr:Name>БП</xr:Name>
+													<xr:DataPath xsi:type="xs:string">БП</xr:DataPath>
+													<xr:ValueChange>Clear</xr:ValueChange>
+												</xr:Link>
+											</ChoiceParameterLinks>
+											<ContextMenu name="ТабВыполняемыеДействияЗадачаКонтекстноеМеню" id="108"/>
+											<ExtendedTooltip name="ТабВыполняемыеДействияЗадачаРасширеннаяПодсказка" id="109"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+								<Table name="ТабРекомендации" id="119">
+									<Representation>List</Representation>
+									<CommandBarLocation>None</CommandBarLocation>
+									<ReadOnly>true</ReadOnly>
+									<Height>5</Height>
+									<RowSelectionMode>Cell</RowSelectionMode>
+									<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>ТабРекомендации</DataPath>
+									<TextColor>style:SpecialTextColor</TextColor>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ТабРекомендацииКонтекстноеМеню" id="120"/>
+									<AutoCommandBar name="ТабРекомендацииКоманднаяПанель" id="121"/>
+									<ExtendedTooltip name="ТабРекомендацииРасширеннаяПодсказка" id="122"/>
+									<SearchStringAddition name="ТабРекомендацииСтрокаПоиска" id="123">
+										<AdditionSource>
+											<Item>ТабРекомендации</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТабРекомендацииСтрокаПоискаКонтекстноеМеню" id="126"/>
+										<ExtendedTooltip name="ТабРекомендацииСтрокаПоискаРасширеннаяПодсказка" id="127"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ТабРекомендацииСостояниеПросмотра" id="128">
+										<AdditionSource>
+											<Item>ТабРекомендации</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТабРекомендацииСостояниеПросмотраКонтекстноеМеню" id="131"/>
+										<ExtendedTooltip name="ТабРекомендацииСостояниеПросмотраРасширеннаяПодсказка" id="132"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ТабРекомендацииУправлениеПоиском" id="133">
+										<AdditionSource>
+											<Item>ТабРекомендации</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ТабРекомендацииУправлениеПоискомКонтекстноеМеню" id="136"/>
+										<ExtendedTooltip name="ТабРекомендацииУправлениеПоискомРасширеннаяПодсказка" id="137"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<InputField name="ТабРекомендацииРекомендация" id="138">
+											<DataPath>ТабРекомендации.Рекомендация</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoEditMode>true</AutoEditMode>
+											<Width>10</Width>
+											<ContextMenu name="ТабРекомендацииРекомендацияКонтекстноеМеню" id="139"/>
+											<ExtendedTooltip name="ТабРекомендацииРекомендацияРасширеннаяПодсказка" id="140"/>
+										</InputField>
+										<InputField name="ТабРекомендацииТочка1" id="141">
+											<DataPath>ТабРекомендации.Точка1</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoEditMode>true</AutoEditMode>
+											<Width>10</Width>
+											<ContextMenu name="ТабРекомендацииТочка1КонтекстноеМеню" id="142"/>
+											<ExtendedTooltip name="ТабРекомендацииТочка1РасширеннаяПодсказка" id="143"/>
+										</InputField>
+										<InputField name="ТабРекомендацииТочка2" id="144">
+											<DataPath>ТабРекомендации.Точка2</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoEditMode>true</AutoEditMode>
+											<Width>10</Width>
+											<ContextMenu name="ТабРекомендацииТочка2КонтекстноеМеню" id="145"/>
+											<ExtendedTooltip name="ТабРекомендацииТочка2РасширеннаяПодсказка" id="146"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаРезультат" id="83">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Карта результирующая</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа результат</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>WeakSeparation</Representation>
+							<ExtendedTooltip name="ГруппаРезультатРасширеннаяПодсказка" id="84"/>
+							<ChildItems>
+								<GraphicalSchemaField name="КартаБПРезультат" id="48">
+									<DataPath>КартаБПРезультат</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="КартаБПРезультатКонтекстноеМеню" id="49"/>
+									<ExtendedTooltip name="КартаБПРезультатРасширеннаяПодсказка" id="50"/>
+								</GraphicalSchemaField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ИА_БПМенеджер</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="КартаБПНовая" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Карта БП Новая</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.2/data/graphscheme">d5p1:FlowchartContextType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КартаБПТекущая" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Карта БП текущая</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.2/data/graphscheme">d5p1:FlowchartContextType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТабЗадачиКИзменению" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таб задачи к изменению</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Точка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Точка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИА_БПТочкиМаршрута</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="БП" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>БП</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:BusinessProcessRef.ИА_БПНоситель</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КартаБПРезультат" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Карта БП Результат</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.2/data/graphscheme">d5p1:FlowchartContextType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КартаМаршрутаТекущая" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Карта маршрута текущая</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ИА_БПКартыМаршрутов</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КартаМаршрутаНовая" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Карта маршрута новая</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ИА_БПКартыМаршрутов</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТабВыполняемыеДействия" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таб выполняемые действия</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Точка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Точка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИА_БПТочкиМаршрута</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Задача" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Задача</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:TaskRef</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Действие" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Действие</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.ИА_БПДействияНадЗадачами</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ОтображатьКартуТекущую" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущая</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтображатьКартуНовую" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Новая</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтображатьКартуРезультат" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТабРекомендации" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таб рекомендации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Рекомендация" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Рекомендация</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Точка1" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Точка1</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИА_БПТочкиМаршрута</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Точка2" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Точка2</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИА_БПТочкиМаршрута</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОбновитьСхемы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить данные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить схемы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьСхемы</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СформироватьПланДействий" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать план действий</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать план действий</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СформироватьПланДействий</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Редактор" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Редактор</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОчиститьНовыеЗадачи" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить новые задачи</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить новые задачи</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОчиститьНовыеЗадачи</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВыполнитьПереход" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить переход</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить переход</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.BusinessProcessStart</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыполнитьПереходКНовомуСостоянию</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

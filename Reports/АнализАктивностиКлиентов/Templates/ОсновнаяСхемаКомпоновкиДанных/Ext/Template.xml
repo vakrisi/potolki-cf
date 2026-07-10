@@ -1,0 +1,689 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МаксРазностьДат</dataPath>
+			<field>МаксРазностьДат</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Макс разность дат</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Контрагенты</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МинРазностьДат</dataPath>
+			<field>МинРазностьДат</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Мин разность дат</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаОборот</dataPath>
+			<field>СуммаОборот</field>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>глСуммаОборот</dataPath>
+			<field>глСуммаОборот</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Гл сумма оборот</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПоследнегоЗаказа</dataPath>
+			<field>ДатаПоследнегоЗаказа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата последнего заказа</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПервогоЗаказа</dataPath>
+			<field>ДатаПервогоЗаказа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата первого заказа</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>2</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КолВоЗаказов</dataPath>
+			<field>КолВоЗаказов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол во заказов</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>3</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КолВоДнейБезЗаказа</dataPath>
+			<field>КолВоДнейБезЗаказа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол во дней без заказа</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СредневзвешеннаяРазностьДат</dataPath>
+			<field>СредневзвешеннаяРазностьДат</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Средневзвешенная разность дат</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаВзаиморасчетов</dataPath>
+			<field>СуммаВзаиморасчетов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма взаиморасчетов</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КолВоЗаказовКосяков</dataPath>
+			<field>КолВоЗаказовКосяков</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол во заказов косяков</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>4</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КонтрагентДополнительно</dataPath>
+			<field>КонтрагентДополнительно</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент дополнительно</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Контрагенты.Ссылка КАК Контрагент
+ПОМЕСТИТЬ ВТ_Контрагенты
+ИЗ
+	Справочник.Контрагенты КАК Контрагенты
+ГДЕ
+	НЕ Контрагенты.ЭтоГруппа
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЗаказПокупателя.Контрагент КАК Контрагент,
+	ЗаказПокупателя.Дата КАК Дата
+ПОМЕСТИТЬ ВТ_Даты
+ИЗ
+	Документ.ЗаказПокупателя КАК ЗаказПокупателя
+ГДЕ
+	(ЗаказПокупателя.ТекущийСтатус = ЗНАЧЕНИЕ(Справочник.СтатусыЗаказовПокупателей.Выполнен)
+			ИЛИ ЗаказПокупателя.ТекущийСтатус = ЗНАЧЕНИЕ(Справочник.СтатусыЗаказовПокупателей.ВРаботе))
+	И ЗаказПокупателя.Дата МЕЖДУ &amp;Д1 И &amp;Д2
+
+СГРУППИРОВАТЬ ПО
+	ЗаказПокупателя.Контрагент,
+	ЗаказПокупателя.Дата
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТ_Даты1.Контрагент КАК Контрагент,
+	ВТ_Даты1.Дата КАК Дата1,
+	МАКСИМУМ(ВТ_Даты2.Дата) КАК Дата2
+ПОМЕСТИТЬ ВТ_ДатыСгруппированно
+ИЗ
+	ВТ_Даты КАК ВТ_Даты1
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Даты КАК ВТ_Даты2
+		ПО ВТ_Даты1.Контрагент = ВТ_Даты2.Контрагент
+			И ВТ_Даты1.Дата &gt; ВТ_Даты2.Дата
+			И (РАЗНОСТЬДАТ(ВТ_Даты2.Дата, ВТ_Даты1.Дата, ДЕНЬ) &gt;= 1)
+ГДЕ
+	НЕ ВТ_Даты2.Дата ЕСТЬ NULL
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Даты1.Контрагент,
+	ВТ_Даты1.Дата
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТ_ДатыСгруппированно.Контрагент КАК Контрагент,
+	ВТ_ДатыСгруппированно.Дата1 КАК Дата1,
+	ВТ_ДатыСгруппированно.Дата2 КАК Дата2,
+	ВЫБОР
+		КОГДА ВТ_ДатыСгруппированно.Дата2 ЕСТЬ NULL
+			ТОГДА 0
+		ИНАЧЕ РАЗНОСТЬДАТ(ВТ_ДатыСгруппированно.Дата2, ВТ_ДатыСгруппированно.Дата1, ДЕНЬ)
+	КОНЕЦ КАК РазностьДат
+ПОМЕСТИТЬ ВТ_Даты_РазностьДат
+ИЗ
+	ВТ_ДатыСгруппированно КАК ВТ_ДатыСгруппированно
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЗаказыПокупателейОбороты.Контрагент КАК Контрагент,
+	СУММА(ЗаказыПокупателейОбороты.СуммаОборот) КАК СуммаОборот
+ПОМЕСТИТЬ ВТ_глОборот
+ИЗ
+	РегистрНакопления.ЗаказыПокупателей.Обороты(&amp;глД1, &amp;глД2, Авто, ) КАК ЗаказыПокупателейОбороты
+ГДЕ
+	(ЗаказыПокупателейОбороты.Регистратор.ТекущийСтатус = ЗНАЧЕНИЕ(Справочник.СтатусыЗаказовПокупателей.Выполнен)
+			ИЛИ ЗаказыПокупателейОбороты.Регистратор.ТекущийСтатус = ЗНАЧЕНИЕ(Справочник.СтатусыЗаказовПокупателей.ВРаботе))
+
+СГРУППИРОВАТЬ ПО
+	ЗаказыПокупателейОбороты.Контрагент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЗаказыПокупателейОбороты.Контрагент КАК Контрагент,
+	СУММА(ЗаказыПокупателейОбороты.СуммаОборот) КАК СуммаОборот
+ПОМЕСТИТЬ ВТ_Оборот
+ИЗ
+	РегистрНакопления.ЗаказыПокупателей.Обороты(&amp;Д1, &amp;Д2, Авто, ) КАК ЗаказыПокупателейОбороты
+ГДЕ
+	(ЗаказыПокупателейОбороты.Регистратор.ТекущийСтатус = ЗНАЧЕНИЕ(Справочник.СтатусыЗаказовПокупателей.Выполнен)
+			ИЛИ ЗаказыПокупателейОбороты.Регистратор.ТекущийСтатус = ЗНАЧЕНИЕ(Справочник.СтатусыЗаказовПокупателей.ВРаботе))
+
+СГРУППИРОВАТЬ ПО
+	ЗаказыПокупателейОбороты.Контрагент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказыПокупателейОбороты.Регистратор) КАК КолВоЗаказов,
+	ЗаказыПокупателейОбороты.Контрагент КАК Контрагент
+ПОМЕСТИТЬ ВТ_Заказы
+ИЗ
+	РегистрНакопления.ЗаказыПокупателей.Обороты(&amp;Д1, &amp;Д2, Авто, ) КАК ЗаказыПокупателейОбороты
+ГДЕ
+	(ЗаказыПокупателейОбороты.Регистратор.ТекущийСтатус = ЗНАЧЕНИЕ(Справочник.СтатусыЗаказовПокупателей.Выполнен)
+			ИЛИ ЗаказыПокупателейОбороты.Регистратор.ТекущийСтатус = ЗНАЧЕНИЕ(Справочник.СтатусыЗаказовПокупателей.ВРаботе))
+
+СГРУППИРОВАТЬ ПО
+	ЗаказыПокупателейОбороты.Контрагент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказыПокупателейОбороты.Регистратор) КАК КолВоЗаказов,
+	ЗаказыПокупателейОбороты.Контрагент КАК Контрагент
+ПОМЕСТИТЬ ВТ_Заказы_Косяки
+ИЗ
+	РегистрНакопления.ЗаказыПокупателей.Обороты(&amp;Д1, &amp;Д2, Авто, ) КАК ЗаказыПокупателейОбороты
+ГДЕ
+	(ЗаказыПокупателейОбороты.Регистратор.ТекущийСтатус = ЗНАЧЕНИЕ(Справочник.СтатусыЗаказовПокупателей.Выполнен)
+			ИЛИ ЗаказыПокупателейОбороты.Регистратор.ТекущийСтатус = ЗНАЧЕНИЕ(Справочник.СтатусыЗаказовПокупателей.ВРаботе))
+	И ЗаказыПокупателейОбороты.Регистратор.КосячныйЗаказ
+
+СГРУППИРОВАТЬ ПО
+	ЗаказыПокупателейОбороты.Контрагент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВзаиморасчетыСКонтрагентамиОстатки.Контрагент КАК Контрагент,
+	ВзаиморасчетыСКонтрагентамиОстатки.СуммаОстаток КАК СуммаОстаток
+ПОМЕСТИТЬ ВТ_СуммаВзаиморасчетов
+ИЗ
+	РегистрНакопления.ВзаиморасчетыСКонтрагентами.Остатки(&amp;ТекущаяДата, ) КАК ВзаиморасчетыСКонтрагентамиОстатки
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТ_Контрагенты.Контрагент КАК Контрагент,
+	МАКСИМУМ(ВТ_Даты_РазностьДат.РазностьДат) КАК МаксРазностьДат,
+	МИНИМУМ(ВТ_Даты_РазностьДат.РазностьДат) КАК МинРазностьДат,
+	СУММА(ВТ_Даты_РазностьДат.РазностьДат) / КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВТ_Даты_РазностьДат.Дата1) КАК СредневзвешеннаяРазностьДат,
+	ВлЗап_ДатыПоследнихЗаказов.ДатаПоследнегоЗаказа КАК ДатаПоследнегоЗаказа,
+	ВлЗап_ДатыПервыхЗаказов.ДатаПервогоЗаказа КАК ДатаПервогоЗаказа,
+	ВЫБОР
+		КОГДА ВлЗап_ДатыПоследнихЗаказов.ДатаПоследнегоЗаказа ЕСТЬ NULL
+			ТОГДА 0
+		ИНАЧЕ ВЫБОР
+				КОГДА &amp;Д2 &gt; &amp;ТекущаяДата
+					ТОГДА РАЗНОСТЬДАТ(ВлЗап_ДатыПоследнихЗаказов.ДатаПоследнегоЗаказа, &amp;ТекущаяДата, ДЕНЬ)
+				ИНАЧЕ РАЗНОСТЬДАТ(ВлЗап_ДатыПоследнихЗаказов.ДатаПоследнегоЗаказа, &amp;Д2, ДЕНЬ)
+			КОНЕЦ
+	КОНЕЦ КАК КолВоДнейБезЗаказа,
+	ВТ_Оборот.СуммаОборот КАК СуммаОборот,
+	ВТ_глОборот.СуммаОборот КАК глСуммаОборот,
+	ВТ_Заказы.КолВоЗаказов КАК КолВоЗаказов,
+	ВТ_СуммаВзаиморасчетов.СуммаОстаток КАК СуммаВзаиморасчетов,
+	ВТ_Заказы_Косяки.КолВоЗаказов КАК КолВоЗаказовКосяков,
+	ВЫРАЗИТЬ(ВТ_Контрагенты.Контрагент.Дополнительно КАК СТРОКА(1000)) КАК КонтрагентДополнительно
+{ВЫБРАТЬ
+	Контрагент.*,
+	МаксРазностьДат,
+	МинРазностьДат,
+	СредневзвешеннаяРазностьДат,
+	ДатаПоследнегоЗаказа,
+	ДатаПервогоЗаказа,
+	КолВоДнейБезЗаказа,
+	СуммаОборот,
+	глСуммаОборот,
+	КолВоЗаказов,
+	СуммаВзаиморасчетов,
+	КолВоЗаказовКосяков,
+	КонтрагентДополнительно}
+ИЗ
+	ВТ_Контрагенты КАК ВТ_Контрагенты
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Даты_РазностьДат КАК ВТ_Даты_РазностьДат
+		ПО ВТ_Контрагенты.Контрагент = ВТ_Даты_РазностьДат.Контрагент
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			ЗаказыПокупателейОбороты.Контрагент КАК Контрагент,
+			МАКСИМУМ(ЗаказыПокупателейОбороты.ПериодСекунда) КАК ДатаПоследнегоЗаказа
+		ИЗ
+			РегистрНакопления.ЗаказыПокупателей.Обороты(ДАТАВРЕМЯ(1, 1, 1), &amp;глД2, Авто, ) КАК ЗаказыПокупателейОбороты
+		ГДЕ
+			(ЗаказыПокупателейОбороты.Регистратор.ТекущийСтатус = ЗНАЧЕНИЕ(Справочник.СтатусыЗаказовПокупателей.ВРаботе)
+					ИЛИ ЗаказыПокупателейОбороты.Регистратор.ТекущийСтатус = ЗНАЧЕНИЕ(Справочник.СтатусыЗаказовПокупателей.Выполнен))
+		
+		СГРУППИРОВАТЬ ПО
+			ЗаказыПокупателейОбороты.Контрагент) КАК ВлЗап_ДатыПоследнихЗаказов
+		ПО ВТ_Контрагенты.Контрагент = ВлЗап_ДатыПоследнихЗаказов.Контрагент
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			ЗаказыПокупателейОбороты.Контрагент КАК Контрагент,
+			МИНИМУМ(ЗаказыПокупателейОбороты.ПериодСекунда) КАК ДатаПервогоЗаказа
+		ИЗ
+			РегистрНакопления.ЗаказыПокупателей.Обороты(&amp;глД1, , Авто, ) КАК ЗаказыПокупателейОбороты
+		ГДЕ
+			(ЗаказыПокупателейОбороты.Регистратор.ТекущийСтатус = ЗНАЧЕНИЕ(Справочник.СтатусыЗаказовПокупателей.ВРаботе)
+					ИЛИ ЗаказыПокупателейОбороты.Регистратор.ТекущийСтатус = ЗНАЧЕНИЕ(Справочник.СтатусыЗаказовПокупателей.Выполнен))
+		
+		СГРУППИРОВАТЬ ПО
+			ЗаказыПокупателейОбороты.Контрагент) КАК ВлЗап_ДатыПервыхЗаказов
+		ПО ВТ_Контрагенты.Контрагент = ВлЗап_ДатыПервыхЗаказов.Контрагент
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_глОборот КАК ВТ_глОборот
+		ПО ВТ_Контрагенты.Контрагент = ВТ_глОборот.Контрагент
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Оборот КАК ВТ_Оборот
+		ПО ВТ_Контрагенты.Контрагент = ВТ_Оборот.Контрагент
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Заказы КАК ВТ_Заказы
+		ПО ВТ_Контрагенты.Контрагент = ВТ_Заказы.Контрагент
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СуммаВзаиморасчетов КАК ВТ_СуммаВзаиморасчетов
+		ПО ВТ_Контрагенты.Контрагент = ВТ_СуммаВзаиморасчетов.Контрагент
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Заказы_Косяки КАК ВТ_Заказы_Косяки
+		ПО ВТ_Контрагенты.Контрагент = ВТ_Заказы_Косяки.Контрагент
+{ГДЕ
+	ВТ_Контрагенты.Контрагент.*,
+	(ВЫБОР
+			КОГДА ВлЗап_ДатыПоследнихЗаказов.ДатаПоследнегоЗаказа ЕСТЬ NULL
+				ТОГДА 0
+			ИНАЧЕ РАЗНОСТЬДАТ(ВлЗап_ДатыПоследнихЗаказов.ДатаПоследнегоЗаказа, &amp;Д2, ДЕНЬ)
+		КОНЕЦ) КАК КолВоДнейБезЗаказа,
+	(СУММА(ВТ_Даты_РазностьДат.РазностьДат) / КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВТ_Даты_РазностьДат.Дата1)) КАК СредневзвешеннаяРазностьДат,
+	ВТ_СуммаВзаиморасчетов.СуммаОстаток КАК СуммаВзаиморасчетов}
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Контрагенты.Контрагент,
+	ВлЗап_ДатыПоследнихЗаказов.ДатаПоследнегоЗаказа,
+	ВлЗап_ДатыПервыхЗаказов.ДатаПервогоЗаказа,
+	ВТ_Оборот.СуммаОборот,
+	ВТ_глОборот.СуммаОборот,
+	ВТ_Заказы.КолВоЗаказов,
+	ВТ_СуммаВзаиморасчетов.СуммаОстаток,
+	ВТ_Заказы_Косяки.КолВоЗаказов,
+	ВЫРАЗИТЬ(ВТ_Контрагенты.Контрагент.Дополнительно КАК СТРОКА(1000))</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<totalField>
+		<dataPath>СуммаОборот</dataPath>
+		<expression>Сумма(СуммаОборот)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КолВоЗаказов</dataPath>
+		<expression>Сумма(КолВоЗаказов)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>глСуммаОборот</dataPath>
+		<expression>Сумма(глСуммаОборот)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаВзаиморасчетов</dataPath>
+		<expression>Сумма(СуммаВзаиморасчетов)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КолВоЗаказовКосяков</dataPath>
+		<expression>Сумма(КолВоЗаказовКосяков)</expression>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>глПериод</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Глобальный период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>глД1</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Гл д1</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;глПериод.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>глД2</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Гл д2</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;глПериод.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>Д1</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Д1</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>Д2</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Д2</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>ТекущаяДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текущая дата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<expression>ТекущаяДата()</expression>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Контрагент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КонтрагентДополнительно</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаПервогоЗаказа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаПоследнегоЗаказа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КолВоДнейБезЗаказа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>МаксРазностьДат</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>МинРазностьДат</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СредневзвешеннаяРазностьДат</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаОборот</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КолВоЗаказов</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КолВоЗаказовКосяков</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>глСуммаОборот</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаВзаиморасчетов</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>a1998a54-277d-4cc2-80d6-e963730e689e</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>глПериод</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>aaf7c48f-b1c6-49e8-bc90-529b3ef85caa</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Античный</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаПериод" id="38">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа период</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа период</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПериодРасширеннаяПодсказка" id="39"/>
+			<ChildItems>
+				<InputField name="Период" id="1">
+					<DataPath>Объект.Период</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>За период</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ПериодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДоговоры" id="63">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа договоры</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа договоры</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаДоговорыРасширеннаяПодсказка" id="64"/>
+			<ChildItems>
+				<CheckBoxField name="ВРазрезеДоговоров" id="65">
+					<DataPath>Объект.ВРазрезеДоговоров</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ContextMenu name="ВРазрезеДоговоровКонтекстноеМеню" id="66"/>
+					<ExtendedTooltip name="ВРазрезеДоговоровРасширеннаяПодсказка" id="67"/>
+					<Events>
+						<Event name="OnChange">ВРазрезеДоговоровПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<CheckBoxField name="ИзменятьВидЦенВДоговорах" id="68">
+					<DataPath>Объект.ИзменятьВидЦенВДоговорах</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ContextMenu name="ИзменятьВидЦенВДоговорахКонтекстноеМеню" id="69"/>
+					<ExtendedTooltip name="ИзменятьВидЦенВДоговорахРасширеннаяПодсказка" id="70"/>
+					<Events>
+						<Event name="OnChange">ИзменятьВидЦенВДоговорахПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="КатегорииПоОбъемуПродаж" id="7">
+			<Representation>List</Representation>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.КатегорииПоОбъемуПродаж</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="КатегорииПоОбъемуПродажКонтекстноеМеню" id="8"/>
+			<AutoCommandBar name="КатегорииПоОбъемуПродажКоманднаяПанель" id="9">
+				<ChildItems>
+					<Popup name="КатегорииПоОбъемуПродажГруппа1" id="42">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заполнить</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="КатегорииПоОбъемуПродажГруппа1РасширеннаяПодсказка" id="43"/>
+						<ChildItems>
+							<Button name="КатегорииПоОбъемуПродажДобавитьПоГруппе" id="40">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ДобавитьПоГруппе</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>По группе контрагентов</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="КатегорииПоОбъемуПродажДобавитьПоГруппеРасширеннаяПодсказка" id="41"/>
+							</Button>
+							<Button name="КатегорииПоОбъемуПродажДобавитьПоПродажам" id="44">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ДобавитьПоПродажам</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>По продажам за период</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="КатегорииПоОбъемуПродажДобавитьПоПродажамРасширеннаяПодсказка" id="45"/>
+							</Button>
+						</ChildItems>
+					</Popup>
+					<Button name="КатегорииПоОбъемуПродажОтметитьВсе" id="48">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ОтметитьВсе</CommandName>
+						<ExtendedTooltip name="КатегорииПоОбъемуПродажОтметитьВсеРасширеннаяПодсказка" id="49"/>
+					</Button>
+					<Button name="КатегорииПоОбъемуПродажОтменитьОтметкуВсех" id="50">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ОтменитьОтметкуВсех</CommandName>
+						<ExtendedTooltip name="КатегорииПоОбъемуПродажОтменитьОтметкуВсехРасширеннаяПодсказка" id="51"/>
+					</Button>
+					<Button name="КатегорииПоОбъемуПродажОчистить" id="52">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Очистить</CommandName>
+						<ExtendedTooltip name="КатегорииПоОбъемуПродажОчиститьРасширеннаяПодсказка" id="53"/>
+					</Button>
+					<Button name="КатегорииПоОбъемуПродажИзменитьКатегорию" id="46">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ИзменитьКатегорию</CommandName>
+						<ExtendedTooltip name="КатегорииПоОбъемуПродажИзменитьКатегориюРасширеннаяПодсказка" id="47"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="КатегорииПоОбъемуПродажРасширеннаяПодсказка" id="10"/>
+			<SearchStringAddition name="КатегорииПоОбъемуПродажСтрокаПоиска" id="11">
+				<AdditionSource>
+					<Item>КатегорииПоОбъемуПродаж</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КатегорииПоОбъемуПродажСтрокаПоискаКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="КатегорииПоОбъемуПродажСтрокаПоискаРасширеннаяПодсказка" id="13"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="КатегорииПоОбъемуПродажСостояниеПросмотра" id="14">
+				<AdditionSource>
+					<Item>КатегорииПоОбъемуПродаж</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КатегорииПоОбъемуПродажСостояниеПросмотраКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="КатегорииПоОбъемуПродажСостояниеПросмотраРасширеннаяПодсказка" id="16"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="КатегорииПоОбъемуПродажУправлениеПоиском" id="17">
+				<AdditionSource>
+					<Item>КатегорииПоОбъемуПродаж</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="КатегорииПоОбъемуПродажУправлениеПоискомКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="КатегорииПоОбъемуПродажУправлениеПоискомРасширеннаяПодсказка" id="19"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="КатегорииПоОбъемуПродажНомерСтроки" id="20">
+					<DataPath>Объект.КатегорииПоОбъемуПродаж.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="КатегорииПоОбъемуПродажНомерСтрокиКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="КатегорииПоОбъемуПродажНомерСтрокиРасширеннаяПодсказка" id="22"/>
+				</LabelField>
+				<CheckBoxField name="КатегорииПоОбъемуПродажИзменять" id="23">
+					<DataPath>Объект.КатегорииПоОбъемуПродаж.Изменять</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="КатегорииПоОбъемуПродажИзменятьКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="КатегорииПоОбъемуПродажИзменятьРасширеннаяПодсказка" id="25"/>
+				</CheckBoxField>
+				<InputField name="КатегорииПоОбъемуПродажКонтрагент" id="26">
+					<DataPath>Объект.КатегорииПоОбъемуПродаж.Контрагент</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="КатегорииПоОбъемуПродажКонтрагентКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="КатегорииПоОбъемуПродажКонтрагентРасширеннаяПодсказка" id="28"/>
+					<Events>
+						<Event name="OnChange">КатегорииПоОбъемуПродажКонтрагентПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="КатегорииПоОбъемуПродажДоговор" id="54">
+					<DataPath>Объект.КатегорииПоОбъемуПродаж.Договор</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="КатегорииПоОбъемуПродажДоговорКонтекстноеМеню" id="55"/>
+					<ExtendedTooltip name="КатегорииПоОбъемуПродажДоговорРасширеннаяПодсказка" id="56"/>
+					<Events>
+						<Event name="OnChange">КатегорииПоОбъемуПродажДоговорПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="КатегорииПоОбъемуПродажСуммаПродаж" id="29">
+					<DataPath>Объект.КатегорииПоОбъемуПродаж.СуммаПродаж</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="КатегорииПоОбъемуПродажСуммаПродажКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="КатегорииПоОбъемуПродажСуммаПродажРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="КатегорииПоОбъемуПродажТекущаяКатегория" id="32">
+					<DataPath>Объект.КатегорииПоОбъемуПродаж.ТекущаяКатегория</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="КатегорииПоОбъемуПродажТекущаяКатегорияКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="КатегорииПоОбъемуПродажТекущаяКатегорияРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="КатегорииПоОбъемуПродажУстановитьКатегорию" id="35">
+					<DataPath>Объект.КатегорииПоОбъемуПродаж.УстановитьКатегорию</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="КатегорииПоОбъемуПродажУстановитьКатегориюКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="КатегорииПоОбъемуПродажУстановитьКатегориюРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="КатегорииПоОбъемуПродажТекущийВидЦен" id="57">
+					<DataPath>Объект.КатегорииПоОбъемуПродаж.ТекущийВидЦен</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="КатегорииПоОбъемуПродажТекущийВидЦенКонтекстноеМеню" id="58"/>
+					<ExtendedTooltip name="КатегорииПоОбъемуПродажТекущийВидЦенРасширеннаяПодсказка" id="59"/>
+				</InputField>
+				<InputField name="КатегорииПоОбъемуПродажУстановитьВидЦен" id="60">
+					<DataPath>Объект.КатегорииПоОбъемуПродаж.УстановитьВидЦен</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="КатегорииПоОбъемуПродажУстановитьВидЦенКонтекстноеМеню" id="61"/>
+					<ExtendedTooltip name="КатегорииПоОбъемуПродажУстановитьВидЦенРасширеннаяПодсказка" id="62"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ПроверкаИНазначениеКатегорийКонтрагентов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>КатегорииПоОбъемуПродаж</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.КатегорииПоОбъемуПродаж.Изменять</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFCC99</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Шрифт</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ДобавитьПоГруппе" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить по группе</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить по группе</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Папка</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ДобавитьПоГруппе</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьПоПродажам" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить по продажам</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить по продажам</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Монеты</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ДобавитьПоПродажам</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ИзменитьКатегорию" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить изменение категорий</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить категорию</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckSyntax</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ИзменитьКатегорию</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтметитьВсе" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОтметитьВсе</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтменитьОтметкуВсех" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить отметку всех</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить отметку всех</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОтменитьОтметкуВсех</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Очистить" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Delete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Очистить</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

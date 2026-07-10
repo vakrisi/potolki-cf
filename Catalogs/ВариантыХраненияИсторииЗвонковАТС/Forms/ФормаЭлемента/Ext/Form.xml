@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>LockOwner</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаТестПодключения" id="22">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ТестПодключения</CommandName>
+				<ExtendedTooltip name="ФормаТестПодключенияРасширеннаяПодсказка" id="23"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Наименование" id="1">
+			<DataPath>Объект.Description</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<UsualGroup name="ГруппаНастройкиПодключения" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки подключения для получения истории</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа настройки подключения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>HorizontalIfPossible</Group>
+			<Representation>WeakSeparation</Representation>
+			<ExtendedTooltip name="ГруппаНастройкиПодключенияРасширеннаяПодсказка" id="25"/>
+			<ChildItems>
+				<InputField name="СтрокаДрайвера" id="4">
+					<DataPath>Объект.СтрокаДрайвера</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<DropListButton>true</DropListButton>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xs:string">{MySQL ODBC 5.1 Driver}</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="СтрокаДрайвераКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="СтрокаДрайвераРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="Сервер" id="7">
+					<DataPath>Объект.Сервер</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СерверКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="СерверРасширеннаяПодсказка" id="9"/>
+				</InputField>
+				<InputField name="Порт" id="10">
+					<DataPath>Объект.Порт</DataPath>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ПортКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ПортРасширеннаяПодсказка" id="12"/>
+				</InputField>
+				<InputField name="БазаДанных" id="13">
+					<DataPath>Объект.БазаДанных</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="БазаДанныхКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="БазаДанныхРасширеннаяПодсказка" id="15"/>
+				</InputField>
+				<InputField name="ЛогинДляПодключения" id="16">
+					<DataPath>Объект.ЛогинДляПодключения</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ЛогинДляПодключенияКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="ЛогинДляПодключенияРасширеннаяПодсказка" id="18"/>
+				</InputField>
+				<InputField name="ПарольДляПодключения" id="19">
+					<DataPath>Объект.ПарольДляПодключения</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ПарольДляПодключенияКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="ПарольДляПодключенияРасширеннаяПодсказка" id="21"/>
+				</InputField>
+				<InputField name="ВнутренниеНомера" id="92">
+					<DataPath>Объект.ВнутренниеНомера</DataPath>
+					<ContextMenu name="ВнутренниеНомераКонтекстноеМеню" id="93"/>
+					<ExtendedTooltip name="ВнутренниеНомераРасширеннаяПодсказка" id="94"/>
+				</InputField>
+				<InputField name="ВнутренниеГруппыНомеров" id="89">
+					<DataPath>Объект.ВнутренниеГруппыНомеров</DataPath>
+					<ContextMenu name="ВнутренниеГруппыНомеровКонтекстноеМеню" id="90"/>
+					<ExtendedTooltip name="ВнутренниеГруппыНомеровРасширеннаяПодсказка" id="91"/>
+				</InputField>
+				<InputField name="КонтекстыВходящихЗвонков" id="98">
+					<DataPath>Объект.КонтекстыВходящихЗвонков</DataPath>
+					<ContextMenu name="КонтекстыВходящихЗвонковКонтекстноеМеню" id="99"/>
+					<ExtendedTooltip name="КонтекстыВходящихЗвонковРасширеннаяПодсказка" id="100"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПолучениеЗаписей" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки получения записей</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа получение записей</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>WeakSeparation</Representation>
+			<ExtendedTooltip name="ГруппаПолучениеЗаписейРасширеннаяПодсказка" id="27"/>
+			<ChildItems>
+				<InputField name="ВариантДоступаКЗаписям" id="31">
+					<DataPath>Объект.ВариантДоступаКЗаписям</DataPath>
+					<ListChoiceMode>true</ListChoiceMode>
+					<TextEdit>false</TextEdit>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>dl.php</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">0</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>ftp-сервер</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">1</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>samba</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">2</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>http-запрос</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">3</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="ВариантДоступаКЗаписямКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ВариантДоступаКЗаписямРасширеннаяПодсказка" id="33"/>
+					<Events>
+						<Event name="OnChange">ВариантДоступаКЗаписямПриИзменении</Event>
+					</Events>
+				</InputField>
+				<UsualGroup name="ГруппаНастройкиВариантаДоступаКЗаписям" id="78">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки варианта доступа</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки варианта доступа к записям</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>StrongSeparation</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНастройкиВариантаДоступаКЗаписямРасширеннаяПодсказка" id="79"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаПолучениеЗаписей0" id="34">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа получение записей0</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа получение записей0</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПолучениеЗаписей0РасширеннаяПодсказка" id="35"/>
+							<ChildItems>
+								<InputField name="ЗаписиНачальныйКаталог" id="42">
+									<DataPath>Объект.ЗаписиНачальныйКаталог</DataPath>
+									<ContextMenu name="ЗаписиНачальныйКаталогКонтекстноеМеню" id="43"/>
+									<ExtendedTooltip name="ЗаписиНачальныйКаталогРасширеннаяПодсказка" id="44"/>
+								</InputField>
+								<InputField name="ЗаписиЛогин2" id="107">
+									<DataPath>Объект.ЗаписиЛогин</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Заполнить при использовании basic-авторизации</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<ContextMenu name="ЗаписиЛогин2КонтекстноеМеню" id="108"/>
+									<ExtendedTooltip name="ЗаписиЛогин2РасширеннаяПодсказка" id="109"/>
+								</InputField>
+								<InputField name="ЗаписиПароль2" id="110">
+									<DataPath>Объект.ЗаписиПароль</DataPath>
+									<ContextMenu name="ЗаписиПароль2КонтекстноеМеню" id="111"/>
+									<ExtendedTooltip name="ЗаписиПароль2РасширеннаяПодсказка" id="112"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаПолучениеЗаписей1" id="36">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа получение записей0</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа получение записей0</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПолучениеЗаписей1РасширеннаяПодсказка" id="37"/>
+							<ChildItems>
+								<InputField name="ЗаписиХост" id="45">
+									<DataPath>Объект.ЗаписиХост</DataPath>
+									<ContextMenu name="ЗаписиХостКонтекстноеМеню" id="46"/>
+									<ExtendedTooltip name="ЗаписиХостРасширеннаяПодсказка" id="47"/>
+								</InputField>
+								<InputField name="ЗаписиПорт" id="48">
+									<DataPath>Объект.ЗаписиПорт</DataPath>
+									<ContextMenu name="ЗаписиПортКонтекстноеМеню" id="49"/>
+									<ExtendedTooltip name="ЗаписиПортРасширеннаяПодсказка" id="50"/>
+								</InputField>
+								<InputField name="ЗаписиЛогин" id="51">
+									<DataPath>Объект.ЗаписиЛогин</DataPath>
+									<ContextMenu name="ЗаписиЛогинКонтекстноеМеню" id="52"/>
+									<ExtendedTooltip name="ЗаписиЛогинРасширеннаяПодсказка" id="53"/>
+								</InputField>
+								<InputField name="ЗаписиПароль" id="54">
+									<DataPath>Объект.ЗаписиПароль</DataPath>
+									<ContextMenu name="ЗаписиПарольКонтекстноеМеню" id="55"/>
+									<ExtendedTooltip name="ЗаписиПарольРасширеннаяПодсказка" id="56"/>
+								</InputField>
+								<RadioButtonField name="РежимFTP" id="95">
+									<DataPath>Объект.РежимFTP</DataPath>
+									<RadioButtonType>Auto</RadioButtonType>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Пассивный</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">0</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Активный</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">1</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="РежимFTPКонтекстноеМеню" id="96"/>
+									<ExtendedTooltip name="РежимFTPРасширеннаяПодсказка" id="97"/>
+								</RadioButtonField>
+								<InputField name="ЗаписиНачальныйКаталог1" id="57">
+									<DataPath>Объект.ЗаписиНачальныйКаталог</DataPath>
+									<ContextMenu name="ЗаписиНачальныйКаталог1КонтекстноеМеню" id="58"/>
+									<ExtendedTooltip name="ЗаписиНачальныйКаталог1РасширеннаяПодсказка" id="59"/>
+								</InputField>
+								<InputField name="ЗаписиФорматИерархииПапок" id="80">
+									<DataPath>Объект.ЗаписиФорматИерархииПапок</DataPath>
+									<ContextMenu name="ЗаписиФорматИерархииПапокКонтекстноеМеню" id="81"/>
+									<ExtendedTooltip name="ЗаписиФорматИерархииПапокРасширеннаяПодсказка" id="82"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаПолучениеЗаписей2" id="38">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа получение записей0</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа получение записей0</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПолучениеЗаписей2РасширеннаяПодсказка" id="39"/>
+							<ChildItems>
+								<InputField name="ЗаписиНачальныйКаталог2" id="72">
+									<DataPath>Объект.ЗаписиНачальныйКаталог</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Каталог</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ЗаписиНачальныйКаталог2КонтекстноеМеню" id="73"/>
+									<ExtendedTooltip name="ЗаписиНачальныйКаталог2РасширеннаяПодсказка" id="74"/>
+								</InputField>
+								<InputField name="ЗаписиФорматИерархииПапок1" id="83">
+									<DataPath>Объект.ЗаписиФорматИерархииПапок</DataPath>
+									<ContextMenu name="ЗаписиФорматИерархииПапок1КонтекстноеМеню" id="84"/>
+									<ExtendedTooltip name="ЗаписиФорматИерархииПапок1РасширеннаяПодсказка" id="85"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаПолучениеЗаписей3" id="40">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа получение записей0</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа получение записей0</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПолучениеЗаписей3РасширеннаяПодсказка" id="41"/>
+							<ChildItems>
+								<InputField name="ЗаписиСтрокаЗапроса" id="75">
+									<DataPath>Объект.ЗаписиСтрокаЗапроса</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Возможно использование параметров {ID}, {IDЗаписи}, {YYYY}, {YY}, {MM}, {DD}</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<ContextMenu name="ЗаписиСтрокаЗапросаКонтекстноеМеню" id="76"/>
+									<ExtendedTooltip name="ЗаписиСтрокаЗапросаРасширеннаяПодсказка" id="77"/>
+								</InputField>
+								<InputField name="ЗаписиЛогин1" id="101">
+									<DataPath>Объект.ЗаписиЛогин</DataPath>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Заполнить при использовании basic-авторизации</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<ContextMenu name="ЗаписиЛогин1КонтекстноеМеню" id="102"/>
+									<ExtendedTooltip name="ЗаписиЛогин1РасширеннаяПодсказка" id="103"/>
+								</InputField>
+								<InputField name="ЗаписиПароль1" id="104">
+									<DataPath>Объект.ЗаписиПароль</DataPath>
+									<ContextMenu name="ЗаписиПароль1КонтекстноеМеню" id="105"/>
+									<ExtendedTooltip name="ЗаписиПароль1РасширеннаяПодсказка" id="106"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ВариантыХраненияИсторииЗвонковАТС</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ТестПодключения" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тест подключения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тест подключения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ТестПодключения</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

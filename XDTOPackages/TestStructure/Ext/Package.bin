@@ -1,0 +1,11 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="TestStructure">
+	<valueType name="OurString" base="xs:string" minLength="1" maxLength="100"/>
+	<objectType name="Structure">
+		<property name="Cnt" type="xs:positiveInteger" form="Element"/>
+		<property xmlns:d3p1="TestStructure" name="Comment" type="d3p1:OurString"/>
+		<property name="Array" type="xs:decimal" lowerBound="1" upperBound="-1"/>
+		<property name="User" type="xs:string" form="Element"/>
+		<property name="Date" type="xs:date" form="Element"/>
+		<property name="ClosedMeasures" type="xs:string" nillable="true"/>
+	</objectType>
+</package>

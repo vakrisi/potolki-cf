@@ -1,0 +1,696 @@
+﻿<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	
+	<style>
+			* {	padding: 0; margin: 0; vertical-align: top; }
+
+		body {
+			font: 18px/1.5em "proxima-nova", Helvetica, Arial, sans-serif;
+		}
+		
+		.dep { 
+			font-size:11pt;
+			font-weight:bold;
+			font-family:'Verdana';
+			height:40px;
+   		}
+		.otd { 
+			vertical-align:middle;
+			font-family:'Verdana';
+			height:40px;
+			font-size:10pt;
+			font-weight:bold;
+		}
+		.stat { 
+			font-size:10pt;
+			font-family:'Verdana';
+		}
+		.up { 
+			background-color:rgb(255,255,255);
+		}
+		.graph { 
+			background-color:rgb(230,230,255);
+		}
+		
+
+		.mainLabel {
+			box-sizing: border-box;
+			width: <1C_width>px;
+			min-height: 50px;
+			padding: 3px;
+			margin: 1px 0px;
+			border: 1px solid #ddd;
+			font: <1C_FontSizeBig>px "proxima-nova", Helvetica, Arial, sans-serif;
+			font-weight:bold;
+			text-align: center;
+			background-color:#fcfcfc;
+		}
+		
+		.mainLabelICO {
+			width: <1C_width>px;
+			text-align: center;
+			font: 12px "Verdana", Helvetica, Arial, sans-serif;
+			height:40px;
+		}	
+		
+		.demo-container {
+			box-sizing: border-box;
+			width: <1C_width>px;
+			height: <1C_height>px;
+			
+			margin: 0px auto 4px auto;
+			border: 1px solid #ddd;
+			background: linear-gradient(#f6f6f6 0, #fff 50px);
+			box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+			-o-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+			-ms-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+			-moz-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+			-webkit-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+		}
+
+		.demo-placeholder {
+			width: 100%;
+			height: 100%;
+			margin: 0px;
+			font-size: <1C_FontSize>px;
+			line-height: 1.2em;
+			background: rgba(255,255,255,0.7);
+		}
+		
+		.mainPanel
+		{
+		width: 100%;
+		height:  20px;
+		border: 1px solid #ddd;
+		margin: 0px 0px;
+		background-color:rgb(245,255,245);
+		font: 13px "Verdana", Helvetica, Arial, sans-serif;
+		position: fixed; 
+		top: 0px; 
+		z-index:1000000;
+		}
+		
+		.myButton {
+			background-color:#2980b9;
+			border-radius:10px;
+			border:1px solid #1f628d;
+			display:inline-block;
+			cursor:pointer;
+			color:#ffffff;
+			font-family:Verdana;
+			font-size:13px;
+			font-weight:bold;
+			padding:0px 8px;
+			text-decoration:none;
+		}
+		.myButton:hover {
+			background-color:#3498db;
+		}
+		.myButton:active {
+			position:relative;
+			top:1px;
+		}		
+
+		.button {
+			position: absolute;
+			cursor: pointer;
+			height:  22px;
+			width:  22px;
+			right:-15px;
+			bottom:30px;
+			padding: 0px;
+			background-image: url(img_info.gif);
+			opacity: 0.75;
+			visibility: <1C_VIS_INFO>;
+		}
+		
+		.buttonzoom {
+			position: absolute;
+			cursor: pointer;
+			height:  22px;
+			width:  22px;
+			right:  -15px;
+			bottom:    55px;
+			padding: 0px;
+			background-image: url(img_zoomout.gif);
+			opacity: 0.75;
+		}
+		
+		.buttonreport {
+			position: absolute;
+			cursor: pointer;
+			height:  22px;
+			width:  22px;
+			right:  -15px;
+			bottom:    83px;
+			padding: 0px;
+			background-image: url(img_report.gif);
+			opacity: 0.75;
+		}
+
+		.buttoninclstat {
+			position: absolute;
+			cursor: pointer;
+			height:  22px;
+			width:  22px;
+			right:  -15px;
+			bottom:    111px;
+			padding: 0px;
+			background-image: url(img_incl_stat.gif);
+			opacity: 0.75;
+		}
+		
+		.buttontrend {
+			position: absolute;
+			cursor: pointer;
+			height:  22px;
+			width:  22px;
+			right:  -15px;
+			bottom:    139px;
+			padding: 0px;
+			background-image: url(img_trend.gif);
+			opacity: 0.75;
+		}
+		
+		.buttonadd {
+			position: absolute;
+			cursor: pointer;
+			height:  22px;
+			width:  22px;
+			right:  -15px;
+			bottom:    167px;
+			padding: 0px;
+			background-image: url(img_create.gif);
+			opacity: 0.75;
+		}
+	</style>
+	
+	
+	
+	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="excanvas.min.js"></script><![endif]-->
+	<script language="javascript" type="text/javascript" src="jquery.js"></script>
+	<script language="javascript" type="text/javascript" src="jquery.flot.js"></script>
+	<script language="javascript" type="text/javascript" src="jquery.flot.selection.js"></script>
+	<script language="javascript" type="text/javascript" src="jquery.flot.time.js"></script>
+	<script language="javascript" type="text/javascript" src="jquery.colorhelpers.js"></script>
+	<script language="javascript" type="text/javascript" src="jquery.flot.symbol.js"></script>
+
+	<script type="text/javascript">
+
+	var PlotsArr = [];
+	var PhOffsets = [];
+	var PhNames = 'placeholder';
+	var CurEvent = '';
+	var CurEventSource = '';
+	var color_up = "rgba(50,50,255,0.9)";
+	var color_down = "rgba(255,50,50,0.9)";
+	var color_trend_hide = "rgba(150,150,150,0)";
+	var color_trend = "rgba(150,150,150,1)";
+	
+	var LabelsShowed = [];
+	var AllLabelsShowed = false;
+	var AllLegendsShowed = true;
+	var TrendShowed = [];
+	var GraphCount = <1C_GraphCount>;
+	var userShowLabels = <1C_userShowLabels>;
+	var mainScale = <1C_mainScale>;
+	var DateInHover = <1C_DateInHover>;
+	var addScale = <1C_addScale>;
+
+	$(function() {
+
+		if (typeof $.fn.prop != 'function') {
+		    $.fn.prop = $.fn.attr;
+		}
+
+		var options = {
+			series: {
+				lines: {
+					show: true
+				},
+				points: {
+					show: true
+				}
+			},
+			legend: {
+				show: true,
+				noColumns: 1
+			},
+			grid: {
+				hoverable: true,
+				clickable: true,
+				markings: [{ color: '#00FF26', lineWidth: 1, xaxis: { from: 0, to: 0 } }]
+			},
+			xaxis: {
+				show: true,
+				minTickSize: 1,
+				tickDecimals: 0
+				   },
+			yaxis: {
+				show: true,
+				autoscaleMargin: 0.01
+			},
+			selection: {
+				mode: "x"
+			}, 
+			mainScale: false,
+			
+			addScale: addScale
+		};
+		
+		$("<div id='tooltip'></div>").css({
+			position: "absolute",
+			display: "none",
+			padding: "2px",
+			height:  '27px',
+			'font-size': '11px',
+            'background-image': 'url(img_grad.png)',
+			opacity: 0.80
+		}).appendTo("body");
+		
+		var plothover_f = function (event, pos, item) {
+
+			if (item) {
+				var xint = item.datapoint[0],
+					yint = item.datapoint[1];
+				var xstr = xint.toFixed(2),
+					ystr = yint.toFixed(2);
+	
+				var ytooltip = ystr;
+				ytooltip_ = formatNumber(ytooltip);
+				
+				if(DateInHover){ 
+				    
+				    ytooltip_ = ytooltip_ + ' ('+ item.series.xaxis.tickFormatter(xint, item.series.xaxis) + ')';
+				}	
+
+				$("#tooltip").html(ytooltip_)
+					.css({top: item.pageY-25, left: item.pageX+5})
+					.fadeIn(200);
+			} else {
+				$("#tooltip").hide();
+			}
+		};
+		
+		////////// ICO and other options!!!
+		isICO = <1C_isICO>;
+		isMyStats = <1C_isMyStats>;
+		isPrint = <1C_isPrint>;
+		isZP = <1C_isZP>;
+		if (isICO) {
+			options.selection = undefined;			
+		};
+		// /END OF CONSTANTS
+		
+		<1C_drawItem>		
+});
+
+
+//////////////////////////////// CONSTANTS (functions)
+function GetTrendCoord(data, plotObj) {
+	if (data == undefined){
+		var axX = plotObj.getXAxes()[0];
+		var optsX = axX.options;
+		var range_min = optsX.min;
+		var range_max = optsX.max;
+		var data = [];
+		
+		fullData = plotObj.getData()[0];
+		for(var m = 0; m < fullData.data.length; m++){
+			if(fullData.data[m][0] != null && fullData.data[m][1] != null){
+				if (range_min == null || fullData.data[m][0] >= range_min && fullData.data[m][0] <= range_max){					  
+					data.push(fullData.data[m]);									  
+				}
+			
+			}
+		}
+	};
+	
+	var ii=0, x, y, x0, x1, y0, y1, dx,
+		m = 0, b = 0, cs, ns,
+		n = data.length, Sx = 0, Sy = 0, Sxy = 0, Sx2 = 0, S2x = 0;
+		
+	// Not enough data or disabled
+	if(n < 2 ) return;
+	
+	// Do math stuff
+	for(ii;ii<data.length;ii++){
+		x = data[ii][0];
+		y = data[ii][1];
+		Sx += x;
+		Sy += y;
+		Sxy += (x*y);
+		Sx2 += (x*x);
+	}
+	// Calculate slope and intercept
+	m = (n*Sx2 - S2x) != 0 ? (n*Sxy - Sx*Sy) / (n*Sx2 - Sx*Sx) : 0;
+	b = (Sy - m*Sx) / n;
+	
+	// Calculate minimal coordinates to draw the trendline
+	dx = parseFloat(data[1][0]) - parseFloat(data[0][0]);
+	
+	//x0 = parseFloat(data[0][0])-dx;
+	x0 = parseFloat(data[0][0]);
+	
+	y0 = parseFloat(m*x0 + b);
+	
+	//x1 = parseFloat(data[ii-1][0])+dx;
+	x1 = parseFloat(data[ii-1][0]);
+	
+	y1 = parseFloat(m*x1 + b);
+
+	return [[x0,y0],[x1,y1]];
+};
+
+function ShowHideTrend(plotObj, elNumber) {
+	if (TrendShowed[elNumber]=== undefined){TrendShowed[elNumber] = false;};
+	
+	CurData = plotObj.getData();
+	if (TrendShowed[elNumber]){
+		CurData[1].color = color_trend_hide;
+		TrendShowed[elNumber] = false;
+		$("#buttonTrend"+elNumber).css({'background-image': 'url(img_trend.gif)'});
+	}else{
+		CurData[1].color = color_trend;
+		TrendShowed[elNumber] = true;
+		$("#buttonTrend"+elNumber).css({'background-image': 'url(img_trend_p.gif)'});
+		RefreshTrend(plotObj, elNumber);
+	};
+	Refresh(plotObj);
+};
+
+function RefreshTrend(plotObj, elNumber) {
+	if (TrendShowed[elNumber]=== undefined){TrendShowed[elNumber] = false;};
+	if (TrendShowed[elNumber]){
+		data1 = plotObj.getData();
+		trend_c = GetTrendCoord(undefined, plotObj);
+		data1[1].data = trend_c;
+		plotObj.setData(data1);
+		Refresh(plotObj);
+	};
+};
+
+function zoom(ranges, plotN) {
+	// set X range
+	var XAxes = plotN.getXAxes();
+	var axis;
+	var opts;
+	
+	for(i = 0; i < XAxes.length; i++){
+	    axis = XAxes[i];
+	    opts = axis.options;
+	    
+	    xaxisnum = (i == 0) ? "" : i+1;
+	    xaxisname = "x"+xaxisnum+"axis";
+	    opts.min = ranges[xaxisname].from;
+	    opts.max = ranges[xaxisname].to;
+	}
+	// set Y range
+	SetYzoom(plotN, ranges);
+	Refresh(plotN);
+};
+
+function SetlineWidth(opts, lw) {				
+	if (lw==0){
+		lw = 2;
+	};
+	opts.series.lines.lineWidth = lw;
+};
+
+function SetReverse(opts, reversed) {				
+	if (reversed){
+		opts.yaxis.transform = function (v) { return -v; };
+		opts.yaxis.inverseTransform = function (v) { return -v; };
+	}
+	else{
+		opts.yaxis.transform = undefined;
+		opts.yaxis.inverseTransform = undefined;
+	};
+};
+
+function zoomOut(plotN) {
+	// set X range
+	
+	var XAxes = plotN.getXAxes();
+	var axis;
+	var opts;
+	var points = plotN.getData();
+	
+	if (points.length > 0)
+	{	
+	
+	  for(i = 0; i < XAxes.length; i++){
+	    axis = XAxes[i];
+	    opts = axis.options;
+	    
+	    gr1data = points[i].data;
+		
+		opts.min = gr1data[0][0];
+		opts.max = gr1data[gr1data.length-1][0];
+	    
+	  }
+		// set Y range
+		SetYzoom(plotN);
+		Refresh(plotN);
+	};
+};
+
+function SetYzoom(plotN, ranges) {
+	var minV = 100000000000;
+	var maxV = -100000000000;
+	var points = plotN.getData();
+	var options = plotN.getOptions();
+	var addScale = options.addScale;
+	
+    for(var k = 0; k < points.length; k++){
+	   if ('trendLine' in points[k] && points[k].trendLine) {
+		 continue;
+	   };
+	   for(var m = 0; m < points[k].data.length; m++){
+		 if(points[k].data[m] != null && points[k].data[m][0] != null && points[k].data[m][1] != null){				  
+			var curX = points[k].data[m][0];
+			if (ranges === undefined || (curX >= ranges.xaxis.from && curX <= ranges.xaxis.to)){
+			  var curVal = points[k].data[m][1];								  
+			   if (curVal >= maxV){
+						maxV = curVal;
+					}
+					if (curVal <= minV){
+						minV = curVal;
+			  }
+			}
+		  }
+		}   
+	 }
+	
+	if(mainScale)
+	{
+	    if(!(options.yaxis.min == 0)) 
+		{
+	        minV = options.yaxis.min;
+	    }
+	    
+	    if(!(options.yaxis.max == 0)) 
+		{
+	        maxV = options.yaxis.max;
+	    }
+	}
+	else
+	{
+	  if(addScale !== 0){
+	     minV_ = minV -(addScale/100)*maxV;
+	     if((minV >=0) && (minV_ < 0)){
+	        minV = 0;
+	     }
+	     else{
+	        minV = minV_;   
+	     }
+	     maxV = ((100 + addScale)/100)*maxV;
+	  }
+	}
+	
+	var axisY = plotN.getYAxes()[0];
+	var optsY = axisY.options;
+	optsY.min = minV;
+	optsY.max = maxV;
+};
+
+function Refresh(plotN) {
+	plotN.setupGrid();
+	plotN.draw();
+	plotN.clearSelection();
+};
+
+function removeTooltips(plotNum){
+	var elName = 'valueLabel' + plotNum;
+	var labels = document.getElementsByName(elName);
+	for (var i = labels.length-1; i >=0 ; i--) {
+		child = labels[i];
+		child.parentNode.removeChild(child);
+	}
+};
+
+function RefreshLabels(plotNum){
+	restoreLabels = false;
+	if (LabelsShowed[plotNum]== true){restoreLabels = true;};
+	hideLabels(plotNum);
+	if (restoreLabels){
+		showLabels(plotNum);
+	};
+};
+
+function addTooltips(plotN, placeholderN, dataN, plotNum){
+	removeTooltips(plotNum);
+	
+	var axX = plotN.getXAxes()[0];
+	var optsX = axX.options;
+	var range_min = optsX.min;
+	var range_max = optsX.max;
+	
+	var points = plotN.getData();
+	var graphx = placeholderN.offset().left;
+
+	var yax = plotN.getYAxes()[0];
+	var lw = yax.labelWidth;
+
+	graphx = graphx + lw;
+	var graphy = 0;
+	
+	graphy = PhOffsets[plotNum];
+	
+	for(var k = 0; k < points.length; k++){
+		if ('trendLine' in points[k] && points[k].trendLine) {
+			continue;
+		};
+	  for(var m = 0; m < points[k].data.length; m++){
+			if(points[k].data[m] != null && points[k].data[m][0] != null && points[k].data[m][1] != null){
+				if (range_min == null || points[k].data[m][0] >= range_min && points[k].data[m][0] <= range_max){					  
+					addTooltip(graphx + points[k].xaxis.p2c(points[k].data[m][0]), graphy + points[k].yaxis.p2c(points[k].data[m][1]),points[k].data[m][1], dataN[k].color, m, plotNum)									  
+				}
+			
+			}
+		}
+	}
+};
+
+ function addTooltip(x,y,contents, colour, CurNumber, plotNum, dateX){
+		delta = 15;
+		if (CurNumber%2 == 0)
+		{
+				delta = -25;
+		}
+		dY = y + delta;
+		dX = x - 8;
+      contents_ = formatNumber(contents);
+	  $('<div id="valueLabel'+plotNum+'" name="valueLabel'+plotNum+'">' +  contents_ + '</div>').css( {
+            position: 'absolute',
+            display: 'none',
+            top: dY,
+            left: dX,
+			
+			height:  '27px',
+			'font-size': '10px',
+            'background-image': 'url(img_grad.png)',
+            color: '#262626',
+            padding: '2px'
+      }).appendTo("body");
+	  
+};
+
+function ShowHideLabels(elNumber){
+	if (LabelsShowed[elNumber]=== undefined){LabelsShowed[elNumber] = false;};
+	
+	if (LabelsShowed[elNumber]){
+		hideLabels(elNumber);
+	}else{
+		showLabels(elNumber);
+	};
+};
+
+function ShowHideLabelsAll(){
+	var i;
+	for(i=1; i<= GraphCount;i++){
+		elNumber = ''+i;
+		if (AllLabelsShowed){
+			hideLabels(elNumber);
+		}else{
+			showLabels(elNumber);
+		};
+	};
+	AllLabelsShowed = !AllLabelsShowed;
+};
+
+function showLabels(elNumber){
+	var elName = 'valueLabel' + elNumber;
+	var labels = document.getElementsByName(elName);
+	for (var i = 0; i < labels.length; i++) {
+	   $(labels[i]).fadeIn(100);
+	}
+	
+	LabelsShowed[elNumber] = true;
+	$("#buttonInfo"+elNumber).css({'background-image': 'url(img_info_p.gif)'});
+};
+
+function hideLabels(elNumber){
+	var elName = 'valueLabel' + elNumber;
+	var labels = document.getElementsByName(elName);
+	for (var i = 0; i < labels.length; i++) {
+	   $(labels[i]).hide();
+	}
+	
+	LabelsShowed[elNumber] = false;
+	$("#buttonInfo"+elNumber).css({'background-image': 'url(img_info.gif)'});
+};
+
+function setCurEvent(e_type,e_source){
+	CurEvent = e_type;
+	CurEventSource = e_source;
+};
+
+function setCurButton(ButType){
+	$("#button_day").css({'color': '#ffffff'});
+	$("#button_week").css({'color': '#ffffff'});
+	$("#button_month").css({'color': '#ffffff'});
+	$("#button_year").css({'color': '#ffffff'});
+	
+	if (ButType == '') {return; };
+	$("#button_"+ButType).css({'color': '#dddddd'});
+};
+
+function ShowHideLegendsAll(){
+	AllLegendsShowed = !AllLegendsShowed;
+	var i;
+	for(i=1; i<= GraphCount;i++){
+		var pl = PlotsArr[i];
+		var opt= pl.getOptions();
+		opt.legend.show = AllLegendsShowed;
+		Refresh(pl);
+	};
+	
+};
+
+function zoom100() {
+            document.body.style.zoom = "100%" 
+};
+
+function formatNumber(Number) {
+   return  Number.toLocaleString('ru').replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+ 
+};
+
+function ShowTooltipsForPrint() {
+   //if (isPrint) { ShowHideLabelsAll(); };
+ 
+};
+
+</script>
+</head>
+<body onload="zoom100(); setCurButton('<1С_CurPeriod>'); ShowTooltipsForPrint();">
+<center>
+		<1C_PANEL>
+		<1C_body>
+</center>
+
+</body>
+</html>

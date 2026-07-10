@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>LockOwner</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<ShowCommandBar>true</ShowCommandBar>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаДобавить" id="13">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Добавить</CommandName>
+				<ButtonImportance>Main</ButtonImportance>
+				<ExtendedTooltip name="ФормаДобавитьРасширеннаяПодсказка" id="14"/>
+			</Button>
+			<Button name="ФормаОтмена" id="15">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Cancel</CommandName>
+				<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="16"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Сотрудник" id="7">
+			<DataPath>Сотрудник</DataPath>
+			<MarkRequiredComplete>true</MarkRequiredComplete>
+			<ClearButton>true</ClearButton>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<ContextMenu name="СотрудникКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="СотрудникРасширеннаяПодсказка" id="9"/>
+			<Events>
+				<Event name="OnChange">СотрудникПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ВидНачисления" id="1">
+			<DataPath>ВидНачисления</DataPath>
+			<ClearButton>true</ClearButton>
+			<ContextMenu name="ВидНачисленияКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ВидНачисленияРасширеннаяПодсказка" id="3"/>
+			<Events>
+				<Event name="OnChange">ВидНачисленияПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ОбъектВыработки" id="4">
+			<DataPath>ОбъектВыработки</DataPath>
+			<ClearButton>true</ClearButton>
+			<OpenButton>true</OpenButton>
+			<ChoiceParameterLinks>
+				<xr:Link>
+					<xr:Name>Отбор.Валюта</xr:Name>
+					<xr:DataPath xsi:type="xs:string">Валюта</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+			</ChoiceParameterLinks>
+			<ContextMenu name="ОбъектВыработкиКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ОбъектВыработкиРасширеннаяПодсказка" id="6"/>
+			<Events>
+				<Event name="OnChange">ОбъектВыработкиПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="Сумма" id="10">
+			<DataPath>Сумма</DataPath>
+			<ContextMenu name="СуммаКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="СуммаРасширеннаяПодсказка" id="12"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ВидНачисления" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид начисления</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ВидыНачислений</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Сотрудник" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сотрудник</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Сотрудники</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОбъектВыработки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект выработки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ДокументРасчетаВыработки</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="Сумма" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Валюта" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Валюта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Добавить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Добавить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

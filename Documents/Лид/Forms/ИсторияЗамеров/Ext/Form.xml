@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>История замеров и выездов</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>LockOwner</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<Group>Vertical</Group>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаЗакрыть" id="32">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ButtonImportance>Main</ButtonImportance>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="33"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="ИсторияЗамеров" id="1">
+			<Representation>List</Representation>
+			<ReadOnly>true</ReadOnly>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ИсторияЗамеров</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ИсторияЗамеровКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="ИсторияЗамеровКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ИсторияЗамеровРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="ИсторияЗамеровСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>ИсторияЗамеров</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ИсторияЗамеровСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="ИсторияЗамеровСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ИсторияЗамеровСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>ИсторияЗамеров</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ИсторияЗамеровСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="ИсторияЗамеровСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ИсторияЗамеровУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>ИсторияЗамеров</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ИсторияЗамеровУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="ИсторияЗамеровУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<CheckBoxField name="ИсторияЗамеровЭтоВыезд" id="37">
+					<DataPath>ИсторияЗамеров.ЭтоВыезд</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ИсторияЗамеровЭтоВыездКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="ИсторияЗамеровЭтоВыездРасширеннаяПодсказка" id="39"/>
+				</CheckBoxField>
+				<InputField name="ИсторияЗамеровДатаЗамера" id="14">
+					<DataPath>ИсторияЗамеров.ДатаЗамера</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ИсторияЗамеровДатаЗамераКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="ИсторияЗамеровДатаЗамераРасширеннаяПодсказка" id="16"/>
+				</InputField>
+				<InputField name="ИсторияЗамеровВремяНачалаЗамера" id="17">
+					<DataPath>ИсторияЗамеров.ВремяНачалаЗамера</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ИсторияЗамеровВремяНачалаЗамераКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="ИсторияЗамеровВремяНачалаЗамераРасширеннаяПодсказка" id="19"/>
+				</InputField>
+				<InputField name="ИсторияЗамеровВремяОкончанияЗамера" id="20">
+					<DataPath>ИсторияЗамеров.ВремяОкончанияЗамера</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ИсторияЗамеровВремяОкончанияЗамераКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ИсторияЗамеровВремяОкончанияЗамераРасширеннаяПодсказка" id="22"/>
+				</InputField>
+				<InputField name="ИсторияЗамеровИсполнительЗамера" id="23">
+					<DataPath>ИсторияЗамеров.ИсполнительЗамера</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ИсторияЗамеровИсполнительЗамераКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ИсторияЗамеровИсполнительЗамераРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<InputField name="ИсторияЗамеровНазначил" id="40">
+					<DataPath>ИсторияЗамеров.Назначил</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ИсторияЗамеровНазначилКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="ИсторияЗамеровНазначилРасширеннаяПодсказка" id="42"/>
+				</InputField>
+				<CheckBoxField name="ИсторияЗамеровЗамерВыполнен" id="34">
+					<DataPath>ИсторияЗамеров.ЗамерВыполнен</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ИсторияЗамеровЗамерВыполненКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="ИсторияЗамеровЗамерВыполненРасширеннаяПодсказка" id="36"/>
+				</CheckBoxField>
+				<InputField name="ИсторияЗамеровТекущийСтатусЗамера" id="26">
+					<DataPath>ИсторияЗамеров.РезультатЗамера</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ИсторияЗамеровТекущийСтатусЗамераКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ИсторияЗамеровТекущийСтатусЗамераРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="ИсторияЗамеровСуммаДоговораНаЗамере" id="29">
+					<DataPath>ИсторияЗамеров.СуммаДоговораНаЗамере</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ИсторияЗамеровСуммаДоговораНаЗамереКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ИсторияЗамеровСуммаДоговораНаЗамереРасширеннаяПодсказка" id="31"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ИсторияЗамеров" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>История замеров</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ДатаЗамера" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВремяНачалаЗамера" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Время начала</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Time</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВремяОкончанияЗамера" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Время окончания</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Time</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИсполнительЗамера" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Исполнитель</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Сотрудники</v8:Type>
+					</Type>
+				</Column>
+				<Column name="РезультатЗамера" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Результат замера</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.РезультатЗамераЛида</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СуммаДоговораНаЗамере" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма договора</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗамерВыполнен" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Замер выполнен</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЭтоВыезд" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Это выезд</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Назначил" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Назначил</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Сотрудники</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Объект" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentRef.Лид</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Parameters>
+		<Parameter name="Объект">
+			<Type>
+				<v8:Type>cfg:DocumentRef.Лид</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

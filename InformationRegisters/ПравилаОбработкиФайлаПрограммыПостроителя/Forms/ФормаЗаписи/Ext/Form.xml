@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>LockOwner</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<RadioButtonField name="ВидПравила" id="56">
+			<DataPath>Запись.ВидПравила</DataPath>
+			<RadioButtonType>Auto</RadioButtonType>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Добавление номенклатуры в документ</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xr:DesignTimeRef">Enum.ВидыПравилОбработкиФайлаПрограммыПостроителя.EnumValue.ДобавлениеНоменклатурыВДокумент</Value>
+					</xr:Value>
+				</xr:Item>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Обработка номенклатуры-продукции</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xr:DesignTimeRef">Enum.ВидыПравилОбработкиФайлаПрограммыПостроителя.EnumValue.ОбработкаНоменклатурыПродукции</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<ContextMenu name="ВидПравилаКонтекстноеМеню" id="57"/>
+			<ExtendedTooltip name="ВидПравилаРасширеннаяПодсказка" id="58"/>
+			<Events>
+				<Event name="OnChange">ВидПравилаПриИзменении</Event>
+			</Events>
+		</RadioButtonField>
+		<Pages name="ГруппаСтраницы" id="59">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="60"/>
+			<ChildItems>
+				<Page name="СтраницаДобавление" id="61">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница добавление</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<ScrollOnCompress>false</ScrollOnCompress>
+					<ExtendedTooltip name="СтраницаДобавлениеРасширеннаяПодсказка" id="62"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаПравилаДля" id="54">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Назначение</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа правила для</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>StrongSeparation</Representation>
+							<ExtendedTooltip name="ГруппаПравилаДляРасширеннаяПодсказка" id="55"/>
+							<ChildItems>
+								<InputField name="ВидСоздаваемойНоменклатуры" id="79">
+									<DataPath>Запись.ВидСоздаваемойНоменклатуры</DataPath>
+									<ListChoiceMode>true</ListChoiceMode>
+									<TextEdit>false</TextEdit>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xr:DesignTimeRef">Catalog.ВидыНоменклатуры.Потолок</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xr:DesignTimeRef">Catalog.ВидыНоменклатуры.Отрез</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xr:DesignTimeRef">Catalog.ВидыНоменклатуры.Продукция</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="ВидСоздаваемойНоменклатурыКонтекстноеМеню" id="80"/>
+									<ExtendedTooltip name="ВидСоздаваемойНоменклатурыРасширеннаяПодсказка" id="81"/>
+									<Events>
+										<Event name="OnChange">ВидСоздаваемойНоменклатурыПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ВидПродукции" id="88">
+									<DataPath>Запись.ВидПродукции</DataPath>
+									<ContextMenu name="ВидПродукцииКонтекстноеМеню" id="89"/>
+									<ExtendedTooltip name="ВидПродукцииРасширеннаяПодсказка" id="90"/>
+								</InputField>
+								<InputField name="ВидЗаказа" id="7">
+									<DataPath>Запись.ВидЗаказа</DataPath>
+									<ContextMenu name="ВидЗаказаКонтекстноеМеню" id="8"/>
+									<ExtendedTooltip name="ВидЗаказаРасширеннаяПодсказка" id="9"/>
+									<Events>
+										<Event name="OnChange">ВидЗаказаПриИзменении</Event>
+										<Event name="StartChoice">ВидЗаказаНачалоВыбора</Event>
+									</Events>
+								</InputField>
+								<InputField name="ТабличнаяЧастьЗаказа" id="10">
+									<DataPath>Запись.ТабличнаяЧастьЗаказа</DataPath>
+									<ListChoiceMode>true</ListChoiceMode>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="ТабличнаяЧастьЗаказаКонтекстноеМеню" id="11"/>
+									<ExtendedTooltip name="ТабличнаяЧастьЗаказаРасширеннаяПодсказка" id="12"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаПараметрПравила" id="52">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа параметр правила</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа параметр правила</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПараметрПравилаРасширеннаяПодсказка" id="53"/>
+							<ChildItems>
+								<InputField name="ПараметрФайла" id="1">
+									<DataPath>Запись.ПараметрФайла</DataPath>
+									<ContextMenu name="ПараметрФайлаКонтекстноеМеню" id="2"/>
+									<ExtendedTooltip name="ПараметрФайлаРасширеннаяПодсказка" id="3"/>
+								</InputField>
+								<CheckBoxField name="ЭтоПравилоБезПараметра" id="49">
+									<DataPath>Запись.ЭтоПравилоБезПараметра</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<ContextMenu name="ЭтоПравилоБезПараметраКонтекстноеМеню" id="50"/>
+									<ExtendedTooltip name="ЭтоПравилоБезПараметраРасширеннаяПодсказка" id="51"/>
+									<Events>
+										<Event name="OnChange">ЭтоПравилоБезПараметраПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="Номенклатура" id="4">
+							<DataPath>Запись.Номенклатура</DataPath>
+							<ContextMenu name="НоменклатураКонтекстноеМеню" id="5"/>
+							<ExtendedTooltip name="НоменклатураРасширеннаяПодсказка" id="6"/>
+							<Events>
+								<Event name="OnChange">НоменклатураПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ЕдиницаИзмерения" id="27">
+							<DataPath>Запись.ЕдиницаИзмерения</DataPath>
+							<DropListButton>true</DropListButton>
+							<ChoiceButton>false</ChoiceButton>
+							<OpenButton>false</OpenButton>
+							<QuickChoice>true</QuickChoice>
+							<ChooseType>false</ChooseType>
+							<ContextMenu name="ЕдиницаИзмеренияКонтекстноеМеню" id="28"/>
+							<ExtendedTooltip name="ЕдиницаИзмеренияРасширеннаяПодсказка" id="29"/>
+							<Events>
+								<Event name="StartChoice">ЕдиницаИзмеренияНачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<UsualGroup name="ГруппаКоличество" id="33">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа количество</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа количество</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаКоличествоРасширеннаяПодсказка" id="34"/>
+							<ChildItems>
+								<RadioButtonField name="ВариантОпределенияКоличества" id="30">
+									<DataPath>Запись.ВариантОпределенияКоличества</DataPath>
+									<RadioButtonType>Tumbler</RadioButtonType>
+									<ColumnsCount>2</ColumnsCount>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Из параметра файла</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">1</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Общее количество</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">2</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="ВариантОпределенияКоличестваКонтекстноеМеню" id="31"/>
+									<ExtendedTooltip name="ВариантОпределенияКоличестваРасширеннаяПодсказка" id="32"/>
+									<Events>
+										<Event name="OnChange">ВариантОпределенияКоличестваПриИзменении</Event>
+									</Events>
+								</RadioButtonField>
+								<InputField name="ОбщееКоличество" id="35">
+									<DataPath>Запись.ОбщееКоличество</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="ОбщееКоличествоКонтекстноеМеню" id="36"/>
+									<ExtendedTooltip name="ОбщееКоличествоРасширеннаяПодсказка" id="37"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="Коэффициент" id="19">
+							<DataPath>Запись.Коэффициент</DataPath>
+							<ContextMenu name="КоэффициентКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="КоэффициентРасширеннаяПодсказка" id="21"/>
+						</InputField>
+						<UsualGroup name="ГруппаОкругления" id="38">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа округления</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа округления</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОкругленияРасширеннаяПодсказка" id="39"/>
+							<ChildItems>
+								<CheckBoxField name="ОкруглятьКоличество" id="40">
+									<DataPath>Запись.ОкруглятьКоличество</DataPath>
+									<ContextMenu name="ОкруглятьКоличествоКонтекстноеМеню" id="41"/>
+									<ExtendedTooltip name="ОкруглятьКоличествоРасширеннаяПодсказка" id="42"/>
+								</CheckBoxField>
+								<InputField name="ПорядокОкругления" id="43">
+									<DataPath>Запись.ПорядокОкругленияЧислом</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<DropListButton>true</DropListButton>
+									<ChoiceButton>false</ChoiceButton>
+									<ContextMenu name="ПорядокОкругленияКонтекстноеМеню" id="44"/>
+									<ExtendedTooltip name="ПорядокОкругленияРасширеннаяПодсказка" id="45"/>
+								</InputField>
+								<CheckBoxField name="ОкруглятьВБольшуюСторону" id="46">
+									<DataPath>Запись.ОкруглятьВБольшуюСторону</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<ContextMenu name="ОкруглятьВБольшуюСторонуКонтекстноеМеню" id="47"/>
+									<ExtendedTooltip name="ОкруглятьВБольшуюСторонуРасширеннаяПодсказка" id="48"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаДополнительныеУсловия" id="25">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дополнительные условия срабатывания</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа дополнительные условия</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>StrongSeparation</Representation>
+							<ExtendedTooltip name="ГруппаДополнительныеУсловияРасширеннаяПодсказка" id="26"/>
+							<ChildItems>
+								<InputField name="ПараметрФайлаДляОбработкиЗначения" id="13">
+									<DataPath>Запись.ПараметрФайлаДляОбработкиЗначения</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Когда параметр</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ПараметрФайлаДляОбработкиЗначенияКонтекстноеМеню" id="14"/>
+									<ExtendedTooltip name="ПараметрФайлаДляОбработкиЗначенияРасширеннаяПодсказка" id="15"/>
+								</InputField>
+								<InputField name="ВидСравненияПараметраДляОбработки" id="82">
+									<DataPath>Запись.ВидСравненияПараметраДляОбработки</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>10</MaxWidth>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>содержит</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xr:DesignTimeRef">Enum.ВидыСравнений.EnumValue.Содержит</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>равно</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xr:DesignTimeRef">Enum.ВидыСравнений.EnumValue.Равно</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="ВидСравненияПараметраДляОбработкиКонтекстноеМеню" id="83"/>
+									<ExtendedTooltip name="ВидСравненияПараметраДляОбработкиРасширеннаяПодсказка" id="84"/>
+								</InputField>
+								<InputField name="ЗначениеПараметраДляОбработки" id="16">
+									<DataPath>Запись.ЗначениеПараметраДляОбработки</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>содержит</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="ЗначениеПараметраДляОбработкиКонтекстноеМеню" id="17"/>
+									<ExtendedTooltip name="ЗначениеПараметраДляОбработкиРасширеннаяПодсказка" id="18"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаОбработка" id="63">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница обработка</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<ScrollOnCompress>false</ScrollOnCompress>
+					<ExtendedTooltip name="СтраницаОбработкаРасширеннаяПодсказка" id="64"/>
+					<ChildItems>
+						<InputField name="ВидСоздаваемойНоменклатуры1" id="85">
+							<DataPath>Запись.ВидСоздаваемойНоменклатуры</DataPath>
+							<ContextMenu name="ВидСоздаваемойНоменклатуры1КонтекстноеМеню" id="86"/>
+							<ExtendedTooltip name="ВидСоздаваемойНоменклатуры1РасширеннаяПодсказка" id="87"/>
+						</InputField>
+						<InputField name="ВидПродукции1" id="91">
+							<DataPath>Запись.ВидПродукции</DataPath>
+							<ContextMenu name="ВидПродукции1КонтекстноеМеню" id="92"/>
+							<ExtendedTooltip name="ВидПродукции1РасширеннаяПодсказка" id="93"/>
+						</InputField>
+						<InputField name="ВидЗаказа1" id="65">
+							<DataPath>Запись.ВидЗаказа</DataPath>
+							<ContextMenu name="ВидЗаказа1КонтекстноеМеню" id="66"/>
+							<ExtendedTooltip name="ВидЗаказа1РасширеннаяПодсказка" id="67"/>
+							<Events>
+								<Event name="OnChange">ВидЗаказаПриИзменении</Event>
+								<Event name="StartChoice">ВидЗаказаНачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<UsualGroup name="ГруппаДополнительныеУсловия1" id="68">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дополнительные условия срабатывания</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа дополнительные условия</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>StrongSeparation</Representation>
+							<ExtendedTooltip name="ГруппаДополнительныеУсловия1РасширеннаяПодсказка" id="69"/>
+							<ChildItems>
+								<InputField name="ПараметрФайлаДляОбработкиЗначения1" id="70">
+									<DataPath>Запись.ПараметрФайлаДляОбработкиЗначения</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Когда параметр</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ПараметрФайлаДляОбработкиЗначения1КонтекстноеМеню" id="71"/>
+									<ExtendedTooltip name="ПараметрФайлаДляОбработкиЗначения1РасширеннаяПодсказка" id="72"/>
+								</InputField>
+								<InputField name="ЗначениеПараметраДляОбработки1" id="73">
+									<DataPath>Запись.ЗначениеПараметраДляОбработки</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>содержит</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ЗначениеПараметраДляОбработки1КонтекстноеМеню" id="74"/>
+									<ExtendedTooltip name="ЗначениеПараметраДляОбработки1РасширеннаяПодсказка" id="75"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="КатегорияНоменклатуры" id="76">
+							<DataPath>Запись.КатегорияНоменклатуры</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Присвоить категорию</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="КатегорияНоменклатурыКонтекстноеМеню" id="77"/>
+							<ExtendedTooltip name="КатегорияНоменклатурыРасширеннаяПодсказка" id="78"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<CheckBoxField name="НеДействует" id="22">
+			<DataPath>Запись.НеДействует</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<ContextMenu name="НеДействуетКонтекстноеМеню" id="23"/>
+			<ExtendedTooltip name="НеДействуетРасширеннаяПодсказка" id="24"/>
+		</CheckBoxField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.ПравилаОбработкиФайлаПрограммыПостроителя</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

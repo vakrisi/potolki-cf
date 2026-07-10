@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>LockOwner</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаНаименованиеКод" id="44">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа наименование код</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа наименование код</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНаименованиеКодРасширеннаяПодсказка" id="45"/>
+			<ChildItems>
+				<InputField name="Наименование" id="4">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Владелец" id="7">
+			<DataPath>Объект.Owner</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<ContextMenu name="ВладелецКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="9"/>
+			<Events>
+				<Event name="OnChange">ВладелецПриИзменении</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="Группа1" id="76">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="77"/>
+			<ChildItems>
+				<InputField name="ВидСпецификации" id="61">
+					<DataPath>Объект.ВидСпецификации</DataPath>
+					<ContextMenu name="ВидСпецификацииКонтекстноеМеню" id="62"/>
+					<ExtendedTooltip name="ВидСпецификацииРасширеннаяПодсказка" id="63"/>
+					<Events>
+						<Event name="OnChange">ВидСпецификацииПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="ДекорацияСпецификацияПродукции" id="64">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<TextColor>style:ТекстИнформационнойНадписи</TextColor>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Используется в документах "Заказ покупателя", "Заказ на производство", "Выпуск продукции"</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияСпецификацияПродукцииКонтекстноеМеню" id="65"/>
+			<ExtendedTooltip name="ДекорацияСпецификацияПродукцииРасширеннаяПодсказка" id="66"/>
+		</LabelDecoration>
+		<LabelDecoration name="ДекорацияСопутствующиеМатериалы" id="70">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<TextColor>style:ТекстИнформационнойНадписи</TextColor>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Используется в документах "Заказ-договор", "Предварительный расчет", "Монтаж"</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияСопутствующиеМатериалыКонтекстноеМеню" id="71"/>
+			<ExtendedTooltip name="ДекорацияСопутствующиеМатериалыРасширеннаяПодсказка" id="72"/>
+		</LabelDecoration>
+		<LabelDecoration name="ДекорацияКомплектация" id="67">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<TextColor>style:ТекстИнформационнойНадписи</TextColor>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Используется в документе "Комплектация номенклатуры"</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияКомплектацияКонтекстноеМеню" id="68"/>
+			<ExtendedTooltip name="ДекорацияКомплектацияРасширеннаяПодсказка" id="69"/>
+		</LabelDecoration>
+		<Table name="Состав" id="10">
+			<Representation>List</Representation>
+			<TitleLocation>Top</TitleLocation>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.Состав</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СоставКонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="СоставКоманднаяПанель" id="12"/>
+			<ExtendedTooltip name="СоставРасширеннаяПодсказка" id="13"/>
+			<SearchStringAddition name="СоставСтрокаПоиска" id="14">
+				<AdditionSource>
+					<Item>Состав</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставСтрокаПоискаКонтекстноеМеню" id="17"/>
+				<ExtendedTooltip name="СоставСтрокаПоискаРасширеннаяПодсказка" id="18"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СоставСостояниеПросмотра" id="19">
+				<AdditionSource>
+					<Item>Состав</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставСостояниеПросмотраКонтекстноеМеню" id="22"/>
+				<ExtendedTooltip name="СоставСостояниеПросмотраРасширеннаяПодсказка" id="23"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СоставУправлениеПоиском" id="24">
+				<AdditionSource>
+					<Item>Состав</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставУправлениеПоискомКонтекстноеМеню" id="27"/>
+				<ExtendedTooltip name="СоставУправлениеПоискомРасширеннаяПодсказка" id="28"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="СоставНомерСтроки" id="29">
+					<DataPath>Объект.Состав.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СоставНомерСтрокиКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="СоставНомерСтрокиРасширеннаяПодсказка" id="31"/>
+				</LabelField>
+				<InputField name="СоставНоменклатура" id="32">
+					<DataPath>Объект.Состав.Номенклатура</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СоставНоменклатураКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="СоставНоменклатураРасширеннаяПодсказка" id="34"/>
+					<Events>
+						<Event name="OnChange">СоставНоменклатураПриИзменении</Event>
+						<Event name="ChoiceProcessing">СоставНоменклатураОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+				<InputField name="СоставХарактеристикаНоменклатуры" id="55">
+					<DataPath>Объект.Состав.ХарактеристикаНоменклатуры</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Отбор.Владелец</xr:Name>
+							<xr:DataPath xsi:type="xs:string">Items.Состав.CurrentData.Номенклатура</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<ContextMenu name="СоставХарактеристикаНоменклатурыКонтекстноеМеню" id="56"/>
+					<ExtendedTooltip name="СоставХарактеристикаНоменклатурыРасширеннаяПодсказка" id="57"/>
+				</InputField>
+				<InputField name="СоставЕдиницаИзмерения" id="46">
+					<DataPath>Объект.Состав.ЕдиницаИзмерения</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>6</Width>
+					<DropListButton>true</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ClearButton>false</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<QuickChoice>true</QuickChoice>
+					<ChooseType>false</ChooseType>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="СоставЕдиницаИзмеренияКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="СоставЕдиницаИзмеренияРасширеннаяПодсказка" id="48"/>
+					<Events>
+						<Event name="StartChoice">СоставЕдиницаИзмеренияНачалоВыбора</Event>
+						<Event name="ChoiceProcessing">СоставЕдиницаИзмеренияОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+				<InputField name="СоставКоэффициент" id="38">
+					<DataPath>Объект.Состав.Коэффициент</DataPath>
+					<Enabled>false</Enabled>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>10</Width>
+					<ContextMenu name="СоставКоэффициентКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="СоставКоэффициентРасширеннаяПодсказка" id="40"/>
+				</InputField>
+				<InputField name="СоставКоличество" id="41">
+					<DataPath>Объект.Состав.Количество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СоставКоличествоКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="СоставКоличествоРасширеннаяПодсказка" id="43"/>
+				</InputField>
+				<CheckBoxField name="СоставФиксированноеКоличество" id="58">
+					<DataPath>Объект.Состав.ФиксированноеКоличество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СоставФиксированноеКоличествоКонтекстноеМеню" id="59"/>
+					<ExtendedTooltip name="СоставФиксированноеКоличествоРасширеннаяПодсказка" id="60"/>
+				</CheckBoxField>
+				<InputField name="СоставПорядокОкругления" id="49">
+					<DataPath>Объект.Состав.ПорядокОкругленияЧислом</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<DropListButton>true</DropListButton>
+					<ChoiceButton>false</ChoiceButton>
+					<ContextMenu name="СоставПорядокОкругленияКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="СоставПорядокОкругленияРасширеннаяПодсказка" id="51"/>
+				</InputField>
+				<CheckBoxField name="СоставОкруглятьВБольшуюСторону" id="52">
+					<DataPath>Объект.Состав.ОкруглятьВБольшуюСторону</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СоставОкруглятьВБольшуюСторонуКонтекстноеМеню" id="53"/>
+					<ExtendedTooltip name="СоставОкруглятьВБольшуюСторонуРасширеннаяПодсказка" id="54"/>
+				</CheckBoxField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Спецификации</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

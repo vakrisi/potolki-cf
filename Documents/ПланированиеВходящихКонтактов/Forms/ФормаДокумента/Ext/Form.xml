@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаПровестиИЗакрыть" id="77">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.PostAndClose</CommandName>
+				<ButtonImportance>Main</ButtonImportance>
+				<ExtendedTooltip name="ФормаПровестиИЗакрытьРасширеннаяПодсказка" id="78"/>
+			</Button>
+			<Button name="ФормаЗаписать" id="79">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.StandardCommand.Write</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.Write</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="80"/>
+			</Button>
+			<Button name="ФормаПровести" id="81">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.StandardCommand.Post</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.Post</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаПровестиРасширеннаяПодсказка" id="82"/>
+			</Button>
+			<ButtonGroup name="ФормаГлобальныеКоманды" id="83">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма глобальные команды</v8:content>
+					</v8:item>
+				</Title>
+				<CommandSource>FormCommandPanelGlobalCommands</CommandSource>
+				<ExtendedTooltip name="ФормаГлобальныеКомандыРасширеннаяПодсказка" id="84"/>
+			</ButtonGroup>
+			<ButtonGroup name="ПерваяГруппаКнопокКП" id="75">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Первая группа кнопок КП</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Первая группа кнопок КП</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ПерваяГруппаКнопокКПРасширеннаяПодсказка" id="76"/>
+			</ButtonGroup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаНомерДата" id="71">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номер дата</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номер дата</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНомерДатаРасширеннаяПодсказка" id="72"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="Год" id="7">
+					<DataPath>Объект.Год</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Год планирования</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧГ=</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="ГодКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ГодРасширеннаяПодсказка" id="9"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="План" id="10">
+			<Representation>List</Representation>
+			<TitleLocation>Top</TitleLocation>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<Footer>true</Footer>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.План</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Планируемое количество по точкам продаж</v8:content>
+				</v8:item>
+			</Title>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ПланКонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="ПланКоманднаяПанель" id="12">
+				<ChildItems>
+					<Button name="ПланЗаполнитьТочкиПродаж" id="73">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ЗаполнитьТочкиПродаж</CommandName>
+						<ExtendedTooltip name="ПланЗаполнитьТочкиПродажРасширеннаяПодсказка" id="74"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ПланРасширеннаяПодсказка" id="13"/>
+			<SearchStringAddition name="ПланСтрокаПоиска" id="14">
+				<AdditionSource>
+					<Item>План</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПланСтрокаПоискаКонтекстноеМеню" id="17"/>
+				<ExtendedTooltip name="ПланСтрокаПоискаРасширеннаяПодсказка" id="18"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ПланСостояниеПросмотра" id="19">
+				<AdditionSource>
+					<Item>План</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПланСостояниеПросмотраКонтекстноеМеню" id="22"/>
+				<ExtendedTooltip name="ПланСостояниеПросмотраРасширеннаяПодсказка" id="23"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ПланУправлениеПоиском" id="24">
+				<AdditionSource>
+					<Item>План</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ПланУправлениеПоискомКонтекстноеМеню" id="27"/>
+				<ExtendedTooltip name="ПланУправлениеПоискомРасширеннаяПодсказка" id="28"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ПланНомерСтроки" id="29">
+					<DataPath>Объект.План.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ПланНомерСтрокиКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ПланНомерСтрокиРасширеннаяПодсказка" id="31"/>
+				</LabelField>
+				<InputField name="ПланТочкаПродаж" id="32">
+					<DataPath>Объект.План.ТочкаПродаж</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ПланТочкаПродажКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ПланТочкаПродажРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="ПланЯнварь" id="35">
+					<DataPath>Объект.План.Январь</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.План.TotalЯнварь</FooterDataPath>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>8</Width>
+					<ContextMenu name="ПланЯнварьКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ПланЯнварьРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="ПланФевраль" id="38">
+					<DataPath>Объект.План.Февраль</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.План.TotalФевраль</FooterDataPath>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>8</Width>
+					<ContextMenu name="ПланФевральКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ПланФевральРасширеннаяПодсказка" id="40"/>
+				</InputField>
+				<InputField name="ПланМарт" id="41">
+					<DataPath>Объект.План.Март</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.План.TotalМарт</FooterDataPath>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>8</Width>
+					<ContextMenu name="ПланМартКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ПланМартРасширеннаяПодсказка" id="43"/>
+				</InputField>
+				<InputField name="ПланАпрель" id="44">
+					<DataPath>Объект.План.Апрель</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.План.TotalАпрель</FooterDataPath>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>8</Width>
+					<ContextMenu name="ПланАпрельКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ПланАпрельРасширеннаяПодсказка" id="46"/>
+				</InputField>
+				<InputField name="ПланМай" id="47">
+					<DataPath>Объект.План.Май</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.План.TotalМай</FooterDataPath>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>8</Width>
+					<ContextMenu name="ПланМайКонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="ПланМайРасширеннаяПодсказка" id="49"/>
+				</InputField>
+				<InputField name="ПланИюнь" id="50">
+					<DataPath>Объект.План.Июнь</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.План.TotalИюнь</FooterDataPath>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>8</Width>
+					<ContextMenu name="ПланИюньКонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="ПланИюньРасширеннаяПодсказка" id="52"/>
+				</InputField>
+				<InputField name="ПланИюль" id="53">
+					<DataPath>Объект.План.Июль</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.План.TotalИюль</FooterDataPath>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>8</Width>
+					<ContextMenu name="ПланИюльКонтекстноеМеню" id="54"/>
+					<ExtendedTooltip name="ПланИюльРасширеннаяПодсказка" id="55"/>
+				</InputField>
+				<InputField name="ПланАвгуст" id="56">
+					<DataPath>Объект.План.Август</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.План.TotalАвгуст</FooterDataPath>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>8</Width>
+					<ContextMenu name="ПланАвгустКонтекстноеМеню" id="57"/>
+					<ExtendedTooltip name="ПланАвгустРасширеннаяПодсказка" id="58"/>
+				</InputField>
+				<InputField name="ПланСентябрь" id="59">
+					<DataPath>Объект.План.Сентябрь</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.План.TotalСентябрь</FooterDataPath>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>8</Width>
+					<ContextMenu name="ПланСентябрьКонтекстноеМеню" id="60"/>
+					<ExtendedTooltip name="ПланСентябрьРасширеннаяПодсказка" id="61"/>
+				</InputField>
+				<InputField name="ПланОктябрь" id="62">
+					<DataPath>Объект.План.Октябрь</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.План.TotalОктябрь</FooterDataPath>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>8</Width>
+					<ContextMenu name="ПланОктябрьКонтекстноеМеню" id="63"/>
+					<ExtendedTooltip name="ПланОктябрьРасширеннаяПодсказка" id="64"/>
+				</InputField>
+				<InputField name="ПланНоябрь" id="65">
+					<DataPath>Объект.План.Ноябрь</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.План.TotalНоябрь</FooterDataPath>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>8</Width>
+					<ContextMenu name="ПланНоябрьКонтекстноеМеню" id="66"/>
+					<ExtendedTooltip name="ПланНоябрьРасширеннаяПодсказка" id="67"/>
+				</InputField>
+				<InputField name="ПланДекабрь" id="68">
+					<DataPath>Объект.План.Декабрь</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.План.TotalДекабрь</FooterDataPath>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>8</Width>
+					<ContextMenu name="ПланДекабрьКонтекстноеМеню" id="69"/>
+					<ExtendedTooltip name="ПланДекабрьРасширеннаяПодсказка" id="70"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ПланированиеВходящихКонтактов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="ТребуетсяВыводКомандыОбработкиОбновления" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Требуется вывод команды обработки обновления</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаполнитьТочкиПродаж" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить точки продаж</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить точки продаж</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьТочкиПродаж</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

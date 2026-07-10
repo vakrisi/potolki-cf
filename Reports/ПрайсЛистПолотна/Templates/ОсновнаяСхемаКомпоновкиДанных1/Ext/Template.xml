@@ -1,0 +1,2367 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Валюта</dataPath>
+			<field>Валюта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидЦен</dataPath>
+			<field>ВидЦен</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидНоменклатуры</dataPath>
+			<field>ВидНоменклатуры</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Шаблон</dataPath>
+			<field>Шаблон</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Фактура</dataPath>
+			<field>Фактура</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦветФактуры</dataPath>
+			<field>ЦветФактуры</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЕдиницаИзмерения</dataPath>
+			<field>ЕдиницаИзмерения</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Цена</dataPath>
+			<field>Цена</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цена</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦенаСФотопечатью</dataPath>
+			<field>ЦенаСФотопечатью</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цена с фотопечатью</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦветФактурыВладелец</dataPath>
+			<field>ЦветФактурыВладелец</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цвет фактуры владелец</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Фактура_Материал</dataPath>
+			<field>Фактура_Материал</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фактура материал</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦенаВГарпунеСФотопечатью</dataPath>
+			<field>ЦенаВГарпунеСФотопечатью</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цена в гарпуне с фотопечатью</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦенаВГарпуне</dataPath>
+			<field>ЦенаВГарпуне</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цена в гарпуне</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаФактуры</dataPath>
+			<field>ГруппаФактуры</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа фактуры</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипФактуры</dataPath>
+			<field>ТипФактуры</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип фактуры</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВидыЦен.Ссылка КАК ВидЦены,
+	ВЫБОР
+		КОГДА ВидыЦен.СсылочныйВидЦены = ИСТИНА
+			ТОГДА ЕСТЬNULL(ЦеныСсылочныхСрезПоследнихОтрез.Фактура.ТипФактуры, ЗНАЧЕНИЕ(Справочник.ТипыФактур.ПустаяСсылка))
+		ИНАЧЕ ЕСТЬNULL(ЦеныСрезПоследнихОтрез.Фактура.ТипФактуры, ЗНАЧЕНИЕ(Справочник.ТипыФактур.ПустаяСсылка))
+	КОНЕЦ КАК ТипФактуры,
+	ВЫБОР
+		КОГДА ВидыЦен.СсылочныйВидЦены = ИСТИНА
+			ТОГДА ЕСТЬNULL(ЦеныСсылочныхСрезПоследнихОтрез.Фактура, ЗНАЧЕНИЕ(Справочник.Фактура.ПустаяСсылка))
+		ИНАЧЕ ЕСТЬNULL(ЦеныСрезПоследнихОтрез.Фактура, ЗНАЧЕНИЕ(Справочник.Фактура.ПустаяСсылка))
+	КОНЕЦ КАК Фактура,
+	ВЫБОР
+		КОГДА ВидыЦен.СсылочныйВидЦены = ИСТИНА
+			ТОГДА ЕСТЬNULL(ЦеныСсылочныхСрезПоследнихОтрез.ЦветФактуры, ЗНАЧЕНИЕ(Справочник.ЦветФактуры.ПустаяСсылка))
+		ИНАЧЕ ЕСТЬNULL(ЦеныСрезПоследнихОтрез.ЦветФактуры, ЗНАЧЕНИЕ(Справочник.ЦветФактуры.ПустаяСсылка))
+	КОНЕЦ КАК ЦветФактуры,
+	ВЫБОР
+		КОГДА ВидыЦен.СсылочныйВидЦены = ИСТИНА
+			ТОГДА ЕСТЬNULL(ЦеныСсылочныхСрезПоследнихОтрез.Цена, 0)
+		ИНАЧЕ ЕСТЬNULL(ЦеныСрезПоследнихОтрез.Цена, 0)
+	КОНЕЦ КАК Цена,
+	ВЫБОР
+		КОГДА ВидыЦен.СсылочныйВидЦены = ИСТИНА
+			ТОГДА ЕСТЬNULL(ЦеныСсылочныхСрезПоследнихОтрез.ЦенаСФотопечатью, 0)
+		ИНАЧЕ ЕСТЬNULL(ЦеныСрезПоследнихОтрез.ЦенаСФотопечатью, 0)
+	КОНЕЦ КАК ЦенаСФотопечатью
+ПОМЕСТИТЬ ВТ_Цены_Отрез
+ИЗ
+	Справочник.ВидыЦен КАК ВидыЦен
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныМатериалов.СрезПоследних(
+				&amp;Период,
+				ВидНоменклатуры В (&amp;ВидНоменклатурыОтрез)
+					И Валюта = &amp;Валюта) КАК ЦеныСрезПоследнихОтрез
+		ПО (ЦеныСрезПоследнихОтрез.ВидЦен = ВидыЦен.Ссылка)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныМатериалов.СрезПоследних(
+				&amp;Период,
+				ВидНоменклатуры В (&amp;ВидНоменклатурыОтрез)
+					И Валюта = &amp;Валюта) КАК ЦеныСсылочныхСрезПоследнихОтрез
+		ПО (ЦеныСсылочныхСрезПоследнихОтрез.ВидЦен = ВидыЦен.ВидЦеныНоменклатуры)
+ГДЕ
+	ВидыЦен.Ссылка В(&amp;ВидЦены)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВидыЦен.Ссылка КАК ВидЦены,
+	ВЫБОР
+		КОГДА ВидыЦен.СсылочныйВидЦены = ИСТИНА
+			ТОГДА ЕСТЬNULL(ЦеныСсылочныхСрезПоследнихПотолок.Фактура.ТипФактуры, ЗНАЧЕНИЕ(Справочник.ТипыФактур.ПустаяСсылка))
+		ИНАЧЕ ЕСТЬNULL(ЦеныСрезПоследнихПотолок.Фактура.ТипФактуры, ЗНАЧЕНИЕ(Справочник.ТипыФактур.ПустаяСсылка))
+	КОНЕЦ КАК ТипФактуры,
+	ВЫБОР
+		КОГДА ВидыЦен.СсылочныйВидЦены = ИСТИНА
+			ТОГДА ЕСТЬNULL(ЦеныСсылочныхСрезПоследнихПотолок.Фактура, ЗНАЧЕНИЕ(Справочник.Фактура.ПустаяСсылка))
+		ИНАЧЕ ЕСТЬNULL(ЦеныСрезПоследнихПотолок.Фактура, ЗНАЧЕНИЕ(Справочник.Фактура.ПустаяСсылка))
+	КОНЕЦ КАК Фактура,
+	ВЫБОР
+		КОГДА ВидыЦен.СсылочныйВидЦены = ИСТИНА
+			ТОГДА ЕСТЬNULL(ЦеныСсылочныхСрезПоследнихПотолок.ЦветФактуры, ЗНАЧЕНИЕ(Справочник.ЦветФактуры.ПустаяСсылка))
+		ИНАЧЕ ЕСТЬNULL(ЦеныСрезПоследнихПотолок.ЦветФактуры, ЗНАЧЕНИЕ(Справочник.ЦветФактуры.ПустаяСсылка))
+	КОНЕЦ КАК ЦветФактуры,
+	ВЫБОР
+		КОГДА ВидыЦен.СсылочныйВидЦены = ИСТИНА
+			ТОГДА ЕСТЬNULL(ЦеныСсылочныхСрезПоследнихПотолок.Цена, 0)
+		ИНАЧЕ ЕСТЬNULL(ЦеныСрезПоследнихПотолок.Цена, 0)
+	КОНЕЦ КАК ЦенаВГарпуне,
+	ВЫБОР
+		КОГДА ВидыЦен.СсылочныйВидЦены = ИСТИНА
+			ТОГДА ЕСТЬNULL(ЦеныСсылочныхСрезПоследнихПотолок.ЦенаСФотопечатью, 0)
+		ИНАЧЕ ЕСТЬNULL(ЦеныСрезПоследнихПотолок.ЦенаСФотопечатью, 0)
+	КОНЕЦ КАК ЦенаВГарпунеСФотопечатью
+ПОМЕСТИТЬ ВТ_Цены_Потолок
+ИЗ
+	Справочник.ВидыЦен КАК ВидыЦен
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныМатериалов.СрезПоследних(
+				&amp;Период,
+				ВидНоменклатуры В (&amp;ВидНоменклатурыПотолок)
+					И Валюта = &amp;Валюта) КАК ЦеныСрезПоследнихПотолок
+		ПО (ЦеныСрезПоследнихПотолок.ВидЦен = ВидыЦен.Ссылка)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныМатериалов.СрезПоследних(
+				&amp;Период,
+				ВидНоменклатуры В (&amp;ВидНоменклатурыПотолок)
+					И Валюта = &amp;Валюта) КАК ЦеныСсылочныхСрезПоследнихПотолок
+		ПО (ЦеныСсылочныхСрезПоследнихПотолок.ВидЦен = ВидыЦен.ВидЦеныНоменклатуры)
+ГДЕ
+	ВидыЦен.Ссылка В(&amp;ВидЦены)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЕСТЬNULL(ВТ_Цены_Отрез.ВидЦены, ВТ_Цены_Потолок.ВидЦены) КАК ВидЦены,
+	ВЫБОР
+		КОГДА ВТ_Цены_Отрез.ТипФактуры = ЗНАЧЕНИЕ(Справочник.ТипыФактур.ПустаяСсылка)
+			ТОГДА ВТ_Цены_Потолок.ТипФактуры
+		ИНАЧЕ ВТ_Цены_Отрез.ТипФактуры
+	КОНЕЦ КАК ТипФактуры,
+	ВЫБОР
+		КОГДА ВТ_Цены_Отрез.Фактура ЕСТЬ NULL
+			ТОГДА ВЫРАЗИТЬ(ВТ_Цены_Потолок.Фактура.Материал КАК СТРОКА(100))
+		ИНАЧЕ ВЫРАЗИТЬ(ВТ_Цены_Отрез.Фактура.Материал КАК СТРОКА(100))
+	КОНЕЦ КАК Фактура_Материал,
+	МАКСИМУМ(ЕСТЬNULL(ВТ_Цены_Отрез.Фактура, ВТ_Цены_Потолок.Фактура)) КАК Фактура,
+	МАКСИМУМ(ЕСТЬNULL(ВТ_Цены_Отрез.ЦветФактуры, ВТ_Цены_Потолок.ЦветФактуры)) КАК ЦветФактуры,
+	ВТ_Цены_Отрез.Цена КАК Цена,
+	ВТ_Цены_Отрез.ЦенаСФотопечатью КАК ЦенаСФотопечатью,
+	ВТ_Цены_Потолок.ЦенаВГарпуне КАК ЦенаВГарпуне,
+	ВТ_Цены_Потолок.ЦенаВГарпунеСФотопечатью КАК ЦенаВГарпунеСФотопечатью
+ПОМЕСТИТЬ ВТ_Цены
+ИЗ
+	ВТ_Цены_Потолок КАК ВТ_Цены_Потолок
+		ПОЛНОЕ СОЕДИНЕНИЕ ВТ_Цены_Отрез КАК ВТ_Цены_Отрез
+		ПО (ВТ_Цены_Отрез.ВидЦены = ВТ_Цены_Потолок.ВидЦены)
+			И (ВТ_Цены_Отрез.Фактура = ВТ_Цены_Потолок.Фактура)
+			И (ВТ_Цены_Отрез.ЦветФактуры = ВТ_Цены_Потолок.ЦветФактуры)
+
+СГРУППИРОВАТЬ ПО
+	ЕСТЬNULL(ВТ_Цены_Отрез.ВидЦены, ВТ_Цены_Потолок.ВидЦены),
+	ВЫБОР
+		КОГДА ВТ_Цены_Отрез.Фактура ЕСТЬ NULL
+			ТОГДА ВЫРАЗИТЬ(ВТ_Цены_Потолок.Фактура.Материал КАК СТРОКА(100))
+		ИНАЧЕ ВЫРАЗИТЬ(ВТ_Цены_Отрез.Фактура.Материал КАК СТРОКА(100))
+	КОНЕЦ,
+	ВТ_Цены_Отрез.Цена,
+	ВТ_Цены_Отрез.ЦенаСФотопечатью,
+	ВТ_Цены_Потолок.ЦенаВГарпуне,
+	ВТ_Цены_Потолок.ЦенаВГарпунеСФотопечатью,
+	ВЫБОР
+		КОГДА ВТ_Цены_Отрез.ТипФактуры = ЗНАЧЕНИЕ(Справочник.ТипыФактур.ПустаяСсылка)
+			ТОГДА ВТ_Цены_Потолок.ТипФактуры
+		ИНАЧЕ ВТ_Цены_Отрез.ТипФактуры
+	КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Цены.ЦветФактуры.Владелец.Родитель КАК ГруппаФактуры,
+	ВТ_Цены.ТипФактуры КАК ТипФактуры,
+	ВТ_Цены.Фактура_Материал КАК Фактура_Материал,
+	ВТ_Цены.ЦветФактуры КАК ЦветФактуры,
+	ВТ_Цены.ЦветФактуры.Владелец КАК ЦветФактурыВладелец,
+	ЕСТЬNULL(ВТ_Цены.Цена, 0) КАК Цена,
+	ЕСТЬNULL(ВТ_Цены.ЦенаСФотопечатью, 0) КАК ЦенаСФотопечатью,
+	ЕСТЬNULL(ВТ_Цены.ЦенаВГарпуне, 0) КАК ЦенаВГарпуне,
+	ЕСТЬNULL(ВТ_Цены.ЦенаВГарпунеСФотопечатью, 0) КАК ЦенаВГарпунеСФотопечатью,
+	ВТ_Цены.ВидЦены КАК ВидЦены
+ПОМЕСТИТЬ ВТ
+ИЗ
+	ВТ_Цены КАК ВТ_Цены
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ.ГруппаФактуры КАК ГруппаФактуры,
+	ВТ.ТипФактуры КАК ТипФактуры,
+	ВТ.Фактура_Материал КАК Фактура_Материал,
+	ВТ.ЦветФактуры КАК ЦветФактуры,
+	ВТ.ЦветФактурыВладелец КАК ЦветФактурыВладелец,
+	ВТ.Цена КАК Цена,
+	ВТ.ЦенаВГарпуне КАК ЦенаВГарпуне,
+	ВТ.ЦенаСФотопечатью КАК ЦенаСФотопечатью,
+	ВТ.ЦенаВГарпунеСФотопечатью КАК ЦенаВГарпунеСФотопечатью
+ИЗ
+	ВТ КАК ВТ</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>ШириныФактуры</dataPath>
+		<expression>ОбщийМодульОтчеты.ПолучитьСтрокуСпискаШиринФактуры(Фактура_Материал)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Ширины фактуры</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>Ссылка</dataPath>
+		<expression>"https://optceiling.ru/"</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Ссылка</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Валюта</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Валюта</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Валюты</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.Валюты.RUB</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВидЦены</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид цены</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ВидыЦен</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.ВидыЦен.ОсновнаяЦенаПродажи</value>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>ВидНоменклатурыОтрез</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид номенклатуры отрез</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ВидыНоменклатуры</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.ВидыНоменклатуры.Отрез</value>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>ВидНоменклатурыПотолок</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид номенклатуры потолок</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ВидыНоменклатуры</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.ВидыНоменклатуры.Потолок</value>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<template>
+		<name>Макет1</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Наименование</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#FFFFFF</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветТекста</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>СтильГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+							</dcscor:value>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Слева</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Сверху</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Справа</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Снизу</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">21.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">21.125</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сылка на изображение</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#FFFFFF</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветТекста</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>СтильГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+							</dcscor:value>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Слева</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Сверху</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Справа</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Снизу</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">23.375</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">23.375</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Цвет</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#FFFFFF</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветТекста</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>СтильГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+							</dcscor:value>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Слева</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Сверху</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Справа</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Снизу</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Ширина, см</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#FFFFFF</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветТекста</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>СтильГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+							</dcscor:value>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Слева</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Сверху</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Справа</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Снизу</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13.75</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13.75</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Цена на отрез, руб./м2</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#FFFFFF</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветТекста</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>СтильГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+							</dcscor:value>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Слева</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Сверху</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Справа</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Снизу</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.25</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.25</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Цена в гарпуне, руб./м2</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#FFFFFF</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветТекста</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>СтильГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+							</dcscor:value>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Слева</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Сверху</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Справа</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Снизу</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.125</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+	</template>
+	<template>
+		<name>Макет2</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ГруппаФактуры</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#FFFFFF</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветТекста</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>СтильГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+							</dcscor:value>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Слева</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Сверху</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Справа</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Снизу</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Left</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">21.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">21.125</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ГруппаФактуры</dcsat:name>
+			<dcsat:expression>Представление(ГруппаФактуры)</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет3</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Ссылка</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#FFFFFF</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветТекста</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>СтильГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+							</dcscor:value>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Слева</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Сверху</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Справа</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Снизу</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">23.375</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">23.375</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Ссылка</dcsat:name>
+			<dcsat:expression>Ссылка</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет4</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ЦветФактуры</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#FFFFFF</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветТекста</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>СтильГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+							</dcscor:value>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Слева</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Сверху</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Справа</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Снизу</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Left</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ЦветФактуры</dcsat:name>
+			<dcsat:expression>Представление(ЦветФактуры)</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет5</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ШириныФактуры</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#FFFFFF</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветТекста</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>СтильГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+							</dcscor:value>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Слева</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Сверху</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Справа</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Снизу</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13.75</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13.75</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ШириныФактуры</dcsat:name>
+			<dcsat:expression>ШириныФактуры</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет6</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Цена</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#FFFFFF</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветТекста</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>СтильГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+							</dcscor:value>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Слева</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Сверху</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Справа</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Снизу</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.25</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.25</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Цена</dcsat:name>
+			<dcsat:expression>Цена</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет7</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ЦенаВГарпуне</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#FFFFFF</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветТекста</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ЦветГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>СтильГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Line" width="0" gap="false">
+								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">None</v8ui:style>
+							</dcscor:value>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Слева</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Сверху</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Справа</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+							<dcscor:item>
+								<dcscor:parameter>СтильГраницы.Снизу</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+									<v8ui:style xsi:type="v8ui:SpreadsheetDocumentCellLineType">Solid</v8ui:style>
+								</dcscor:value>
+							</dcscor:item>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.125</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ЦенаВГарпуне</dcsat:name>
+			<dcsat:expression>ЦенаВГарпуне</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет8</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">21.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">21.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Картинка</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Picture" t="false">iVBORw0KGgoAAAANSUhEUgAAAPkAAABYCAIAAAC4bcaMAAAAAXNSR0IArs4c6QAA
+AARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAACHYSURBVHhe7Z0H
+eFTF+sa/JPRi6M0khB56J6G3BKki0gUELFw1il4FQVERuIr3uepFvYgFUAT5X6QJ
+AgLSWygCIUCoAqGG3lsSkv9vzhz2LsnuZkMKCZz3ybOcnZkzZ+ab9/vm/c6eXTwS
+EhLEgoVHAJ7mvxkNy8EsZDQyPK7fui47N8iy6ZInn7QdIGWqSo5cZpUFC+mJDOR6
+zE3ZvUkWfi/hq+VitHh5SVFfqdNa2j8nFepItuxmMwsW0gcZwvWY2xK5URZNlB2r
+5dxJib1jSqd4kZzZpZiv1G1jML62eGUzKixYSHukM9djY2R3mCyeIjtWytljEmOw
+3MusVLhjMD4XjPeTWq0k5Fmp0kCy5zBrLVhIO6Qb12NjZRe6fJqEr5TTURITl5jl
+NnB9GB8rkjubNOgoz4+U8rXMKgsW0g7pwPW4WIlYKyt/kfBVEv2X3IpTFHfIcqCJ
+DvwCpHEnafiklK8ueb2NIgPkskj5bFakt5BapCnX4+/I5qWyaqbsWienD8tt57Ec
+cFnUC/CvJi17SoM2iu55HzOKDFy9KKvnyIaFkjuPNHlSgtpJ7vxmlQULKUcacT0u
+TrYukzVzlGI5dVhln65juWZ5aVjeQ+qHSNlqkjufUWTgykVZP0/W/Sp7Nsq50+Ll
+IcV8pGoTad5V6reRPBbjLdwPUs11FMuONbJ8hkSskpOH3GZ5FWnRXeq1kXI11I12
+Gy6dkfXzZf1vsm+LnDul2tMVr+icbCLF/aVykDTvIvWekHx2OseCBTeQCq7fiVPZ
+55KpsnudHN8vMfHJsDyOq6HLKxqxvK3BcrsIffmchC2UNbNl72YVy2kPue0/1cVJ
+6IHCEqWlUqCSPfWDJY+d5rFgwSXui+vo8t1hsny6ykGP7JaYBEVB1ywH/hWlWXcl
+QirUTszyzUtk9SzZu0nOnlKcTsRye2jGc62SZaRyfWn6tNoc8hc0ay1YcI4Ucj02
+VnavV2J6+0o5vFNuxyfPcl7LGPdYGrSTSvXuZflZ+XO5iuXo8ujjqmV2I/YnCxgf
+qxnvJ1UbG4wPsVSNBddwm+uxMRKxTsJ+k+3LJWqPupPomuVwEZSrrORKUAcJqCt5
+CxhFBi5fkK1LVfYZuUFOHVNyPId7LLeHLcaXKiPVGkuD9irN9S5i1lqwcC/c4Hrs
+bYnYoFgOO4/tM++XQ3SHsLG8bGUJbK9YXrG25LNn+Xn5c5nqbedaiT6q+OpmLHcG
+zXg0T3EfqdFUGnaWeq3Eu6hZa8HCXbjkOrGc7HPjAsXOqEi5FZt8LIe1pStJw04S
++IQE1L/nU6GLZ2X7KtXbjtXqk1QICsud6fKUwqZqyFyrE+PbSb1gKVTCrLVgwSnX
+Y2LU01phC2TbMjmyS266x3K/StKoo5LOVYLuUc+X0OXLZNNC2bVeTh1JY5bbw8b4
+Yj5K1bCrBLaVAlaMt6CQhOvE8r1bZO08CV+usk83We5TXmWf9Z6Qag3v+ezzygXZ
+vFg2/67uwaNY0OXpxHJ72EZV/HGp2UJqt5RGT0pBi/GPOuy4fvumHNih8sXwlXJg
+q9y6o/JFF7wkiIJS5SSwg4rlNZvdw/LL52TrcnUzcdtyxXIukkpdnlJoxoOixaVO
+iLrXWTdYipQ0iiw8ijC4zl/UHln6k7qTuN9gObx0Fss1YFLOvNKsm4T0laoNJXde
+sxzExyutMv8b2bZCzkarlvdxjyWtYGN8iVJSvbk0aCu1mktxX/FI783FQqaDseR3
+7qjoO/sLCd+sjnMlR3QTCYrBufM4eNzcw0NpobhYFfsfFMs1uDqjw3WjT8rv/ydf
+vSaT35fDu5V7W3jE4PXhhx+qT/u3L1e3RzyMp1kA6SPhEEdwxlTKY2PVh6Z7Nkv0
+EcmeUwqVNL9VBNGL+6lg719VcnjJtQty5ZoivYve0htcnVQhp4f4VpKAelKhrngX
+VuO08CjB0DBxMTLjU5k6Rm7dUoz08hS/KuKVQw5HyM04V9kkHIoxomb5GuprFg3a
+SJXAe74rffa42jHCFqrc9OxpxfUMVu1QHKfN6SXla6qnCUhSK9cTLwZh4ZGDEdfV
+8y0bJGKNejQXZMsmrfrIU6EqVN++KhfPKEI7jMqUEMp5PX1aItfKwXC5AKG9pHAp
+9dVpQLZavpa6BVmijOTMIVfOytUbSkNnQIyH5coPPaVKXQl+Vp5+Vdr0lZL+4umW
+PrPw8CEJ16EgNK0TLO0Gqo8h/QIkf2GJuabuq8QkuGI8DD4TLZFr5EC4XDqvCm2q
+Jq+3+vQUVVOstOTILlfPybUb6ahqNMuRTwGwvI90HaxYXqqs9cXtRxxOuF61ifr0
+kaQTitRqLj6VJG8hib1uMp42SVWNZjw4Gy27VsvB7XL5onhmUx/l6N/DgPGV6qob
+8EV8VM9Xz6c943WawQaCUGn9jDw9WJ54Vj0RacVyC065Xq2pul+uKUI4fLy81NaM
+95bb1xRNXTBe8wpVs3O1HNohl85JtpwqF7QxnuywapAU9lGJwfWLacN4zfI8uaRS
+LWndV7q9Lm36WYrFgj3c4LoGTPWB8S3Et7LkgfGX1fdBXasaZE30SYPxO9VjAjlz
+K8ZrIZGvgHr6HB1fxFc8E1LFeJPluaVSHfWTG13Q5f2khJ94JnVEC4803Oa6hsn4
+luIboL7pfOuKXCHGO+GoyXiRUycMxu9SDznmyvU/xucvaDDeUDWobBh//WYKGK9Z
+nje3SgZC+krX16VtP3W702K5BUdwxvUmKjF1lswpxleQuq2VqiFax95QJIZ2yTD+
+uPpFpL92yrVL6r6kdxF1IaAY30A9qlW4lOKvYvytZBhvsjyPVK6rojgsb/Oset7L
+ggXnSGFctwee4FtBPWcC4z09JO6m+gaGC8brzmB8hMH4m9fUJ1BkrjoMK8YHSvUm
+UrC4JMSqT6Bu3HbAeFjOH4oloK607iO9hqoctKiPU6+wYOEuUsF1DRhPjG/QVkpX
+VqfH3ZCrl5JhfEKCYnz4MvWoWVyMZM8tjxX+H+OrNlRbymOFJD5Orp2XmzGK8Zx4
+R7M8jwTUUfzuPVyCn5HC1rNcFtxFqrmugap5vIIEthPfiurt7Wty3WA8vblg/Onj
+6rtOByPUkzNooXyF1J0ZAOMJ8DWMBycZGzH+doxieYWaKpb3eUex3PoehoUUIo24
+rpE9h/rsqX5bKVVRUfn2Vbl+OXnGRx+VrUvk8C6JuaV+KyZfAfO6MJ4xEONhfJ78
+6rtOzwyXEIvlFu4TSZ6HgYI5skuvd6TfiFT9iiIs37RU1sxUXnTuhFIgENiI2g6Q
+YEiUbJ7qsdvGT6oHzf0qmffjNW5dl1x5HHmMBQvuwhn7Uo283tKquwydKIP+JU26
+SbHHVSExHvGdFDrGx8TL5pXy4yhZ8Ysitz1y5bWIbiGVSDeuayA/QnrLsIny0mfS
+uIv6UhxIRHf9dQryzoIFpGag9Bkh7fsrV7FgIU2RzlzXyOctwT1l+A/yyjgJ7Kh4
+bPumBAf8FSig/ouBviPlg/+TZ4ao7/VZD5dbSGtkCNc1YHzLbjLkO6nZUlFZ0500
+tGwNGTBGRs+SHm+o57QsWEgfZCDXNfIXUDdYPDwV18lHOR44SrqEqv81yULWRMK9
+MEszHzKc6/F31H1Gm0Lx9FSa3lIsWRnnzp1bsmTJggULli1bdvv2bbM08yHDuZ4I
+sDze4a2Z1CI+Pj4mJgbTAw7u3GETeThBKGWCtwww2bg40vz0Ap0fPXp0586dp06d
+wsK6cPfu3S+//HL//v3feOONS5cu6UKGtH///oiIiIsXL2aSYJ9u99ed4eY1Gfea
+rJgqcQR4kSLF5Z1p6oZ6GgETX79+nZU4dOjQiRMneEuhp6dnkSJFypUr5+Pj89hj
+j+XJk0c3Tgpc4vTp0xcuXDDfJ4GHh0d+Azly5MiVK5eXfnzNOJGL2lY6paAfPz+/
+vHntfnokOXDFGzduREdHQ6ljx45xDBEZVeHChcuXL+/v71+gQIHcuXObrdMCUGXt
+2rXvvfceVwwMDPz444+rVq1K+fLly3v37s3cS5UqFRYWVrJkSUYyY8aMUaNGXbt2
+rVevXu+8807Rog/+t6geHq5D66ioqMWLF2N6Ag9BDoqbdUaY522ZMmWaNGnSoUOH
+GjVqwFezzg4whhX673//Gxsba3+6BraisFChQvhM5cqV6apx48Z4EQ7AiUOHDv3t
+t99Y5qQnugan0Ml3333XqFEjsyg54I1M8/fff9+wYQOBkwEwQYbHAVcHOHbr1q2f
+euopxpkzZ07ztNTh5s2bsPann37iAOuNGDEiNDQ0W7ZsK1as6Nu3r+b6unXrSpQo
+gaoJDg4+cOAAQypYsODUqVNbtWpl9vLg8KA1TBqBYPzVV19h8bFjxxJ7sDUR5aod
+CPZXrlzZtWvXpEmTnnvuuWHDhoWHhzsUNsgAWjoE/Vy+fBmP2rhxI+s3ePDggQMH
+zp8/H8fQdDfbpRz07KbKgtObN2/m0m+99dbcuXPZu3AVFbCMPYdXjhkJsxs/fvzz
+zz8/YcIEF9vUfYCraJjvHcE2HqCPMwMeBq5HRkay8P/+97/37t1LyKEESUBs4zW7
+AWKPfovp4SX7/syZM1999dU5c+bAbN2JDTQmENqAKqDEBt0JhKMfOLp+/XpCHbyH
+XvpCNNAtgT6mB7MvA86a0a05AueA1r/++itEX7RoEeGcrlARr7zyyrhx49iLZs2a
+xUj+8Y9/9OzZ8/HHH6cxYuPzzz+nBH1ldpEKMPguXbpUq1bN29s7KCiIfYNhm3X3
+Avk0ZMgQdj+COhqmevXqZsUDRZbXMNu3b0dBEmiJi9r0EBESoMvRrGhHWA4tDh48
+SHjT8l2TlfalS5d+++23e/ToAR2NzpSG+eCDD6ZNm2bTMEheexkNgXAnPIQeaMAr
+fXIhNvRNmzYtXbqUt/pEDRqww3CW+V49lZwHoW++MUAtGubLL79EBJtFjsCA0Ugf
+fvghqQhvGfygQYPat2+PZoCFeu6sJr2xie3btw9RtHDhQo6hJi0hn4tExU3QObkB
+cgX9jW3xUgqTahgKMRHj5JU8BMa748npjazNdaw5fPjwZcuWMQsWG2JRiCjv379/
+s2bNIBAkoIQVYiW2bdv2448/aumiaQqh0bUfffRRu3bt9GLYc50+8QHC0gsvvAA7
+tcbgLGIknCO+Etd1P6BFixYEeOKZbqYBFRBXI0eOjIiI4C3N6If9pHPnzrbRatCS
+SOw6N926detrr71GKkJjwjl5RdOmTfUEHeLw4cMoOnQOzunr6/vZZ5/Zppm2cMj1
+zAhWNCH2dsK0jxKeyJXQXBJaSEKb7AmTP1CF6YEbVxM+HpAQ7KUuxOW6Fk/48w+z
+KoVA40Kv4sWLwzBoTcrIK9Qk0pOYmo3sAOPJllA7sEo35pWYR6qqsyhAFKQBfVJF
+NOJgzJgxusoeZ8+eJQxDINrQDwMgyqIrzGo7kDl06tSpsAEas63jb2ZdSnDmzBkc
+mB7Yr5AEpOBmhUvg3g0bNuQUTnzxxRdJNsyKNAVZMjGeDZDAQSAwSzMfsqpeZ+ho
+ZYIWtNYxkohFsj969OhatWo5jHaEw/Llyw8dOpQgpOM0UZmziJezZ8+mH7PdvaCZ
+Vj72gN8on5o1a3K6vjQbAsRKqv71/qCP9QEd4nW6xE3Qnti5atUqesuXL9+AAQNa
+tmxp1rkE4b9jx46wkBOReXv27DErkoBZEP6RW0zWNuC0gsMO7QuxCVfHhozTLHIP
+WIbwxLn222ki2C7k5NvTmR6sCkKCqAlf9WTKli375ptvVqhQQTdwBkI1EW737t0b
+NmxggXEAWI6uRVcEBAQ43OIdLhV0R7fAbwytzyKkubB4akC+wWSRTIyWCXbr1s2W
+YLgGzZo0aULCirmwFVyvW7euVvYacIttMCwsDGkUFRUFdXAMLMnWgUCqXLlyIoMc
+PXoU8caOykbx1FNPIVrMinuBYdGKK1euxLbseLTERbkW2xGWp0GVKlXINJjOjh07
+Vq9ejRlPnDjBWag4ct8GDRqEhIRwiu4tKdBLnPXnn39GRkaShtEPy1qjRg2EK+dC
+CWa0du1apsPei7l0opIluQ75MJmeDCsHw4jT2I6IbrZwCdayX79+LDxmwi6UsMys
+DVzXb90BJGCluTqD0YQgqKcH1+l///79sIHJsvzEaWcMcwi2su7dux8/fpy9LpGS
+PnLkyMSJE//44w+SCuiL03ItLLBlyxb02M8//8y1nnvuObzaPEEkOjoaDXby5EmS
+oqCgIGcjoR9Y+P333+OfNGvTpg0jZ/zsTnPmzKEW9kNK3IarYHyujvUox55cff78
++YyKyMXgzR7vAn9AMuG97MYsH0FdbwXMDvbTOT2zuDjwt99+y4zq16+PhtRcz5Ia
+BkoRDxDN5nsR1DAGdZGo2QNqNm7cmNXiQK8uu+fSpUsxjftc50S9PLbIx4HtOA0B
+RZisvkdONCV02QfmZFGsWLHBgweTf5MiE+MJgbp8165dpPWTJk3iAEsSLBA8dE5Y
+xYxwmqg5fvz4999/nxxXnwKwPLxE9/PqwrGxA1qIZrolVtLlWJgSNpnz58/jCV98
+8QXMxh+IyhUrVvTz82Mjohb2z5w5kzHTTJ+oQZ9TpkxhSAsWLDh06BA9Fy1atHbt
+2no1WQ4M9c0335CFs8dSS8/0Zrt6lozruDJ7Lq9QU7ONdJNobVa7AXyDuEIn+hYh
+y0Z6ypJjdDf5yombN29mj6a9tiYZqo1JaQimydiIZ1yILJNN2axwDziGfWDWgL4w
+acmSJXSOKbp27RocHEzUR8BAR8L8mjVrfvnlFw6IlBRCL9yMExkDHeqPCFwbCqvS
+TLc0i4yUCTZjLiwPywkxzz77LLkHk6IlJj148CBXJLXAsIR28iiSEy3YsABC7ssv
+v8QadE6yxLAhOuPnXLo6duwYIX/evHn4CXxgeDit/dWzZFxn52JimuW8MnN/f38X
+8i4pMB9ilGCmaQroExWIQfVbezhc1IiICEQhQVf7G6uIksboZnXagYFpLcslCNIp
+embGIQh1P/zwA3KCwdMhyToBvkOHDkh5ZDSvqMEhQ4a89dZbsJ/GsIfGaSXPMCZd
+oam4+rBhwz744IPevXuz4QQGBpIhQH32H8IQltSXxvf0iX/99Rcxm1eqCOT4amho
+KC4K3bXEh/ojRoxgLiwuqo+rJFq4LMl1SAk0TTXXS5Ysae/B7iB//vz2pxDhbGa1
+B210XLGBZoS9Tz75BH+zWZMBkC2kR1xnIz5z5gwrR+fs1Kl3J+IiAZJASMCGH6hb
+djOz7i7YCvr06UOCSBuEBLGW/Jhyh26fUuC3WLVnz55c2sfnnl9rY4716tWD8Vrf
+79u3DzVFOavDPqM/pmAT+Pvf/966deukH40RzjmXkdN/0rCVJbluU4Ha9BiIzR3G
+61p3wIkESM11jumKDTTRHUNdjlBh3/zaAPp11KhRyN93332XzFi7GcvAAJ5++umk
+dy3SBPTPhq7jOv6ZykvQFdKF5JKR4zmknkgvs+5eUE6eh0Lg0mh6TjErUgeMxitJ
+LZ07uzQxHmdjpoQVfd+G0LZ48WLeshWzBbEP6JZJ4e3t3aNHDy1o9bVscMYP4z/H
+y6zACnrJ9WRYNnhg1LgLTidS6tP1q+7QHnTLMiMrx40b9+mnn5LxgAkTJiAHyYE4
+SxMdh+nevbsOReaZaQpjrgrm+9SBMIH0wrHZH9j38U+zwhHq169PpOSA0B4ZGZlU
+FdwHtN3IRF3cHSYMQVnWFPsjWohBJMrsorzFPTp27Oj6YQcELZsD66JX1gZnXPfA
+xuZh5gO2YG+12Z3Njh0WQ+i37oDGWJDF02/pirV3eBuHQHjOAJkrrzoZxY7QBSVd
+tGjRF198EXXr5+dnnpDWsHkyK+dQZaUI7IdMhK7oEwssWLCAME/ITIqlS5ci1XRC
+wmSjoqLShOuADqEsEdp8nwRcBTbzqqfM1dlYsDxjRm4la2rWkS2LqySiRJbUMFgK
+v9fHWIT1YIclxOoSd4ARSX040bZ4iHKH1qcBzLYBC/IKxYOCgl566aWxY8eSw5Ur
+V85snQ7AsQsVKsR1Ga3+uMesuC8g02EPk4IHq1atIhEkn3vPESgfM2bMkSNHNOdw
+7BRFE9egQ2C+SQIma0tL4DctL1y4wNUpR6wmm7Fol9ABwh5ZkuvIVvZWZo4V9Eqw
+JCyGWe0GCFEHDx4ksNm4zkahKWVbA905Kf/7778/evToDw2g1z/66CMo/s9//hM2
+dOvWLekdvbQF0qhYsWKsHCw/deoUZDUr7gvEdb05MDtUQXh4+LZt27Y7wtatW5Fq
+eisDsC2VbnbfYKgMgAOWAzvYlswZaEBoZynN93eRJbmOZyM0ia/4OhPDFsePH4e7
+NpomC3Idkk42R306FgwICCAPs7ejDiR16tR5+eWXQ0NDX72LQYMGde3alXLam03T
+E2w4vr6+epww9fTp02aFe9DGWbFixR9//AGDmRST5RWR0K9fP7zX5saJgFfz+o6B
+t99+OyQkBLO7b+G0Aldk7vpWGMf4G4PXVc5AA9bXJlBtyJJch+W1atWyz+KJOgsX
+Lkx0I8UFWPX9+/drO/JKUG/WrBmvSdcSunM5mnEA7J0hY8AyV69eXesrlpAsLdnF
+tgfSjmT63XffZReaN28e/cBypsmk2rRpQ6YBj4c6B7XDhg3joEOHDgTLFF06rYDN
+9X02rk5iRoQyK5wAlqNpHxKuM/lq1aoRWfX8eWWPI53asGGD2cIlSM5+/vlnrKaJ
+Tknp0qUbNGjA26RrSYOkVstIMDsmq5Mt4jouDePNOjdAFCD7xLf37t0L0VFEOu3D
+YhCCEp2oOAP8BhzgG2aPGQvtluy6jJPVYVvbs2dP0pBkjytXrkRGRmpimEUG7r6J
+vyOxMep3FdVfrHqbuYFK1jdomRIrx6xQn//5z39YVLOFE2AI/akhDOYsTseI7du3
+h+7UujbigwLJSYsWLZAQ7ODE9UWLFpkVbmDLli2HDh2CrHRC7oHdyNuYOHsgcjzZ
+GIlfQS+gP9AwSzMQLBATJxKVLFmShWb55syZc/nyZbPaEdavXw8N9PqaRQbuvslb
+QEr4S8lSUoK/0upH0NU3lDIvmDbLHxwczHz0rFiJ1atXkziuXLnSWSSOior66quv
+Jk6cSIanZSsta9eu3aVLFwSM2SjzgUjcqVMnf39/jllmxg/jdZVrHD58mB2M/BJz
+sQ1WrVq1YMGCzZs3h/q4DVxHyJlNHQGijxs3Dg2Ddt+1axclidiTYcBRWWt2GCTZ
+8uXLobuz226k2t9//z3OyZTNorswhu6VTeoFy0v/klfHqb+XPlP/Q0Y6fNydtiha
+tOgLL7xQt25dna9oui9btmzkyJGff/45vD9x4sS1a9fYrJErbGoYiGTrm2++OXPm
+DESnMfaCQH/7298qVjT+O5DMCpatRo0apJLIVpwzIiJi7NixYWFhZrUT4NhsdHg+
+wZtY3qNHj0KFCqEHIE25cuWwGA0mTZqkn6B0CGQhDX766ScOHuCOpxe3V69e+CrH
+uC7zmjx5Mjm32cIAIR+1hmWI6xiKJTYr7sIQYR6e4ldZ/WU1QPTXX38dNrNnsdMx
+PYyi886yZcvCYLZsYhhc1zdqjh49ShtaYjI2cYj+yiuvtG3b9kGFK/eB0Orduzfs
+1D/PQmxDVPTs2bNp06ZJH5LBmQn8c+fOXbBgAd7OwkOU1q1b61pm3adPH7rCLPi/
+t7f3M888g63sAyEmXbVq1bfffguBkPitWrXST0BgN7NFBkK7GUkLi/XJJ5/s27eP
+9f3000+RZ/ppApaPce7evRuzoObZwXx8fPTDbboHjQeTcKQVmCRMZQ2+/vprElNI
+oBMp/Ukb2xlVRDLeQnHoQi1nwXLMV7169eeffx4C0V73lsnBPjZ48GDYNnPmzPPn
+z69du5Ylr1+/PktL2NbPPzJTGAwbiPoHDhxg4yKW4xJsgLZHGDBCt27dEPG4DV4x
+YcIENr0mTZqUKFFC+8z169cRP8TynTt3so3Qf//+/e3vej0QsJRITab/3XffsbL4
+6rRp00hd9DNCuDS6hSUOCQlhsliADS2RZ2ZtrgNITGZZrFix6dOn48qYAMZTCMWR
+uboNSwi5mTlVlMMMlpY9nd08UUQE8IOoxqs+JVFsSCnoBP7RIcfwhqunpkMS6OHD
+h5cqVWrhwoWEsVOnTs2aNQtSst4sMw3onDnq1I3CSpUqde7ceeDAgYkeJ8Rt2A8h
+/ezZs48cOUInRETaYzdqiQU4DK+UBAUFhYaGNmrUCD5RhUEoZzq82pjEvLioho7B
+upBmgOnbCrVtecuBLnEIm9E4sDcXi8UGRZI6f/58Ni4cks0NljM2hsogSb5xbHYA
+9vBERAdZnusa9erVq1ChAhv6unXrkLModfIqeyuzrkQ+zMRezPqxGzj8/hhWIxBC
+Kc11CKS/o3DfgD3ES32TB+vjfigKXXV/wFHffPPNhg0bQnGSS5hKjGem+mNjvX0h
+x/38/JD4LVu2RLo4TLthP0knzkCAIH6fPHkS3kBQtkocEkMxZiQirmL/UCF7oK+v
+Lw1IFvUmCdgxqlSpgsEZm/YWXcgYICJd6UJsW7hwYbrFsDibdh6HoD1dobUc2p/c
+muVGqYaHh6PdmTvN6LC2ASbL2lGoG9sIAMwbzBmHdP7tUkILio3NHYGO9Qk/FLI2
+bMGYA1XKqsBm3TgpMBOuwuYAL7EMC69PsS1hSsF4Nm3axJJwTIeMBArqm+W6wX2D
+oaJS9u7dy2ihFNC+RISDXgEBAXi1bWdzAbZ+JAEWw1w4jA4K7JNER2ReIj85e/Ys
+07lx4wZtCBn6k2NmB+2gF55AcOWVmaKR9Ne+MDst6QdH2rp1KykTp+AwOBLWMHpN
+DFZt48aN6CusRAjTKameIAtBgmHvJ1wrkdswvJEjR/7444+YiPA3depULcAeNq7b
+g6kxWw6waeq5lcnBTJmvVjL3DTpJKuoyA6Kjo0nJLly4gCf369eP6GNWOAJ73aBB
+g8hcWfcBAwaMHj1ae+zDzADcnbUHDz3RARxNJdFB5iQ6wI3nzp07fvz4cePGEaeJ
+8WZFErCTkMyQbSP00VGoOJvWevhJYOEhALJT/3wa/jxv3rwZM2aQPZt1dkBiUTV5
+8mScgQCHTELZ2yKd8f9WZyTiYmTj73I4QuIN7ZQnnzR9Wkql4CcALDyCQI2QQpBK
+HTt27MqVKyTlly9fJheC3KTmJNaHDx8mZ5g+ffrEiRM5Zh8gLxoyZAhZh03NP8x6
+3cLDBIi6aNEiNAwJLtknDC5iAKFCFVk1vEfQc4w6r1OnTmhoaOfOne3lq8V1C1kJ
+GzdunDJlCnQnliNUEOWawFCfZEPfVta/RBAYGJgoT7O4biGLAemyZcuWsLCwKOPH
+8W4Zn9ORgBLg/f39oThweLPV4rqFLIz4+Hj0DByG3Ml+BmLdh7GQhYFKIZzbnm5w
+DYvrFh4VPAiuJ8Sr7z3FswPxh5LJWBFl4VHFg+C6p5d4ZZdsnurPM7t6et6ChfRH
+huemMTfl9ykSuUHuxKncNH9B6fSylK2Wub/xZ+FhQIZzncsp3RKviA48PFSYfwSe
+V7HwwJHhXLdg4YFA5P8BrxjlOLfg/w4AAAAASUVORK5CYII=</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложениеКартинки</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Север - г. Москва, Алтуфьевское шоссе, д.102,к.2,с.1</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">23.375</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">23.375</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13.75</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13.75</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.25</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.25</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Тел./WhatsApp: +7 (916) 023-65-65</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.125</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">21.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">21.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоВертикали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Юг - г. Москва, Востряковский проезд, д.10Б,стр. 16</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">23.375</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">23.375</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13.75</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13.75</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.25</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.25</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Тел./WhatsApp: +7 (985) 866-50-12</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.125</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">21.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">21.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоВертикали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Запад - г. Москва, ул. Ивана Франко 42/2</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">23.375</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">23.375</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13.75</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13.75</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.25</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.25</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Тел./WhatsApp: +7 (985) 125-78-95</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.125</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">21.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">21.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоВертикали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Восток - г. Москва, ул. Сталеваров, д. 26, корп. 1</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">23.375</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">23.375</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13.75</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13.75</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.25</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.25</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Тел./WhatsApp: +7 (964) 647-68-86</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.125</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">21.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">21.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">6</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоВертикали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">23.375</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">23.375</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">6</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">6</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13.75</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13.75</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">6</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.25</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.25</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">6</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">6</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">21.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">21.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоВертикали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>8 800 550 82 50</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">23.375</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">23.375</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Info@optceiling.ru</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13.75</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">13.75</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.25</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.25</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>www.optceiling.ru</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Calibri" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12.125</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+	</template>
+	<fieldTemplate>
+		<field>ГруппаФактуры</field>
+		<template>Макет2</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>Ссылка</field>
+		<template>Макет3</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>ЦветФактуры</field>
+		<template>Макет4</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>ШириныФактуры</field>
+		<template>Макет5</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>Цена</field>
+		<template>Макет6</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>ЦенаВГарпуне</field>
+		<template>Макет7</template>
+	</fieldTemplate>
+	<groupTemplate>
+		<groupName>Заголовок</groupName>
+		<templateType>Header</templateType>
+		<template>Макет8</template>
+	</groupTemplate>
+	<groupHeaderTemplate>
+		<groupName>ДетальныеЗаписи</groupName>
+		<templateType>Header</templateType>
+		<template>Макет1</template>
+	</groupHeaderTemplate>
+	<totalFieldsTemplate>
+		<templateType1>Header</templateType1>
+		<groupField2>ГруппаФактуры</groupField2>
+		<templateType2>Header</templateType2>
+		<template>Макет2</template>
+	</totalFieldsTemplate>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТипФактуры</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ГруппаФактуры</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа Фактуры</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ссылка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЦветФактуры</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Цвет Фактуры</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ШириныФактуры</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ширины</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Цена</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЦенаВГарпуне</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+						<v8:date>2025-01-17T00:00:00</v8:date>
+					</dcscor:value>
+					<dcsset:userSettingID>c764edc0-cbf5-431b-a3ab-647188479a63</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВидЦены</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.ВидыЦен.ОсновнаяЦенаПродажи</dcscor:value>
+					<dcsset:userSettingID>94f9f061-38f0-44a8-af95-0799dcbcd47f</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВидНоменклатурыПотолок</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">БезОформления</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:name>Заголовок</dcsset:name>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВариантИспользованияГруппировки</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionGroupUseVariant">AdditionalInformation</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ТипФактуры</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ТипФактуры</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:name>ДетальныеЗаписи</dcsset:name>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ГруппаФактуры</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа Фактуры</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Ссылка</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ЦветФактуры</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Цвет Фактуры</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ШириныФактуры</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ширины</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Цена</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ЦенаВГарпуне</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

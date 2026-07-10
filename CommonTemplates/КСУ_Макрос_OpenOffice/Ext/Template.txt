@@ -1,0 +1,68 @@
+﻿Sub AddLinkToInstruction
+	Dim filenumber As Integer
+	Dim lineNumber As Integer
+	Dim lineCount As Integer
+	Dim iLine As String
+	Dim file as String
+	Dim Proceed As Boolean
+	Dim oDialog As Object
+	dim i As Integer
+	dim LinkArray(1000)
+	
+	Dim oLib as Object
+	Dim oLibDialog as Object
+	Dim oRuntimeDialog as Object
+	
+	DialogLibraries.LoadLibrary("KSU")
+	oLib = DialogLibraries.GetByName("KSU")
+	oLibDialog = oLib.GetByName("Instructions_ksu")
+	oDialog = CreateUnoDialog(oLibDialog)
+	oListBox = oDialog.getControl("ListBox1")
+	
+	'load data
+	GlobalScope.BasicLibraries.loadLibrary("Tools")
+	path=DirectoryNameoutofPath(ThisComponent.getURL(),"/")
+	
+	file = path + "/inst_list.txt"
+	lineCount = 0
+	filenumber = Freefile
+	Open file For Input As filenumber
+	
+	While not EOF(filenumber)
+	    Line Input #filenumber, iLine
+        If iLine <> "" then
+        	tmp = Split(iLine, "|^|")
+        	LinkArray(lineCount) = tmp(1)
+            oListBox.additem(tmp(0),lineCount)
+	        lineCount = lineCount + 1
+        end if
+	wend
+	Close #filenumber
+	
+	'show dialog
+	oListBox.selectItemPos(0,True)
+	nState = oDialog.Execute()
+	
+	'procedure
+	If nState = 1 then
+		inst_name = oListBox.getSelectedItem()
+		inst_url = LinkArray(oListBox.getSelectedItemPos())
+		
+		document   = ThisComponent.CurrentController.Frame
+		dispatcher = createUnoService("com.sun.star.frame.DispatchHelper")
+		dim args1(4) as new com.sun.star.beans.PropertyValue
+		args1(0).Name = "Hyperlink.Text"
+		args1(0).Value = inst_name
+		args1(1).Name = "Hyperlink.URL"
+		args1(1).Value = "http://" + inst_url + "/"
+		args1(2).Name = "Hyperlink.Target"
+		args1(2).Value = ""
+		args1(3).Name = "Hyperlink.Name"
+		args1(3).Value = "1CRef_Inst"
+		args1(4).Name = "Hyperlink.Type"
+		args1(4).Value = 1
+		
+		dispatcher.executeDispatch(document, ".uno:SetHyperlink", "", 0, args1())
+	else
+	End If
+End Sub

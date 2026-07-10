@@ -1,0 +1,658 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Склад</dataPath>
+			<field>Склад</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоМ2ПотолковДня</dataPath>
+			<field>КоличествоМ2ПотолковДня</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество м2 потолков дня</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>День</dataPath>
+			<field>День</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>День</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнтервалыДня</dataPath>
+			<field>ИнтервалыДня</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Интервалы дня</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказыНаПроизводствоДня</dataPath>
+			<field>ЗаказыНаПроизводствоДня</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказы на производство дня</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Автор</dataPath>
+			<field>Автор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Автор</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПорядокИнтерваловДня</dataPath>
+			<field>ПорядокИнтерваловДня</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Порядок интервалов дня</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(&amp;ТекущаяДата, ДЕНЬ) КАК День,
+	1 КАК Порядок
+ПОМЕСТИТЬ Дни
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(ДОБАВИТЬКДАТЕ(&amp;ТекущаяДата, ДЕНЬ, 1), ДЕНЬ),
+	2
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(ДОБАВИТЬКДАТЕ(&amp;ТекущаяДата, ДЕНЬ, 2), ДЕНЬ),
+	3
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	"Нераспределенно" КАК Диапазон,
+	1 КАК ПорядокИнтерваловДня
+ПОМЕСТИТЬ Диапазоны
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"00 - 01",
+	2
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"01 - 02",
+	3
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"02 - 03",
+	4
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"03 - 04",
+	5
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"04 - 05",
+	6
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"05 - 06",
+	7
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"06 - 07",
+	8
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"07 - 08",
+	9
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"08 - 09",
+	10
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"09 - 10",
+	11
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"10 - 11",
+	12
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"11 - 12",
+	13
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"12 - 13",
+	14
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"13 - 14",
+	15
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"14 - 15",
+	16
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"15 - 16",
+	17
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"16 - 17",
+	18
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"17 - 18",
+	19
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"18 - 19",
+	20
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"19 - 20",
+	21
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"20 - 21",
+	22
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"21 - 22",
+	23
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"22 - 23",
+	24
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	"23 - 24",
+	25
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Склады.Ссылка КАК Склад
+ПОМЕСТИТЬ ВТ_Склады
+ИЗ
+	Справочник.Склады КАК Склады
+ГДЕ
+	(Склады.Код = "000000004"
+			ИЛИ Склады.Код = "000000001"
+			ИЛИ Склады.Код = "000000017")
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	1 КАК КоличествоПотолков,
+	ЗаказНаПроизводство.ПродукцияНоменклатураКоличество КАК КоличествоМ2Потолков,
+	ВЫБОР
+		КОГДА ДЕНЬ(ЗаказНаПроизводство.ОжидаемаяДатаОтгрузки) = ДЕНЬ(&amp;ТекущаяДата)
+			ТОГДА НАЧАЛОПЕРИОДА(&amp;ТекущаяДата, ДЕНЬ)
+		КОГДА ДЕНЬ(ЗаказНаПроизводство.ОжидаемаяДатаОтгрузки) = ДЕНЬ(ДОБАВИТЬКДАТЕ(&amp;ТекущаяДата, ДЕНЬ, 1))
+			ТОГДА НАЧАЛОПЕРИОДА(ДОБАВИТЬКДАТЕ(&amp;ТекущаяДата, ДЕНЬ, 1), ДЕНЬ)
+		КОГДА ДЕНЬ(ЗаказНаПроизводство.ОжидаемаяДатаОтгрузки) = ДЕНЬ(ДОБАВИТЬКДАТЕ(&amp;ТекущаяДата, ДЕНЬ, 2))
+			ТОГДА НАЧАЛОПЕРИОДА(ДОБАВИТЬКДАТЕ(&amp;ТекущаяДата, ДЕНЬ, 2), ДЕНЬ)
+		ИНАЧЕ "Не в диапазоне дат"
+	КОНЕЦ КАК День,
+	ВЫБОР
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 0
+			ТОГДА "Нераспределенно"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 1
+			ТОГДА "01 - 02"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 2
+			ТОГДА "02 - 03"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 3
+			ТОГДА "03 - 04"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 4
+			ТОГДА "04 - 05"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 5
+			ТОГДА "05 - 06"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 6
+			ТОГДА "06 - 07"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 7
+			ТОГДА "07 - 08"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 8
+			ТОГДА "08 - 09"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 9
+			ТОГДА "09 - 10"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 10
+			ТОГДА "10 - 11"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 11
+			ТОГДА "11 - 12"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 12
+			ТОГДА "12 - 13"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 13
+			ТОГДА "13 - 14"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 14
+			ТОГДА "14 - 15"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 15
+			ТОГДА "15 - 16"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 16
+			ТОГДА "16 - 17"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 17
+			ТОГДА "17 - 18"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 18
+			ТОГДА "18 - 19"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 19
+			ТОГДА "19 - 20"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 20
+			ТОГДА "20 - 21"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 21
+			ТОГДА "21 - 22"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 22
+			ТОГДА "22 - 23"
+		КОГДА ЧАС(ЕСТЬNULL(ЗаказНаПроизводство.ОжидаемоеВремяОтгрузки, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) = 23
+			ТОГДА "23 - 24"
+		ИНАЧЕ "Нераспределенно"
+	КОНЕЦ КАК Период,
+	ЗаказНаПроизводство.Ссылка КАК ЗаказНаПроизовдство
+ПОМЕСТИТЬ ВТ_ЗаказыНаПроизводство
+ИЗ
+	Документ.ЗаказНаПроизводство КАК ЗаказНаПроизводство
+ГДЕ
+	(ЗаказНаПроизводство.ПродукцияНоменклатура.ВидНоменклатуры = ЗНАЧЕНИЕ(Справочник.ВидыНоменклатуры.Потолок)
+			ИЛИ ЗаказНаПроизводство.ПродукцияНоменклатура.ВидНоменклатуры = ЗНАЧЕНИЕ(Справочник.ВидыНоменклатуры.Отрез))
+	И ЗаказНаПроизводство.ТекущийСтатус = ЗНАЧЕНИЕ(Справочник.СтатусыЗаказовНаПроизводство.ВПроизводстве)
+	И ЗаказНаПроизводство.Склад &lt;&gt; ЗНАЧЕНИЕ(Справочник.Склады.ПустаяСсылка)
+	И ЗаказНаПроизводство.Проведен
+	И НЕ ЗаказНаПроизводство.ПометкаУдаления
+{ГДЕ
+	ЗаказНаПроизводство.Склад.*}
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Дни.Порядок КАК Порядок,
+	Дни.День КАК День,
+	Диапазоны.Диапазон КАК Диапазон,
+	ВТ_Склады.Склад КАК Склад,
+	Диапазоны.ПорядокИнтерваловДня КАК ПорядокИнтерваловДня
+ПОМЕСТИТЬ ВТ_ИтоговыеДни
+ИЗ
+	Дни КАК Дни,
+	Диапазоны КАК Диапазоны,
+	ВТ_Склады КАК ВТ_Склады
+
+СГРУППИРОВАТЬ ПО
+	Дни.День,
+	Дни.Порядок,
+	Диапазоны.Диапазон,
+	ВТ_Склады.Склад,
+	Диапазоны.ПорядокИнтерваловДня
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ИтоговыеДни.День КАК День,
+	ВТ_ИтоговыеДни.Диапазон КАК ИнтервалыДня,
+	ВТ_ЗаказыНаПроизводство.ЗаказНаПроизовдство КАК ЗаказыНаПроизводствоДня,
+	ВТ_ЗаказыНаПроизводство.КоличествоМ2Потолков КАК КоличествоМ2ПотолковДня,
+	ВТ_ИтоговыеДни.Склад КАК Склад,
+	ВТ_ЗаказыНаПроизводство.ЗаказНаПроизовдство.Автор КАК Автор,
+	ВТ_ИтоговыеДни.ПорядокИнтерваловДня КАК ПорядокИнтерваловДня
+ИЗ
+	ВТ_ИтоговыеДни КАК ВТ_ИтоговыеДни
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ЗаказыНаПроизводство КАК ВТ_ЗаказыНаПроизводство
+		ПО ВТ_ИтоговыеДни.День = ВТ_ЗаказыНаПроизводство.День
+			И ВТ_ИтоговыеДни.Диапазон = ВТ_ЗаказыНаПроизводство.Период
+			И ВТ_ИтоговыеДни.Склад = ВТ_ЗаказыНаПроизводство.ЗаказНаПроизовдство.Склад</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>КоличествоПотолковЗаДень</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество потолков за день</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<totalField>
+		<dataPath>КоличествоПотолковЗаДень</dataPath>
+		<expression>Количество(Различные ЗаказыНаПроизводствоДня)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоМ2ПотолковДня</dataPath>
+		<expression>Сумма(КоличествоМ2ПотолковДня)</expression>
+	</totalField>
+	<parameter>
+		<name>ТекущаяДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текущая дата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>ТекущаяДата()</expression>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоПотолковЗаДень</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Кол-во (шт)</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоМ2ПотолковДня</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Кол-во (м2)</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>День</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ПорядокИнтерваловДня</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Склад</dcsset:field>
+					<dcsset:orderType>Desc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>День</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ДФ=dd.MM.yyyy</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Античный</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеГруппировки</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionGroupPlacement">End</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>АвтоПозицияРесурсов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionResourcesAutoPosition">DontUse</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Склад</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Склад</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>КоличествоПотолковЗаДень</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:field>КоличествоМ2ПотолковДня</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:outputParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>РасположениеПолейГруппировки</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionGroupFieldsPlacement">SeparatelyAndInTotalsOnly</dcscor:value>
+						</dcscor:item>
+					</dcsset:outputParameters>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>День</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>День</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:use>false</dcsset:use>
+								<dcsset:field>КоличествоПотолковЗаДень</dcsset:field>
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Кол-во (шт)</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:use>false</dcsset:use>
+								<dcsset:field>КоличествоМ2ПотолковДня</dcsset:field>
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Кол-во (м2)</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:outputParameters>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>РасположениеПолейГруппировки</dcscor:parameter>
+								<dcscor:value xsi:type="dcsset:DataCompositionGroupFieldsPlacement">Separately</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:use>false</dcscor:use>
+								<dcscor:parameter>РасположениеГруппировки</dcscor:parameter>
+								<dcscor:value xsi:type="dcsset:DataCompositionGroupPlacement">None</dcscor:value>
+							</dcscor:item>
+						</dcsset:outputParameters>
+					</dcsset:item>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ИнтервалыДня</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПорядокИнтерваловДня</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ПорядокИнтерваловДня</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ИнтервалыДня</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоПотолковЗаДень</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Кол-во (шт)</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоМ2ПотолковДня</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Кол-во (м2)</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+					</dcsset:selection>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоПотолковЗаДень</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоМ2ПотолковДня</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

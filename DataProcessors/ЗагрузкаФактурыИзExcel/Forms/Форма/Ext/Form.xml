@@ -1,0 +1,763 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<Group>Vertical</Group>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Center</HorizontalAlign>
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Button name="Закрыть" id="124">
+			<Type>UsualButton</Type>
+			<Representation>PictureAndText</Representation>
+			<CommandName>Form.StandardCommand.Close</CommandName>
+			<ExtendedTooltip name="ЗакрытьРасширеннаяПодсказка" id="125"/>
+		</Button>
+		<RadioButtonField name="ВариантЗагрузки" id="146">
+			<DataPath>ВариантЗагрузки</DataPath>
+			<RadioButtonType>Tumbler</RadioButtonType>
+			<ColumnsCount>2</ColumnsCount>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Обычный режим</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:decimal">1</Value>
+					</xr:Value>
+				</xr:Item>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Расширенный режим</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:decimal">2</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<ContextMenu name="ВариантЗагрузкиКонтекстноеМеню" id="147"/>
+			<ExtendedTooltip name="ВариантЗагрузкиРасширеннаяПодсказка" id="148"/>
+			<Events>
+				<Event name="OnChange">ВариантЗагрузкиПриИзменении</Event>
+			</Events>
+		</RadioButtonField>
+		<UsualGroup name="Группа1" id="10">
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="11"/>
+			<ChildItems>
+				<InputField name="ПутьКФайлу" id="75">
+					<DataPath>ПутьКФайлу</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Путь к файлу</v8:content>
+						</v8:item>
+					</Title>
+					<ChoiceButton>true</ChoiceButton>
+					<ContextMenu name="ПутьКФайлуКонтекстноеМеню" id="76"/>
+					<ExtendedTooltip name="ПутьКФайлуРасширеннаяПодсказка" id="77"/>
+					<Events>
+						<Event name="OnChange">ПутьКФайлуПриИзменении</Event>
+						<Event name="StartChoice">ПутьКФайлуНачалоВыбора</Event>
+					</Events>
+				</InputField>
+				<InputField name="НачСтр" id="7">
+					<DataPath>НачСтр</DataPath>
+					<SpinButton>true</SpinButton>
+					<MinValue xsi:type="xs:decimal">1</MinValue>
+					<ContextMenu name="НачСтрКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="НачСтрРасширеннаяПодсказка" id="9"/>
+					<Events>
+						<Event name="OnChange">НачСтрПриИзменении</Event>
+					</Events>
+				</InputField>
+				<UsualGroup name="ГруппаНастроек" id="156">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа настроек</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа настроек</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНастроекРасширеннаяПодсказка" id="157"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаНастроекОбычныйРежим" id="149">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа настроек обычный режим</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа настроек обычный режим</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНастроекОбычныйРежимРасширеннаяПодсказка" id="150"/>
+							<ChildItems>
+								<InputField name="НомерКолонкиНаименование" id="78">
+									<DataPath>НомерКолонкиНаименованиеФактуры</DataPath>
+									<ContextMenu name="НомерКолонкиНаименованиеКонтекстноеМеню" id="79"/>
+									<ExtendedTooltip name="НомерКолонкиНаименованиеРасширеннаяПодсказка" id="80"/>
+									<Events>
+										<Event name="OnChange">НомерКолонкиНаименованиеПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="НомерКолонкиЕдиницаИзмерения" id="81">
+									<DataPath>НомерКолонкиНаименованиеЦвета</DataPath>
+									<ContextMenu name="НомерКолонкиЕдиницаИзмеренияКонтекстноеМеню" id="82"/>
+									<ExtendedTooltip name="НомерКолонкиЕдиницаИзмеренияРасширеннаяПодсказка" id="83"/>
+								</InputField>
+								<InputField name="НомерКолонкиКоличество" id="84">
+									<DataPath>НомерКолонкиШирина</DataPath>
+									<ContextMenu name="НомерКолонкиКоличествоКонтекстноеМеню" id="85"/>
+									<ExtendedTooltip name="НомерКолонкиКоличествоРасширеннаяПодсказка" id="86"/>
+									<Events>
+										<Event name="OnChange">НомерКолонкиКоличествоПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаНастроекРасширенныйРежим" id="151">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа настроек расширенный режим</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа настроек расширенный режим</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНастроекРасширенныйРежимРасширеннаяПодсказка" id="152"/>
+							<ChildItems>
+								<InputField name="НомерКолонкиКаталогФактуры" id="153">
+									<DataPath>НомерКолонкиКаталогФактуры</DataPath>
+									<ContextMenu name="НомерКолонкиКаталогФактурыКонтекстноеМеню" id="154"/>
+									<ExtendedTooltip name="НомерКолонкиКаталогФактурыРасширеннаяПодсказка" id="155"/>
+									<Events>
+										<Event name="OnChange">НомерКолонкиКаталогФактурыПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="ГруппаДляНовойНоменклатуры" id="90">
+					<DataPath>ГруппаДляНовойФактуры</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Задается, если в файле не указан каталог фактуры</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
+					<ContextMenu name="ГруппаДляНовойНоменклатурыКонтекстноеМеню" id="91"/>
+					<ExtendedTooltip name="ГруппаДляНовойНоменклатурыРасширеннаяПодсказка" id="92"/>
+					<Events>
+						<Event name="OnChange">ГруппаДляНовойНоменклатурыПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаКнопки" id="126">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа кнопки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа кнопки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКнопкиРасширеннаяПодсказка" id="127"/>
+			<ChildItems>
+				<Button name="Загрузка" id="48">
+					<Type>UsualButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.Command.Загрузка</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Прочитать файл Excel</v8:content>
+						</v8:item>
+					</Title>
+					<ButtonImportance>Main</ButtonImportance>
+					<ExtendedTooltip name="ЗагрузкаРасширеннаяПодсказка" id="49"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ТабЗнач" id="96">
+			<Representation>List</Representation>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<HeaderHeight>2</HeaderHeight>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ТабЗнач</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТабЗначКонтекстноеМеню" id="97"/>
+			<AutoCommandBar name="ТабЗначКоманднаяПанель" id="98">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ТабЗначРасширеннаяПодсказка" id="99"/>
+			<SearchStringAddition name="ТабЗначСтрокаПоиска" id="100">
+				<AdditionSource>
+					<Item>ТабЗнач</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТабЗначСтрокаПоискаКонтекстноеМеню" id="101"/>
+				<ExtendedTooltip name="ТабЗначСтрокаПоискаРасширеннаяПодсказка" id="102"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТабЗначСостояниеПросмотра" id="103">
+				<AdditionSource>
+					<Item>ТабЗнач</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТабЗначСостояниеПросмотраКонтекстноеМеню" id="104"/>
+				<ExtendedTooltip name="ТабЗначСостояниеПросмотраРасширеннаяПодсказка" id="105"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТабЗначУправлениеПоиском" id="106">
+				<AdditionSource>
+					<Item>ТабЗнач</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТабЗначУправлениеПоискомКонтекстноеМеню" id="107"/>
+				<ExtendedTooltip name="ТабЗначУправлениеПоискомРасширеннаяПодсказка" id="108"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<ColumnGroup name="ТабЗначГруппаИзФайла" id="139">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Из файла</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Таб знач группа из файла</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ExtendedTooltip name="ТабЗначГруппаИзФайлаРасширеннаяПодсказка" id="140"/>
+					<ChildItems>
+						<InputField name="ТабЗначЦвет" id="112">
+							<DataPath>ТабЗнач.Цвет</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="ТабЗначЦветКонтекстноеМеню" id="113"/>
+							<ExtendedTooltip name="ТабЗначЦветРасширеннаяПодсказка" id="114"/>
+						</InputField>
+						<InputField name="ТабЗначФактура" id="109">
+							<DataPath>ТабЗнач.Фактура</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="ТабЗначФактураКонтекстноеМеню" id="110"/>
+							<ExtendedTooltip name="ТабЗначФактураРасширеннаяПодсказка" id="111"/>
+						</InputField>
+						<InputField name="ТабЗначКаталогФактуры" id="158">
+							<DataPath>ТабЗнач.КаталогФактуры</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="ТабЗначКаталогФактурыКонтекстноеМеню" id="159"/>
+							<ExtendedTooltip name="ТабЗначКаталогФактурыРасширеннаяПодсказка" id="160"/>
+						</InputField>
+						<InputField name="ТабЗначШирина" id="130">
+							<DataPath>ТабЗнач.Ширина</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="ТабЗначШиринаКонтекстноеМеню" id="131"/>
+							<ExtendedTooltip name="ТабЗначШиринаРасширеннаяПодсказка" id="132"/>
+						</InputField>
+						<InputField name="ТабЗначНаименованиеНоменклатурыЦвета" id="161">
+							<DataPath>ТабЗнач.НаименованиеНоменклатурыЦвета</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Наименование номенклатуры цвета</v8:content>
+								</v8:item>
+							</ToolTip>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="ТабЗначНаименованиеНоменклатурыЦветаКонтекстноеМеню" id="162"/>
+							<ExtendedTooltip name="ТабЗначНаименованиеНоменклатурыЦветаРасширеннаяПодсказка" id="163"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ТабЗначГруппаВБазе" id="141">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>В базе</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Таб знач группа в базе</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ExtendedTooltip name="ТабЗначГруппаВБазеРасширеннаяПодсказка" id="142"/>
+					<ChildItems>
+						<InputField name="ТабЗначБаза_ГруппаФактуры" id="164">
+							<DataPath>ТабЗнач.База_ГруппаФактуры</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="ТабЗначБаза_ГруппаФактурыКонтекстноеМеню" id="165"/>
+							<ExtendedTooltip name="ТабЗначБаза_ГруппаФактурыРасширеннаяПодсказка" id="166"/>
+						</InputField>
+						<InputField name="ТабЗначБаза_ГруппаНоменклатуры" id="167">
+							<DataPath>ТабЗнач.База_ГруппаНоменклатуры</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="ТабЗначБаза_ГруппаНоменклатурыКонтекстноеМеню" id="168"/>
+							<ExtendedTooltip name="ТабЗначБаза_ГруппаНоменклатурыРасширеннаяПодсказка" id="169"/>
+						</InputField>
+						<InputField name="ТабЗначБаза_Фактура" id="133">
+							<DataPath>ТабЗнач.База_Фактура</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="ТабЗначБаза_ФактураКонтекстноеМеню" id="134"/>
+							<ExtendedTooltip name="ТабЗначБаза_ФактураРасширеннаяПодсказка" id="135"/>
+						</InputField>
+						<InputField name="ТабЗначБаза_Цвет" id="136">
+							<DataPath>ТабЗнач.База_Цвет</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="ТабЗначБаза_ЦветКонтекстноеМеню" id="137"/>
+							<ExtendedTooltip name="ТабЗначБаза_ЦветРасширеннаяПодсказка" id="138"/>
+						</InputField>
+						<InputField name="ТабЗначБаза_ШиринаПолотна" id="143">
+							<DataPath>ТабЗнач.База_ШиринаПолотна</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="ТабЗначБаза_ШиринаПолотнаКонтекстноеМеню" id="144"/>
+							<ExtendedTooltip name="ТабЗначБаза_ШиринаПолотнаРасширеннаяПодсказка" id="145"/>
+						</InputField>
+						<InputField name="ТабЗначБаза_НоменклатураЦвета" id="170">
+							<DataPath>ТабЗнач.База_НоменклатураЦвета</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="ТабЗначБаза_НоменклатураЦветаКонтекстноеМеню" id="171"/>
+							<ExtendedTooltip name="ТабЗначБаза_НоменклатураЦветаРасширеннаяПодсказка" id="172"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+			</ChildItems>
+		</Table>
+		<Button name="СоздатьФактуру" id="128">
+			<Type>UsualButton</Type>
+			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+			<CommandName>Form.Command.СоздатьФактуру</CommandName>
+			<ExtendedTooltip name="СоздатьФактуруРасширеннаяПодсказка" id="129"/>
+		</Button>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ЗагрузкаФактурыИзExcel</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ТабЗнач" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таб знач</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Фактура" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фактура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Цвет" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Цвет</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ширина" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ширина</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="База_Фактура" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фактура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Фактура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="База_Цвет" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Цвет</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ЦветФактуры</v8:Type>
+					</Type>
+				</Column>
+				<Column name="База_ШиринаПолотна" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ширина</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="КаталогФактуры" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Каталог фактуры</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="НаименованиеНоменклатурыЦвета" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование номенклатуры цвета</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="База_ГруппаФактуры" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа фактуры</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Фактура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="База_ГруппаНоменклатуры" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа номенклатуры</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="База_НоменклатураЦвета" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура цвета</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ПутьКФайлу" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Входящий файл</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ПутьКФайлу</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="НачСтр" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начальная строка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<Save>
+				<Field>НачСтр</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="НомерКолонкиНаименованиеФактуры" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер колонки "Наименование фактуры"</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НомерКолонкиНаименованиеЦвета" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер колонки "Наименование цвета"</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НомерКолонкиШирина" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер колонки "Ширина полотна"</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ГруппаДляНовойФактуры" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа для новой фактуры</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Фактура</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВариантЗагрузки" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вариант загрузки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НомерКолонкиКаталогФактуры" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер колонки "Каталог фактуры"</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТабЗнач</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>OrGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ТабЗнач.База_Фактура</dcsset:left>
+							<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ТабЗнач.База_Цвет</dcsset:left>
+							<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FF0000</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="Загрузка" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Загрузка</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СоздатьФактуру" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать фактуры</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать фактуру</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьФактуру</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

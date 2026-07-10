@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаДатаНомер" id="35">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа дата номер</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа дата номер</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаДатаНомерРасширеннаяПодсказка" id="36"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ВидНоменклатурыПотолка" id="56">
+			<DataPath>Объект.ВидНоменклатурыПотолка</DataPath>
+			<ContextMenu name="ВидНоменклатурыПотолкаКонтекстноеМеню" id="57"/>
+			<ExtendedTooltip name="ВидНоменклатурыПотолкаРасширеннаяПодсказка" id="58"/>
+		</InputField>
+		<Table name="СтоимостьВыработки" id="7">
+			<Representation>List</Representation>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.СтоимостьВыработки</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СтоимостьВыработкиКонтекстноеМеню" id="8"/>
+			<AutoCommandBar name="СтоимостьВыработкиКоманднаяПанель" id="9">
+				<ChildItems>
+					<Popup name="СтоимостьВыработкиГруппаИзменить" id="41">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Изменить</v8:content>
+							</v8:item>
+						</Title>
+						<ToolTip>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Стоимость выработки группа изменить</v8:content>
+							</v8:item>
+						</ToolTip>
+						<ExtendedTooltip name="СтоимостьВыработкиГруппаИзменитьРасширеннаяПодсказка" id="42"/>
+						<ChildItems>
+							<Button name="СтоимостьВыработкиКомандаДобавитьГруппуНоменклатуры" id="43">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.КомандаДобавитьГруппуНоменклатуры</CommandName>
+								<ExtendedTooltip name="СтоимостьВыработкиКомандаДобавитьГруппуНоменклатурыРасширеннаяПодсказка" id="44"/>
+							</Button>
+							<Button name="СтоимостьВыработкиКомандаУстановитьСтоимостьВыработки" id="45">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.КомандаУстановитьСтоимостьВыработки</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Установить цену выработки для раскройщиков</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="СтоимостьВыработкиКомандаУстановитьСтоимостьВыработкиРасширеннаяПодсказка" id="46"/>
+							</Button>
+							<Button name="СтоимостьВыработкиКомандаУстановитьЦенуВыработкиДляМенеджера" id="64">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.КомандаУстановитьЦенуВыработкиДляМенеджера</CommandName>
+								<ExtendedTooltip name="СтоимостьВыработкиКомандаУстановитьЦенуВыработкиДляМенеджераРасширеннаяПодсказка" id="65"/>
+							</Button>
+						</ChildItems>
+					</Popup>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СтоимостьВыработкиРасширеннаяПодсказка" id="10"/>
+			<SearchStringAddition name="СтоимостьВыработкиСтрокаПоиска" id="11">
+				<AdditionSource>
+					<Item>СтоимостьВыработки</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СтоимостьВыработкиСтрокаПоискаКонтекстноеМеню" id="14"/>
+				<ExtendedTooltip name="СтоимостьВыработкиСтрокаПоискаРасширеннаяПодсказка" id="15"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СтоимостьВыработкиСостояниеПросмотра" id="16">
+				<AdditionSource>
+					<Item>СтоимостьВыработки</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СтоимостьВыработкиСостояниеПросмотраКонтекстноеМеню" id="19"/>
+				<ExtendedTooltip name="СтоимостьВыработкиСостояниеПросмотраРасширеннаяПодсказка" id="20"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СтоимостьВыработкиУправлениеПоиском" id="21">
+				<AdditionSource>
+					<Item>СтоимостьВыработки</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СтоимостьВыработкиУправлениеПоискомКонтекстноеМеню" id="24"/>
+				<ExtendedTooltip name="СтоимостьВыработкиУправлениеПоискомРасширеннаяПодсказка" id="25"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="СтоимостьВыработкиНомерСтроки" id="26">
+					<DataPath>Объект.СтоимостьВыработки.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СтоимостьВыработкиНомерСтрокиКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="СтоимостьВыработкиНомерСтрокиРасширеннаяПодсказка" id="28"/>
+				</LabelField>
+				<InputField name="СтоимостьВыработкиНоменклатура" id="29">
+					<DataPath>Объект.СтоимостьВыработки.Номенклатура</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СтоимостьВыработкиНоменклатураКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="СтоимостьВыработкиНоменклатураРасширеннаяПодсказка" id="31"/>
+					<Events>
+						<Event name="OnChange">СтоимостьВыработкиНоменклатураПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="СтоимостьВыработкиЕдиницаИзмерения" id="53">
+					<DataPath>Объект.СтоимостьВыработки.ЕдиницаИзмерения</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ед</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<Width>5</Width>
+					<DropListButton>true</DropListButton>
+					<ChoiceButton>true</ChoiceButton>
+					<ClearButton>false</ClearButton>
+					<SpinButton>false</SpinButton>
+					<OpenButton>false</OpenButton>
+					<CreateButton>false</CreateButton>
+					<QuickChoice>true</QuickChoice>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Отбор.Владелец</xr:Name>
+							<xr:DataPath xsi:type="xs:string">Items.СтоимостьВыработки.CurrentData.Номенклатура</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="СтоимостьВыработкиЕдиницаИзмеренияКонтекстноеМеню" id="54"/>
+					<ExtendedTooltip name="СтоимостьВыработкиЕдиницаИзмеренияРасширеннаяПодсказка" id="55"/>
+					<Events>
+						<Event name="StartChoice">СтоимостьВыработкиЕдиницаИзмеренияНачалоВыбора</Event>
+					</Events>
+				</InputField>
+				<CheckBoxField name="СтоимостьВыработкиПоВыработке" id="82">
+					<DataPath>Объект.СтоимостьВыработки.ПоВыработке</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="СтоимостьВыработкиПоВыработкеКонтекстноеМеню" id="83"/>
+					<ExtendedTooltip name="СтоимостьВыработкиПоВыработкеРасширеннаяПодсказка" id="84"/>
+				</CheckBoxField>
+				<ColumnGroup name="СтоимостьВыработкиГруппаСтоимость" id="59">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Стоимость выработки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Стоимость выработки группа стоимость</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="СтоимостьВыработкиГруппаСтоимостьРасширеннаяПодсказка" id="60"/>
+					<ChildItems>
+						<InputField name="СтоимостьВыработкиСтоимость" id="32">
+							<DataPath>Объект.СтоимостьВыработки.Стоимость</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="СтоимостьВыработкиСтоимостьКонтекстноеМеню" id="33"/>
+							<ExtendedTooltip name="СтоимостьВыработкиСтоимостьРасширеннаяПодсказка" id="34"/>
+						</InputField>
+						<InputField name="СтоимостьВыработкиСтоимостьДляМенеджера" id="61">
+							<DataPath>Объект.СтоимостьВыработки.СтоимостьДляМенеджера</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="СтоимостьВыработкиСтоимостьДляМенеджераКонтекстноеМеню" id="62"/>
+							<ExtendedTooltip name="СтоимостьВыработкиСтоимостьДляМенеджераРасширеннаяПодсказка" id="63"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ГруппаСтоимостьЗаПозициюПродукции" id="66">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стоимость за позицию продукции в выпуске по виду номенклатуры потолка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа стоимость за позицию продукции</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаСтоимостьЗаПозициюПродукцииРасширеннаяПодсказка" id="67"/>
+			<ChildItems>
+				<CheckBoxField name="УстановитьСтоимостьЗаПозициюВВыпуске" id="74">
+					<DataPath>Объект.УстановитьСтоимостьЗаПозициюВВыпуске</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ContextMenu name="УстановитьСтоимостьЗаПозициюВВыпускеКонтекстноеМеню" id="75"/>
+					<ExtendedTooltip name="УстановитьСтоимостьЗаПозициюВВыпускеРасширеннаяПодсказка" id="76"/>
+					<Events>
+						<Event name="OnChange">УстановитьСтоимостьЗаПозициюВВыпускеПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<UsualGroup name="ГруппаСтоимостьЗаПозициюДляРаскройщиков" id="77">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа стоимость за позицию для раскройщиков</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа стоимость за позицию для раскройщиков</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСтоимостьЗаПозициюДляРаскройщиковРасширеннаяПодсказка" id="78"/>
+					<ChildItems>
+						<InputField name="СтоимостьЗаПозициюПродукцииРаскройщику" id="68">
+							<DataPath>Объект.СтоимостьЗаПозициюПродукцииРаскройщику</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Для раскройщика</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="СтоимостьЗаПозициюПродукцииРаскройщикуКонтекстноеМеню" id="69"/>
+							<ExtendedTooltip name="СтоимостьЗаПозициюПродукцииРаскройщикуРасширеннаяПодсказка" id="70"/>
+						</InputField>
+						<CheckBoxField name="СтоимостьЗаПозициюДелитсяНаВсехРаспройщиков" id="79">
+							<DataPath>Объект.СтоимостьЗаПозициюДелитсяНаВсехРаспройщиков</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ContextMenu name="СтоимостьЗаПозициюДелитсяНаВсехРаспройщиковКонтекстноеМеню" id="80"/>
+							<ExtendedTooltip name="СтоимостьЗаПозициюДелитсяНаВсехРаспройщиковРасширеннаяПодсказка" id="81"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="СтоимостьЗаПозициюПродукцииМенеджеру" id="71">
+					<DataPath>Объект.СтоимостьЗаПозициюПродукцииМенеджеру</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Для менеджера</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СтоимостьЗаПозициюПродукцииМенеджеруКонтекстноеМеню" id="72"/>
+					<ExtendedTooltip name="СтоимостьЗаПозициюПродукцииМенеджеруРасширеннаяПодсказка" id="73"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Комментарий" id="47">
+			<DataPath>Объект.Комментарий</DataPath>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="48"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="49"/>
+		</InputField>
+		<InputField name="Ответственный" id="50">
+			<DataPath>Объект.Ответственный</DataPath>
+			<Enabled>false</Enabled>
+			<ContextMenu name="ОтветственныйКонтекстноеМеню" id="51"/>
+			<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="52"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.УДАЛИТЬ_УстановкаСтоимостиВыработкиПроизводства</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаДобавитьГруппуНоменклатуры" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить группу номенклатуры</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда добавить группу номенклатуры</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаДобавитьГруппуНоменклатуры</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаУстановитьСтоимостьВыработки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить стоимость выработки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда установить стоимость выработки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаУстановитьСтоимостьВыработки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаУстановитьЦенуВыработкиДляМенеджера" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить цену выработки для менеджера</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда установить цену выработки для менеджера</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаУстановитьЦенуВыработкиДляМенеджера</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

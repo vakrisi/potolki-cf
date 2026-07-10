@@ -1,0 +1,1277 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<ScalingMode>Compact</ScalingMode>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаПечать" id="154">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.Печать</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.Print</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ФормаПечатьРасширеннаяПодсказка" id="155"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="Декорация2" id="99">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Font ref="style:NormalTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ПРОТОКОЛ ЕЖЕНЕДЕЛЬНОЙ КООРДИНАЦИИ</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalAlign>Center</HorizontalAlign>
+			<BackColor>#E3F2FF</BackColor>
+			<ContextMenu name="Декорация2КонтекстноеМеню" id="100"/>
+			<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="101"/>
+		</LabelDecoration>
+		<UsualGroup name="Группа2" id="156">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="157"/>
+			<ChildItems>
+				<InputField name="Пост" id="158">
+					<DataPath>Объект.Пост</DataPath>
+					<ContextMenu name="ПостКонтекстноеМеню" id="159"/>
+					<ExtendedTooltip name="ПостРасширеннаяПодсказка" id="160"/>
+				</InputField>
+				<InputField name="Дата" id="1">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ПрисутствиеРуководителей" id="11">
+			<Representation>List</Representation>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.ПрисутствиеРуководителей</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ПрисутствиеРуководителейКонтекстноеМеню" id="12"/>
+			<AutoCommandBar name="ПрисутствиеРуководителейКоманднаяПанель" id="13"/>
+			<ExtendedTooltip name="ПрисутствиеРуководителейРасширеннаяПодсказка" id="14"/>
+			<SearchStringAddition name="ПрисутствиеРуководителейСтрокаПоиска" id="15">
+				<AdditionSource>
+					<Item>ПрисутствиеРуководителей</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПрисутствиеРуководителейСтрокаПоискаКонтекстноеМеню" id="16"/>
+				<ExtendedTooltip name="ПрисутствиеРуководителейСтрокаПоискаРасширеннаяПодсказка" id="17"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ПрисутствиеРуководителейСостояниеПросмотра" id="18">
+				<AdditionSource>
+					<Item>ПрисутствиеРуководителей</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПрисутствиеРуководителейСостояниеПросмотраКонтекстноеМеню" id="19"/>
+				<ExtendedTooltip name="ПрисутствиеРуководителейСостояниеПросмотраРасширеннаяПодсказка" id="20"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ПрисутствиеРуководителейУправлениеПоиском" id="21">
+				<AdditionSource>
+					<Item>ПрисутствиеРуководителей</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ПрисутствиеРуководителейУправлениеПоискомКонтекстноеМеню" id="22"/>
+				<ExtendedTooltip name="ПрисутствиеРуководителейУправлениеПоискомРасширеннаяПодсказка" id="23"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ПрисутствиеРуководителейНомерСтроки" id="24">
+					<DataPath>Объект.ПрисутствиеРуководителей.LineNumber</DataPath>
+					<Visible>false</Visible>
+					<TitleBackColor>#E3F2FF</TitleBackColor>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterBackColor>#E3F2FF</FooterBackColor>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ПрисутствиеРуководителейНомерСтрокиКонтекстноеМеню" id="25"/>
+					<ExtendedTooltip name="ПрисутствиеРуководителейНомерСтрокиРасширеннаяПодсказка" id="26"/>
+				</LabelField>
+				<InputField name="ПрисутствиеРуководителейОтделение" id="27">
+					<DataPath>Объект.ПрисутствиеРуководителей.Отделение</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Должность</v8:content>
+						</v8:item>
+					</Title>
+					<TitleBackColor>#E3F2FF</TitleBackColor>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterBackColor>#E3F2FF</FooterBackColor>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ПрисутствиеРуководителейОтделениеКонтекстноеМеню" id="28"/>
+					<ExtendedTooltip name="ПрисутствиеРуководителейОтделениеРасширеннаяПодсказка" id="29"/>
+				</InputField>
+				<CheckBoxField name="ПрисутствиеРуководителейПрисутствует" id="30">
+					<DataPath>Объект.ПрисутствиеРуководителей.Присутствует</DataPath>
+					<Visible>false</Visible>
+					<TitleBackColor>#E3F2FF</TitleBackColor>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterBackColor>#E3F2FF</FooterBackColor>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ПрисутствиеРуководителейПрисутствуетКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="ПрисутствиеРуководителейПрисутствуетРасширеннаяПодсказка" id="32"/>
+				</CheckBoxField>
+			</ChildItems>
+		</Table>
+		<LabelDecoration name="Декорация1" id="96">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Font ref="style:NormalTextFont" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ПРОДУКТ: Одобренные планы на неделю. Сформированный общий план подразделения или компании.</v8:content>
+				</v8:item>
+			</Title>
+			<BackColor>#E3F2FF</BackColor>
+			<ContextMenu name="Декорация1КонтекстноеМеню" id="97"/>
+			<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="98"/>
+		</LabelDecoration>
+		<LabelDecoration name="Декорация3" id="102">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Font ref="style:NormalTextFont" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОТЧЕТ ПО СТАТИСТИКАМ:</v8:content>
+				</v8:item>
+			</Title>
+			<BackColor>#E3F2FF</BackColor>
+			<ContextMenu name="Декорация3КонтекстноеМеню" id="103"/>
+			<ExtendedTooltip name="Декорация3РасширеннаяПодсказка" id="104"/>
+		</LabelDecoration>
+		<Table name="ГлавныеСтатистики" id="35">
+			<Representation>List</Representation>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.ГлавныеСтатистики</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ГлавныеСтатистикиКонтекстноеМеню" id="36"/>
+			<AutoCommandBar name="ГлавныеСтатистикиКоманднаяПанель" id="37">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ГлавныеСтатистикиЗаполнитьСтатистики" id="111">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ЗаполнитьСтатистики</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заполнить</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ГлавныеСтатистикиЗаполнитьСтатистикиРасширеннаяПодсказка" id="112"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ГлавныеСтатистикиРасширеннаяПодсказка" id="38"/>
+			<SearchStringAddition name="ГлавныеСтатистикиСтрокаПоиска" id="39">
+				<AdditionSource>
+					<Item>ГлавныеСтатистики</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ГлавныеСтатистикиСтрокаПоискаКонтекстноеМеню" id="40"/>
+				<ExtendedTooltip name="ГлавныеСтатистикиСтрокаПоискаРасширеннаяПодсказка" id="41"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ГлавныеСтатистикиСостояниеПросмотра" id="42">
+				<AdditionSource>
+					<Item>ГлавныеСтатистики</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ГлавныеСтатистикиСостояниеПросмотраКонтекстноеМеню" id="43"/>
+				<ExtendedTooltip name="ГлавныеСтатистикиСостояниеПросмотраРасширеннаяПодсказка" id="44"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ГлавныеСтатистикиУправлениеПоиском" id="45">
+				<AdditionSource>
+					<Item>ГлавныеСтатистики</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ГлавныеСтатистикиУправлениеПоискомКонтекстноеМеню" id="46"/>
+				<ExtendedTooltip name="ГлавныеСтатистикиУправлениеПоискомРасширеннаяПодсказка" id="47"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ГлавныеСтатистикиНомерСтроки" id="48">
+					<DataPath>Объект.ГлавныеСтатистики.LineNumber</DataPath>
+					<Visible>false</Visible>
+					<TitleBackColor>#E3F2FF</TitleBackColor>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterBackColor>#E3F2FF</FooterBackColor>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ГлавныеСтатистикиНомерСтрокиКонтекстноеМеню" id="49"/>
+					<ExtendedTooltip name="ГлавныеСтатистикиНомерСтрокиРасширеннаяПодсказка" id="50"/>
+				</LabelField>
+				<InputField name="ГлавныеСтатистикиОтделение" id="51">
+					<DataPath>Объект.ГлавныеСтатистики.Отделение</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Должность</v8:content>
+						</v8:item>
+					</Title>
+					<TitleBackColor>#E3F2FF</TitleBackColor>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterBackColor>#E3F2FF</FooterBackColor>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ГлавныеСтатистикиОтделениеКонтекстноеМеню" id="52"/>
+					<ExtendedTooltip name="ГлавныеСтатистикиОтделениеРасширеннаяПодсказка" id="53"/>
+				</InputField>
+				<InputField name="ГлавныеСтатистикиВидСтатистики" id="54">
+					<DataPath>Объект.ГлавныеСтатистики.ВидСтатистики</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Название статистики</v8:content>
+						</v8:item>
+					</Title>
+					<TitleBackColor>#E3F2FF</TitleBackColor>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterBackColor>#E3F2FF</FooterBackColor>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ГлавныеСтатистикиВидСтатистикиКонтекстноеМеню" id="55"/>
+					<ExtendedTooltip name="ГлавныеСтатистикиВидСтатистикиРасширеннаяПодсказка" id="56"/>
+				</InputField>
+				<InputField name="ГлавныеСтатистикиПредыдущаяКвота" id="57">
+					<DataPath>Объект.ГлавныеСтатистики.ПредыдущаяКвота</DataPath>
+					<TitleBackColor>#E3F2FF</TitleBackColor>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterBackColor>#E3F2FF</FooterBackColor>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ГлавныеСтатистикиПредыдущаяКвотаКонтекстноеМеню" id="58"/>
+					<ExtendedTooltip name="ГлавныеСтатистикиПредыдущаяКвотаРасширеннаяПодсказка" id="59"/>
+				</InputField>
+				<InputField name="ГлавныеСтатистикиТекущееЗначениеСтатистики" id="60">
+					<DataPath>Объект.ГлавныеСтатистики.ТекущееЗначениеСтатистики</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тек. значение</v8:content>
+						</v8:item>
+					</Title>
+					<TitleBackColor>#E3F2FF</TitleBackColor>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterBackColor>#E3F2FF</FooterBackColor>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ГлавныеСтатистикиТекущееЗначениеСтатистикиКонтекстноеМеню" id="61"/>
+					<ExtendedTooltip name="ГлавныеСтатистикиТекущееЗначениеСтатистикиРасширеннаяПодсказка" id="62"/>
+				</InputField>
+				<InputField name="ГлавныеСтатистикиКвота" id="63">
+					<DataPath>Объект.ГлавныеСтатистики.Квота</DataPath>
+					<TitleBackColor>#E3F2FF</TitleBackColor>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterBackColor>#E3F2FF</FooterBackColor>
+					<AutoEditMode>true</AutoEditMode>
+					<ContextMenu name="ГлавныеСтатистикиКвотаКонтекстноеМеню" id="64"/>
+					<ExtendedTooltip name="ГлавныеСтатистикиКвотаРасширеннаяПодсказка" id="65"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<LabelDecoration name="Декорация4" id="105">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Font ref="style:NormalTextFont" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОТЧЕТ ПО ПЛАНАМ НА НЕДЕЛЮ:</v8:content>
+				</v8:item>
+			</Title>
+			<BackColor>#E3F2FF</BackColor>
+			<ContextMenu name="Декорация4КонтекстноеМеню" id="106"/>
+			<ExtendedTooltip name="Декорация4РасширеннаяПодсказка" id="107"/>
+		</LabelDecoration>
+		<UsualGroup name="Группа1" id="115">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="116"/>
+			<ChildItems>
+				<Table name="БоевойПлан" id="68">
+					<Representation>List</Representation>
+					<ChangeRowSet>false</ChangeRowSet>
+					<ChangeRowOrder>false</ChangeRowOrder>
+					<RowSelectionMode>Cell</RowSelectionMode>
+					<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>Объект.БоевойПлан</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="БоевойПланКонтекстноеМеню" id="69"/>
+					<AutoCommandBar name="БоевойПланКоманднаяПанель" id="70">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<Button name="БоевойПланЗаполнитьПланы" id="113">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ЗаполнитьПланы</CommandName>
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Заполнить</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="БоевойПланЗаполнитьПланыРасширеннаяПодсказка" id="114"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="БоевойПланРасширеннаяПодсказка" id="71"/>
+					<SearchStringAddition name="БоевойПланСтрокаПоиска" id="72">
+						<AdditionSource>
+							<Item>БоевойПлан</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="БоевойПланСтрокаПоискаКонтекстноеМеню" id="73"/>
+						<ExtendedTooltip name="БоевойПланСтрокаПоискаРасширеннаяПодсказка" id="74"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="БоевойПланСостояниеПросмотра" id="75">
+						<AdditionSource>
+							<Item>БоевойПлан</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="БоевойПланСостояниеПросмотраКонтекстноеМеню" id="76"/>
+						<ExtendedTooltip name="БоевойПланСостояниеПросмотраРасширеннаяПодсказка" id="77"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="БоевойПланУправлениеПоиском" id="78">
+						<AdditionSource>
+							<Item>БоевойПлан</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="БоевойПланУправлениеПоискомКонтекстноеМеню" id="79"/>
+						<ExtendedTooltip name="БоевойПланУправлениеПоискомРасширеннаяПодсказка" id="80"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="OnActivateRow">БоевойПланПриАктивизацииСтроки</Event>
+						<Event name="OnChange">БоевойПланПриИзменении</Event>
+					</Events>
+					<ChildItems>
+						<LabelField name="БоевойПланНомерСтроки" id="81">
+							<DataPath>Объект.БоевойПлан.LineNumber</DataPath>
+							<Visible>false</Visible>
+							<TitleBackColor>#E3F2FF</TitleBackColor>
+							<EditMode>EnterOnInput</EditMode>
+							<FooterBackColor>#E3F2FF</FooterBackColor>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="БоевойПланНомерСтрокиКонтекстноеМеню" id="82"/>
+							<ExtendedTooltip name="БоевойПланНомерСтрокиРасширеннаяПодсказка" id="83"/>
+						</LabelField>
+						<InputField name="БоевойПланОтделение" id="84">
+							<DataPath>Объект.БоевойПлан.Отделение</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Должность</v8:content>
+								</v8:item>
+							</Title>
+							<TitleBackColor>#E3F2FF</TitleBackColor>
+							<EditMode>EnterOnInput</EditMode>
+							<FooterBackColor>#E3F2FF</FooterBackColor>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="БоевойПланОтделениеКонтекстноеМеню" id="85"/>
+							<ExtendedTooltip name="БоевойПланОтделениеРасширеннаяПодсказка" id="86"/>
+						</InputField>
+						<InputField name="БоевойПланПлан" id="87">
+							<DataPath>Объект.БоевойПлан.План</DataPath>
+							<TitleBackColor>#E3F2FF</TitleBackColor>
+							<EditMode>EnterOnInput</EditMode>
+							<FooterBackColor>#E3F2FF</FooterBackColor>
+							<AutoEditMode>true</AutoEditMode>
+							<Width>12</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="БоевойПланПланКонтекстноеМеню" id="88"/>
+							<ExtendedTooltip name="БоевойПланПланРасширеннаяПодсказка" id="89"/>
+						</InputField>
+						<InputField name="БоевойПланПроблемы" id="90">
+							<DataPath>Объект.БоевойПлан.Проблемы</DataPath>
+							<TitleBackColor>#E3F2FF</TitleBackColor>
+							<EditMode>EnterOnInput</EditMode>
+							<FooterBackColor>#E3F2FF</FooterBackColor>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="БоевойПланПроблемыКонтекстноеМеню" id="91"/>
+							<ExtendedTooltip name="БоевойПланПроблемыРасширеннаяПодсказка" id="92"/>
+						</InputField>
+						<InputField name="БоевойПланДостижения" id="93">
+							<DataPath>Объект.БоевойПлан.Достижения</DataPath>
+							<TitleBackColor>#E3F2FF</TitleBackColor>
+							<EditMode>EnterOnInput</EditMode>
+							<FooterBackColor>#E3F2FF</FooterBackColor>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="БоевойПланДостиженияКонтекстноеМеню" id="94"/>
+							<ExtendedTooltip name="БоевойПланДостиженияРасширеннаяПодсказка" id="95"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+				<Table name="ДеревоПлана" id="117">
+					<Representation>Tree</Representation>
+					<ReadOnly>true</ReadOnly>
+					<RowSelectionMode>Cell</RowSelectionMode>
+					<Footer>true</Footer>
+					<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<InitialTreeView>ExpandAllLevels</InitialTreeView>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>ДеревоПлана</DataPath>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<ContextMenu name="ДеревоПланаКонтекстноеМеню" id="118"/>
+					<AutoCommandBar name="ДеревоПланаКоманднаяПанель" id="119">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ДеревоПланаРасширеннаяПодсказка" id="120"/>
+					<SearchStringAddition name="ДеревоПланаСтрокаПоиска" id="121">
+						<AdditionSource>
+							<Item>ДеревоПлана</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ДеревоПланаСтрокаПоискаКонтекстноеМеню" id="122"/>
+						<ExtendedTooltip name="ДеревоПланаСтрокаПоискаРасширеннаяПодсказка" id="123"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ДеревоПланаСостояниеПросмотра" id="124">
+						<AdditionSource>
+							<Item>ДеревоПлана</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ДеревоПланаСостояниеПросмотраКонтекстноеМеню" id="125"/>
+						<ExtendedTooltip name="ДеревоПланаСостояниеПросмотраРасширеннаяПодсказка" id="126"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ДеревоПланаУправлениеПоиском" id="127">
+						<AdditionSource>
+							<Item>ДеревоПлана</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ДеревоПланаУправлениеПоискомКонтекстноеМеню" id="128"/>
+						<ExtendedTooltip name="ДеревоПланаУправлениеПоискомРасширеннаяПодсказка" id="129"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<InputField name="ДеревоПланаСодержание" id="130">
+							<DataPath>ДеревоПлана.Содержание</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Содержание</v8:content>
+								</v8:item>
+							</Title>
+							<TitleBackColor>#E3F2FF</TitleBackColor>
+							<EditMode>EnterOnInput</EditMode>
+							<FooterBackColor>#E3F2FF</FooterBackColor>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="ДеревоПланаСодержаниеКонтекстноеМеню" id="131"/>
+							<ExtendedTooltip name="ДеревоПланаСодержаниеРасширеннаяПодсказка" id="132"/>
+						</InputField>
+						<InputField name="ДеревоПланаСрокИсполнения" id="133">
+							<DataPath>ДеревоПлана.СрокИсполнения</DataPath>
+							<TitleBackColor>#E3F2FF</TitleBackColor>
+							<EditMode>EnterOnInput</EditMode>
+							<FooterBackColor>#E3F2FF</FooterBackColor>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="ДеревоПланаСрокИсполненияКонтекстноеМеню" id="134"/>
+							<ExtendedTooltip name="ДеревоПланаСрокИсполненияРасширеннаяПодсказка" id="135"/>
+						</InputField>
+						<InputField name="ДеревоПланаПродукт" id="136">
+							<DataPath>ДеревоПлана.Продукт</DataPath>
+							<TitleBackColor>#E3F2FF</TitleBackColor>
+							<EditMode>EnterOnInput</EditMode>
+							<FooterBackColor>#E3F2FF</FooterBackColor>
+							<AutoEditMode>true</AutoEditMode>
+							<ContextMenu name="ДеревоПланаПродуктКонтекстноеМеню" id="137"/>
+							<ExtendedTooltip name="ДеревоПланаПродуктРасширеннаяПодсказка" id="138"/>
+						</InputField>
+						<InputField name="ДеревоПланаВремяПлан" id="139">
+							<DataPath>ДеревоПлана.ВремяПлан</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Часы</v8:content>
+								</v8:item>
+							</Title>
+							<TitleBackColor>#E3F2FF</TitleBackColor>
+							<EditMode>EnterOnInput</EditMode>
+							<FooterDataPath>Время</FooterDataPath>
+							<FooterBackColor>#E3F2FF</FooterBackColor>
+							<AutoEditMode>true</AutoEditMode>
+							<Format>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Л=; ДФ=ЧЧ:мм</v8:content>
+								</v8:item>
+							</Format>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Л=; ДФ=ЧЧ:мм</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="ДеревоПланаВремяПланКонтекстноеМеню" id="140"/>
+							<ExtendedTooltip name="ДеревоПланаВремяПланРасширеннаяПодсказка" id="141"/>
+						</InputField>
+						<InputField name="ДеревоПланаВремяФакт" id="151">
+							<DataPath>ДеревоПлана.ВремяФакт</DataPath>
+							<TitleBackColor>#E3F2FF</TitleBackColor>
+							<EditMode>EnterOnInput</EditMode>
+							<FooterDataPath>ВремяФакт</FooterDataPath>
+							<FooterBackColor>#E3F2FF</FooterBackColor>
+							<AutoEditMode>true</AutoEditMode>
+							<Format>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Л=; ДФ=ЧЧ:мм</v8:content>
+								</v8:item>
+							</Format>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Л=; ДФ=ЧЧ:мм</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="ДеревоПланаВремяФактКонтекстноеМеню" id="152"/>
+							<ExtendedTooltip name="ДеревоПланаВремяФактРасширеннаяПодсказка" id="153"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="Декорация5" id="108">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Font ref="style:NormalTextFont" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>БЛАГОДАРНОСТИ, ШТРАФЫ, НАЗНАЧЕНИЯ НА ПОСТЫ, МЕРОПРИЯТИЯ</v8:content>
+				</v8:item>
+			</Title>
+			<BackColor>#E3F2FF</BackColor>
+			<ContextMenu name="Декорация5КонтекстноеМеню" id="109"/>
+			<ExtendedTooltip name="Декорация5РасширеннаяПодсказка" id="110"/>
+		</LabelDecoration>
+		<InputField name="БлагодарностиШтрафы" id="4">
+			<DataPath>Объект.БлагодарностиШтрафы</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoEditMode>true</AutoEditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<MultiLine>true</MultiLine>
+			<ContextMenu name="БлагодарностиШтрафыКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="БлагодарностиШтрафыРасширеннаяПодсказка" id="6"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ИА_ПротоколЕженедельногоСобрания</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="ДеревоПлана" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево плана</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Дерево плана</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>az</v8:lang>
+					<v8:content>Дерево плана</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>be</v8:lang>
+					<v8:content>Дерево плана</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>kk</v8:lang>
+					<v8:content>Дерево плана</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ky</v8:lang>
+					<v8:content>Дерево плана</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>md</v8:lang>
+					<v8:content>Дерево плана</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tg</v8:lang>
+					<v8:content>Дерево плана</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tk</v8:lang>
+					<v8:content>Дерево плана</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uz</v8:lang>
+					<v8:content>Дерево плана</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Содержание" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Содержание</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Содержание</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>az</v8:lang>
+							<v8:content>Содержание</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>be</v8:lang>
+							<v8:content>Содержание</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>kk</v8:lang>
+							<v8:content>Содержание</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ky</v8:lang>
+							<v8:content>Содержание</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>md</v8:lang>
+							<v8:content>Содержание</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tg</v8:lang>
+							<v8:content>Содержание</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tk</v8:lang>
+							<v8:content>Содержание</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uz</v8:lang>
+							<v8:content>Содержание</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИА_Состояния</v8:Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:Type>cfg:EnumRef.ИА_ТипыЗадачБП</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СрокИсполнения" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Срок исполнения</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Срок исполнения</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>az</v8:lang>
+							<v8:content>Срок исполнения</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>be</v8:lang>
+							<v8:content>Срок исполнения</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>kk</v8:lang>
+							<v8:content>Срок исполнения</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ky</v8:lang>
+							<v8:content>Срок исполнения</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>md</v8:lang>
+							<v8:content>Срок исполнения</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tg</v8:lang>
+							<v8:content>Срок исполнения</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tk</v8:lang>
+							<v8:content>Срок исполнения</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uz</v8:lang>
+							<v8:content>Срок исполнения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Продукт" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Продукт</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Продукт</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>az</v8:lang>
+							<v8:content>Продукт</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>be</v8:lang>
+							<v8:content>Продукт</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>kk</v8:lang>
+							<v8:content>Продукт</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ky</v8:lang>
+							<v8:content>Продукт</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>md</v8:lang>
+							<v8:content>Продукт</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tg</v8:lang>
+							<v8:content>Продукт</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tk</v8:lang>
+							<v8:content>Продукт</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uz</v8:lang>
+							<v8:content>Продукт</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВремяПлан" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Время план</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Время</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>az</v8:lang>
+							<v8:content>Время</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>be</v8:lang>
+							<v8:content>Время</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>kk</v8:lang>
+							<v8:content>Время</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ky</v8:lang>
+							<v8:content>Время</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>md</v8:lang>
+							<v8:content>Время</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tg</v8:lang>
+							<v8:content>Время</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tk</v8:lang>
+							<v8:content>Время</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uz</v8:lang>
+							<v8:content>Время</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Выполнено" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выполнено</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Выполнено</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>az</v8:lang>
+							<v8:content>Выполнено</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>be</v8:lang>
+							<v8:content>Выполнено</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>kk</v8:lang>
+							<v8:content>Выполнено</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ky</v8:lang>
+							<v8:content>Выполнено</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>md</v8:lang>
+							<v8:content>Выполнено</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tg</v8:lang>
+							<v8:content>Выполнено</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tk</v8:lang>
+							<v8:content>Выполнено</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uz</v8:lang>
+							<v8:content>Выполнено</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="УО" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>УО</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>УО</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>az</v8:lang>
+							<v8:content>УО</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>be</v8:lang>
+							<v8:content>УО</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>kk</v8:lang>
+							<v8:content>УО</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ky</v8:lang>
+							<v8:content>УО</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>md</v8:lang>
+							<v8:content>УО</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tg</v8:lang>
+							<v8:content>УО</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tk</v8:lang>
+							<v8:content>УО</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uz</v8:lang>
+							<v8:content>УО</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>2</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВремяФакт" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Время факт</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Время</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>az</v8:lang>
+							<v8:content>Время</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>be</v8:lang>
+							<v8:content>Время</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>kk</v8:lang>
+							<v8:content>Время</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ky</v8:lang>
+							<v8:content>Время</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>md</v8:lang>
+							<v8:content>Время</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tg</v8:lang>
+							<v8:content>Время</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tk</v8:lang>
+							<v8:content>Время</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uz</v8:lang>
+							<v8:content>Время</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Пост" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пост</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ОргСхема</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Группировка" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группировка</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uk</v8:lang>
+							<v8:content>Шаг формулы</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>az</v8:lang>
+							<v8:content>Шаг формулы</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>be</v8:lang>
+							<v8:content>Шаг формулы</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>kk</v8:lang>
+							<v8:content>Шаг формулы</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ky</v8:lang>
+							<v8:content>Шаг формулы</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>md</v8:lang>
+							<v8:content>Шаг формулы</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tg</v8:lang>
+							<v8:content>Шаг формулы</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tk</v8:lang>
+							<v8:content>Шаг формулы</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>uz</v8:lang>
+							<v8:content>Шаг формулы</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИА_Состояния</v8:Type>
+						<v8:Type>cfg:EnumRef.ИА_ТипыЗадачБП</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЗадачаОснование" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Задача основание</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИА_СтратегическоеУправление</v8:Type>
+						<v8:Type>cfg:TaskRef.ИА_ЗадачаПланаДействий</v8:Type>
+					</Type>
+				</Column>
+				<Column name="индКартинки" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Инд картинки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="идСобытияГугл" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ид события гугл</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ПредИДСтрокиБП" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пред ИДСтроки БП</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uk</v8:lang>
+					<v8:content>Пред ИДСтроки БП</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>az</v8:lang>
+					<v8:content>Пред ИДСтроки БП</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>be</v8:lang>
+					<v8:content>Пред ИДСтроки БП</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>kk</v8:lang>
+					<v8:content>Пред ИДСтроки БП</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ky</v8:lang>
+					<v8:content>Пред ИДСтроки БП</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>md</v8:lang>
+					<v8:content>Пред ИДСтроки БП</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tg</v8:lang>
+					<v8:content>Пред ИДСтроки БП</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tk</v8:lang>
+					<v8:content>Пред ИДСтроки БП</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>uz</v8:lang>
+					<v8:content>Пред ИДСтроки БП</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Время" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Время</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВремяФакт" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Время</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="БоевойПланПредыдущий" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Боевой план предыдущий</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Отделение" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отделение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ОргСхема</v8:Type>
+					</Type>
+				</Column>
+				<Column name="План" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>План</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ИА_ПланыДействий</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаполнитьСтатистики" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить статистики</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить статистики</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьСтатистики</Action>
+		</Command>
+		<Command name="ЗаполнитьПланы" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить планы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить планы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьПланы</Action>
+		</Command>
+		<Command name="Печать" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Печать</Action>
+		</Command>
+	</Commands>
+</Form>

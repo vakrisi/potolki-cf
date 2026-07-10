@@ -1,0 +1,709 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаЗакрыть" id="4">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ButtonImportance>Main</ButtonImportance>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="5"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаПолитикаСложностиПаролей" id="108">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Политика сложности паролей</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа политика сложности паролей</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>HorizontalIfPossible</Group>
+			<Behavior>Collapsible</Behavior>
+			<ControlRepresentation>Button</ControlRepresentation>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаПолитикаСложностиПаролейРасширеннаяПодсказка" id="109"/>
+			<ChildItems>
+				<LabelDecoration name="ДекорацияПолитикаСложностиПаролей" id="110">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<TextColor>web:Red</TextColor>
+					<Font ref="style:NormalTextFont" height="16" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Внимание! В вашей базе данных не задана политика сложности паролей и минимальная длина пароля пользователя. Это влияет на вашу информационную безопасность. Вы можете создать заявку в HelpDesk на включение политики сложностей паролей для повышения уровня информационной безопасности.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияПолитикаСложностиПаролейКонтекстноеМеню" id="111"/>
+					<ExtendedTooltip name="ДекорацияПолитикаСложностиПаролейРасширеннаяПодсказка" id="112"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОбъектыПослеОбновления" id="66">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обработка документов после обновления</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<ControlRepresentation>Button</ControlRepresentation>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаОбъектыПослеОбновленияРасширеннаяПодсказка" id="67"/>
+			<ChildItems>
+				<LabelDecoration name="Декорация4" id="68">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<TextColor>web:Red</TextColor>
+					<Font ref="style:NormalTextFont" height="16" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ВНИМАНИЕ! В вашей базе имеются объекты, которые требуют обработки после обновления. Без завершения обработки данных объектов возможна их некорректная работа и отражение в отчетах. Необходимо завершить процедуру обработки объектов после обновления</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="Декорация4КонтекстноеМеню" id="69"/>
+					<ExtendedTooltip name="Декорация4РасширеннаяПодсказка" id="70"/>
+				</LabelDecoration>
+				<Button name="ПерейтиКСпискуДокументов" id="71">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ПерейтиКСпискуДокументов</CommandName>
+					<ExtendedTooltip name="ПерейтиКСпискуДокументовРасширеннаяПодсказка" id="72"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПревышениеОбъемаПрикрепленныхДанных" id="73">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Превышение объема прикрепленных данных</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<ControlRepresentation>Button</ControlRepresentation>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаПревышениеОбъемаПрикрепленныхДанныхРасширеннаяПодсказка" id="74"/>
+			<ChildItems>
+				<LabelDecoration name="ДекорацияПревышениеОбъема" id="75">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<TextColor>web:Red</TextColor>
+					<Font ref="style:NormalTextFont" height="16" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ВНИМАНИЕ! Размер прикрепленных данных превышает XX Гб, текущий размер ХХ Гб. Рекомендуется выполнять архивацию или очистку прикрепленных данных через соответствующую обработку (Настройки \ Архивация прикрепленных данных). При достижении размера прикрепленных данных ХХ ГБ, функционал по прикреплению данных станет недоступным.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияПревышениеОбъемаКонтекстноеМеню" id="76"/>
+					<ExtendedTooltip name="ДекорацияПревышениеОбъемаРасширеннаяПодсказка" id="77"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаРезервноеКопирование" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Резервное копирование</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<ControlRepresentation>Button</ControlRepresentation>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаРезервноеКопированиеРасширеннаяПодсказка" id="10"/>
+			<ChildItems>
+				<SpreadSheetDocumentField name="Результат" id="1">
+					<DataPath>Результат</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<VerticalStretch>false</VerticalStretch>
+					<ContextMenu name="РезультатКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="РезультатРасширеннаяПодсказка" id="3"/>
+				</SpreadSheetDocumentField>
+				<CheckBoxField name="НеПоказывать" id="6">
+					<DataPath>НеПоказывать</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ContextMenu name="НеПоказыватьКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="НеПоказыватьРасширеннаяПодсказка" id="8"/>
+					<Events>
+						<Event name="OnChange">НеПоказыватьПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаНастройкиПрограммы" id="103">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки программы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа настройки программы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<ControlRepresentation>Button</ControlRepresentation>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаНастройкиПрограммыРасширеннаяПодсказка" id="104"/>
+			<ChildItems>
+				<LabelDecoration name="ДекорацияКонтрольОстатковПоСкладам" id="105">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<TextColor>web:Red</TextColor>
+					<Font ref="style:NormalTextFont" height="16" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Внимание! В вашей базе отключен контроль остатков по складам. Отключенный контроль может привести к появлению отрицательных остатков!</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияКонтрольОстатковПоСкладамКонтекстноеМеню" id="106"/>
+					<ExtendedTooltip name="ДекорацияКонтрольОстатковПоСкладамРасширеннаяПодсказка" id="107"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаЭкспрессПроверка" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Экспресс проверка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<ControlRepresentation>Button</ControlRepresentation>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаЭкспрессПроверкаРасширеннаяПодсказка" id="12"/>
+			<ChildItems>
+				<LabelDecoration name="Декорация2" id="22">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<TextColor>#339966</TextColor>
+					<Font ref="style:NormalTextFont" height="16" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отчет "Экспресс проверка учета" в последний раз выполнялся более 7 дней назад.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="Декорация2КонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="24"/>
+				</LabelDecoration>
+				<LabelDecoration name="Декорация1" id="13">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Экспресс проверку важно делать периодически, чтобы оперативно находить ошибки в учете и вовремя их исправлять. </v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="Декорация1КонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="15"/>
+				</LabelDecoration>
+				<UsualGroup name="ГруппаКнопки" id="20">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа кнопки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа кнопки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКнопкиРасширеннаяПодсказка" id="21"/>
+					<ChildItems>
+						<Button name="ОткрытьЭкспрессПроверку" id="18">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ОткрытьЭкспрессПроверку</CommandName>
+							<ExtendedTooltip name="ОткрытьЭкспрессПроверкуРасширеннаяПодсказка" id="19"/>
+						</Button>
+						<Button name="ЗапуститьЭкспрессПроверку" id="16">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ЗапуститьЭкспрессПроверку</CommandName>
+							<ExtendedTooltip name="ЗапуститьЭкспрессПроверкуРасширеннаяПодсказка" id="17"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаМобильныйКлиентSmartCeilings" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сервисы SmartCeilings</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа мобильный клиент smart ceilings</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<ControlRepresentation>Button</ControlRepresentation>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаМобильныйКлиентSmartCeilingsРасширеннаяПодсказка" id="26"/>
+			<ChildItems>
+				<LabelDecoration name="ДекорацияСостояниеМобильногоКлиента" id="30">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<TextColor>web:FireBrick</TextColor>
+					<Font ref="style:NormalTextFont" height="16" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Внимание! При проверке публикации базы данных для работы внешних сервисов выявлены ошибки, не позволяющие использовать функционал внешних сервисов:</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияСостояниеМобильногоКлиентаКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="ДекорацияСостояниеМобильногоКлиентаРасширеннаяПодсказка" id="32"/>
+				</LabelDecoration>
+				<UsualGroup name="ГруппаМобильныйЗамерщик" id="33">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сервис мобильного замерщика</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа мобильный замерщик</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<VerticalAlign>Center</VerticalAlign>
+					<Representation>WeakSeparation</Representation>
+					<ExtendedTooltip name="ГруппаМобильныйЗамерщикРасширеннаяПодсказка" id="34"/>
+					<ChildItems>
+						<PictureDecoration name="ДекорацияМобильныйЗамерщикИстина" id="35">
+							<Picture>
+								<xr:Ref>CommonPicture.Успешно32</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ДекорацияМобильныйЗамерщикИстинаКонтекстноеМеню" id="36"/>
+							<ExtendedTooltip name="ДекорацияМобильныйЗамерщикИстинаРасширеннаяПодсказка" id="37"/>
+						</PictureDecoration>
+						<PictureDecoration name="ДекорацияМобильныйЗамерщикЛожь" id="38">
+							<Picture>
+								<xr:Ref>CommonPicture.Ошибка32</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ДекорацияМобильныйЗамерщикЛожьКонтекстноеМеню" id="39"/>
+							<ExtendedTooltip name="ДекорацияМобильныйЗамерщикЛожьРасширеннаяПодсказка" id="40"/>
+						</PictureDecoration>
+						<LabelDecoration name="ДекорацияМобильныйЗамерщикТекст" id="41">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Декорация мобильный замерщик текст</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияМобильныйЗамерщикТекстКонтекстноеМеню" id="42"/>
+							<ExtendedTooltip name="ДекорацияМобильныйЗамерщикТекстРасширеннаяПодсказка" id="43"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаМобильныйМонтажника" id="44">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сервис мобильного монтажника</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа мобильный замерщик</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<VerticalAlign>Center</VerticalAlign>
+					<Representation>WeakSeparation</Representation>
+					<ExtendedTooltip name="ГруппаМобильныйМонтажникаРасширеннаяПодсказка" id="45"/>
+					<ChildItems>
+						<PictureDecoration name="ДекорацияМобильныйМонтажникИстина" id="46">
+							<Picture>
+								<xr:Ref>CommonPicture.Успешно32</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ДекорацияМобильныйМонтажникИстинаКонтекстноеМеню" id="47"/>
+							<ExtendedTooltip name="ДекорацияМобильныйМонтажникИстинаРасширеннаяПодсказка" id="48"/>
+						</PictureDecoration>
+						<PictureDecoration name="ДекорацияМобильныйМонтажникЛожь" id="49">
+							<Picture>
+								<xr:Ref>CommonPicture.Ошибка32</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ДекорацияМобильныйМонтажникЛожьКонтекстноеМеню" id="50"/>
+							<ExtendedTooltip name="ДекорацияМобильныйМонтажникЛожьРасширеннаяПодсказка" id="51"/>
+						</PictureDecoration>
+						<LabelDecoration name="ДекорацияМобильныйМонтажникТекст" id="52">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Декорация мобильный монтажник текст</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияМобильныйМонтажникТекстКонтекстноеМеню" id="53"/>
+							<ExtendedTooltip name="ДекорацияМобильныйМонтажникТекстРасширеннаяПодсказка" id="54"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПроверкиПотолка" id="55">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сервис проверки потолка</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа мобильный замерщик</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<VerticalAlign>Center</VerticalAlign>
+					<Representation>WeakSeparation</Representation>
+					<ExtendedTooltip name="ГруппаПроверкиПотолкаРасширеннаяПодсказка" id="56"/>
+					<ChildItems>
+						<PictureDecoration name="ДекорацияПроверкаПотолкаИстина" id="57">
+							<Picture>
+								<xr:Ref>CommonPicture.Успешно32</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ДекорацияПроверкаПотолкаИстинаКонтекстноеМеню" id="58"/>
+							<ExtendedTooltip name="ДекорацияПроверкаПотолкаИстинаРасширеннаяПодсказка" id="59"/>
+						</PictureDecoration>
+						<PictureDecoration name="ДекорацияПроверкаПотолкаЛожь" id="60">
+							<Picture>
+								<xr:Ref>CommonPicture.Ошибка32</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ДекорацияПроверкаПотолкаЛожьКонтекстноеМеню" id="61"/>
+							<ExtendedTooltip name="ДекорацияПроверкаПотолкаЛожьРасширеннаяПодсказка" id="62"/>
+						</PictureDecoration>
+						<LabelDecoration name="ДекорацияПроверкаПотолкаТекст" id="63">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Декорация сервиса проверки потолка</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияПроверкаПотолкаТекстКонтекстноеМеню" id="64"/>
+							<ExtendedTooltip name="ДекорацияПроверкаПотолкаТекстРасширеннаяПодсказка" id="65"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСервисы" id="78">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сервисы SmartCeilings</v8:content>
+				</v8:item>
+			</Title>
+			<Group>HorizontalIfPossible</Group>
+			<Behavior>Collapsible</Behavior>
+			<ControlRepresentation>Button</ControlRepresentation>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаСервисыРасширеннаяПодсказка" id="79"/>
+			<ChildItems>
+				<Pages name="ГруппаСервисыСтраницы" id="80">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа сервисы страницы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа сервисы страницы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<PagesRepresentation>None</PagesRepresentation>
+					<ExtendedTooltip name="ГруппаСервисыСтраницыРасширеннаяПодсказка" id="81"/>
+					<ChildItems>
+						<Page name="ГруппаСервисыОжидание" id="82">
+							<Group>Horizontal</Group>
+							<ScrollOnCompress>false</ScrollOnCompress>
+							<ExtendedTooltip name="ГруппаСервисыОжиданиеРасширеннаяПодсказка" id="83"/>
+							<ChildItems>
+								<PictureDecoration name="ДекорацияБублик" id="84">
+									<PictureSize>Stretch</PictureSize>
+									<Picture>
+										<xr:Ref>CommonPicture.ДлительнаяОперация48</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="ДекорацияБубликКонтекстноеМеню" id="85"/>
+									<ExtendedTooltip name="ДекорацияБубликРасширеннаяПодсказка" id="86"/>
+								</PictureDecoration>
+								<LabelDecoration name="НадписьВыполняетсяПроверка" id="87">
+									<Width>30</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>3</Height>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Выполняется проверка.
+Пожалуйста, подождите...</v8:content>
+										</v8:item>
+									</Title>
+									<GroupVerticalAlign>Center</GroupVerticalAlign>
+									<VerticalAlign>Center</VerticalAlign>
+									<ContextMenu name="НадписьВыполняетсяПроверкаКонтекстноеМеню" id="88"/>
+									<ExtendedTooltip name="НадписьВыполняетсяПроверкаРасширеннаяПодсказка" id="89"/>
+								</LabelDecoration>
+							</ChildItems>
+						</Page>
+						<Page name="ГруппаСервисыРезультатПроверки" id="90">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа сервисы результат проверки</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа сервисы результат проверки</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<ScrollOnCompress>false</ScrollOnCompress>
+							<ExtendedTooltip name="ГруппаСервисыРезультатПроверкиРасширеннаяПодсказка" id="91"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияПроверкиСервисовУспешно" id="98">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<TextColor>web:ForestGreen</TextColor>
+									<Font ref="style:NormalTextFont" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Успешно проверены</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияПроверкиСервисовУспешноКонтекстноеМеню" id="99"/>
+									<ExtendedTooltip name="ДекорацияПроверкиСервисовУспешноРасширеннаяПодсказка" id="100"/>
+								</LabelDecoration>
+								<LabelDecoration name="ДекорацияОшибкаПроверкиСервисов" id="92">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<TextColor>web:Red</TextColor>
+									<Font ref="style:NormalTextFont" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ошибка проверки состояния сервисов.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияОшибкаПроверкиСервисовКонтекстноеМеню" id="93"/>
+									<ExtendedTooltip name="ДекорацияОшибкаПроверкиСервисовРасширеннаяПодсказка" id="94"/>
+								</LabelDecoration>
+								<LabelDecoration name="ДекорацияПредставлениеОшибкаПроверкиСервисов" id="95">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<TextColor>web:Red</TextColor>
+									<Font ref="style:NormalTextFont" height="11" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Описание ошибки</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияПредставлениеОшибкаПроверкиСервисовКонтекстноеМеню" id="96"/>
+									<ExtendedTooltip name="ДекорацияПредставлениеОшибкаПроверкиСервисовРасширеннаяПодсказка" id="97"/>
+								</LabelDecoration>
+								<UsualGroup name="ГруппаСервисыРезультатПроверкиСообщения" id="101">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа сервисы результат проверки сообщения</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа сервисы результат проверки сообщения</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаСервисыРезультатПроверкиСообщенияРасширеннаяПодсказка" id="102"/>
+								</UsualGroup>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Результат" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НеПоказывать" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Резервное копирование настроено и проверено</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьУведомлениеПоСервисам" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать уведомление по сервисам</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИДЗаданияПроверкиСервисов" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ИДЗадания проверки сервисов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:UUID</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПроверкаСервисовЗавершена" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверка сервисов завершена</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗапуститьЭкспрессПроверку" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запустить экспресс проверку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запустить экспресс проверку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗапуститьЭкспрессПроверку</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьЭкспрессПроверку" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть экспресс проверку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запустить экспресс проверку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьЭкспрессПроверку</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПерейтиКСпискуДокументов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти к списку объектов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти к списку документов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПерейтиКСпискуДокументов</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ПоказыватьУведомлениеОРезервномКопировании">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ПоказыватьУведомлениеОЗапускеЭкспрессПроверки">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ПоказатьСостояниеПубликацииДляМобильногоКлиента">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="РезультатПроверкиМобильногоКлиента">
+			<Type/>
+		</Parameter>
+		<Parameter name="ПоказыватьУведомлениеОбОбработкеПослеОбновления">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ПоказыватьУведомлениеПоСервисам">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

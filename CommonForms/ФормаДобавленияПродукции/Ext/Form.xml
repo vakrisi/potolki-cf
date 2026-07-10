@@ -1,0 +1,1018 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Добавление простого потолка</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>LockOwner</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<Group>Vertical</Group>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="ГруппаСтраницы" id="118">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="119"/>
+			<ChildItems>
+				<Page name="ГруппаПотолок" id="27">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Потолок</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа потолок</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<ScrollOnCompress>false</ScrollOnCompress>
+					<ExtendedTooltip name="ГруппаПотолокРасширеннаяПодсказка" id="28"/>
+					<ChildItems>
+						<InputField name="НомерПотолка" id="1">
+							<DataPath>НомерПотолка</DataPath>
+							<ContextMenu name="НомерПотолкаКонтекстноеМеню" id="2"/>
+							<ExtendedTooltip name="НомерПотолкаРасширеннаяПодсказка" id="3"/>
+							<Events>
+								<Event name="OnChange">НомерПотолкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<UsualGroup name="ГруппаФактура" id="58">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа фактура</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа фактура</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаФактураРасширеннаяПодсказка" id="59"/>
+							<ChildItems>
+								<InputField name="Фактура" id="4">
+									<DataPath>Фактура</DataPath>
+									<ContextMenu name="ФактураКонтекстноеМеню" id="5"/>
+									<ExtendedTooltip name="ФактураРасширеннаяПодсказка" id="6"/>
+									<Events>
+										<Event name="OnChange">ФактураПриИзменении</Event>
+									</Events>
+								</InputField>
+								<Button name="ВыбратьПоНоменклатуреПолотна" id="60">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ВыбратьПоНоменклатуреПолотна</CommandName>
+									<ExtendedTooltip name="ВыбратьПоНоменклатуреПолотнаРасширеннаяПодсказка" id="61"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="ФактураШиринаПолотна" id="29">
+							<DataPath>Фактура.ШиринаПолотна</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ширина выбранного полотна</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ChoiceButton>true</ChoiceButton>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="ФактураШиринаПолотнаКонтекстноеМеню" id="30"/>
+							<ExtendedTooltip name="ФактураШиринаПолотнаРасширеннаяПодсказка" id="31"/>
+						</InputField>
+						<InputField name="Цвет" id="7">
+							<DataPath>Цвет</DataPath>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Отбор.Владелец</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Фактура</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="ЦветКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="ЦветРасширеннаяПодсказка" id="9"/>
+							<Events>
+								<Event name="OnChange">ЦветПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="Количество" id="32">
+							<DataPath>Количество</DataPath>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ChoiceButton>true</ChoiceButton>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="КоличествоКонтекстноеМеню" id="33"/>
+							<ExtendedTooltip name="КоличествоРасширеннаяПодсказка" id="34"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаОтрез" id="35">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отрез</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа потолок</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<ScrollOnCompress>false</ScrollOnCompress>
+					<ExtendedTooltip name="ГруппаОтрезРасширеннаяПодсказка" id="36"/>
+					<ChildItems>
+						<InputField name="НомерПотолка1" id="55">
+							<DataPath>НомерПотолка</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номер отреза</v8:content>
+								</v8:item>
+							</Title>
+							<InputHint>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>(не указан)</v8:content>
+								</v8:item>
+							</InputHint>
+							<ContextMenu name="НомерПотолка1КонтекстноеМеню" id="56"/>
+							<ExtendedTooltip name="НомерПотолка1РасширеннаяПодсказка" id="57"/>
+							<Events>
+								<Event name="OnChange">НомерПотолкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<UsualGroup name="ГруппаФактура1" id="62">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа фактура1</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа фактура1</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаФактура1РасширеннаяПодсказка" id="63"/>
+							<ChildItems>
+								<InputField name="Фактура1" id="40">
+									<DataPath>Фактура</DataPath>
+									<ContextMenu name="Фактура1КонтекстноеМеню" id="41"/>
+									<ExtendedTooltip name="Фактура1РасширеннаяПодсказка" id="42"/>
+									<Events>
+										<Event name="OnChange">ФактураПриИзменении</Event>
+									</Events>
+								</InputField>
+								<Button name="ВыбратьПоНоменклатуреПолотна1" id="64">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ВыбратьПоНоменклатуреПолотна</CommandName>
+									<ExtendedTooltip name="ВыбратьПоНоменклатуреПолотна1РасширеннаяПодсказка" id="65"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="ФактураШиринаПолотна1" id="43">
+							<DataPath>Фактура.ШиринаПолотна</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ширина выбранного полотна</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ChoiceButton>true</ChoiceButton>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="ФактураШиринаПолотна1КонтекстноеМеню" id="44"/>
+							<ExtendedTooltip name="ФактураШиринаПолотна1РасширеннаяПодсказка" id="45"/>
+						</InputField>
+						<InputField name="Цвет1" id="46">
+							<DataPath>Цвет</DataPath>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Отбор.Владелец</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Фактура</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="Цвет1КонтекстноеМеню" id="47"/>
+							<ExtendedTooltip name="Цвет1РасширеннаяПодсказка" id="48"/>
+							<Events>
+								<Event name="OnChange">ЦветПриИзменении</Event>
+							</Events>
+						</InputField>
+						<UsualGroup name="ГруппаДлина1" id="137">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа длина</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа длина</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаДлина1РасширеннаяПодсказка" id="138"/>
+							<ChildItems>
+								<InputField name="Длина3" id="139">
+									<DataPath>Длина</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Длина</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ChoiceButton>true</ChoiceButton>
+									<ClearButton>true</ClearButton>
+									<EditFormat>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ЧДЦ=</v8:content>
+										</v8:item>
+									</EditFormat>
+									<ContextMenu name="Длина3КонтекстноеМеню" id="140"/>
+									<ExtendedTooltip name="Длина3РасширеннаяПодсказка" id="141"/>
+									<Events>
+										<Event name="OnChange">ДлинаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<LabelDecoration name="Декорация2" id="142">
+									<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>см.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Декорация2КонтекстноеМеню" id="143"/>
+									<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="144"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="Количество1" id="49">
+							<DataPath>Количество</DataPath>
+							<Enabled>false</Enabled>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Площадь</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ChoiceButton>true</ChoiceButton>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="Количество1КонтекстноеМеню" id="50"/>
+							<ExtendedTooltip name="Количество1РасширеннаяПодсказка" id="51"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаТиповойОтрез" id="66">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Типовой отрез</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа потолок</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<ScrollOnCompress>false</ScrollOnCompress>
+					<ExtendedTooltip name="ГруппаТиповойОтрезРасширеннаяПодсказка" id="67"/>
+					<ChildItems>
+						<InputField name="НомерПотолка2" id="68">
+							<DataPath>НомерПотолка</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номер отреза</v8:content>
+								</v8:item>
+							</Title>
+							<InputHint>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>(не указан)</v8:content>
+								</v8:item>
+							</InputHint>
+							<ContextMenu name="НомерПотолка2КонтекстноеМеню" id="69"/>
+							<ExtendedTooltip name="НомерПотолка2РасширеннаяПодсказка" id="70"/>
+							<Events>
+								<Event name="OnChange">НомерПотолкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<UsualGroup name="ГруппаФактура2" id="71">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа фактура1</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа фактура1</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаФактура2РасширеннаяПодсказка" id="72"/>
+							<ChildItems>
+								<InputField name="Фактура2" id="73">
+									<DataPath>Фактура</DataPath>
+									<ContextMenu name="Фактура2КонтекстноеМеню" id="74"/>
+									<ExtendedTooltip name="Фактура2РасширеннаяПодсказка" id="75"/>
+									<Events>
+										<Event name="OnChange">ФактураПриИзменении</Event>
+									</Events>
+								</InputField>
+								<Button name="ВыбратьПоНоменклатуреПолотна2" id="76">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ВыбратьПоНоменклатуреПолотна</CommandName>
+									<ExtendedTooltip name="ВыбратьПоНоменклатуреПолотна2РасширеннаяПодсказка" id="77"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="ФактураШиринаПолотна2" id="78">
+							<DataPath>Фактура.ШиринаПолотна</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ширина выбранного полотна</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ChoiceButton>true</ChoiceButton>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="ФактураШиринаПолотна2КонтекстноеМеню" id="79"/>
+							<ExtendedTooltip name="ФактураШиринаПолотна2РасширеннаяПодсказка" id="80"/>
+						</InputField>
+						<InputField name="Цвет2" id="81">
+							<DataPath>Цвет</DataPath>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Отбор.Владелец</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Фактура</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="Цвет2КонтекстноеМеню" id="82"/>
+							<ExtendedTooltip name="Цвет2РасширеннаяПодсказка" id="83"/>
+							<Events>
+								<Event name="OnChange">ЦветПриИзменении</Event>
+							</Events>
+						</InputField>
+						<UsualGroup name="ГруппаДлина" id="87">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа длина</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа длина</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаДлинаРасширеннаяПодсказка" id="88"/>
+							<ChildItems>
+								<InputField name="Длина2" id="84">
+									<DataPath>Длина</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Длина</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ChoiceButton>true</ChoiceButton>
+									<ClearButton>true</ClearButton>
+									<EditFormat>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ЧДЦ=</v8:content>
+										</v8:item>
+									</EditFormat>
+									<ContextMenu name="Длина2КонтекстноеМеню" id="85"/>
+									<ExtendedTooltip name="Длина2РасширеннаяПодсказка" id="86"/>
+									<Events>
+										<Event name="OnChange">ДлинаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<LabelDecoration name="Декорация1" id="89">
+									<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>см.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Декорация1КонтекстноеМеню" id="90"/>
+									<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="91"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаОстатокПленки" id="92">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Остаток пленки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа потолок</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<ScrollOnCompress>false</ScrollOnCompress>
+					<ExtendedTooltip name="ГруппаОстатокПленкиРасширеннаяПодсказка" id="93"/>
+					<ChildItems>
+						<InputField name="НомерПотолка3" id="94">
+							<DataPath>НомерПотолка</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номер</v8:content>
+								</v8:item>
+							</Title>
+							<InputHint>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>(не указан)</v8:content>
+								</v8:item>
+							</InputHint>
+							<ContextMenu name="НомерПотолка3КонтекстноеМеню" id="95"/>
+							<ExtendedTooltip name="НомерПотолка3РасширеннаяПодсказка" id="96"/>
+							<Events>
+								<Event name="OnChange">НомерПотолкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<UsualGroup name="ГруппаФактура3" id="97">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа фактура1</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа фактура1</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаФактура3РасширеннаяПодсказка" id="98"/>
+							<ChildItems>
+								<InputField name="Фактура3" id="99">
+									<DataPath>Фактура</DataPath>
+									<ContextMenu name="Фактура3КонтекстноеМеню" id="100"/>
+									<ExtendedTooltip name="Фактура3РасширеннаяПодсказка" id="101"/>
+									<Events>
+										<Event name="OnChange">ФактураПриИзменении</Event>
+									</Events>
+								</InputField>
+								<Button name="ВыбратьПоНоменклатуреПолотна3" id="102">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ВыбратьПоНоменклатуреПолотна</CommandName>
+									<ExtendedTooltip name="ВыбратьПоНоменклатуреПолотна3РасширеннаяПодсказка" id="103"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="ФактураШиринаПолотна3" id="104">
+							<DataPath>Фактура.ШиринаПолотна</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ширина выбранного полотна</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ChoiceButton>true</ChoiceButton>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="ФактураШиринаПолотна3КонтекстноеМеню" id="105"/>
+							<ExtendedTooltip name="ФактураШиринаПолотна3РасширеннаяПодсказка" id="106"/>
+						</InputField>
+						<InputField name="Цвет3" id="107">
+							<DataPath>Цвет</DataPath>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Отбор.Владелец</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Фактура</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="Цвет3КонтекстноеМеню" id="108"/>
+							<ExtendedTooltip name="Цвет3РасширеннаяПодсказка" id="109"/>
+							<Events>
+								<Event name="OnChange">ЦветПриИзменении</Event>
+							</Events>
+						</InputField>
+						<UsualGroup name="ГруппаПлощадьОстаткаПленки" id="120">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПлощадьОстаткаПленкиРасширеннаяПодсказка" id="121"/>
+							<ChildItems>
+								<InputField name="Длина" id="122">
+									<DataPath>Длина</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>10</MaxWidth>
+									<ContextMenu name="ДлинаКонтекстноеМеню" id="123"/>
+									<ExtendedTooltip name="ДлинаРасширеннаяПодсказка" id="124"/>
+									<Events>
+										<Event name="OnChange">ДлинаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<LabelDecoration name="Декорация3" id="125">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>
+
+Х</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Декорация3КонтекстноеМеню" id="126"/>
+									<ExtendedTooltip name="Декорация3РасширеннаяПодсказка" id="127"/>
+								</LabelDecoration>
+								<InputField name="Ширина" id="128">
+									<DataPath>ШиринаПолотна</DataPath>
+									<TitleLocation>Top</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>10</MaxWidth>
+									<ContextMenu name="ШиринаКонтекстноеМеню" id="129"/>
+									<ExtendedTooltip name="ШиринаРасширеннаяПодсказка" id="130"/>
+									<Events>
+										<Event name="OnChange">ШиринаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<LabelDecoration name="Декорация4" id="131">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>
+
+=</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Декорация4КонтекстноеМеню" id="132"/>
+									<ExtendedTooltip name="Декорация4РасширеннаяПодсказка" id="133"/>
+								</LabelDecoration>
+								<InputField name="Площадь" id="134">
+									<DataPath>Количество</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Площадь (м2)</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Top</TitleLocation>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="ПлощадьКонтекстноеМеню" id="135"/>
+									<ExtendedTooltip name="ПлощадьРасширеннаяПодсказка" id="136"/>
+									<Events>
+										<Event name="OnChange">ПлощадьПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="ГруппаНоменклатура" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номенклатура:</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номенклатура</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>StrongSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНоменклатураРасширеннаяПодсказка" id="20"/>
+			<ChildItems>
+				<InputField name="НаименованиеПотолка" id="16">
+					<DataPath>НаименованиеПотолка</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Будет создана номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<TitleTextColor>#339966</TitleTextColor>
+					<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<TitleLocation>Top</TitleLocation>
+					<Width>50</Width>
+					<HorizontalStretch>true</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<MultiLine>false</MultiLine>
+					<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ContextMenu name="НаименованиеПотолкаКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="НаименованиеПотолкаРасширеннаяПодсказка" id="18"/>
+				</InputField>
+				<InputField name="Номенклатура" id="21">
+					<DataPath>Номенклатура</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleTextColor>#FF6600</TitleTextColor>
+					<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<TitleLocation>Top</TitleLocation>
+					<Width>50</Width>
+					<HorizontalStretch>true</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<MultiLine>false</MultiLine>
+					<ContextMenu name="НоменклатураКонтекстноеМеню" id="22"/>
+					<ExtendedTooltip name="НоменклатураРасширеннаяПодсказка" id="23"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаКнопки" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа кнопки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа кнопки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКнопкиРасширеннаяПодсказка" id="11"/>
+			<ChildItems>
+				<Button name="ОК" id="12">
+					<Type>UsualButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.Command.ОК</CommandName>
+					<ButtonImportance>Main</ButtonImportance>
+					<ExtendedTooltip name="ОКРасширеннаяПодсказка" id="13"/>
+				</Button>
+				<Button name="Отмена" id="14">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.Отмена</CommandName>
+					<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="15"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="НомерПотолка" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер потолка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="Фактура" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фактура</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Фактура</v8:Type>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="Цвет" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цвет</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ЦветФактуры</v8:Type>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="НаименованиеПотолка" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Номенклатура" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Будет использована номенклатура</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ГруппаНоменклатурыДляПоиска" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа номенклатуры для поиска</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Количество" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="НомерОтреза" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер отреза</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>50</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РежимДобавленияПотолка" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим добавления потолка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РежимДобавленияОтреза" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим добавления потолка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РежимДобавленияТиповогоОтреза" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим добавления типового отреза</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РежимДобавленияОстаткаПленки" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим добавления остатка пленки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ШиринаПолотна" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ширина (см)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Длина" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Длина (см)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Реквизит1" id="17">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НомерПотолкаПредыдущий" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер потолка предыдущий</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОК" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОК</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Отмена" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Отмена</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВыбратьПоНоменклатуреПолотна" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать по номенклатуре полотна</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать по номенклатуре полотна</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗаполнитьПоШаблону</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыбратьПоНоменклатуреПолотна</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ПоНомеруДоговора">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="НомерДоговора">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="КоличествоПотолковВДокументе">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="РежимДобавленияОтреза">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="РежимДобавленияТиповогоОтреза">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="РежимДобавленияОстаткаПленки">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

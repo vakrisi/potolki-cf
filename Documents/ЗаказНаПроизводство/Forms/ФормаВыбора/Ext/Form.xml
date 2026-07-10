@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>LockOwner</WindowOpeningMode>
+	<Group>Vertical</Group>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Popup name="ПодменюПечать" id="52">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Печать</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Команды печати</v8:content>
+					</v8:item>
+				</ToolTip>
+				<Picture>
+					<xr:Ref>StdPicture.Print</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ПодменюПечатьРасширеннаяПодсказка" id="53"/>
+			</Popup>
+			<Popup name="ПодменюСоздатьНаОсновании" id="54">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Создать на основании</v8:content>
+					</v8:item>
+				</Title>
+				<Picture>
+					<xr:Ref>CommonPicture.ЗаполнитьПоШаблону</xr:Ref>
+					<xr:LoadTransparent>false</xr:LoadTransparent>
+				</Picture>
+				<Representation>Text</Representation>
+				<ExtendedTooltip name="ПодменюСоздатьНаОснованииРасширеннаяПодсказка" id="55"/>
+				<ChildItems>
+					<ButtonGroup name="ПодменюСоздатьНаОснованииВажное" id="56">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Создать на основании (Важное)</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ПодменюСоздатьНаОснованииВажноеРасширеннаяПодсказка" id="57"/>
+					</ButtonGroup>
+					<ButtonGroup name="ПодменюСоздатьНаОснованииОбычное" id="58">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Создать на основании (Обычное)</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ПодменюСоздатьНаОснованииОбычноеРасширеннаяПодсказка" id="59"/>
+					</ButtonGroup>
+					<ButtonGroup name="ПодменюСоздатьНаОснованииСмТакже" id="60">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Создать на основании (См. также)</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ПодменюСоздатьНаОснованииСмТакжеРасширеннаяПодсказка" id="61"/>
+					</ButtonGroup>
+				</ChildItems>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<Representation>WeakSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="2"/>
+		</UsualGroup>
+		<Table name="Список" id="3">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<ChoiceMode>true</ChoiceMode>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокКонтекстноеМеню" id="4"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="5">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="6"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="7">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="8"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="10">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="11"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="12"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="13">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="14"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="15"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnChange">СписокПриИзменении</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="Дата" id="16">
+					<DataPath>Список.Дата</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="18"/>
+				</LabelField>
+				<LabelField name="Номер" id="19">
+					<DataPath>Список.Номер</DataPath>
+					<ContextMenu name="НомерКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="21"/>
+				</LabelField>
+				<LabelField name="НомерРасчета" id="49">
+					<DataPath>Список.НомерРасчета</DataPath>
+					<ContextMenu name="НомерРасчетаКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="НомерРасчетаРасширеннаяПодсказка" id="51"/>
+				</LabelField>
+				<LabelField name="Организация" id="28">
+					<DataPath>Список.Организация</DataPath>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="30"/>
+				</LabelField>
+				<LabelField name="Контрагент" id="25">
+					<DataPath>Список.Контрагент</DataPath>
+					<ContextMenu name="КонтрагентКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="27"/>
+				</LabelField>
+				<LabelField name="СуммаДокумента" id="31">
+					<DataPath>Список.СуммаДокумента</DataPath>
+					<ContextMenu name="СуммаДокументаКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="СуммаДокументаРасширеннаяПодсказка" id="33"/>
+				</LabelField>
+				<LabelField name="Валюта" id="22">
+					<DataPath>Список.Валюта</DataPath>
+					<Width>8</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ВалютаКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ВалютаРасширеннаяПодсказка" id="24"/>
+				</LabelField>
+				<LabelField name="КОплате" id="37">
+					<DataPath>Список.КОплате</DataPath>
+					<Width>15</Width>
+					<ContextMenu name="КОплатеКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="КОплатеРасширеннаяПодсказка" id="39"/>
+				</LabelField>
+				<LabelField name="ТекущийСтатус" id="34">
+					<DataPath>Список.ТекущийСтатус</DataPath>
+					<ContextMenu name="ТекущийСтатусКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="ТекущийСтатусРасширеннаяПодсказка" id="36"/>
+				</LabelField>
+				<LabelField name="Подразделение" id="43">
+					<DataPath>Список.Подразделение</DataPath>
+					<ContextMenu name="ПодразделениеКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="ПодразделениеРасширеннаяПодсказка" id="45"/>
+				</LabelField>
+				<LabelField name="Цех" id="40">
+					<DataPath>Список.Цех</DataPath>
+					<ContextMenu name="ЦехКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="ЦехРасширеннаяПодсказка" id="42"/>
+				</LabelField>
+				<LabelField name="Ссылка" id="46">
+					<DataPath>Список.Ссылка</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="СсылкаКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="48"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>Список.Ссылка</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ДокументЗаказНаПроизводство.Ссылка КАК Ссылка,
+	ДокументЗаказНаПроизводство.ПометкаУдаления КАК ПометкаУдаления,
+	ДокументЗаказНаПроизводство.Номер КАК Номер,
+	ДокументЗаказНаПроизводство.Дата КАК Дата,
+	ДокументЗаказНаПроизводство.Проведен КАК Проведен,
+	ДокументЗаказНаПроизводство.АдресМонтажа КАК АдресМонтажа,
+	ДокументЗаказНаПроизводство.Валюта КАК Валюта,
+	ДокументЗаказНаПроизводство.ВидЦен КАК ВидЦен,
+	ДокументЗаказНаПроизводство.ДоговорКонтрагента КАК ДоговорКонтрагента,
+	ДокументЗаказНаПроизводство.Комментарий КАК Комментарий,
+	ДокументЗаказНаПроизводство.Контрагент КАК Контрагент,
+	ДокументЗаказНаПроизводство.ОжидаемаяДатаОтгрузки КАК ОжидаемаяДатаОтгрузки,
+	ДокументЗаказНаПроизводство.ОжидаемоеВремяОтгрузки КАК ОжидаемоеВремяОтгрузки,
+	ДокументЗаказНаПроизводство.Организация КАК Организация,
+	ДокументЗаказНаПроизводство.Автор КАК Автор,
+	ДокументЗаказНаПроизводство.Подразделение КАК Подразделение,
+	ДокументЗаказНаПроизводство.ПродукцияНоменклатура КАК ПродукцияНоменклатура,
+	ДокументЗаказНаПроизводство.ПродукцияНоменклатураЕдиницаИзмерения КАК ПродукцияНоменклатураЕдиницаИзмерения,
+	ДокументЗаказНаПроизводство.ПродукцияНоменклатураКоличество КАК ПродукцияНоменклатураКоличество,
+	ДокументЗаказНаПроизводство.ПродукцияНоменклатураКоэффициент КАК ПродукцияНоменклатураКоэффициент,
+	ДокументЗаказНаПроизводство.ПродукцияНомерРасчета КАК НомерРасчета,
+	ДокументЗаказНаПроизводство.ПродукцияПроцентРучнойСкидки КАК ПродукцияПроцентРучнойСкидки,
+	ДокументЗаказНаПроизводство.ПродукцияСуммаРучнойСкидки КАК ПродукцияСуммаРучнойСкидки,
+	ДокументЗаказНаПроизводство.ПродукцияСумма КАК ПродукцияСумма,
+	ДокументЗаказНаПроизводство.ПродукцияЦена КАК ПродукцияЦена,
+	ДокументЗаказНаПроизводство.Склад КАК Склад,
+	ДокументЗаказНаПроизводство.СуммаДокумента КАК СуммаДокумента,
+	ДокументЗаказНаПроизводство.ТекущийСтатус КАК ТекущийСтатус,
+	ДокументЗаказНаПроизводство.ДанныеФайлаИмпорта КАК ДанныеФайлаИмпорта,
+	ДокументЗаказНаПроизводство.ДокументОснование КАК ДокументОснование,
+	ДокументЗаказНаПроизводство.ЭтоЗаказОтРозницы КАК ЭтоЗаказОтРозницы,
+	ДокументЗаказНаПроизводство.ЗаказЗагруженИзПрограммыПостроителя КАК ЗаказЗагруженИзПрограммыПостроителя,
+	ДокументЗаказНаПроизводство.Покупатель КАК Покупатель,
+	ДокументЗаказНаПроизводство.Товары.(
+		Ссылка КАК Ссылка,
+		НомерСтроки КАК НомерСтроки,
+		Номенклатура КАК Номенклатура,
+		ХарактеристикаНоменклатуры КАК ХарактеристикаНоменклатуры,
+		СерияНоменклатуры КАК СерияНоменклатуры,
+		ЕдиницаИзмерения КАК ЕдиницаИзмерения,
+		Коэффициент КАК Коэффициент,
+		Количество КАК Количество,
+		Цена КАК Цена,
+		ПроцентРучнойСкидки КАК ПроцентРучнойСкидки,
+		СуммаРучнойСкидки КАК СуммаРучнойСкидки,
+		Сумма КАК Сумма
+	) КАК Товары,
+	ДокументЗаказНаПроизводство.Продукция.(
+		Ссылка КАК Ссылка,
+		НомерСтроки КАК НомерСтроки,
+		Номенклатура КАК Номенклатура,
+		Количество КАК Количество,
+		ЕдиницаИзмерения КАК ЕдиницаИзмерения,
+		Коэффициент КАК Коэффициент
+	) КАК Продукция,
+	ДокументЗаказНаПроизводство.Услуги.(
+		Ссылка КАК Ссылка,
+		НомерСтроки КАК НомерСтроки,
+		Номенклатура КАК Номенклатура,
+		ЕдиницаИзмерения КАК ЕдиницаИзмерения,
+		Коэффициент КАК Коэффициент,
+		Количество КАК Количество,
+		Цена КАК Цена,
+		ПроцентРучнойСкидки КАК ПроцентРучнойСкидки,
+		СуммаРучнойСкидки КАК СуммаРучнойСкидки,
+		Сумма КАК Сумма
+	) КАК Услуги,
+	ДокументЗаказНаПроизводство.Материалы.(
+		Ссылка КАК Ссылка,
+		НомерСтроки КАК НомерСтроки,
+		Номенклатура КАК Номенклатура,
+		ХарактеристикаНоменклатуры КАК ХарактеристикаНоменклатуры,
+		СерияНоменклатуры КАК СерияНоменклатуры,
+		Количество КАК Количество,
+		ЕдиницаИзмерения КАК ЕдиницаИзмерения,
+		Коэффициент КАК Коэффициент,
+		КоличествоКВыработке КАК КоличествоКВыработке
+	) КАК Материалы,
+	ДокументЗаказНаПроизводство.ФактураПотолка.(
+		Ссылка КАК Ссылка,
+		НомерСтроки КАК НомерСтроки,
+		ПродукцияФактура КАК ПродукцияФактура,
+		ПродукцияЦвет КАК ПродукцияЦвет,
+		ПродукцияКоличество КАК ПродукцияКоличество
+	) КАК ФактураПотолка,
+	ДокументЗаказНаПроизводство.МоментВремени КАК МоментВремени,
+	РасчетыПоЗаказамОстатки.СуммаОстаток КАК КОплате,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(РасчетыПоЗаказамОстатки.СуммаОстаток, 0) = 0
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК Оплачен,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(РасчетыПоЗаказамОстатки.СуммаОстаток, 0) &gt; 0
+				И ЕСТЬNULL(РасчетыПоЗаказамОстатки.СуммаОстаток, 0) &lt; ДокументЗаказНаПроизводство.СуммаДокумента
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК ЧастичноОплачен,
+	ДокументЗаказНаПроизводство.Цех КАК Цех
+ИЗ
+	Документ.ЗаказНаПроизводство КАК ДокументЗаказНаПроизводство
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.РасчетыПоЗаказам.Остатки КАК РасчетыПоЗаказамОстатки
+		ПО ДокументЗаказНаПроизводство.Ссылка = РасчетыПоЗаказамОстатки.Заказ</QueryText>
+				<MainTable>Document.ЗаказНаПроизводство</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Оплачен</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">#C0C0C0</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ЧастичноОплачен</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">#3366FF</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+	<CommandInterface>
+		<CommandBar>
+			<Item>
+				<Command>Report.РасчетыПоЗаказам.Command.РасчетыПоЗаказам</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormCommandBarImportant</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.ВозвратПродукции.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.ВыпускПродукции.Command.СоздатьНаОснованииВыпускПродукции</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>BusinessProcess.Задание.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.ЗаказПоставщику.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.ОприходованиеТоваров.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.ПоступлениеТоваровИУслуг.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>Document.ВыпускПродукции.StandardCommand.CreateBasedOn</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</CommandBar>
+	</CommandInterface>
+</Form>
